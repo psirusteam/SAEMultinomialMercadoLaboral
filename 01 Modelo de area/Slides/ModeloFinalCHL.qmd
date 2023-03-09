@@ -1,0 +1,144 @@
+---
+title: "Modelo SAE para estimar estadísticas del trabajo"
+subtitle: "Resultados del procesamiento"
+author: "CEPAL"
+date: Marzo de 2023
+format: revealjs
+editor: visual
+---
+
+## Introducción
+
+* 
+  La Encuesta de Caracterización Socioeconómica Nacional (CASEN) de
+  Chile 2017.
+* 
+  Los niveles de estimación o dominios de estudio para los cuales la
+  muestra fue representativa son: nacional, nacional urbano, nacional
+  rural, y regional.
+* 
+  El diseño corresponde a una muestra probabilística, estratificada y
+  bietápica, siendo los estratos conformados por la dupla Comuna-Área.
+* 
+  La base de datos de la encuesta cuenta con 216439 registros,
+  distribuidos en 1637 upm
+
+## Selección de dominios para modelo de área
+
+Después de realizar la estimación directa en los dominios presentes en
+la muestra se aplican los siguientes criterios para la selección los
+dominios incluidos en el modelo de área.
+
+* 
+  El municipio tiene dos o más upm
+* 
+  Tener estimación del Deff para las tres tasas estimadas.
+
+
+El resultado de aplicar estos criterios fue conservar 309 municipios.
+
+## Definición del modelo multinomial
+
+* 
+  Sea $K$ el número de categorías de la variable de interés
+  $Y \sim multinomial\left(\boldsymbol{p}\right)$, con
+  $\boldsymbol{p}=\left(p_{1},p_{2},\dots ,p_{k}\right)$ y
+  $\sum_{k=1}^{K}p_{k}=1$.
+* 
+  Sea $N_i$ el número de elementos en el i-ésimo dominio y $N_{ik}$
+  el número de elementos que tienen la k-ésima categoría, note que
+  $\sum_{k=1}^{K}N_{ik}=N_{i}$ y $p_{ik}=\frac{N_{ik}}{N_{i}}$.
+* 
+  Sea $\hat{p}_{ik}$ la estimación puntual de $p_{ik}$ y
+  $v_{ik}=Var\left(\hat{p}_{ik}\right)$ y denote el estimador de la varianza por $\hat{v}_{ik}$.
+  
+
+## Definición del tamaño de muestra efectivo
+
+Note que el efecto diseño cambia entre categoría, por tanto, lo primero
+será definir el tamaño de muestra efectivo por categoría. Esto es:
+
+La estimación de $\tilde{n}$ esta dado por
+$\tilde{n}_{ik} = \frac{(\tilde{p}_{ik}\times(1-\tilde{p}_{ik}))}{\hat{v}_{ik}},$
+
+$\tilde{y}_{ik}=\tilde{n}_{ik}\times\hat{p}_{ik}$
+
+luego, $\hat{n}_{i} = \sum_{k=1}^{K}\tilde{y}_{ik}$
+
+de donde se sigue que $\hat{y}_{ik} = \hat{n}_i\times \hat{p}_{ik}$
+
+
+## Definición del modelo multinomial
+
+$\boldsymbol{p}=\left(p_{1},p_{2},\dots p_{k}\right)^{T}=\left(\frac{N_{i1}}{N_{i}},\frac{N_{i2}}{N_{i}}\frac{N_{i3}}{N_{i}}\right)$,
+entonces el modelo multinomial estaría dado por:
+
+$$
+\left(\tilde{y}_{i1},\tilde{y}_{i2},\tilde{y}_{i3}\right)\mid\hat{n}_{i}, \boldsymbol{p}_{i}\sim multinomial\left(\hat{n}_{i},\boldsymbol{p}_{i}\right)
+$$ 
+
+donde
+$\ln\left(\frac{p_{i2}}{p_{i1}}\right)=\boldsymbol{X}_{i}^{T}\beta_{2} + u_{i2}$
+y
+$\ln\left(\frac{p_{i3}}{p_{i1}}\right)=\boldsymbol{X}_{i}^{T}\beta_{3}+ u_{i3}$
+
+## Reescribiendo $\boldsymbol{p}$
+
+Dada la restricción $1 = p_{i1} + p_{i2} + p_{i3}$ entonces
+$p_{i1} + p_{i1}e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta_{2}}}+p_{i1}e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta}_{3}}$
+de donde se sigue que 
+
+$$
+p_{i1}=\frac{1}{1+e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta_{2}}}+e^{\boldsymbol{X_{i}}^{T}\boldsymbol{\beta_{2}}}}
+$$
+
+$$
+p_{i2}=\frac{e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta}_{2}}}{1+e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta_{2}}}+e^{\boldsymbol{X_{i}}^{T}\boldsymbol{\beta_{2}}}}
+$$
+
+$$
+p_{i3}=\frac{e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta}_{3}}}{1+e^{\boldsymbol{X}_{i}^{T}\boldsymbol{\beta_{2}}}+e^{\boldsymbol{X_{i}}^{T}\boldsymbol{\beta_{2}}}}
+$$
+
+## Covariables del modelo de área
+
+* 
+  Luces nocturnas
+* 
+  Cubrimiento de suelo urbano
+* 
+  Cubrimiento de suelo cultivos
+* 
+  Distancia a hospitales
+* 
+  Distancia a hospitales vehículo no motorizado
+* Modificación humana
+
+# Resultados de la estimación
+
+## Comparando el modelo de área y la estimación directa
+
+![]("../Imagenes/Figura1 Comparando estimaciones dir vs mod.png")
+
+## Comparando el modelo de área y la estimación directa (cv)
+
+![]("../Imagenes/Figura3 Comparando estimaciones dir vs mod (cv).png")
+
+## Matriz de correlación
+
+![](../Imagenes/Figura4 Matriz Omega.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
