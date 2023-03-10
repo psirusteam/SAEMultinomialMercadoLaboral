@@ -1,6 +1,6 @@
 --- 
 title: "Estimación de áreas pequeñas con el modelo multinomial"
-author: "Carolina Franco, Andrés Gutiérrez, Charlotte Taglioni, Stalyn Guerrero"
+author: "Andrés Gutiérrez, Stalyn Guerrero, Carolina Franco, Charlotte Taglioni"
 documentclass: book
 # bibliography: [CEPAL.bib]
 biblio-style: apalike
