@@ -3,3 +3,12 @@
 .RData
 .Ruserdata
 fit_multinomial_con_covariable.rds
+index.Rmd
+01-Estimacion_HT.rmd
+02-Seleccion_comunas.rmd
+03-EstimacionSAE_multinomial.Rmd
+04-Validacion_modelo.rmd
+05-Benchmarking.Rmd
+06-Grafico_BENCH.Rmd
+07-Mapas.rmd
+_bookdown_files
