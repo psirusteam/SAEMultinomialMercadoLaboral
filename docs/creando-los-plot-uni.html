@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7.6 Creando los plot uni | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7.6 Creando los plot uni | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
+  <meta name="github-repo" content="psirusteam/HHS-Handbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7.6 Creando los plot uni | Estimación de áreas pequeñas con el modelo multinomial" />
+  
+  <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
+  
+
+<meta name="author" content="Carolina Franco, Andrés Gutiérrez, Charlotte Taglioni, Stalyn Guerrero" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estimación-del-indicador.html"/>
+<link rel="next" href="mapas-de-resultados.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estimación de áreas pequeñas con el modelo multinomial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="1" data-path="estimación-directa-para-las-comunas-de-chile..html"><a href="estimación-directa-para-las-comunas-de-chile..html"><i class="fa fa-check"></i><b>1</b> Estimación directa para las comunas de Chile.</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lectura-de-la-encuesta..html"><a href="lectura-de-la-encuesta..html"><i class="fa fa-check"></i><b>1.1</b> Lectura de la encuesta.</a></li>
+<li class="chapter" data-level="1.2" data-path="definición-del-diseño-muestral.html"><a href="definición-del-diseño-muestral.html"><i class="fa fa-check"></i><b>1.2</b> Definición del diseño muestral</a></li>
+<li class="chapter" data-level="1.3" data-path="estimación-directa-del-indicador.html"><a href="estimación-directa-del-indicador.html"><i class="fa fa-check"></i><b>1.3</b> Estimación directa del indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análisis-descriptivo-de-las-estimaciones-directas..html"><a href="análisis-descriptivo-de-las-estimaciones-directas..html"><i class="fa fa-check"></i><b>2</b> Análisis descriptivo de las estimaciones directas.</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lectura-de-librerías.html"><a href="lectura-de-librerías.html"><i class="fa fa-check"></i><b>2.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="2.2" data-path="definiendo-algunas-funciones-útiles..html"><a href="definiendo-algunas-funciones-útiles..html"><i class="fa fa-check"></i><b>2.2</b> Definiendo algunas funciones útiles.</a></li>
+<li class="chapter" data-level="2.3" data-path="lectura-de-las-estimaciones-directas.html"><a href="lectura-de-las-estimaciones-directas.html"><i class="fa fa-check"></i><b>2.3</b> Lectura de las estimaciones directas</a></li>
+<li class="chapter" data-level="2.4" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html"><i class="fa fa-check"></i><b>2.4</b> Descriptivo de las estimaciones directas</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-los-dominios-con-deff-no-estimados"><i class="fa fa-check"></i><b>2.4.1</b> Conteo de los dominios con deff no estimados</a></li>
+<li class="chapter" data-level="2.4.2" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-los-dominios-con-deff-mayores-que-1"><i class="fa fa-check"></i><b>2.4.2</b> Conteo de los dominios con deff mayores que 1</a></li>
+<li class="chapter" data-level="2.4.3" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0"><i class="fa fa-check"></i><b>2.4.3</b> Porcentaje de dominios con estimación de la varianza mayor a 0</a></li>
+<li class="chapter" data-level="2.4.4" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#número-de-dominios-con-2-o-más-upm"><i class="fa fa-check"></i><b>2.4.4</b> Número de dominios con 2 o más upm</a></li>
+<li class="chapter" data-level="2.4.5" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente."><i class="fa fa-check"></i><b>2.4.5</b> Conteo de dominios con dos o más upm y deff mayor 1 simultáneamente.</a></li>
+<li class="chapter" data-level="2.4.6" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#selección-de-los-dominios-que-empleamos-en-el-modelo-de-área."><i class="fa fa-check"></i><b>2.4.6</b> Selección de los dominios que empleamos en el modelo de área.</a></li>
+<li class="chapter" data-level="2.4.7" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#guardar-archivos"><i class="fa fa-check"></i><b>2.4.7</b> Guardar archivos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimación-del-modelo-de-área-de-respuesta-multinomial.html"><a href="estimación-del-modelo-de-área-de-respuesta-multinomial.html"><i class="fa fa-check"></i><b>3</b> Estimación del modelo de área de respuesta multinomial</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lectura-de-librerías-1.html"><a href="lectura-de-librerías-1.html"><i class="fa fa-check"></i><b>3.1</b> Lectura de librerías</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="lectura-de-librerías-1.html"><a href="lectura-de-librerías-1.html#lectura-de-bases-de-datos"><i class="fa fa-check"></i><b>3.1.1</b> Lectura de bases de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estandarizando-las-variables-para-controlar-el-efecto-de-la-escala..html"><a href="estandarizando-las-variables-para-controlar-el-efecto-de-la-escala..html"><i class="fa fa-check"></i><b>3.2</b> Estandarizando las variables para controlar el efecto de la escala.</a></li>
+<li class="chapter" data-level="3.3" data-path="realizando-ajuste-sobre-el-deff-estimado..html"><a href="realizando-ajuste-sobre-el-deff-estimado..html"><i class="fa fa-check"></i><b>3.3</b> Realizando ajuste sobre el deff estimado.</a></li>
+<li class="chapter" data-level="3.4" data-path="definición-del-modelo-multinomial.html"><a href="definición-del-modelo-multinomial.html"><i class="fa fa-check"></i><b>3.4</b> Definición del modelo multinomial</a></li>
+<li class="chapter" data-level="3.5" data-path="modelo-programando-en-stan.html"><a href="modelo-programando-en-stan.html"><i class="fa fa-check"></i><b>3.5</b> Modelo programando en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.6" data-path="identificando-los-municipios-para-predicción.html"><a href="identificando-los-municipios-para-predicción.html"><i class="fa fa-check"></i><b>3.6</b> Identificando los municipios para predicción</a></li>
+<li class="chapter" data-level="3.7" data-path="obteniendo-la-matriz.html"><a href="obteniendo-la-matriz.html"><i class="fa fa-check"></i><b>3.7</b> Obteniendo la matriz</a></li>
+<li class="chapter" data-level="3.8" data-path="identificando-los-dominios-para-realizar-estimación-del-modelo.html"><a href="identificando-los-dominios-para-realizar-estimación-del-modelo.html"><i class="fa fa-check"></i><b>3.8</b> Identificando los dominios para realizar estimación del modelo</a></li>
+<li class="chapter" data-level="3.9" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html"><i class="fa fa-check"></i><b>3.9</b> Identificando los argumentos para <code>STAN</code></a></li>
+<li class="chapter" data-level="3.10" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html"><i class="fa fa-check"></i><b>3.10</b> Validación de los calculos</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#correlación-de-las-covariables-y-las-estimaciones-directas"><i class="fa fa-check"></i><b>3.10.1</b> Correlación de las covariables y las estimaciones directas</a></li>
+<li class="chapter" data-level="3.10.2" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#preparando-argumentos-para-stan"><i class="fa fa-check"></i><b>3.10.2</b> Preparando argumentos para <code>STAN</code></a></li>
+<li class="chapter" data-level="3.10.3" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#preparando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.10.3</b> Preparando el modelo en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.10.4" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#ejecutando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.10.4</b> Ejecutando el modelo en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.10.5" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#valores-estimados-para-beta"><i class="fa fa-check"></i><b>3.10.5</b> Valores estimados para beta</a></li>
+<li class="chapter" data-level="3.10.6" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#valores-estimados-para-la-matriz-de-correlación"><i class="fa fa-check"></i><b>3.10.6</b> Valores estimados para la matriz de correlación</a></li>
+<li class="chapter" data-level="3.10.7" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#validación-dela-convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>3.10.7</b> Validación dela convergencia de las cadenas</a></li>
+<li class="chapter" data-level="3.10.8" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#evaluación-visual-de-las-cadenas-para-beta"><i class="fa fa-check"></i><b>3.10.8</b> Evaluación visual de las cadenas para beta</a></li>
+<li class="chapter" data-level="3.10.9" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#extrayendo-las-estimaciones-para-theta"><i class="fa fa-check"></i><b>3.10.9</b> extrayendo las estimaciones para theta</a></li>
+<li class="chapter" data-level="3.10.10" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#organizando-los-resultados-en-una-matriz."><i class="fa fa-check"></i><b>3.10.10</b> Organizando los resultados en una matriz.</a></li>
+<li class="chapter" data-level="3.10.11" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#preparando-el-gráfico-comparativo-entre-la-estimación-dir-y-el-modelo"><i class="fa fa-check"></i><b>3.10.11</b> Preparando el gráfico comparativo entre la estimación dir y el modelo</a></li>
+<li class="chapter" data-level="3.10.12" data-path="validación-de-los-calculos.html"><a href="validación-de-los-calculos.html#preparando-el-ppc"><i class="fa fa-check"></i><b>3.10.12</b> Preparando el ppc</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="validación-sobre-los-resultados-del-modelo-de-área..html"><a href="validación-sobre-los-resultados-del-modelo-de-área..html"><i class="fa fa-check"></i><b>4</b> Validación sobre los resultados del modelo de área.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lectura-de-librerías-2.html"><a href="lectura-de-librerías-2.html"><i class="fa fa-check"></i><b>4.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="4.2" data-path="lectura-de-bases-de-datos-1.html"><a href="lectura-de-bases-de-datos-1.html"><i class="fa fa-check"></i><b>4.2</b> Lectura de bases de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="parametrizando-el-código.html"><a href="parametrizando-el-código.html"><i class="fa fa-check"></i><b>4.3</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="4.4" data-path="estimacion-directa.html"><a href="estimacion-directa.html"><i class="fa fa-check"></i><b>4.4</b> Estimacion directa</a></li>
+<li class="chapter" data-level="4.5" data-path="estimación-del-parámetro-theta.html"><a href="estimación-del-parámetro-theta.html"><i class="fa fa-check"></i><b>4.5</b> Estimación del parámetro <span class="math inline">\(\theta\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="ordenando-la-matriz-de-theta.html"><a href="ordenando-la-matriz-de-theta.html"><i class="fa fa-check"></i><b>4.6</b> Ordenando la matriz de <span class="math inline">\(\theta\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="estimación-del-coeficiente-de-variación.html"><a href="estimación-del-coeficiente-de-variación.html"><i class="fa fa-check"></i><b>4.7</b> Estimación del coeficiente de variación</a></li>
+<li class="chapter" data-level="4.8" data-path="consolidando-los-resultados-en-una-base-de-datos..html"><a href="consolidando-los-resultados-en-una-base-de-datos..html"><i class="fa fa-check"></i><b>4.8</b> Consolidando los resultados en una base de datos.</a></li>
+<li class="chapter" data-level="4.9" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><i class="fa fa-check"></i><b>4.9</b> Gráfica comparativa entre las estimación directa y la estimación resultante del modelo</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#estimación-puntual"><i class="fa fa-check"></i><b>4.9.1</b> Estimación puntual</a></li>
+<li class="chapter" data-level="4.9.2" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#error-estándar."><i class="fa fa-check"></i><b>4.9.2</b> Error estándar.</a></li>
+<li class="chapter" data-level="4.9.3" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#coeficiente-de-varianción."><i class="fa fa-check"></i><b>4.9.3</b> Coeficiente de varianción.</a></li>
+<li class="chapter" data-level="4.9.4" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>4.9.4</b> Convergencia de las cadenas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estimaciones-ajustadas-por-benchmark.html"><a href="estimaciones-ajustadas-por-benchmark.html"><i class="fa fa-check"></i><b>5</b> Estimaciones ajustadas por Benchmark</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lectura-de-librerías-3.html"><a href="lectura-de-librerías-3.html"><i class="fa fa-check"></i><b>5.1</b> Lectura de librerías</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html"><i class="fa fa-check"></i><b>6</b> Lectura de las bases de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="parametrizando-el-código-1.html"><a href="parametrizando-el-código-1.html"><i class="fa fa-check"></i><b>6.1</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="6.2" data-path="conteos-agregados-por-dam-y-dam2.html"><a href="conteos-agregados-por-dam-y-dam2.html"><i class="fa fa-check"></i><b>6.2</b> Conteos agregados por dam y dam2</a></li>
+<li class="chapter" data-level="6.3" data-path="tranformando-variables-de-la-encuesta..html"><a href="tranformando-variables-de-la-encuesta..html"><i class="fa fa-check"></i><b>6.3</b> Tranformando variables de la encuesta.</a></li>
+<li class="chapter" data-level="6.4" data-path="creando-el-objeto-diseño.html"><a href="creando-el-objeto-diseño.html"><i class="fa fa-check"></i><b>6.4</b> Creando el objeto diseño</a></li>
+<li class="chapter" data-level="6.5" data-path="estimado-el-indicador.html"><a href="estimado-el-indicador.html"><i class="fa fa-check"></i><b>6.5</b> Estimado el indicador</a></li>
+<li class="chapter" data-level="6.6" data-path="organizando-las-estimaciones-directas-agregadas..html"><a href="organizando-las-estimaciones-directas-agregadas..html"><i class="fa fa-check"></i><b>6.6</b> Organizando las estimaciones directas agregadas.</a></li>
+<li class="chapter" data-level="6.7" data-path="benchmarking.html"><a href="benchmarking.html"><i class="fa fa-check"></i><b>6.7</b> Benchmarking</a></li>
+<li class="chapter" data-level="6.8" data-path="seleccionado-variables.html"><a href="seleccionado-variables.html"><i class="fa fa-check"></i><b>6.8</b> Seleccionado variables</a></li>
+<li class="chapter" data-level="6.9" data-path="creando-las-dummys.html"><a href="creando-las-dummys.html"><i class="fa fa-check"></i><b>6.9</b> creando las dummys</a></li>
+<li class="chapter" data-level="6.10" data-path="validación-de-la-concordancia-de-los-nombre.html"><a href="validación-de-la-concordancia-de-los-nombre.html"><i class="fa fa-check"></i><b>6.10</b> Validación de la concordancia de los nombre</a></li>
+<li class="chapter" data-level="6.11" data-path="idenficando-valores-por-cátegoria..html"><a href="idenficando-valores-por-cátegoria..html"><i class="fa fa-check"></i><b>6.11</b> Idenficando valores por cátegoria.</a>
+<ul>
+<li class="chapter" data-level="6.11.1" data-path="idenficando-valores-por-cátegoria..html"><a href="idenficando-valores-por-cátegoria..html#ocupado"><i class="fa fa-check"></i><b>6.11.1</b> Ocupado</a></li>
+<li class="chapter" data-level="6.11.2" data-path="idenficando-valores-por-cátegoria..html"><a href="idenficando-valores-por-cátegoria..html#desocupado"><i class="fa fa-check"></i><b>6.11.2</b> Desocupado</a></li>
+</ul></li>
+<li class="chapter" data-level="6.12" data-path="inactivo.html"><a href="inactivo.html"><i class="fa fa-check"></i><b>6.12</b> Inactivo</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="inactivo.html"><a href="inactivo.html#creando-las-estimaciones-benchmark"><i class="fa fa-check"></i><b>6.12.1</b> Creando las estimaciones Benchmark</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="validación-visual-del-benchmark.html"><a href="validación-visual-del-benchmark.html"><i class="fa fa-check"></i><b>7</b> Validación visual del Benchmark</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lectura-de-librerias.html"><a href="lectura-de-librerias.html"><i class="fa fa-check"></i><b>7.1</b> Lectura de librerias</a></li>
+<li class="chapter" data-level="7.2" data-path="lectura-de-encuesta..html"><a href="lectura-de-encuesta..html"><i class="fa fa-check"></i><b>7.2</b> Lectura de encuesta.</a></li>
+<li class="chapter" data-level="7.3" data-path="estimación-agregada.html"><a href="estimación-agregada.html"><i class="fa fa-check"></i><b>7.3</b> Estimación agregada</a></li>
+<li class="chapter" data-level="7.4" data-path="creación-de-objeto-diseno.html"><a href="creación-de-objeto-diseno.html"><i class="fa fa-check"></i><b>7.4</b> Creación de objeto diseno</a></li>
+<li class="chapter" data-level="7.5" data-path="estimación-del-indicador.html"><a href="estimación-del-indicador.html"><i class="fa fa-check"></i><b>7.5</b> Estimación del indicador</a></li>
+<li class="chapter" data-level="7.6" data-path="creando-los-plot-uni.html"><a href="creando-los-plot-uni.html"><i class="fa fa-check"></i><b>7.6</b> Creando los plot uni</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="creando-los-plot-uni.html"><a href="creando-los-plot-uni.html#ocupado-1"><i class="fa fa-check"></i><b>7.6.1</b> Ocupado</a></li>
+<li class="chapter" data-level="7.6.2" data-path="creando-los-plot-uni.html"><a href="creando-los-plot-uni.html#desocupado-1"><i class="fa fa-check"></i><b>7.6.2</b> Desocupado</a></li>
+<li class="chapter" data-level="7.6.3" data-path="creando-los-plot-uni.html"><a href="creando-los-plot-uni.html#inactivo-1"><i class="fa fa-check"></i><b>7.6.3</b> Inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="mapas-de-resultados.html"><a href="mapas-de-resultados.html"><i class="fa fa-check"></i><b>8</b> Mapas de resultados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lectura-de-librerías-4.html"><a href="lectura-de-librerías-4.html"><i class="fa fa-check"></i><b>8.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="8.2" data-path="parametrizando-el-código-2.html"><a href="parametrizando-el-código-2.html"><i class="fa fa-check"></i><b>8.2</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="8.3" data-path="lectura-de-shapefile.html"><a href="lectura-de-shapefile.html"><i class="fa fa-check"></i><b>8.3</b> Lectura de shapefile</a></li>
+<li class="chapter" data-level="8.4" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html"><i class="fa fa-check"></i><b>8.4</b> Definición del mapa con <code>tmap</code></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-ocupados"><i class="fa fa-check"></i><b>8.4.1</b> Creando mapa de ocupados</a></li>
+<li class="chapter" data-level="8.4.2" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-desocupados"><i class="fa fa-check"></i><b>8.4.2</b> Creando mapa de desocupados</a></li>
+<li class="chapter" data-level="8.4.3" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-inactivo"><i class="fa fa-check"></i><b>8.4.3</b> Creando mapa de inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a Estimación de áreas pequeñas con el modelo multinomial </a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estimación de áreas pequeñas con el modelo multinomial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="creando-los-plot-uni" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Creando los plot uni<a href="creando-los-plot-uni.html#creando-los-plot-uni" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ocupado-1" class="section level3 hasAnchor" number="7.6.1">
+<h3><span class="header-section-number">7.6.1</span> Ocupado<a href="creando-los-plot-uni.html#ocupado-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="creando-los-plot-uni.html#cb140-1" aria-hidden="true" tabindex="-1"></a>temp_ocupado <span class="ot">&lt;-</span> data_plot <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam,nd, <span class="fu">starts_with</span>(<span class="st">&quot;Ocupado&quot;</span>))</span>
+<span id="cb140-2"><a href="creando-los-plot-uni.html#cb140-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-3"><a href="creando-los-plot-uni.html#cb140-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-4"><a href="creando-los-plot-uni.html#cb140-4" aria-hidden="true" tabindex="-1"></a>temp_ocupado_1 <span class="ot">&lt;-</span> temp_ocupado <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Ocupado_low, <span class="sc">-</span>Ocupado_upp) <span class="sc">%&gt;%</span></span>
+<span id="cb140-5"><a href="creando-los-plot-uni.html#cb140-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Estimacion&quot;</span>,<span class="at">value =</span> <span class="st">&quot;value&quot;</span>, <span class="sc">-</span>nd,<span class="sc">-</span>dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb140-6"><a href="creando-los-plot-uni.html#cb140-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="fu">case_when</span>(Estimacion <span class="sc">==</span> <span class="st">&quot;Ocupado_mod&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área&quot;</span>,</span>
+<span id="cb140-7"><a href="creando-los-plot-uni.html#cb140-7" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Ocupado_Bench&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área (bench)&quot;</span>,</span>
+<span id="cb140-8"><a href="creando-los-plot-uni.html#cb140-8" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Ocupado&quot;</span><span class="sc">~</span> <span class="st">&quot;Directo&quot;</span>))</span>
+<span id="cb140-9"><a href="creando-los-plot-uni.html#cb140-9" aria-hidden="true" tabindex="-1"></a>lims_IC_ocupado <span class="ot">&lt;-</span>  temp_ocupado <span class="sc">%&gt;%</span></span>
+<span id="cb140-10"><a href="creando-los-plot-uni.html#cb140-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(dam,nd,<span class="at">value =</span> Ocupado,Ocupado_low, Ocupado_upp) <span class="sc">%&gt;%</span> </span>
+<span id="cb140-11"><a href="creando-los-plot-uni.html#cb140-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="st">&quot;Directo&quot;</span>)</span>
+<span id="cb140-12"><a href="creando-los-plot-uni.html#cb140-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb140-13"><a href="creando-los-plot-uni.html#cb140-13" aria-hidden="true" tabindex="-1"></a>p_ocupado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(temp_ocupado_1,</span>
+<span id="cb140-14"><a href="creando-los-plot-uni.html#cb140-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(</span>
+<span id="cb140-15"><a href="creando-los-plot-uni.html#cb140-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">x =</span> <span class="fu">fct_reorder2</span>(dam, dam, nd),</span>
+<span id="cb140-16"><a href="creando-los-plot-uni.html#cb140-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> value,</span>
+<span id="cb140-17"><a href="creando-los-plot-uni.html#cb140-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">shape =</span> Estimacion,</span>
+<span id="cb140-18"><a href="creando-los-plot-uni.html#cb140-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> Estimacion</span>
+<span id="cb140-19"><a href="creando-los-plot-uni.html#cb140-19" aria-hidden="true" tabindex="-1"></a>            )) <span class="sc">+</span></span>
+<span id="cb140-20"><a href="creando-los-plot-uni.html#cb140-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb140-21"><a href="creando-los-plot-uni.html#cb140-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> lims_IC_ocupado,</span>
+<span id="cb140-22"><a href="creando-los-plot-uni.html#cb140-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> Ocupado_low ,</span>
+<span id="cb140-23"><a href="creando-los-plot-uni.html#cb140-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymax =</span> Ocupado_upp, <span class="at">x =</span> dam),</span>
+<span id="cb140-24"><a href="creando-los-plot-uni.html#cb140-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb140-25"><a href="creando-los-plot-uni.html#cb140-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb140-26"><a href="creando-los-plot-uni.html#cb140-26" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">+</span></span>
+<span id="cb140-27"><a href="creando-los-plot-uni.html#cb140-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb140-28"><a href="creando-los-plot-uni.html#cb140-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dam&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Ocupado&quot;</span>)</span></code></pre></div>
+</div>
+<div id="desocupado-1" class="section level3 hasAnchor" number="7.6.2">
+<h3><span class="header-section-number">7.6.2</span> Desocupado<a href="creando-los-plot-uni.html#desocupado-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="creando-los-plot-uni.html#cb141-1" aria-hidden="true" tabindex="-1"></a>temp_Desocupado <span class="ot">&lt;-</span> data_plot <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam,nd, <span class="fu">starts_with</span>(<span class="st">&quot;Desocupado&quot;</span>))</span>
+<span id="cb141-2"><a href="creando-los-plot-uni.html#cb141-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-3"><a href="creando-los-plot-uni.html#cb141-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-4"><a href="creando-los-plot-uni.html#cb141-4" aria-hidden="true" tabindex="-1"></a>temp_Desocupado_1 <span class="ot">&lt;-</span> temp_Desocupado <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Desocupado_low, <span class="sc">-</span>Desocupado_upp) <span class="sc">%&gt;%</span></span>
+<span id="cb141-5"><a href="creando-los-plot-uni.html#cb141-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Estimacion&quot;</span>,<span class="at">value =</span> <span class="st">&quot;value&quot;</span>, <span class="sc">-</span>nd,<span class="sc">-</span>dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb141-6"><a href="creando-los-plot-uni.html#cb141-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="fu">case_when</span>(Estimacion <span class="sc">==</span> <span class="st">&quot;Desocupado_mod&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área&quot;</span>,</span>
+<span id="cb141-7"><a href="creando-los-plot-uni.html#cb141-7" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Desocupado_Bench&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área (bench)&quot;</span>,</span>
+<span id="cb141-8"><a href="creando-los-plot-uni.html#cb141-8" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Desocupado&quot;</span><span class="sc">~</span> <span class="st">&quot;Directo&quot;</span>))</span>
+<span id="cb141-9"><a href="creando-los-plot-uni.html#cb141-9" aria-hidden="true" tabindex="-1"></a>lims_IC_Desocupado <span class="ot">&lt;-</span>  temp_Desocupado <span class="sc">%&gt;%</span></span>
+<span id="cb141-10"><a href="creando-los-plot-uni.html#cb141-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(dam,nd,<span class="at">value =</span> Desocupado,Desocupado_low, Desocupado_upp) <span class="sc">%&gt;%</span> </span>
+<span id="cb141-11"><a href="creando-los-plot-uni.html#cb141-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="st">&quot;Directo&quot;</span>)</span>
+<span id="cb141-12"><a href="creando-los-plot-uni.html#cb141-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-13"><a href="creando-los-plot-uni.html#cb141-13" aria-hidden="true" tabindex="-1"></a>p_Desocupado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(temp_Desocupado_1,</span>
+<span id="cb141-14"><a href="creando-los-plot-uni.html#cb141-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">aes</span>(</span>
+<span id="cb141-15"><a href="creando-los-plot-uni.html#cb141-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x =</span> <span class="fu">fct_reorder2</span>(dam, dam, nd),</span>
+<span id="cb141-16"><a href="creando-los-plot-uni.html#cb141-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> value,</span>
+<span id="cb141-17"><a href="creando-los-plot-uni.html#cb141-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">shape =</span> Estimacion,</span>
+<span id="cb141-18"><a href="creando-los-plot-uni.html#cb141-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">color =</span> Estimacion</span>
+<span id="cb141-19"><a href="creando-los-plot-uni.html#cb141-19" aria-hidden="true" tabindex="-1"></a>                    )) <span class="sc">+</span></span>
+<span id="cb141-20"><a href="creando-los-plot-uni.html#cb141-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb141-21"><a href="creando-los-plot-uni.html#cb141-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> lims_IC_Desocupado,</span>
+<span id="cb141-22"><a href="creando-los-plot-uni.html#cb141-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> Desocupado_low ,</span>
+<span id="cb141-23"><a href="creando-los-plot-uni.html#cb141-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymax =</span> Desocupado_upp, <span class="at">x =</span> dam),</span>
+<span id="cb141-24"><a href="creando-los-plot-uni.html#cb141-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb141-25"><a href="creando-los-plot-uni.html#cb141-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb141-26"><a href="creando-los-plot-uni.html#cb141-26" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">+</span></span>
+<span id="cb141-27"><a href="creando-los-plot-uni.html#cb141-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb141-28"><a href="creando-los-plot-uni.html#cb141-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dam&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Desocupado&quot;</span>)</span></code></pre></div>
+</div>
+<div id="inactivo-1" class="section level3 hasAnchor" number="7.6.3">
+<h3><span class="header-section-number">7.6.3</span> Inactivo<a href="creando-los-plot-uni.html#inactivo-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="creando-los-plot-uni.html#cb142-1" aria-hidden="true" tabindex="-1"></a>temp_Inactivo <span class="ot">&lt;-</span> data_plot <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam,nd, <span class="fu">starts_with</span>(<span class="st">&quot;Inactivo&quot;</span>))</span>
+<span id="cb142-2"><a href="creando-los-plot-uni.html#cb142-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-3"><a href="creando-los-plot-uni.html#cb142-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-4"><a href="creando-los-plot-uni.html#cb142-4" aria-hidden="true" tabindex="-1"></a>temp_Inactivo_1 <span class="ot">&lt;-</span> temp_Inactivo <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>Inactivo_low, <span class="sc">-</span>Inactivo_upp) <span class="sc">%&gt;%</span></span>
+<span id="cb142-5"><a href="creando-los-plot-uni.html#cb142-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Estimacion&quot;</span>,<span class="at">value =</span> <span class="st">&quot;value&quot;</span>, <span class="sc">-</span>nd,<span class="sc">-</span>dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb142-6"><a href="creando-los-plot-uni.html#cb142-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="fu">case_when</span>(Estimacion <span class="sc">==</span> <span class="st">&quot;Inactivo_mod&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área&quot;</span>,</span>
+<span id="cb142-7"><a href="creando-los-plot-uni.html#cb142-7" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Inactivo_Bench&quot;</span> <span class="sc">~</span> <span class="st">&quot;Modelo de área (bench)&quot;</span>,</span>
+<span id="cb142-8"><a href="creando-los-plot-uni.html#cb142-8" aria-hidden="true" tabindex="-1"></a>                                Estimacion <span class="sc">==</span> <span class="st">&quot;Inactivo&quot;</span><span class="sc">~</span> <span class="st">&quot;Directo&quot;</span>))</span>
+<span id="cb142-9"><a href="creando-los-plot-uni.html#cb142-9" aria-hidden="true" tabindex="-1"></a>lims_IC_Inactivo <span class="ot">&lt;-</span>  temp_Inactivo <span class="sc">%&gt;%</span></span>
+<span id="cb142-10"><a href="creando-los-plot-uni.html#cb142-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(dam,nd,<span class="at">value =</span> Inactivo,Inactivo_low, Inactivo_upp) <span class="sc">%&gt;%</span> </span>
+<span id="cb142-11"><a href="creando-los-plot-uni.html#cb142-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimacion =</span> <span class="st">&quot;Directo&quot;</span>)</span>
+<span id="cb142-12"><a href="creando-los-plot-uni.html#cb142-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-13"><a href="creando-los-plot-uni.html#cb142-13" aria-hidden="true" tabindex="-1"></a>p_Inactivo <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(temp_Inactivo_1,</span>
+<span id="cb142-14"><a href="creando-los-plot-uni.html#cb142-14" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">aes</span>(</span>
+<span id="cb142-15"><a href="creando-los-plot-uni.html#cb142-15" aria-hidden="true" tabindex="-1"></a>                         <span class="at">x =</span> <span class="fu">fct_reorder2</span>(dam, dam, nd),</span>
+<span id="cb142-16"><a href="creando-los-plot-uni.html#cb142-16" aria-hidden="true" tabindex="-1"></a>                         <span class="at">y =</span> value,</span>
+<span id="cb142-17"><a href="creando-los-plot-uni.html#cb142-17" aria-hidden="true" tabindex="-1"></a>                         <span class="at">shape =</span> Estimacion,</span>
+<span id="cb142-18"><a href="creando-los-plot-uni.html#cb142-18" aria-hidden="true" tabindex="-1"></a>                         <span class="at">color =</span> Estimacion</span>
+<span id="cb142-19"><a href="creando-los-plot-uni.html#cb142-19" aria-hidden="true" tabindex="-1"></a>                       )) <span class="sc">+</span></span>
+<span id="cb142-20"><a href="creando-los-plot-uni.html#cb142-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb142-21"><a href="creando-los-plot-uni.html#cb142-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> lims_IC_Inactivo,</span>
+<span id="cb142-22"><a href="creando-los-plot-uni.html#cb142-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> Inactivo_low ,</span>
+<span id="cb142-23"><a href="creando-los-plot-uni.html#cb142-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">ymax =</span> Inactivo_upp, <span class="at">x =</span> dam),</span>
+<span id="cb142-24"><a href="creando-los-plot-uni.html#cb142-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb142-25"><a href="creando-los-plot-uni.html#cb142-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb142-26"><a href="creando-los-plot-uni.html#cb142-26" aria-hidden="true" tabindex="-1"></a>  )  <span class="sc">+</span></span>
+<span id="cb142-27"><a href="creando-los-plot-uni.html#cb142-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">size =</span> <span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb142-28"><a href="creando-los-plot-uni.html#cb142-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Dam&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Inactivo&quot;</span>)</span>
+<span id="cb142-29"><a href="creando-los-plot-uni.html#cb142-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-30"><a href="creando-los-plot-uni.html#cb142-30" aria-hidden="true" tabindex="-1"></a>p_ocupado<span class="sc">/</span>p_Desocupado<span class="sc">/</span>p_Inactivo</span></code></pre></div>
+<p><img src="06-Grafico_BENCH_files/figure-html/unnamed-chunk-9-1.svg" width="672" /></p>
+
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="creando-los-plot-uni.html#cb143-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">warning =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb143-2"><a href="creando-los-plot-uni.html#cb143-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb143-3"><a href="creando-los-plot-uni.html#cb143-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb143-4"><a href="creando-los-plot-uni.html#cb143-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 4.2.2</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="creando-los-plot-uni.html#cb145-1" aria-hidden="true" tabindex="-1"></a>tba <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">cap =</span> <span class="cn">NA</span>){</span>
+<span id="cb145-2"><a href="creando-los-plot-uni.html#cb145-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(dat,</span>
+<span id="cb145-3"><a href="creando-los-plot-uni.html#cb145-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">digits =</span>  <span class="dv">4</span>,</span>
+<span id="cb145-4"><a href="creando-los-plot-uni.html#cb145-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> cap) <span class="sc">%&gt;%</span> </span>
+<span id="cb145-5"><a href="creando-los-plot-uni.html#cb145-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">full_width =</span> F)<span class="sc">%&gt;%</span></span>
+<span id="cb145-6"><a href="creando-los-plot-uni.html#cb145-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">&quot;Arial Narrow&quot;</span>)</span>
+<span id="cb145-7"><a href="creando-los-plot-uni.html#cb145-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estimación-del-indicador.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mapas-de-resultados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/06-Grafico_BENCH.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Estimación de áreas pequeñas con el modelo multinomial.pdf", "Estimación de áreas pequeñas con el modelo multinomial.epub", "Estimación de áreas pequeñas con el modelo multinomial.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"tconfig": null
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

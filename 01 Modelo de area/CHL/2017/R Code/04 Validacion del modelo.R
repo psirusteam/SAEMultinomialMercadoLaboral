@@ -1,6 +1,6 @@
 ################################################################################
 ## Title:        Modelo área para estimación del mercado laboral              ##
-## Returns:      Predicciones del modelo de área y estadísticas de calidad    ##
+## Returns:      Predicciones del modelo de area y estadísticas de calidad    ##
 ## Author:       Stalyn Guerrero - Andrés Gutiérrez                           ##
 ## Date:         02-2023                                                      ##
 ################################################################################
@@ -117,8 +117,8 @@ p_ocupado <- ggplot(data = estimaciones_obs,
            )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-                      y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+                      y = "Estimacion directa" , 
        title = "Ocupado")+
   theme_bw(base_size = 20)
 
@@ -128,8 +128,8 @@ p_Desocupado <- ggplot(data = estimaciones_obs,
                     )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa", 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa", 
        title = "Desocupado")+
   theme_bw(base_size = 20)
 
@@ -139,8 +139,8 @@ p_Inactivo <- ggplot(data = estimaciones_obs,
                        )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa" , 
        title = "Inactivo")+
   theme_bw(base_size = 20)
 
@@ -154,8 +154,8 @@ p_ocupado <- ggplot(data = estimaciones_obs,
                     )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa" , 
        title = "Ocupado (se)")+
   theme_bw(base_size = 20)
 
@@ -165,8 +165,8 @@ p_Desocupado <- ggplot(data = estimaciones_obs,
                        )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa", 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa", 
        title = "Desocupado (se)")+
   theme_bw(base_size = 20)
 
@@ -176,8 +176,8 @@ p_Inactivo <- ggplot(data = estimaciones_obs,
                      )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa" , 
        title = "Inactivo(se)")+
   theme_bw(base_size = 20)
 
@@ -194,8 +194,8 @@ p_ocupado <- ggplot(data = estimaciones_obs,
                     )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa" , 
        title = "Ocupado (cv)")+
   theme_bw(base_size = 20)
 
@@ -205,8 +205,8 @@ p_Desocupado <- ggplot(data = estimaciones_obs,
                        )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa", 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa", 
        title = "Desocupado(cv)")+
   theme_bw(base_size = 20)
 
@@ -216,8 +216,8 @@ p_Inactivo <- ggplot(data = estimaciones_obs,
                      )) +
   geom_point() + 
   geom_abline(slope = 1, intercept = 0, col = "red")  +
-  labs(x = "Modelo de área",
-       y = "Estimación directa" , 
+  labs(x = "Modelo de area",
+       y = "Estimacion directa" , 
        title = "Inactivo(cv)")+
   theme_bw(base_size = 20)
 

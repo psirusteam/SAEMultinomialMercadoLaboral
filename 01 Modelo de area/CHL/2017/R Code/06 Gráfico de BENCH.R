@@ -85,8 +85,8 @@ temp_ocupado <- data_plot %>% select(dam,nd, starts_with("Ocupado"))
 
 temp_ocupado_1 <- temp_ocupado %>% select(-Ocupado_low, -Ocupado_upp) %>%
   gather(key = "Estimacion",value = "value", -nd,-dam) %>% 
-  mutate(Estimacion = case_when(Estimacion == "Ocupado_mod" ~ "Modelo de área",
-                                Estimacion == "Ocupado_Bench" ~ "Modelo de área (bench)",
+  mutate(Estimacion = case_when(Estimacion == "Ocupado_mod" ~ "Modelo de area",
+                                Estimacion == "Ocupado_Bench" ~ "Modelo de area (bench)",
                                 Estimacion == "Ocupado"~ "Directo"))
 lims_IC_ocupado <-  temp_ocupado %>%
   select(dam,nd,value = Ocupado,Ocupado_low, Ocupado_upp) %>% 
@@ -116,8 +116,8 @@ temp_Desocupado <- data_plot %>% select(dam,nd, starts_with("Desocupado"))
 
 temp_Desocupado_1 <- temp_Desocupado %>% select(-Desocupado_low, -Desocupado_upp) %>%
   gather(key = "Estimacion",value = "value", -nd,-dam) %>% 
-  mutate(Estimacion = case_when(Estimacion == "Desocupado_mod" ~ "Modelo de área",
-                                Estimacion == "Desocupado_Bench" ~ "Modelo de área (bench)",
+  mutate(Estimacion = case_when(Estimacion == "Desocupado_mod" ~ "Modelo de area",
+                                Estimacion == "Desocupado_Bench" ~ "Modelo de area (bench)",
                                 Estimacion == "Desocupado"~ "Directo"))
 lims_IC_Desocupado <-  temp_Desocupado %>%
   select(dam,nd,value = Desocupado,Desocupado_low, Desocupado_upp) %>% 
@@ -148,8 +148,8 @@ temp_Inactivo <- data_plot %>% select(dam,nd, starts_with("Inactivo"))
 
 temp_Inactivo_1 <- temp_Inactivo %>% select(-Inactivo_low, -Inactivo_upp) %>%
   gather(key = "Estimacion",value = "value", -nd,-dam) %>% 
-  mutate(Estimacion = case_when(Estimacion == "Inactivo_mod" ~ "Modelo de área",
-                                Estimacion == "Inactivo_Bench" ~ "Modelo de área (bench)",
+  mutate(Estimacion = case_when(Estimacion == "Inactivo_mod" ~ "Modelo de area",
+                                Estimacion == "Inactivo_Bench" ~ "Modelo de area (bench)",
                                 Estimacion == "Inactivo"~ "Directo"))
 lims_IC_Inactivo <-  temp_Inactivo %>%
   select(dam,nd,value = Inactivo,Inactivo_low, Inactivo_upp) %>% 
