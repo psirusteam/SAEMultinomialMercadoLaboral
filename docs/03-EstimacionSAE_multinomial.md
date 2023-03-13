@@ -22,7 +22,30 @@ tba <- function(dat, cap = NA){
 
 # Estimación del modelo de área de respuesta multinomial 
 
+La Estimación del modelo de área de respuesta multinomial es una técnica estadística utilizada para analizar datos provenientes de encuestas que involucran múltiples categorías de respuesta y están diseñadas a nivel de áreas geográficas. Esta técnica es una extensión del modelo de área de respuesta binomial, el cual se utiliza para analizar encuestas con dos posibles respuestas.
+
+El Modelo multinomial logístico es un tipo de modelo de regresión utilizado para analizar datos de respuesta categóricos que tienen más de dos categorías. Este modelo es una extensión del modelo de regresión logística binaria, el cual se utiliza para analizar datos de respuesta binaria.
+
 ## Lectura de librerías 
+
+  -   La librería *survey* es una herramienta de análisis de datos que se utiliza para realizar análisis estadísticos de encuestas y estudios de muestreo complejos. Esta librería proporciona una variedad de herramientas para realizar análisis de regresión, estimaciones de varianza y diseño de muestras.
+
+  -   La librería *srvyr* es una librería de R que permite trabajar con datos de encuestas en el formato de `data.frames` de la librería *dplyr*. Esta librería es especialmente útil para realizar análisis de encuestas y muestras complejas utilizando la sintaxis de *dplyr*.
+  
+  -   La librería *stringr* es una librería de R que proporciona herramientas para manipular y procesar cadenas de caracteres. Esta librería es especialmente útil para limpiar y transformar datos de texto.
+
+  -   La librería *magrittr* es una librería de R que proporciona una sintaxis más legible y fácil de usar para encadenar y componer funciones. Esta librería es especialmente útil para escribir código más limpio y fácil de entender.
+
+  -   La librería *ggplot2* es una herramienta de visualización de datos en R que permite crear gráficos estadísticos personalizados y de alta calidad. Ofrece una amplia variedad de opciones para crear gráficos de barras, gráficos de líneas, gráficos de dispersión, gráficos de cajas, entre otros. Esta librería se destaca por su capacidad para personalizar los gráficos en función de las necesidades del usuario, lo que permite crear gráficos complejos con múltiples capas y características.
+
+  -   La librería *patchwork* es una librería utilizada para crear paneles de visualización personalizados y complejos en R. Ofrece una amplia variedad de opciones para combinar y organizar gráficos, así como para agregar anotaciones y elementos decorativos. Esta librería es especialmente útil para crear paneles de visualización que incluyan varios gráficos y tablas.
+
+  -   La librería *tidyverse* es una colección de paquetes de R que se utilizan para manipular, procesar y visualizar datos de manera eficiente. Incluye varias librerías como `dplyr`, `ggplot2`, `tidyr`, entre otras, que proporcionan herramientas para limpiar, transformar y visualizar datos de manera efectiva.
+
+  -   La librería *cmdstanr* es una librería de R que permite interactuar con el software de modelado Bayesianos CmdStan. Esta librería es especialmente útil para ajustar modelos Bayesianos complejos y realizar inferencia posterior.
+
+  -   La librería *bayesplot* es una librería de visualización de datos que proporciona herramientas para crear gráficos estadísticos y diagnosticar modelos Bayesianos. Esta librería es especialmente útil para explorar la distribución posterior y evaluar la calidad del ajuste del modelo.
+
 
 
 ```r
@@ -40,13 +63,17 @@ select <- dplyr::select
 
 ### Lectura de bases de datos
 
+El archivo `base_modelo.Rds` ubicado en la ruta `01 Modelo de area/CHL/2017/Data/` es leído utilizando la función `readRDS()` y se asigna a la variable `indicador_dam`. Este archivo contiene la información de las estimaciones directas por dominios.
+
+El archivo `satelitales_media.rds` ubicado en la ruta `01 Modelo de area/CHL/2017/Data/` es leído utilizando la función `readRDS()` y se asigna a la variable `statelevel_predictors_df`. Este archivo  contiene los datos de variables a nivel estatal que se utilizarán como predictores en el modelo de área.
+
 
 ```r
 indicador_dam <- readRDS('01 Modelo de area/CHL/2017/Data/base_modelo.Rds')
 statelevel_predictors_df <- readRDS('01 Modelo de area/CHL/2017/Data/satelitales_media.rds')
 ```
 
-## Estandarizando las variables para controlar el efecto de la escala. 
+después de la lectura se realiza la estandarización  de las variables para controlar el efecto de la escala. 
 
 
 ```r
@@ -56,6 +83,12 @@ statelevel_predictors_df %<>%
 ```
 
 ## Realizando ajuste sobre el deff estimado. 
+
+Este código utiliza la librería `dplyr` para modificar el objeto `indicador_dam` y crear una nueva variable `id_orden`, que indica el número de orden de cada observación dentro del conjunto de datos.
+
+Además, se utiliza la función `mutate()` para modificar los valores de tres variables específicas (`Ocupado_deff`, `Desocupado_deff` e `Inactivo_deff`) del conjunto de datos `indicador_dam`. Estas variables el efecto de diseño para cada categoría de ocupación en la encuesta.
+
+La función `ifelse()` se utiliza para evaluar si los valores de las variables son menores que 1, y en ese caso se les asigna un valor de 1. Esto se hace para asegurarse de que el efecto de diseño no sea menor que 1 y así evitar problemas en el análisis posterior.
 
 
 ```r
@@ -119,6 +152,18 @@ $$
 dado la naturaleza de la variable, se puede suponer que $cor(u_{i2},u_{i3})\ne 0$
 
 ## Modelo programando en `STAN`
+
+El código presenta la implementación de un modelo multinomial logístico de área de respuesta utilizando el lenguaje de programación `STAN`. En este modelo, se asume que la variable de respuesta en cada dominio sigue una distribución multinomial con una estructura de correlación desconocida entre las diferentes categorías. Además, se asume que los parámetros que rigen la relación entre las variables predictoras y la variable de respuesta son diferentes en cada dominio y se modelan como efectos aleatorios.
+
+La sección de *functions* define una función auxiliar llamada `pred_theta()`, que se utiliza para predecir los valores de la variable de respuesta en los dominios no observados. La sección de `data` contiene las variables de entrada del modelo, incluyendo el número de dominios, el número de categorías de la variable de respuesta, las estimaciones directas de la variable de respuesta en cada dominio, las covariables observadas en cada dominio y las covariables correspondientes a los dominios no observados.
+
+La sección de *parameters* define los parámetros desconocidos del modelo, incluyendo la matriz de parámetros *beta*, que contiene los coeficientes que relacionan las covariables con la variable de respuesta en cada categoría. También se incluyen los desviaciones estándar de los efectos aleatorios, la matriz de correlación entre los efectos aleatorios y la matriz de efectos aleatorios en sí.
+
+En la sección de *transformed parameters* se define el vector de parámetros `theta`, que contiene las probabilidades de pertenencia a cada categoría de la variable de respuesta en cada dominio. Se utilizan los efectos aleatorios para ajustar los valores de `theta` en cada dominio.
+
+En la sección de *model* se define la estructura del modelo y se incluyen las distribuciones a priori para los parámetros desconocidos. En particular, se utiliza una distribución normal para los coeficientes de la matriz beta y una distribución LKJ para la matriz de correlación entre los efectos aleatorios. Finalmente, se calcula la función de verosimilitud de la distribución multinomial para las estimaciones directas de la variable de respuesta en cada dominio.
+
+La sección de *generated quantities* se utiliza para calcular las predicciones de la variable de respuesta en los dominios no observados utilizando la función auxiliar definida previamente. También se calcula la matriz de correlación entre los efectos aleatorios.
 
 
 ```r
@@ -214,10 +259,6 @@ model {
 generated quantities {
   matrix[D1,P] theta_pred;
   matrix[2, 2] Omega;
-  vector<lower=0>[2] sdcomprobar;
-  sdcomprobar[1] = sd(u[1, ]);
-  sdcomprobar[2] = sd(u[2, ]);
-
   Omega = L_u * L_u'; // so that it return the correlation matrix
   
  theta_pred = pred_theta(X_pred, P, beta);
@@ -252,6 +293,8 @@ X_pred %<>%
 
 ## Identificando los dominios para realizar estimación del modelo
 
+El código siguiente realiza una serie de operaciones con dos conjuntos de datos: `indicador_dam1` y `statelevel_predictors_df`. En primer lugar, utiliza la función `inner_join()` de `dplyr` para unir ambos `data.frames` por la columna `id_orden`. Luego, se ordenan las filas por esta misma columna y se eliminan las columnas `dam2` e `id_orden`. Finalmente, se convierte el resultado en una matriz y se asigna a la variable `X_obs`. En resumen, este código prepara los datos para ser utilizados en un modelo de regresión logística multinomial de área de respuesta.
+
 
 ```r
 X_obs <- inner_join(indicador_dam1 %>% select(dam2, id_orden),
@@ -262,6 +305,7 @@ X_obs <- inner_join(indicador_dam1 %>% select(dam2, id_orden),
 ```
 
 ## Identificando los argumentos para `STAN`
+Creando $\tilde{y}$, $\tilde{n}$ y $\hat{y}$
 
 
 ```r
@@ -272,6 +316,7 @@ n_tilde <- matrix(NA, D, P)
 Y_hat <- matrix(NA, D, P)
 ```
 
+Realizando los calculos necesarios para cada categoria. 
 
 
 ```r
@@ -289,7 +334,7 @@ n_tilde[,3] <- (indicador_dam1$Inactivo*(1 - indicador_dam1$Inactivo))/indicador
 Y_tilde[,3] <- n_tilde[,3]* indicador_dam1$Inactivo
 ```
 
-
+Calculando $\hat{y}$
 
 ```r
 ni_hat = rowSums(Y_tilde)
@@ -298,47 +343,76 @@ Y_hat[,2] <- ni_hat* indicador_dam1$Desocupado
 Y_hat[,3] <- ni_hat* indicador_dam1$Inactivo
 ```
 
-## Validación de los calculos
+Para realizar la validación de los calculos construimos el siguiente gráfico. 
 
 
 ```r
 hat_p <- Y_hat/rowSums(Y_hat)
-plot(hat_p[,1],indicador_dam1$Ocupado)
+par(mfrow = c(1,3))
+plot(hat_p[,1],indicador_dam1$Ocupado, main = "Ocupado", 
+     xlab =  "hat_p", ylab = "Estimacion directa")
+plot(hat_p[,2],indicador_dam1$Desocupado, 
+     main = "Desocupado", 
+     xlab =  "hat_p", ylab = "Estimacion directa")
+plot(hat_p[,3],indicador_dam1$Inactivo,main = "Inactivo", 
+     xlab =  "hat_p", ylab = "Estimacion directa")
 ```
 
 <img src="03-EstimacionSAE_multinomial_files/figure-html/unnamed-chunk-14-1.svg" width="672" />
 
-```r
-plot(hat_p[,2],indicador_dam1$Desocupado)
-```
-
-<img src="03-EstimacionSAE_multinomial_files/figure-html/unnamed-chunk-14-2.svg" width="672" />
-
-```r
-plot(hat_p[,3],indicador_dam1$Inactivo)
-```
-
-<img src="03-EstimacionSAE_multinomial_files/figure-html/unnamed-chunk-14-3.svg" width="672" />
-
-### Correlación de las covariables y las estimaciones directas
+ahora, la correlación de las covariables y las estimaciones directas
 
 
 ```r
-cor(hat_p,X_obs)
+rr <- cor(hat_p,X_obs) %>% data.frame() 
+row.names(rr)<- c("Ocupado", "Desocupado", "Inactivo")
+tba(rr)
 ```
 
-```
-##      luces_nocturnas cubrimiento_cultivo cubrimiento_urbano modificacion_humana
-## [1,]       0.4920297          -0.1208481          0.4484507           0.2943970
-## [2,]       0.1401609          -0.1096543          0.1097744           0.1228389
-## [3,]      -0.5400578           0.1549760         -0.4868899          -0.3347038
-##      accesibilidad_hospitales accesibilidad_hosp_caminado
-## [1,]               0.11274982                  0.09231100
-## [2,]              -0.07645658                 -0.09435139
-## [3,]              -0.09152536                 -0.06550775
-```
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> luces_nocturnas </th>
+   <th style="text-align:right;"> cubrimiento_cultivo </th>
+   <th style="text-align:right;"> cubrimiento_urbano </th>
+   <th style="text-align:right;"> modificacion_humana </th>
+   <th style="text-align:right;"> accesibilidad_hospitales </th>
+   <th style="text-align:right;"> accesibilidad_hosp_caminado </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Ocupado </td>
+   <td style="text-align:right;"> 0.4920 </td>
+   <td style="text-align:right;"> -0.1208 </td>
+   <td style="text-align:right;"> 0.4485 </td>
+   <td style="text-align:right;"> 0.2944 </td>
+   <td style="text-align:right;"> 0.1127 </td>
+   <td style="text-align:right;"> 0.0923 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Desocupado </td>
+   <td style="text-align:right;"> 0.1402 </td>
+   <td style="text-align:right;"> -0.1097 </td>
+   <td style="text-align:right;"> 0.1098 </td>
+   <td style="text-align:right;"> 0.1228 </td>
+   <td style="text-align:right;"> -0.0765 </td>
+   <td style="text-align:right;"> -0.0944 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Inactivo </td>
+   <td style="text-align:right;"> -0.5401 </td>
+   <td style="text-align:right;"> 0.1550 </td>
+   <td style="text-align:right;"> -0.4869 </td>
+   <td style="text-align:right;"> -0.3347 </td>
+   <td style="text-align:right;"> -0.0915 </td>
+   <td style="text-align:right;"> -0.0655 </td>
+  </tr>
+</tbody>
+</table>
 
-Agregando el intercepto a la matrix de covariables
+Agregando el intercepto a la matriz de covariables
 
 
 ```r
@@ -349,6 +423,8 @@ X1_pred <- cbind(matrix(1,nrow = D1,ncol = 1),X_pred)
 ```
 
 ### Preparando argumentos para `STAN`
+
+El código siguiente crea un objeto de lista llamado `sample_data` que contiene los datos necesarios para estimar el modelo de área de respuesta multinomial. La lista incluye el número total de dominios (`D`), el número de categorías (`P`), la cantidad de covariables (`K`), las estimaciones directas de las categorías en cada dominio (`hat_y`), la matriz de covariables de los dominios observados (`X_obs`), la matriz de covariables de los dominios no observados (`X_pred`) y el número de dominios no observados (`D1`). Este objeto de lista será utilizado posteriormente en la estimación del modelo utilizando la función `stan`.
 
 
 ```r
@@ -372,11 +448,13 @@ fit2 <-
 
 ### Ejecutando el modelo en `STAN`
 
+Este código ejecuta el muestreo MCMC utilizando el modelo especificado en `fit2`, con un número de iteraciones de muestreo y calentamiento de 2000 cada uno, y utilizando los datos en `sample_data`. También especifica una semilla de 123 para reproducibilidad y ejecuta cuatro cadenas paralelas en cuatro núcleos. El resultado es una lista `fit_mcmc2` que contiene los valores muestreados de los parámetros del modelo y otros diagnósticos del muestreo.
+
 
 ```r
 fit_mcmc2 <- fit2$sample(
-  iter_sampling = 1000, 
-  iter_warmup = 1000,
+  iter_sampling = 2000, 
+  iter_warmup = 2000,
   data = sample_data,
   seed = 123,
   chains = 4,
@@ -712,6 +790,8 @@ a %>% filter(rhat>1.05,
 
 ### Evaluación visual de las cadenas para beta 
 
+El código dado genera un gráfico de densidad (mcmc_dens_chains), un gráfico de áreas (mcmc_areas) y un gráfico de traza (mcmc_trace) para cada parámetro en la matriz "beta" en la salida del modelo de MCMC "fit_mcmc2". Los gráficos de densidad y de áreas muestran la distribución posterior de cada parámetro en la matriz "beta" para cada cadena del modelo. 
+
 
 ```r
 (mcmc_dens_chains(fit_mcmc2$draws("beta")) +
@@ -730,6 +810,11 @@ theta_temp_pred <- fit_mcmc2$summary("theta_pred")
 ```
 
 ### Organizando los resultados en una matriz. 
+
+La primera parte del código crea una matriz `theta_fh`" de dimensiones D x P, en la que se colocan los valores medios de `theta_temp`. Los argumentos `nrow` y `ncol` definen las filas y columnas de la matriz, mientras que `byrow` establece que los valores se colocan por columnas. Luego se utiliza la función `rowSums()` para sumar los valores por filas.
+
+El segundo bloque de código es similar al primero, pero crea una matriz `theta_fh_pred` de dimensiones D1 x P, con los valores medios de `theta_temp_pred`. Luego se utiliza la función `rowSums` para sumar los valores por filas.
+
 
 ```r
 theta_fh <- matrix(theta_temp$mean, nrow = D,ncol = P,byrow = FALSE)
@@ -823,6 +908,9 @@ abline(a = 0,b = 1, col = "red")
 <img src="03-EstimacionSAE_multinomial_files/figure-html/unnamed-chunk-30-1.svg" width="672" />
 
 ### Preparando el ppc 
+
+En el siguiente código se utiliza para realizar una validación cruzada predictiva (PPC, por las siglas en inglés) en los datos de prueba. Primero, se extraen las muestras de la distribución posterior predictiva para las variables $\theta$ (`y_pred_B`). Luego, se seleccionan aleatoriamente 500 filas de `y_pred_B`. A continuación, se separan las columnas de `y_pred_B` correspondientes a cada categoría de ocupación (Ocupado, Desocupado, Inactivo) y se crean los vectores `y_pred1`, `y_pred2` y `y_pred3`, respectivamente. Finalmente, se utiliza la función `ppc_dens_overlay()` para graficar la densidad de las predicciones en cada categoría y compararlas con los datos observados correspondientes.
+
 
 
 ```r

@@ -24,6 +24,23 @@ tba <- function(dat, cap = NA){
 
 ## Lectura de librerías 
 
+  -   `tidyverse`: colección de paquetes de R diseñados para ciencia de datos. Incluye, entre otros, `ggplot2`, `dplyr`, `tidyr`.
+
+  -   `magrittr`: paquete que ofrece una sintaxis para encadenar operaciones en R (`%>%`).
+  
+  -   `patchwork`: paquete para crear visualizaciones complejas combinando múltiples gráficos en una sola trama.
+  
+  -   `sp`: paquete para trabajar con datos espaciales (análisis espacial, geoprocesamiento, etc.).
+
+  `sf`: paquete para trabajar con datos geoespaciales (formato Simple Features).
+  
+  -   `tmap`: paquete para crear mapas temáticos en R.
+  -   `RColorBrewer`: paquete que proporciona paletas de colores útiles para visualizaciones.
+  
+  -   `maptools`: paquete para leer y manipular datos geoespaciales.
+
+  -   `DescTools`: paquete con funciones útiles para estadística descriptiva.
+
 
 ```r
 library(tidyverse)
@@ -39,6 +56,8 @@ library(DescTools)
 
 ## Parametrizando el código
 
+Este código lee los resultados del modelo `fit_multinomial_con_covariable` y almacena la ubicación de los archivos de salida para tres gráficos en formato PDF y una imagen en formato PNG. Además, almacena los resultados del modelo en un objeto llamado "estimaciones".
+
 
 ```r
 mod <- "fit_multinomial_con_covariable"
@@ -51,6 +70,7 @@ outMosaico <-  paste0("01 Modelo de area/CHL/2017/Output/Mosaico_",mod,".png")
 
 estimaciones <- readRDS(infile)
 ```
+
 ## Lectura de shapefile 
 
 

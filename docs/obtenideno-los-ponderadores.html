@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>6.10 Obtenideno los ponderadores | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="6.10 Obtenideno los ponderadores | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="6.10 Obtenideno los ponderadores | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lectura-de-librerias.html"/>
-<link rel="next" href="estimación-agregada.html"/>
+<link rel="prev" href="creando-las-dummys.html"/>
+<link rel="next" href="validación-visual-del-benchmark.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,31 +270,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lectura-de-encuesta." class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Lectura de encuesta.<a href="lectura-de-encuesta..html#lectura-de-encuesta." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El código está leyendo un archivo RDS llamado <code>encuesta_2017.Rds</code> y almacenándolo en un objeto llamado <code>encuesta</code>. Luego está leyendo otro archivo RDS que tiene el nombre <code>estimaciones_Bench_fit_multinomial_con_covariable.rds</code> y almacenando el contenido en un objeto llamado <code>estimaciones</code>. Finalmente, está filtrando las filas en el objeto <code>estimaciones</code> donde la columna <code>dam</code> es <code>NA</code>.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="lectura-de-encuesta..html#cb126-1" aria-hidden="true" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;01 Modelo de area/CHL/2017/Data/encuesta_2017.Rds&quot;</span>)</span>
-<span id="cb126-2"><a href="lectura-de-encuesta..html#cb126-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&quot;fit_multinomial_con_covariable&quot;</span></span>
-<span id="cb126-3"><a href="lectura-de-encuesta..html#cb126-3" aria-hidden="true" tabindex="-1"></a>infile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;01 Modelo de area/CHL/2017/Data/estimaciones_Bench_&quot;</span>,mod,<span class="st">&quot;.rds&quot;</span>) </span>
-<span id="cb126-4"><a href="lectura-de-encuesta..html#cb126-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb126-5"><a href="lectura-de-encuesta..html#cb126-5" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(infile)</span>
-<span id="cb126-6"><a href="lectura-de-encuesta..html#cb126-6" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(dam))</span></code></pre></div>
-<pre><code>## # A tibble: 0 × 34
-## # … with 34 variables: dam2 &lt;chr&gt;, n_upm &lt;int&gt;, n_ocupado &lt;int&gt;,
-## #   n_desocupado &lt;int&gt;, n_inactivo &lt;int&gt;, Ocupado &lt;dbl&gt;, Ocupado_se &lt;dbl&gt;,
-## #   Ocupado_var &lt;dbl&gt;, Ocupado_deff &lt;dbl&gt;, Desocupado &lt;dbl&gt;,
-## #   Desocupado_se &lt;dbl&gt;, Desocupado_var &lt;dbl&gt;, Desocupado_deff &lt;dbl&gt;,
-## #   Inactivo &lt;dbl&gt;, Inactivo_se &lt;dbl&gt;, Inactivo_var &lt;dbl&gt;, Inactivo_deff &lt;dbl&gt;,
-## #   Ocupado_mod &lt;dbl&gt;, Desocupado_mod &lt;dbl&gt;, Inactivo_mod &lt;dbl&gt;,
-## #   Ocupado_mod_sd &lt;dbl&gt;, Desocupado_mod_sd &lt;dbl&gt;, Inactivo_mod_sd &lt;dbl&gt;, …</code></pre>
+<div id="obtenideno-los-ponderadores" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Obtenideno los ponderadores<a href="obtenideno-los-ponderadores.html#obtenideno-los-ponderadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El código siguiente realiza un ajuste de calibración para los datos de empleo utilizando la función <code>calib()</code> del paquete <code>sampling</code>. La función recibe como argumentos la matriz de variables dummy correspondientes a los dominios, la variable de peso muestral <code>d</code>, y la razón poblacional para la variable de interés ( <em>Ocupado</em>, <em>Desocupados</em> e <em>Inactivo</em>). Se utiliza el método de calibración lineal y se establece un máximo de iteraciones de 5000.</p>
+<p>Posteriormente, se verifica la calidad del ajuste utilizando la función <code>checkcalibration()</code> del mismo paquete, la cual recibe como argumentos la matriz de variables dummy, la variable de peso muestral y la razón poblacional, junto con los resultados del ajuste previo gk_ocupado.</p>
+<p>Finalmente, se utiliza la función <code>summary()</code> para imprimir un resumen de los resultados del ajuste de calibración, el cual incluye información sobre el número de iteraciones, la convergencia, y los valores de las constantes de calibración. Ahora, se ejecuta el proceso para cada una de las categorías por separado.</p>
+<div id="ocupado" class="section level3 hasAnchor" number="6.10.1">
+<h3><span class="header-section-number">6.10.1</span> Ocupado<a href="obtenideno-los-ponderadores.html#ocupado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="obtenideno-los-ponderadores.html#cb106-1" aria-hidden="true" tabindex="-1"></a>gk_ocupado <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_ocupado], </span>
+<span id="cb106-2"><a href="obtenideno-los-ponderadores.html#cb106-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb106-3"><a href="obtenideno-los-ponderadores.html#cb106-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">total =</span> Razon_empleo[names_ocupado],</span>
+<span id="cb106-4"><a href="obtenideno-los-ponderadores.html#cb106-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">method=</span><span class="st">&quot;linear&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>,) </span>
+<span id="cb106-5"><a href="obtenideno-los-ponderadores.html#cb106-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-6"><a href="obtenideno-los-ponderadores.html#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_ocupado], </span>
+<span id="cb106-7"><a href="obtenideno-los-ponderadores.html#cb106-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb106-8"><a href="obtenideno-los-ponderadores.html#cb106-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_ocupado],</span>
+<span id="cb106-9"><a href="obtenideno-los-ponderadores.html#cb106-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_ocupado,)</span></code></pre></div>
+<pre><code>## $message
+## [1] &quot;the calibration is done&quot;
+## 
+## $result
+## [1] TRUE
+## 
+## $value
+## [1] 1e-06</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="obtenideno-los-ponderadores.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gk_ocupado)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.9827  0.9985  1.0005  1.0021  1.0043  1.0191</code></pre>
 </div>
+<div id="desocupado" class="section level3 hasAnchor" number="6.10.2">
+<h3><span class="header-section-number">6.10.2</span> Desocupado<a href="obtenideno-los-ponderadores.html#desocupado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="obtenideno-los-ponderadores.html#cb110-1" aria-hidden="true" tabindex="-1"></a>gk_desocupado <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_descupados], </span>
+<span id="cb110-2"><a href="obtenideno-los-ponderadores.html#cb110-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb110-3"><a href="obtenideno-los-ponderadores.html#cb110-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">total =</span> Razon_empleo[names_descupados],</span>
+<span id="cb110-4"><a href="obtenideno-los-ponderadores.html#cb110-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method=</span><span class="st">&quot;linear&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>,) </span>
+<span id="cb110-5"><a href="obtenideno-los-ponderadores.html#cb110-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="obtenideno-los-ponderadores.html#cb110-6" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_descupados], </span>
+<span id="cb110-7"><a href="obtenideno-los-ponderadores.html#cb110-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb110-8"><a href="obtenideno-los-ponderadores.html#cb110-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_descupados],</span>
+<span id="cb110-9"><a href="obtenideno-los-ponderadores.html#cb110-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_desocupado,)</span></code></pre></div>
+<pre><code>## $message
+## [1] &quot;the calibration is done&quot;
+## 
+## $result
+## [1] TRUE
+## 
+## $value
+## [1] 1e-06</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="obtenideno-los-ponderadores.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gk_desocupado)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.9387  0.9946  1.0171  1.0143  1.0317  1.0983</code></pre>
+</div>
+<div id="inactivo" class="section level3 hasAnchor" number="6.10.3">
+<h3><span class="header-section-number">6.10.3</span> Inactivo<a href="obtenideno-los-ponderadores.html#inactivo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="obtenideno-los-ponderadores.html#cb114-1" aria-hidden="true" tabindex="-1"></a>gk_Inactivo <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_inactivo], </span>
+<span id="cb114-2"><a href="obtenideno-los-ponderadores.html#cb114-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb114-3"><a href="obtenideno-los-ponderadores.html#cb114-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">total =</span> Razon_empleo[names_inactivo],</span>
+<span id="cb114-4"><a href="obtenideno-los-ponderadores.html#cb114-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method=</span><span class="st">&quot;linear&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>,) </span>
+<span id="cb114-5"><a href="obtenideno-los-ponderadores.html#cb114-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-6"><a href="obtenideno-los-ponderadores.html#cb114-6" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_inactivo], </span>
+<span id="cb114-7"><a href="obtenideno-los-ponderadores.html#cb114-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb114-8"><a href="obtenideno-los-ponderadores.html#cb114-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_inactivo],</span>
+<span id="cb114-9"><a href="obtenideno-los-ponderadores.html#cb114-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_Inactivo,)</span></code></pre></div>
+<pre><code>## $message
+## [1] &quot;the calibration is done&quot;
+## 
+## $result
+## [1] TRUE
+## 
+## $value
+## [1] 1e-06</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="obtenideno-los-ponderadores.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gk_Inactivo)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.9610  0.9942  0.9963  0.9935  0.9992  1.0137</code></pre>
+<p>validando los <span class="math inline">\(gk\)</span>’s de forma visual.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="obtenideno-los-ponderadores.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb118-2"><a href="obtenideno-los-ponderadores.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_ocupado)</span>
+<span id="cb118-3"><a href="obtenideno-los-ponderadores.html#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_desocupado)</span>
+<span id="cb118-4"><a href="obtenideno-los-ponderadores.html#cb118-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_Inactivo)</span></code></pre></div>
+<p><img src="05-Benchmarking_files/figure-html/unnamed-chunk-19-1.svg" width="672" /></p>
+</div>
+<div id="creando-las-estimaciones-benchmark" class="section level3 hasAnchor" number="6.10.4">
+<h3><span class="header-section-number">6.10.4</span> Creando las estimaciones Benchmark<a href="obtenideno-los-ponderadores.html#creando-las-estimaciones-benchmark" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="obtenideno-los-ponderadores.html#cb119-1" aria-hidden="true" tabindex="-1"></a>estimacionesBench <span class="ot">&lt;-</span> estimaciones_mod <span class="sc">%&gt;%</span></span>
+<span id="cb119-2"><a href="obtenideno-los-ponderadores.html#cb119-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(gk_ocupado, gk_desocupado, gk_Inactivo) <span class="sc">%&gt;%</span></span>
+<span id="cb119-3"><a href="obtenideno-los-ponderadores.html#cb119-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb119-4"><a href="obtenideno-los-ponderadores.html#cb119-4" aria-hidden="true" tabindex="-1"></a>    dam,</span>
+<span id="cb119-5"><a href="obtenideno-los-ponderadores.html#cb119-5" aria-hidden="true" tabindex="-1"></a>    dam2,</span>
+<span id="cb119-6"><a href="obtenideno-los-ponderadores.html#cb119-6" aria-hidden="true" tabindex="-1"></a>    wi,gk_ocupado, gk_desocupado, gk_Inactivo,</span>
+<span id="cb119-7"><a href="obtenideno-los-ponderadores.html#cb119-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_Bench =</span> Ocupado_mod<span class="sc">*</span>gk_ocupado,</span>
+<span id="cb119-8"><a href="obtenideno-los-ponderadores.html#cb119-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado_Bench =</span> Desocupado_mod<span class="sc">*</span>gk_desocupado,</span>
+<span id="cb119-9"><a href="obtenideno-los-ponderadores.html#cb119-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo_Bench =</span> Inactivo_mod<span class="sc">*</span>gk_Inactivo</span>
+<span id="cb119-10"><a href="obtenideno-los-ponderadores.html#cb119-10" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb119-11"><a href="obtenideno-los-ponderadores.html#cb119-11" aria-hidden="true" tabindex="-1"></a><span class="do">#############################33</span></span></code></pre></div>
+<p>Comparando resultados del Benchmarking</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="obtenideno-los-ponderadores.html#cb120-1" aria-hidden="true" tabindex="-1"></a>estimacionesBench <span class="sc">%&gt;%</span></span>
+<span id="cb120-2"><a href="obtenideno-los-ponderadores.html#cb120-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb120-3"><a href="obtenideno-los-ponderadores.html#cb120-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Ocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_Bench),</span>
+<span id="cb120-4"><a href="obtenideno-los-ponderadores.html#cb120-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Desocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_Bench),</span>
+<span id="cb120-5"><a href="obtenideno-los-ponderadores.html#cb120-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Inactivo_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_Bench)) <span class="sc">%&gt;%</span> </span>
+<span id="cb120-6"><a href="obtenideno-los-ponderadores.html#cb120-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(indicador_agregado) <span class="sc">%&gt;%</span> </span>
+<span id="cb120-7"><a href="obtenideno-los-ponderadores.html#cb120-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">View</span>()</span>
+<span id="cb120-8"><a href="obtenideno-los-ponderadores.html#cb120-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-9"><a href="obtenideno-los-ponderadores.html#cb120-9" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(estimaciones,estimacionesBench)</span></code></pre></div>
+<p>Ordenando la base con las estimaciones directas y predichas</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="obtenideno-los-ponderadores.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">object =</span> estimaciones, <span class="at">file =</span> out_estimacion)</span></code></pre></div>
+
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="obtenideno-los-ponderadores.html#cb122-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">warning =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb122-2"><a href="obtenideno-los-ponderadores.html#cb122-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb122-3"><a href="obtenideno-los-ponderadores.html#cb122-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb122-4"><a href="obtenideno-los-ponderadores.html#cb122-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 4.2.2</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="obtenideno-los-ponderadores.html#cb124-1" aria-hidden="true" tabindex="-1"></a>tba <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">cap =</span> <span class="cn">NA</span>){</span>
+<span id="cb124-2"><a href="obtenideno-los-ponderadores.html#cb124-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(dat,</span>
+<span id="cb124-3"><a href="obtenideno-los-ponderadores.html#cb124-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">digits =</span>  <span class="dv">4</span>,</span>
+<span id="cb124-4"><a href="obtenideno-los-ponderadores.html#cb124-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> cap) <span class="sc">%&gt;%</span> </span>
+<span id="cb124-5"><a href="obtenideno-los-ponderadores.html#cb124-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">full_width =</span> F)<span class="sc">%&gt;%</span></span>
+<span id="cb124-6"><a href="obtenideno-los-ponderadores.html#cb124-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">&quot;Arial Narrow&quot;</span>)</span>
+<span id="cb124-7"><a href="obtenideno-los-ponderadores.html#cb124-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="lectura-de-librerias.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="estimación-agregada.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="creando-las-dummys.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="validación-visual-del-benchmark.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -325,7 +428,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/06-Grafico_BENCH.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/05-Benchmarking.Rmd",
 "text": "Edit"
 },
 "history": {

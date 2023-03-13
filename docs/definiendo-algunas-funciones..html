@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>2.2 Definiendo algunas funciones. | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="2.2 Definiendo algunas funciones. | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.2 Lectura de encuesta. | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="2.2 Definiendo algunas funciones. | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lectura-de-librerias.html"/>
-<link rel="next" href="estimación-agregada.html"/>
+<link rel="prev" href="lectura-de-librerías.html"/>
+<link rel="next" href="lectura-de-las-estimaciones-directas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,31 +270,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lectura-de-encuesta." class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Lectura de encuesta.<a href="lectura-de-encuesta..html#lectura-de-encuesta." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El código está leyendo un archivo RDS llamado <code>encuesta_2017.Rds</code> y almacenándolo en un objeto llamado <code>encuesta</code>. Luego está leyendo otro archivo RDS que tiene el nombre <code>estimaciones_Bench_fit_multinomial_con_covariable.rds</code> y almacenando el contenido en un objeto llamado <code>estimaciones</code>. Finalmente, está filtrando las filas en el objeto <code>estimaciones</code> donde la columna <code>dam</code> es <code>NA</code>.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="lectura-de-encuesta..html#cb126-1" aria-hidden="true" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;01 Modelo de area/CHL/2017/Data/encuesta_2017.Rds&quot;</span>)</span>
-<span id="cb126-2"><a href="lectura-de-encuesta..html#cb126-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="st">&quot;fit_multinomial_con_covariable&quot;</span></span>
-<span id="cb126-3"><a href="lectura-de-encuesta..html#cb126-3" aria-hidden="true" tabindex="-1"></a>infile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;01 Modelo de area/CHL/2017/Data/estimaciones_Bench_&quot;</span>,mod,<span class="st">&quot;.rds&quot;</span>) </span>
-<span id="cb126-4"><a href="lectura-de-encuesta..html#cb126-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb126-5"><a href="lectura-de-encuesta..html#cb126-5" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(infile)</span>
-<span id="cb126-6"><a href="lectura-de-encuesta..html#cb126-6" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">is.na</span>(dam))</span></code></pre></div>
-<pre><code>## # A tibble: 0 × 34
-## # … with 34 variables: dam2 &lt;chr&gt;, n_upm &lt;int&gt;, n_ocupado &lt;int&gt;,
-## #   n_desocupado &lt;int&gt;, n_inactivo &lt;int&gt;, Ocupado &lt;dbl&gt;, Ocupado_se &lt;dbl&gt;,
-## #   Ocupado_var &lt;dbl&gt;, Ocupado_deff &lt;dbl&gt;, Desocupado &lt;dbl&gt;,
-## #   Desocupado_se &lt;dbl&gt;, Desocupado_var &lt;dbl&gt;, Desocupado_deff &lt;dbl&gt;,
-## #   Inactivo &lt;dbl&gt;, Inactivo_se &lt;dbl&gt;, Inactivo_var &lt;dbl&gt;, Inactivo_deff &lt;dbl&gt;,
-## #   Ocupado_mod &lt;dbl&gt;, Desocupado_mod &lt;dbl&gt;, Inactivo_mod &lt;dbl&gt;,
-## #   Ocupado_mod_sd &lt;dbl&gt;, Desocupado_mod_sd &lt;dbl&gt;, Inactivo_mod_sd &lt;dbl&gt;, …</code></pre>
+<div id="definiendo-algunas-funciones." class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Definiendo algunas funciones.<a href="definiendo-algunas-funciones..html#definiendo-algunas-funciones." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>La función <code>NAs_deff(x)</code> cuenta la cantidad de valores NAs en un vector <code>x</code>.</p></li>
+<li><p>La función <code>cont_deff()</code> realiza el conteo del número de elementos en un vector <code>x</code> que son mayores a 1 y devuelve el resultado en la variable <code>deff</code>.</p></li>
+<li><p>La función <code>cont_deff_upm()</code> realiza un conteo similar al de la función <code>cont_deff()</code>, pero solo considera los elementos que también cumplen con la condición de que el número de unidades primarias de muestreo (UPM) es mayor o igual a 2.</p></li>
+<li><p>La función <code>var_conteo()</code> regresa el porcentaje de elementos que son mayores a 1 en un ventor de <code>x</code></p></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="definiendo-algunas-funciones..html#cb13-1" aria-hidden="true" tabindex="-1"></a>NAs_deff <span class="ot">&lt;-</span> <span class="cf">function</span>(x){(<span class="fu">sum</span>(<span class="fu">is.na</span>(x))<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span>}</span>
+<span id="cb13-2"><a href="definiendo-algunas-funciones..html#cb13-2" aria-hidden="true" tabindex="-1"></a>cont_deff <span class="ot">&lt;-</span> <span class="cf">function</span>(x){deff <span class="ot">=</span> (<span class="fu">sum</span>(x<span class="sc">&gt;</span><span class="dv">1</span>,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span>}</span>
+<span id="cb13-3"><a href="definiendo-algunas-funciones..html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="definiendo-algunas-funciones..html#cb13-4" aria-hidden="true" tabindex="-1"></a>cont_deff_upm <span class="ot">&lt;-</span> <span class="cf">function</span>(x, nupm) {</span>
+<span id="cb13-5"><a href="definiendo-algunas-funciones..html#cb13-5" aria-hidden="true" tabindex="-1"></a>  deff <span class="ot">=</span> (<span class="fu">sum</span>(x <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> nupm <span class="sc">&gt;=</span> <span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb13-6"><a href="definiendo-algunas-funciones..html#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-7"><a href="definiendo-algunas-funciones..html#cb13-7" aria-hidden="true" tabindex="-1"></a>var_conteo <span class="ot">&lt;-</span> <span class="cf">function</span>(x)(<span class="fu">sum</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lectura-de-librerias.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="estimación-agregada.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lectura-de-librerías.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lectura-de-las-estimaciones-directas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -325,7 +323,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/06-Grafico_BENCH.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/02-Seleccion_comunas.rmd",
 "text": "Edit"
 },
 "history": {

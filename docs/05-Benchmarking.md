@@ -22,6 +22,8 @@ tba <- function(dat, cap = NA){
 
 # Estimaciones ajustadas por Benchmark
 
+El ajuste de benchmark se puede realizar utilizando diferentes enfoques. En algunos casos, se puede utilizar información auxiliar directamente, como la información sobre la población o la información sobre la distribución de las variables de interés. En otros casos, se pueden utilizar modelos estadísticos para relacionar las variables auxiliares y las variables de interés en las áreas pequeñas y grandes.
+
 ## Lectura de librerías 
 
 
@@ -54,6 +56,8 @@ estimaciones <- readRDS(infile)
 
 ## Conteos agregados por dam y dam2 
 
+Este código carga los datos del censo de población y vivienda de Chile del año 2017, los cuales se encuentran en el archivo *censo_mrp.rds*. Luego, se filtran las observaciones de la población mayor a 15 año utilizando la función `filter()`. A continuación, se agrupan los datos por región (dam) y comuna (dam2) utilizando la función `group_by()`, y se calcula la suma del número de personas por comuna con la función `sum()`. Estos resultados se almacenan en una nueva columna llamada `pp_dam2`. Posteriormente, se utiliza la función `add_tally()` para sumar el peso de cada municipio y se guarda el resultado en una nueva columna llamada `pp_dam`.
+
 
 ```r
 conteo_pp_dam <- readRDS("01 Modelo de area/CHL/2017/Data/censo_mrp.rds") %>%
@@ -64,6 +68,14 @@ conteo_pp_dam <- readRDS("01 Modelo de area/CHL/2017/Data/censo_mrp.rds") %>%
 ```
 
 ## Tranformando variables de la encuesta. 
+
+Este código comienza definiendo las longitudes máximas de los campos `_upm` y `_estrato` en la tabla `encuesta`, y luego utiliza la función `transmute()` del paquete `dplyr` para crear una nueva tabla `encuesta` que contiene las columnas `dam`, `nombre_dam`, `upm`, `estrato`, `fep` y `empleo`.
+
+Para la columna `dam`, se utiliza la variable `dam_ee` para asignar un valor alfanumérico de dos dígitos para cada región y dominio (comuna). La función `as_factor()` convierte la variable a factor, con los valores y etiquetas correspondientes. La función `str_pad()` es utilizada para agregar ceros a la izquierda a la cadena de caracteres si la longitud de la cadena es menor que `width`.
+
+Para las columnas `upm` y `estrato`, la función `str_pad()` es utilizada para agregar ceros a la izquierda a la cadena de caracteres si la longitud de la cadena es menor que `width`.
+
+Las columnas `fep` y `empleo` simplemente se asignan a la tabla encuesta desde las columnas correspondientes de la tabla original.
 
 
 ```r
@@ -85,6 +97,10 @@ encuesta <-
 
 ## Creando el objeto diseño 
 
+En este código, se establece la opción `survey.lonely.psu` como `adjust`, lo que indica al paquete `survey` cómo tratar unidades de muestreo solitarias. A continuación, se utiliza la función `as_survey_design()` para crear un objeto de diseño de encuesta que puede ser utilizado para realizar análisis con el paquete `survey`.
+
+Se especifica que la variable `estrato` se utiliza como `estrato` y que `upm` se utiliza como identificador de unidad primaria de muestreo. Además, se incluye la variable `fep` como peso de diseño de muestreo. Se utiliza la opción `nest=T` para especificar que se desea crear un diseño anidado, lo que significa que cada unidad primaria de muestreo puede tener varias unidades secundarias de muestreo.
+
 
 ```r
 options(survey.lonely.psu= 'adjust' )
@@ -98,6 +114,9 @@ diseno <- encuesta %>%
 ```
 
 ## Estimado el indicador  
+
+El código proporciona un indicador agregado para los tres categorias de la variable empleo en cada región. Primero, se agrupa `diseno` por región (`dam`) y se filtran solo los casos con empleo entre `1` y `3`. Luego, se utilizan las funciones `survey_ratio()` del paquete `survey` para calcular la proporción de personas en cada categoría de empleo ( _Ocupado_, _Desocupado_ e _Inactivo_) en cada región. Por último, se seleccionan las columnas de `dam`, `Ocupado`, `Desocupado` e `Inactivo` para crear un marco de datos que incluya el indicador agregado.
+
  
 
 ```r
@@ -118,6 +137,8 @@ indicador_agregado <-
 
 ## Organizando las estimaciones directas agregadas. 
 
+El código toma el `data.frame` `indicador_agregado` y lo convierte de ancho a largo usando la función `gather()` de la librería `tidyr`. El argumento `key = "agregado"` especifica el nombre de la nueva variable creada que contendrá las columnas originales. El argumento `value = "estimacion"` especifica el nombre de la nueva variable creada que contendrá los valores originales de las columnas. El argumento `-dam` indica que la columna `dam` no debe ser incluida en la nueva estructura de datos. Luego, se agrega una nueva columna llamada `nombre`, que combina la cadena `dam_` con los valores de las columnas `dam` y agregado en una cadena única para identificar cada estimación de razón de empleo. Finalmente, la función `setNames()` establece los nombres de los elementos del vector de estimaciones de razón de empleo en base a los valores únicos de la columna nombre.
+
 
 ```r
 temp <-
@@ -129,6 +150,9 @@ Razon_empleo <- setNames(temp$estimacion, temp$nombre)
 ```
 
 ## Benchmarking
+
+El código realiza una manipulación de datos para obtener las estimaciones del modelo de área ajustado. En primer lugar, se selecciona el primer y segundo dígito de la variable `dam2` para obtener la identificación de la `DAM`. Luego se utiliza la función `inner_join()` para combinar las estimaciones obtenidas del modelo con el conteo de la población por `DAM`, y así calcular los pesos de las `DAM`s. Estos pesos se almacenan en la variable `wi`. Finalmente, se seleccionan las variables de interés `dam`, `dam2`, `Ocupado_mod`, `Desocupado_mod` e `Inactivo_mod`, y se almacenan en la variable `estimaciones_mod`.
+
 
 ```r
 names_cov <-  "dam" 
@@ -169,6 +193,8 @@ estimaciones_mod %>% group_by(dam) %>% summarise(wi = sum(wi))
 
 ## Seleccionado variables
 
+Este código utiliza la función `dummy_cols()` del paquete `fastDummies` para crear variables dummy a partir de la columna `dam`. La opción `select_columns = names_cov` indica que solo se aplicará la creación de variables dummy a la columna especificada en `names_cov` (en este caso, `dam`). La opción `remove_selected_columns = FALSE` indica que la columna original no será eliminada. El resultado final es que se agregan nuevas columnas al conjunto de datos, una por cada valor único en la columna `dam`, que indican si el valor está presente o no para cada fila.
+
 
 ```r
 estimaciones_mod %<>%
@@ -176,7 +202,9 @@ estimaciones_mod %<>%
                           remove_selected_columns = FALSE)
 ```
 
-## creando las dummys 
+## Creando las dummys 
+
+En este código se está creando una matriz de variables dummy para cada categoría de la variable `dam`, que en este caso es la división administrativa en la que se divide la muestra. Luego, se están multiplicando estas variables dummy por las estimaciones obtenidas del modelo en cada categoría de empleo ( _ocupado_, _desocupado_ e _inactivo_) para cada dominio en la muestra. El resultado es una matriz de diseño que incluye tanto las variables dummy como las proporciones de empleo estimada. 
  
 
 ```r
@@ -188,7 +216,7 @@ Xdummy <- estimaciones_mod %>% select(matches("dam_")) %>%
   select((matches("Ocupado|Desocupado|Inactivo")))
 ```
 
-## Validación de la concordancia de los nombre 
+ahora, se validan la concordancia de los nombre 
 
 
 ```r
@@ -259,7 +287,7 @@ Estimacion_encuesta = Razon_empleo)
 ## dam_16_Inactivo   0.45619487          0.45401509
 ```
 
-## Idenficando valores por cátegoria.
+Separando los nombres por cada categoría del empleo
 
 
 ```r
@@ -268,7 +296,16 @@ names_descupados <- grep(pattern = "_D", x = colnames(Xdummy),value = TRUE)
 names_inactivo <- grep(pattern = "_I", x = colnames(Xdummy),value = TRUE)
 ```
 
+## Obtenideno los ponderadores
+
+El código siguiente realiza un ajuste de calibración para los datos de empleo utilizando la función `calib()` del paquete `sampling`. La función recibe como argumentos la matriz de variables dummy correspondientes a los dominios, la variable de peso muestral `d`, y la razón poblacional para la variable de interés ( _Ocupado_, _Desocupados_ e _Inactivo_). Se utiliza el método de calibración lineal y se establece un máximo de iteraciones de 5000.
+
+Posteriormente, se verifica la calidad del ajuste utilizando la función `checkcalibration()` del mismo paquete, la cual recibe como argumentos la matriz de variables dummy, la variable de peso muestral y la razón poblacional, junto con los resultados del ajuste previo gk_ocupado.
+
+Finalmente, se utiliza la función `summary()` para imprimir un resumen de los resultados del ajuste de calibración, el cual incluye información sobre el número de iteraciones, la convergencia, y los valores de las constantes de calibración. Ahora, se ejecuta el proceso para cada una de las categorías por separado. 
+
 ### Ocupado 
+
 
 ```r
 gk_ocupado <- calib(Xs = Xdummy[,names_ocupado], 
@@ -304,6 +341,7 @@ summary(gk_ocupado)
 
 ### Desocupado
 
+
 ```r
 gk_desocupado <- calib(Xs = Xdummy[,names_descupados], 
                     d =  estimaciones_mod$wi,
@@ -336,7 +374,8 @@ summary(gk_desocupado)
 ##  0.9387  0.9946  1.0171  1.0143  1.0317  1.0983
 ```
 
-## Inactivo
+### Inactivo
+
 
 ```r
 gk_Inactivo <- calib(Xs = Xdummy[,names_inactivo], 

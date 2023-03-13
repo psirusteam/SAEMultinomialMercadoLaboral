@@ -22,7 +22,19 @@ tba <- function(dat, cap = NA){
 
 # Análisis descriptivo de las estimaciones directas. 
 
+En la sección anterior, se llevó a cabo una estimación directa para cada categoría individualmente en cada municipio (dominio) presente en la muestra. Ahora, para evaluar la calidad de los resultados obtenidos, realizaremos un análisis descriptivo. Se emplean varias medidas de calidad, entre ellas, se cuenta el número de dominios que tienen dos o más unidades primarias de muestreo (UPM), así como el efecto de diseño mayor a 1 y las varianzas mayores a 0. Estas medidas nos permitirán determinar la fiabilidad de nuestros resultados y tomar decisiones informadas en función de ellos. 
+
 ## Lectura de librerías
+Las librerías que emplearemos en esta sección del código son: 
+
+  -   La librería **ggplot2** es una librería de visualización de datos en R que permite crear gráficos estadísticos personalizados y de alta calidad. Ofrece una amplia variedad de opciones para crear gráficos de barras, gráficos de líneas, gráficos de dispersión, gráficos de cajas, entre otros. Esta librería se destaca por su capacidad para personalizar los gráficos en función de las necesidades del usuario, lo que permite crear gráficos complejos con múltiples capas y características.
+
+  -   La librería **dplyr** es una librería utilizada para procesar y transformar datos en R. Ofrece una variedad de funciones para filtrar, ordenar, agrupar, resumir y transformar datos. Esta librería es muy útil para realizar tareas comunes de análisis de datos, como limpieza de datos, recodificación de variables, cálculo de variables derivadas, entre otras.
+
+  -   La librería **patchwork** es una librería utilizada para crear paneles de visualización personalizados y complejos en R. Ofrece una amplia variedad de opciones para combinar y organizar gráficos, así como para agregar anotaciones y elementos decorativos. Esta librería es especialmente útil para crear paneles de visualización que incluyan varios gráficos y tablas.
+
+  -   La librería **kableExtra** es una librería utilizada para crear tablas personalizadas y estilizadas en R. Ofrece una amplia variedad de opciones para personalizar el formato de las tablas, incluyendo la capacidad de agregar estilos y colores, resaltar celdas específicas, agregar pies de página, y mucho más.
+
 
 
 ```r
@@ -33,20 +45,31 @@ library(kableExtra)
 select <- dplyr::select
 ```
 
-## Definiendo algunas funciones útiles.  
+## Definiendo algunas funciones. 
 
+  -   La función `NAs_deff(x)` cuenta la cantidad de valores NAs en un vector `x`.
+
+  -   La función `cont_deff()` realiza el conteo del número de elementos en un vector `x` que son mayores a 1 y devuelve el resultado en la variable `deff`.
+
+  -   La función `cont_deff_upm()` realiza un conteo similar al de la función `cont_deff()`, pero solo considera los elementos que también cumplen con la condición de que el número de unidades primarias de muestreo (UPM) es mayor o igual a 2. 
+  
+  -   La función `var_conteo()` regresa el porcentaje de elementos que son mayores a 1 en un ventor de `x`
+  
 
 ```r
-NAs_deff <- function(x){sum(is.na(x))}
-cont_deff <- function(x){deff = sum(x>1,na.rm = TRUE)}
+NAs_deff <- function(x){(sum(is.na(x))/length(x))*100}
+cont_deff <- function(x){deff = (sum(x>1,na.rm = TRUE)/length(x))*100}
 
 cont_deff_upm <- function(x, nupm) {
-  deff = sum(x > 1 & nupm >= 2, na.rm = TRUE)
+  deff = (sum(x > 1 & nupm >= 2, na.rm = TRUE)/length(x))*100
 }
-var_conteo <- function(x)sum(x>0)/length(x)
+var_conteo <- function(x)(sum(x>0)/length(x))*100
 ```
 
 ## Lectura de las estimaciones directas
+
+El siguiente comando lee los resultados de las estimaciones directas y sus medidas de calidad para cada domino, los cules fueron calculados previamente. 
+
 
 ```r
 indicador_dam <- readRDS('01 Modelo de area/CHL/2017/Data/indicador_dam.Rds')
@@ -54,11 +77,14 @@ indicador_dam <- readRDS('01 Modelo de area/CHL/2017/Data/indicador_dam.Rds')
 
 ## Descriptivo de las estimaciones directas 
 
+A continuación se realiza el computo de algunos medidas de resumen para las estimaciones directas, estas medidas serán empleadas para indagar por la calidad de los resultados obtenidos. 
+
 ### Conteo de los dominios con deff no estimados 
 
 
 ```r
-indicador_dam %>% summarise_at(.vars = vars(matches("_deff")), NAs_deff) %>%
+indicador_dam %>%
+  summarise_at(.vars = vars(matches("_deff")), NAs_deff) %>%
  tba()
 ```
 
@@ -73,12 +99,13 @@ indicador_dam %>% summarise_at(.vars = vars(matches("_deff")), NAs_deff) %>%
 <tbody>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 1.5432 </td>
    <td style="text-align:right;"> 0 </td>
   </tr>
 </tbody>
 </table>
-
+Los resultados muestran que el $1.5\%$ de los dominios no fue posible estimar el `Deff` de la categoría de Desocupados. 
+ 
 ### Conteo de los dominios con deff mayores que 1
 
 
@@ -104,6 +131,7 @@ indicador_dam %>% summarise_at(.vars =vars( matches("_deff")),
   </tr>
 </tbody>
 </table>
+La tabla muestra que un $50\%$ o menos de los dominios tienen un `Deff` mayores que 1. 
 
 ### Porcentaje de dominios con estimación de la varianza mayor a 0
 
@@ -131,16 +159,7 @@ indicador_dam %>% summarise_at(.vars = vars( matches("_var")),
 </tbody>
 </table>
 
-### Número de dominios con 2 o más upm
-
-
-```r
-sum(indicador_dam$n_upm>=2)
-```
-
-```
-## [1] 310
-```
+El número de dominios con 2 o más upm `{r sum(indicador_dam$n_upm>=2)}`
 
 ### Conteo de dominios con dos o más upm y deff mayor 1 simultáneamente.  
 
@@ -150,7 +169,7 @@ indicador_dam %>% summarise_at(
     .vars = vars(matches("_deff")),
     cont_deff_upm ,
     nupm = indicador_dam$n_upm
-  ) %>%tba()
+  ) %>% tba()
 ```
 
 <table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -163,14 +182,19 @@ indicador_dam %>% summarise_at(
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 153 </td>
-   <td style="text-align:right;"> 134 </td>
-   <td style="text-align:right;"> 162 </td>
+   <td style="text-align:right;"> 47.2222 </td>
+   <td style="text-align:right;"> 41.358 </td>
+   <td style="text-align:right;"> 50 </td>
   </tr>
 </tbody>
 </table>
 
 ### Selección de los dominios que empleamos en el modelo de área. 
+Despues de realizar las validaciones anteriores se establece como regla incluir en el estudio los dominios que posean 
+  -   Dos o más upm por dominio. 
+  -   Contar con un resultado en el `Deff`
+  
+Los resultados nos deja con una base de 309 dominios (309 comunas)
 
 
 ```r
@@ -179,6 +203,7 @@ indicador_dam1 <- indicador_dam %>%
 ```
 
 ### Guardar archivos 
+  
 
 ```r
 saveRDS(object = indicador_dam1, "01 Modelo de area/CHL/2017/Data/base_modelo.Rds")

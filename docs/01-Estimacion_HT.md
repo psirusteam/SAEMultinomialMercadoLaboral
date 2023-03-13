@@ -1,24 +1,4 @@
 
-```r
-knitr::opts_chunk$set(warning = FALSE, 
-                      message = FALSE,
-                      cache = TRUE)
-library(kableExtra)
-```
-
-```
-## Warning: package 'kableExtra' was built under R version 4.2.2
-```
-
-```r
-tba <- function(dat, cap = NA){
-  kable(dat,
-      format = "html", digits =  4,
-      caption = cap) %>% 
-     kable_styling(bootstrap_options = "striped", full_width = F)%>%
-         kable_classic(full_width = F, html_font = "Arial Narrow")
-}
-```
 
 # Estimación directa para las comunas de Chile. 
 

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>02-Seleccion_comunas.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="02-Seleccion_comunas.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="02-Seleccion_comunas.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#análisis-descriptivo-de-las-estimaciones-directas." id="toc-análisis-descriptivo-de-las-estimaciones-directas."><span class="toc-section-number">1</span> Análisis descriptivo de las estimaciones directas.</a>
+<ul>
+<li><a href="#lectura-de-librerías" id="toc-lectura-de-librerías"><span class="toc-section-number">1.1</span> Lectura de librerías</a></li>
+<li><a href="#definiendo-algunas-funciones." id="toc-definiendo-algunas-funciones."><span class="toc-section-number">1.2</span> Definiendo algunas funciones.</a></li>
+<li><a href="#lectura-de-las-estimaciones-directas" id="toc-lectura-de-las-estimaciones-directas"><span class="toc-section-number">1.3</span> Lectura de las estimaciones directas</a></li>
+<li><a href="#descriptivo-de-las-estimaciones-directas" id="toc-descriptivo-de-las-estimaciones-directas"><span class="toc-section-number">1.4</span> Descriptivo de las estimaciones directas</a>
+<ul>
+<li><a href="#conteo-de-los-dominios-con-deff-no-estimados" id="toc-conteo-de-los-dominios-con-deff-no-estimados"><span class="toc-section-number">1.4.1</span> Conteo de los dominios con deff no estimados</a></li>
+<li><a href="#conteo-de-los-dominios-con-deff-mayores-que-1" id="toc-conteo-de-los-dominios-con-deff-mayores-que-1"><span class="toc-section-number">1.4.2</span> Conteo de los dominios con deff mayores que 1</a></li>
+<li><a href="#porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0" id="toc-porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0"><span class="toc-section-number">1.4.3</span> Porcentaje de dominios con estimación de la varianza mayor a 0</a></li>
+<li><a href="#conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente." id="toc-conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente."><span class="toc-section-number">1.4.4</span> Conteo de dominios con dos o más upm y deff mayor 1 simultáneamente.</a></li>
+<li><a href="#selección-de-los-dominios-que-empleamos-en-el-modelo-de-área." id="toc-selección-de-los-dominios-que-empleamos-en-el-modelo-de-área."><span class="toc-section-number">1.4.5</span> Selección de los dominios que empleamos en el modelo de área.</a></li>
+<li><a href="#guardar-archivos" id="toc-guardar-archivos"><span class="toc-section-number">1.4.6</span> Guardar archivos</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">warning =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cache =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<pre><code>## Warning: package &#39;kableExtra&#39; was built under R version 4.2.2</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tba <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, <span class="at">cap =</span> <span class="cn">NA</span>){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(dat,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">digits =</span>  <span class="dv">4</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> cap) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>, <span class="at">full_width =</span> F)<span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">&quot;Arial Narrow&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="análisis-descriptivo-de-las-estimaciones-directas." class="section level1 hasAnchor" number="1">
+<h1 class="hasAnchor"><span class="header-section-number">1</span> Análisis descriptivo de las estimaciones directas.<a href="#análisis-descriptivo-de-las-estimaciones-directas." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En la sección anterior, se llevó a cabo una estimación directa para cada categoría individualmente en cada municipio (dominio) presente en la muestra. Ahora, para evaluar la calidad de los resultados obtenidos, realizaremos un análisis descriptivo. Se emplean varias medidas de calidad, entre ellas, se cuenta el número de dominios que tienen dos o más unidades primarias de muestreo (UPM), así como el efecto de diseño mayor a 1 y las varianzas mayores a 0. Estas medidas nos permitirán determinar la fiabilidad de nuestros resultados y tomar decisiones informadas en función de ellos.</p>
+<div id="lectura-de-librerías" class="section level2 hasAnchor" number="1.1">
+<h2 class="hasAnchor"><span class="header-section-number">1.1</span> Lectura de librerías<a href="#lectura-de-librerías" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las librerías que emplearemos en esta sección del código son:</p>
+<ul>
+<li><p>La librería <strong>ggplot2</strong> es una librería de visualización de datos en R que permite crear gráficos estadísticos personalizados y de alta calidad. Ofrece una amplia variedad de opciones para crear gráficos de barras, gráficos de líneas, gráficos de dispersión, gráficos de cajas, entre otros. Esta librería se destaca por su capacidad para personalizar los gráficos en función de las necesidades del usuario, lo que permite crear gráficos complejos con múltiples capas y características.</p></li>
+<li><p>La librería <strong>dplyr</strong> es una librería utilizada para procesar y transformar datos en R. Ofrece una variedad de funciones para filtrar, ordenar, agrupar, resumir y transformar datos. Esta librería es muy útil para realizar tareas comunes de análisis de datos, como limpieza de datos, recodificación de variables, cálculo de variables derivadas, entre otras.</p></li>
+<li><p>La librería <strong>patchwork</strong> es una librería utilizada para crear paneles de visualización personalizados y complejos en R. Ofrece una amplia variedad de opciones para combinar y organizar gráficos, así como para agregar anotaciones y elementos decorativos. Esta librería es especialmente útil para crear paneles de visualización que incluyan varios gráficos y tablas.</p></li>
+<li><p>La librería <strong>kableExtra</strong> es una librería utilizada para crear tablas personalizadas y estilizadas en R. Ofrece una amplia variedad de opciones para personalizar el formato de las tablas, incluyendo la capacidad de agregar estilos y colores, resaltar celdas específicas, agregar pies de página, y mucho más.</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>select <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>select</span></code></pre></div>
+</div>
+<div id="definiendo-algunas-funciones." class="section level2 hasAnchor" number="1.2">
+<h2 class="hasAnchor"><span class="header-section-number">1.2</span> Definiendo algunas funciones.<a href="#definiendo-algunas-funciones." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>La función <code>NAs_deff(x)</code> cuenta la cantidad de valores NAs en un vector <code>x</code>.</p></li>
+<li><p>La función <code>cont_deff()</code> realiza el conteo del número de elementos en un vector <code>x</code> que son mayores a 1 y devuelve el resultado en la variable <code>deff</code>.</p></li>
+<li><p>La función <code>cont_deff_upm()</code> realiza un conteo similar al de la función <code>cont_deff()</code>, pero solo considera los elementos que también cumplen con la condición de que el número de unidades primarias de muestreo (UPM) es mayor o igual a 2.</p></li>
+<li><p>La función <code>var_conteo()</code> regresa el porcentaje de elementos que son mayores a 1 en un ventor de <code>x</code></p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>NAs_deff <span class="ot">&lt;-</span> <span class="cf">function</span>(x){(<span class="fu">sum</span>(<span class="fu">is.na</span>(x))<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span>}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cont_deff <span class="ot">&lt;-</span> <span class="cf">function</span>(x){deff <span class="ot">=</span> (<span class="fu">sum</span>(x<span class="sc">&gt;</span><span class="dv">1</span>,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span>}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cont_deff_upm <span class="ot">&lt;-</span> <span class="cf">function</span>(x, nupm) {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  deff <span class="ot">=</span> (<span class="fu">sum</span>(x <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> nupm <span class="sc">&gt;=</span> <span class="dv">2</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>var_conteo <span class="ot">&lt;-</span> <span class="cf">function</span>(x)(<span class="fu">sum</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)<span class="sc">/</span><span class="fu">length</span>(x))<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
+</div>
+<div id="lectura-de-las-estimaciones-directas" class="section level2 hasAnchor" number="1.3">
+<h2 class="hasAnchor"><span class="header-section-number">1.3</span> Lectura de las estimaciones directas<a href="#lectura-de-las-estimaciones-directas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El siguiente comando lee los resultados de las estimaciones directas y sus medidas de calidad para cada domino, los cules fueron calculados previamente.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;01 Modelo de area/CHL/2017/Data/indicador_dam.Rds&#39;</span>)</span></code></pre></div>
+</div>
+<div id="descriptivo-de-las-estimaciones-directas" class="section level2 hasAnchor" number="1.4">
+<h2 class="hasAnchor"><span class="header-section-number">1.4</span> Descriptivo de las estimaciones directas<a href="#descriptivo-de-las-estimaciones-directas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A continuación se realiza el computo de algunos medidas de resumen para las estimaciones directas, estas medidas serán empleadas para indagar por la calidad de los resultados obtenidos.</p>
+<div id="conteo-de-los-dominios-con-deff-no-estimados" class="section level3 hasAnchor" number="1.4.1">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.1</span> Conteo de los dominios con deff no estimados<a href="#conteo-de-los-dominios-con-deff-no-estimados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="at">.vars =</span> <span class="fu">vars</span>(<span class="fu">matches</span>(<span class="st">&quot;_deff&quot;</span>)), NAs_deff) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">tba</span>()</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Ocupado_deff
+</th>
+<th style="text-align:right;">
+Desocupado_deff
+</th>
+<th style="text-align:right;">
+Inactivo_deff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.5432
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="conteo-de-los-dominios-con-deff-mayores-que-1" class="section level3 hasAnchor" number="1.4.2">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.2</span> Conteo de los dominios con deff mayores que 1<a href="#conteo-de-los-dominios-con-deff-mayores-que-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="at">.vars =</span><span class="fu">vars</span>( <span class="fu">matches</span>(<span class="st">&quot;_deff&quot;</span>)),</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                               cont_deff) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tba</span>()</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Ocupado_deff
+</th>
+<th style="text-align:right;">
+Desocupado_deff
+</th>
+<th style="text-align:right;">
+Inactivo_deff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+47.2222
+</td>
+<td style="text-align:right;">
+41.358
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0" class="section level3 hasAnchor" number="1.4.3">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.3</span> Porcentaje de dominios con estimación de la varianza mayor a 0<a href="#porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(<span class="at">.vars =</span> <span class="fu">vars</span>( <span class="fu">matches</span>(<span class="st">&quot;_var&quot;</span>)),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                               var_conteo)  <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tba</span>()</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Ocupado_var
+</th>
+<th style="text-align:right;">
+Desocupado_var
+</th>
+<th style="text-align:right;">
+Inactivo_var
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+98.4568
+</td>
+<td style="text-align:right;">
+99.6914
+</td>
+</tr>
+</tbody>
+</table>
+<p>Número de dominios con 2 o más upm <code>{r sum(indicador_dam$n_upm&gt;=2)}</code></p>
+</div>
+<div id="conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente." class="section level3 hasAnchor" number="1.4.4">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.4</span> Conteo de dominios con dos o más upm y deff mayor 1 simultáneamente.<a href="#conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="sc">%&gt;%</span> <span class="fu">summarise_at</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">.vars =</span> <span class="fu">vars</span>(<span class="fu">matches</span>(<span class="st">&quot;_deff&quot;</span>)),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    cont_deff_upm ,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">nupm =</span> indicador_dam<span class="sc">$</span>n_upm</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tba</span>()</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Ocupado_deff
+</th>
+<th style="text-align:right;">
+Desocupado_deff
+</th>
+<th style="text-align:right;">
+Inactivo_deff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+47.2222
+</td>
+<td style="text-align:right;">
+41.358
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="selección-de-los-dominios-que-empleamos-en-el-modelo-de-área." class="section level3 hasAnchor" number="1.4.5">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.5</span> Selección de los dominios que empleamos en el modelo de área.<a href="#selección-de-los-dominios-que-empleamos-en-el-modelo-de-área." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>indicador_dam1 <span class="ot">&lt;-</span> indicador_dam <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_upm <span class="sc">&gt;=</span> <span class="dv">2</span>, <span class="sc">!</span><span class="fu">is.na</span>(Desocupado_deff))</span></code></pre></div>
+</div>
+<div id="guardar-archivos" class="section level3 hasAnchor" number="1.4.6">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.6</span> Guardar archivos<a href="#guardar-archivos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">object =</span> indicador_dam1, <span class="st">&quot;01 Modelo de area/CHL/2017/Data/base_modelo.Rds&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+</body>
+
+</html>
