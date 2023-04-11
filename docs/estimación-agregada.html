@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>6.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="6.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="6.3 Estimación agregada | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="lectura-de-encuesta..html"/>
-<link rel="next" href="creación-de-objeto-diseno.html"/>
+<link rel="next" href="gráfica-de-validación.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -174,16 +174,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html"><i class="fa fa-check"></i><b>3.8</b> Identificando los argumentos para <code>STAN</code></a>
 <ul>
 <li class="chapter" data-level="3.8.1" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-argumentos-para-stan"><i class="fa fa-check"></i><b>3.8.1</b> Preparando argumentos para <code>STAN</code></a></li>
-<li class="chapter" data-level="3.8.2" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.8.2</b> Preparando el modelo en <code>STAN</code></a></li>
-<li class="chapter" data-level="3.8.3" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#ejecutando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.8.3</b> Ejecutando el modelo en <code>STAN</code></a></li>
-<li class="chapter" data-level="3.8.4" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-beta"><i class="fa fa-check"></i><b>3.8.4</b> Valores estimados para beta</a></li>
-<li class="chapter" data-level="3.8.5" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-la-matriz-de-correlación"><i class="fa fa-check"></i><b>3.8.5</b> Valores estimados para la matriz de correlación</a></li>
-<li class="chapter" data-level="3.8.6" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#validación-dela-convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>3.8.6</b> Validación dela convergencia de las cadenas</a></li>
-<li class="chapter" data-level="3.8.7" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#evaluación-visual-de-las-cadenas-para-beta"><i class="fa fa-check"></i><b>3.8.7</b> Evaluación visual de las cadenas para beta</a></li>
-<li class="chapter" data-level="3.8.8" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#extrayendo-las-estimaciones-para-theta"><i class="fa fa-check"></i><b>3.8.8</b> extrayendo las estimaciones para theta</a></li>
-<li class="chapter" data-level="3.8.9" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#organizando-los-resultados-en-una-matriz."><i class="fa fa-check"></i><b>3.8.9</b> Organizando los resultados en una matriz.</a></li>
-<li class="chapter" data-level="3.8.10" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-gráfico-comparativo-entre-la-estimación-dir-y-el-modelo"><i class="fa fa-check"></i><b>3.8.10</b> Preparando el gráfico comparativo entre la estimación dir y el modelo</a></li>
-<li class="chapter" data-level="3.8.11" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-ppc"><i class="fa fa-check"></i><b>3.8.11</b> Preparando el ppc</a></li>
+<li class="chapter" data-level="3.8.2" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#ejecutando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.8.2</b> Ejecutando el modelo en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.8.3" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-beta"><i class="fa fa-check"></i><b>3.8.3</b> Valores estimados para beta</a></li>
+<li class="chapter" data-level="3.8.4" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-la-matriz-de-correlación"><i class="fa fa-check"></i><b>3.8.4</b> Valores estimados para la matriz de correlación</a></li>
+<li class="chapter" data-level="3.8.5" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#validación-dela-convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>3.8.5</b> Validación dela convergencia de las cadenas</a></li>
+<li class="chapter" data-level="3.8.6" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#evaluación-visual-de-las-cadenas-para-beta"><i class="fa fa-check"></i><b>3.8.6</b> Evaluación visual de las cadenas para beta</a></li>
+<li class="chapter" data-level="3.8.7" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#extrayendo-las-estimaciones-para-theta"><i class="fa fa-check"></i><b>3.8.7</b> extrayendo las estimaciones para theta</a></li>
+<li class="chapter" data-level="3.8.8" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#organizando-los-resultados-en-una-matriz."><i class="fa fa-check"></i><b>3.8.8</b> Organizando los resultados en una matriz.</a></li>
+<li class="chapter" data-level="3.8.9" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-gráfico-comparativo-entre-la-estimación-dir-y-el-modelo"><i class="fa fa-check"></i><b>3.8.9</b> Preparando el gráfico comparativo entre la estimación dir y el modelo</a></li>
+<li class="chapter" data-level="3.8.10" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-ppc"><i class="fa fa-check"></i><b>3.8.10</b> Preparando el ppc</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="validación-sobre-los-resultados-del-modelo-de-área..html"><a href="validación-sobre-los-resultados-del-modelo-de-área..html"><i class="fa fa-check"></i><b>4</b> Validación sobre los resultados del modelo de área.</a>
@@ -198,56 +197,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.1" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#estimación-puntual"><i class="fa fa-check"></i><b>4.6.1</b> Estimación puntual</a></li>
 <li class="chapter" data-level="4.6.2" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#error-estándar."><i class="fa fa-check"></i><b>4.6.2</b> Error estándar.</a></li>
 <li class="chapter" data-level="4.6.3" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#coeficiente-de-varianción."><i class="fa fa-check"></i><b>4.6.3</b> Coeficiente de varianción.</a></li>
-<li class="chapter" data-level="4.6.4" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>4.6.4</b> Convergencia de las cadenas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="estimaciones-ajustadas-por-benchmark.html"><a href="estimaciones-ajustadas-por-benchmark.html"><i class="fa fa-check"></i><b>5</b> Estimaciones ajustadas por Benchmark</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="lectura-de-librerías-3.html"><a href="lectura-de-librerías-3.html"><i class="fa fa-check"></i><b>5.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="5.2" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html"><i class="fa fa-check"></i><b>5.2</b> Lectura de las bases de datos</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#parametrizando-el-código"><i class="fa fa-check"></i><b>5.2.1</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#conteos-agregados-por-dam-y-dam2"><i class="fa fa-check"></i><b>5.2.2</b> Conteos agregados por dam y dam2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#tranformando-variables-de-la-encuesta."><i class="fa fa-check"></i><b>5.2.3</b> Tranformando variables de la encuesta.</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#creando-el-objeto-diseño"><i class="fa fa-check"></i><b>5.2.4</b> Creando el objeto diseño</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#estimado-el-indicador"><i class="fa fa-check"></i><b>5.2.5</b> Estimado el indicador</a></li>
+<li class="chapter" data-level="5.2.6" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#organizando-las-estimaciones-directas-agregadas."><i class="fa fa-check"></i><b>5.2.6</b> Organizando las estimaciones directas agregadas.</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html"><i class="fa fa-check"></i><b>6</b> Lectura de las bases de datos</a>
+<li class="chapter" data-level="5.3" data-path="benchmarking.html"><a href="benchmarking.html"><i class="fa fa-check"></i><b>5.3</b> Benchmarking</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="parametrizando-el-código.html"><a href="parametrizando-el-código.html"><i class="fa fa-check"></i><b>6.1</b> Parametrizando el código</a></li>
-<li class="chapter" data-level="6.2" data-path="conteos-agregados-por-dam-y-dam2.html"><a href="conteos-agregados-por-dam-y-dam2.html"><i class="fa fa-check"></i><b>6.2</b> Conteos agregados por dam y dam2</a></li>
-<li class="chapter" data-level="6.3" data-path="tranformando-variables-de-la-encuesta..html"><a href="tranformando-variables-de-la-encuesta..html"><i class="fa fa-check"></i><b>6.3</b> Tranformando variables de la encuesta.</a></li>
-<li class="chapter" data-level="6.4" data-path="creando-el-objeto-diseño.html"><a href="creando-el-objeto-diseño.html"><i class="fa fa-check"></i><b>6.4</b> Creando el objeto diseño</a></li>
-<li class="chapter" data-level="6.5" data-path="estimado-el-indicador.html"><a href="estimado-el-indicador.html"><i class="fa fa-check"></i><b>6.5</b> Estimado el indicador</a></li>
-<li class="chapter" data-level="6.6" data-path="organizando-las-estimaciones-directas-agregadas..html"><a href="organizando-las-estimaciones-directas-agregadas..html"><i class="fa fa-check"></i><b>6.6</b> Organizando las estimaciones directas agregadas.</a></li>
-<li class="chapter" data-level="6.7" data-path="benchmarking.html"><a href="benchmarking.html"><i class="fa fa-check"></i><b>6.7</b> Benchmarking</a></li>
-<li class="chapter" data-level="6.8" data-path="seleccionado-variables.html"><a href="seleccionado-variables.html"><i class="fa fa-check"></i><b>6.8</b> Seleccionado variables</a></li>
-<li class="chapter" data-level="6.9" data-path="creando-las-dummys.html"><a href="creando-las-dummys.html"><i class="fa fa-check"></i><b>6.9</b> Creando las dummys</a></li>
-<li class="chapter" data-level="6.10" data-path="obtenideno-los-ponderadores.html"><a href="obtenideno-los-ponderadores.html"><i class="fa fa-check"></i><b>6.10</b> Obtenideno los ponderadores</a>
-<ul>
-<li class="chapter" data-level="6.10.1" data-path="obtenideno-los-ponderadores.html"><a href="obtenideno-los-ponderadores.html#ocupado"><i class="fa fa-check"></i><b>6.10.1</b> Ocupado</a></li>
-<li class="chapter" data-level="6.10.2" data-path="obtenideno-los-ponderadores.html"><a href="obtenideno-los-ponderadores.html#desocupado"><i class="fa fa-check"></i><b>6.10.2</b> Desocupado</a></li>
-<li class="chapter" data-level="6.10.3" data-path="obtenideno-los-ponderadores.html"><a href="obtenideno-los-ponderadores.html#inactivo"><i class="fa fa-check"></i><b>6.10.3</b> Inactivo</a></li>
-<li class="chapter" data-level="6.10.4" data-path="obtenideno-los-ponderadores.html"><a href="obtenideno-los-ponderadores.html#creando-las-estimaciones-benchmark"><i class="fa fa-check"></i><b>6.10.4</b> Creando las estimaciones Benchmark</a></li>
+<li class="chapter" data-level="5.3.1" data-path="benchmarking.html"><a href="benchmarking.html#seleccionado-variables"><i class="fa fa-check"></i><b>5.3.1</b> Seleccionado variables</a></li>
+<li class="chapter" data-level="5.3.2" data-path="benchmarking.html"><a href="benchmarking.html#creando-las-dummys"><i class="fa fa-check"></i><b>5.3.2</b> Creando las dummys</a></li>
+<li class="chapter" data-level="5.3.3" data-path="benchmarking.html"><a href="benchmarking.html#obtenideno-los-ponderadores"><i class="fa fa-check"></i><b>5.3.3</b> Obtenideno los ponderadores</a></li>
+<li class="chapter" data-level="5.3.4" data-path="benchmarking.html"><a href="benchmarking.html#creando-las-estimaciones-benchmark"><i class="fa fa-check"></i><b>5.3.4</b> Creando las estimaciones Benchmark</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="validación-visual-del-benchmark.html"><a href="validación-visual-del-benchmark.html"><i class="fa fa-check"></i><b>7</b> Validación visual del Benchmark</a>
+<li class="chapter" data-level="6" data-path="validación-visual-del-benchmark.html"><a href="validación-visual-del-benchmark.html"><i class="fa fa-check"></i><b>6</b> Validación visual del Benchmark</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="lectura-de-librerias.html"><a href="lectura-de-librerias.html"><i class="fa fa-check"></i><b>7.1</b> Lectura de librerias</a></li>
-<li class="chapter" data-level="7.2" data-path="lectura-de-encuesta..html"><a href="lectura-de-encuesta..html"><i class="fa fa-check"></i><b>7.2</b> Lectura de encuesta.</a></li>
-<li class="chapter" data-level="7.3" data-path="estimación-agregada.html"><a href="estimación-agregada.html"><i class="fa fa-check"></i><b>7.3</b> Estimación agregada</a></li>
-<li class="chapter" data-level="7.4" data-path="creación-de-objeto-diseno.html"><a href="creación-de-objeto-diseno.html"><i class="fa fa-check"></i><b>7.4</b> Creación de objeto diseno</a></li>
-<li class="chapter" data-level="7.5" data-path="estimación-del-indicador.html"><a href="estimación-del-indicador.html"><i class="fa fa-check"></i><b>7.5</b> Estimación del indicador</a></li>
-<li class="chapter" data-level="7.6" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html"><i class="fa fa-check"></i><b>7.6</b> Gráfica de validación</a>
+<li class="chapter" data-level="6.1" data-path="lectura-de-librerias.html"><a href="lectura-de-librerias.html"><i class="fa fa-check"></i><b>6.1</b> Lectura de librerias</a></li>
+<li class="chapter" data-level="6.2" data-path="lectura-de-encuesta..html"><a href="lectura-de-encuesta..html"><i class="fa fa-check"></i><b>6.2</b> Lectura de encuesta.</a></li>
+<li class="chapter" data-level="6.3" data-path="estimación-agregada.html"><a href="estimación-agregada.html"><i class="fa fa-check"></i><b>6.3</b> Estimación agregada</a>
 <ul>
-<li class="chapter" data-level="7.6.1" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#ocupado-1"><i class="fa fa-check"></i><b>7.6.1</b> Ocupado</a></li>
-<li class="chapter" data-level="7.6.2" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#desocupado-1"><i class="fa fa-check"></i><b>7.6.2</b> Desocupado</a></li>
-<li class="chapter" data-level="7.6.3" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#inactivo-1"><i class="fa fa-check"></i><b>7.6.3</b> Inactivo</a></li>
+<li class="chapter" data-level="6.3.1" data-path="estimación-agregada.html"><a href="estimación-agregada.html#creación-de-objeto-diseno"><i class="fa fa-check"></i><b>6.3.1</b> Creación de objeto diseno</a></li>
+<li class="chapter" data-level="6.3.2" data-path="estimación-agregada.html"><a href="estimación-agregada.html#estimación-del-indicador"><i class="fa fa-check"></i><b>6.3.2</b> Estimación del indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html"><i class="fa fa-check"></i><b>6.4</b> Gráfica de validación</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#ocupado-1"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#desocupado-1"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#inactivo-1"><i class="fa fa-check"></i>Inactivo</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="mapas-de-resultados.html"><a href="mapas-de-resultados.html"><i class="fa fa-check"></i><b>8</b> Mapas de resultados</a>
+<li class="chapter" data-level="7" data-path="mapas-de-resultados.html"><a href="mapas-de-resultados.html"><i class="fa fa-check"></i><b>7</b> Mapas de resultados</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="lectura-de-librerías-4.html"><a href="lectura-de-librerías-4.html"><i class="fa fa-check"></i><b>8.1</b> Lectura de librerías</a></li>
-<li class="chapter" data-level="8.2" data-path="parametrizando-el-código-1.html"><a href="parametrizando-el-código-1.html"><i class="fa fa-check"></i><b>8.2</b> Parametrizando el código</a></li>
-<li class="chapter" data-level="8.3" data-path="lectura-de-shapefile.html"><a href="lectura-de-shapefile.html"><i class="fa fa-check"></i><b>8.3</b> Lectura de shapefile</a></li>
-<li class="chapter" data-level="8.4" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html"><i class="fa fa-check"></i><b>8.4</b> Definición del mapa con <code>tmap</code></a>
+<li class="chapter" data-level="7.1" data-path="lectura-de-librerías-4.html"><a href="lectura-de-librerías-4.html"><i class="fa fa-check"></i><b>7.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="7.2" data-path="parametrizando-el-código-1.html"><a href="parametrizando-el-código-1.html"><i class="fa fa-check"></i><b>7.2</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="7.3" data-path="lectura-de-shapefile.html"><a href="lectura-de-shapefile.html"><i class="fa fa-check"></i><b>7.3</b> Lectura de shapefile</a></li>
+<li class="chapter" data-level="7.4" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html"><i class="fa fa-check"></i><b>7.4</b> Definición del mapa con <code>tmap</code></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-ocupados"><i class="fa fa-check"></i><b>8.4.1</b> Creando mapa de ocupados</a></li>
-<li class="chapter" data-level="8.4.2" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-desocupados"><i class="fa fa-check"></i><b>8.4.2</b> Creando mapa de desocupados</a></li>
-<li class="chapter" data-level="8.4.3" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-inactivo"><i class="fa fa-check"></i><b>8.4.3</b> Creando mapa de inactivo</a></li>
+<li class="chapter" data-level="7.4.1" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-ocupados"><i class="fa fa-check"></i><b>7.4.1</b> Creando mapa de ocupados</a></li>
+<li class="chapter" data-level="7.4.2" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-desocupados"><i class="fa fa-check"></i><b>7.4.2</b> Creando mapa de desocupados</a></li>
+<li class="chapter" data-level="7.4.3" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-inactivo"><i class="fa fa-check"></i><b>7.4.3</b> Creando mapa de inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="país-colombia..html"><a href="país-colombia..html"><i class="fa fa-check"></i><b>8</b> País: Colombia.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lectura-de-la-encuesta-y-estimaciones-directas.html"><a href="lectura-de-la-encuesta-y-estimaciones-directas.html"><i class="fa fa-check"></i><b>8.1</b> Lectura de la encuesta y estimaciones directas</a></li>
+<li class="chapter" data-level="8.2" data-path="selección-de-dominios.html"><a href="selección-de-dominios.html"><i class="fa fa-check"></i><b>8.2</b> Selección de dominios</a></li>
+<li class="chapter" data-level="8.3" data-path="preparando-insumos-para-stan.html"><a href="preparando-insumos-para-stan.html"><i class="fa fa-check"></i><b>8.3</b> Preparando insumos para <code>STAN</code></a></li>
+<li class="chapter" data-level="8.4" data-path="validación-del-modelo.html"><a href="validación-del-modelo.html"><i class="fa fa-check"></i><b>8.4</b> Validación del modelo</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="validación-del-modelo.html"><a href="validación-del-modelo.html#estimación-de-los-parámetros."><i class="fa fa-check"></i><b>8.4.1</b> Estimación de los parámetros.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="metodología-de-benchmarking.html"><a href="metodología-de-benchmarking.html"><i class="fa fa-check"></i><b>8.5</b> Metodología de Benchmarking</a></li>
+<li class="chapter" data-level="8.6" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html"><i class="fa fa-check"></i><b>8.6</b> Mapas del mercado de trabajo.</a>
+<ul>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#ocupado-3"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#desocupado-3"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#inactivo-3"><i class="fa fa-check"></i>Inactivo</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -270,19 +284,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimación-agregada" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Estimación agregada<a href="estimación-agregada.html#estimación-agregada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="estimación-agregada" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Estimación agregada<a href="estimación-agregada.html#estimación-agregada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Esta parte de código toma el objeto estimaciones y lo resume por el campo <code>dam</code>. Para cada comuna, se calcula la suma ponderada de las variables <em>Ocupado_mod</em>, <em>Desocupado_mod</em> e <em>Inactivo_mod</em> (estimaciones del modelo) y de las variables <em>Ocupado_Bench</em>, <em>Desocupado_Bench</em> e <em>Inactivo_Bench</em> (estimaciones de la encuesta benchmark). Esto resulta en una tabla con seis columnas: <code>dam</code>, <code>Ocupado_mod</code>, <code>Desocupado_mod</code>, <code>Inactivo_mod</code>, <code>Ocupado_Bench</code>, <code>Desocupado_Bench</code> y <code>Inactivo_Bench</code>.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="estimación-agregada.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="do">############## Estimación agregada ######################</span></span>
-<span id="cb128-2"><a href="estimación-agregada.html#cb128-2" aria-hidden="true" tabindex="-1"></a>estimaciones_agregada <span class="ot">&lt;-</span> estimaciones <span class="sc">%&gt;%</span></span>
-<span id="cb128-3"><a href="estimación-agregada.html#cb128-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dam) <span class="sc">%&gt;%</span> </span>
-<span id="cb128-4"><a href="estimación-agregada.html#cb128-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb128-5"><a href="estimación-agregada.html#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_mod),</span>
-<span id="cb128-6"><a href="estimación-agregada.html#cb128-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_mod),</span>
-<span id="cb128-7"><a href="estimación-agregada.html#cb128-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_mod),</span>
-<span id="cb128-8"><a href="estimación-agregada.html#cb128-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_Bench),</span>
-<span id="cb128-9"><a href="estimación-agregada.html#cb128-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Desocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_Bench),</span>
-<span id="cb128-10"><a href="estimación-agregada.html#cb128-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">Inactivo_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_Bench))</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="estimación-agregada.html#cb94-1" aria-hidden="true" tabindex="-1"></a>estimaciones_agregada <span class="ot">&lt;-</span> estimaciones <span class="sc">%&gt;%</span></span>
+<span id="cb94-2"><a href="estimación-agregada.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb94-3"><a href="estimación-agregada.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb94-4"><a href="estimación-agregada.html#cb94-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_mod),</span>
+<span id="cb94-5"><a href="estimación-agregada.html#cb94-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_mod),</span>
+<span id="cb94-6"><a href="estimación-agregada.html#cb94-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo_mod =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_mod),</span>
+<span id="cb94-7"><a href="estimación-agregada.html#cb94-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_Bench),</span>
+<span id="cb94-8"><a href="estimación-agregada.html#cb94-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">Desocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_Bench),</span>
+<span id="cb94-9"><a href="estimación-agregada.html#cb94-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Inactivo_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_Bench))</span></code></pre></div>
+<div id="creación-de-objeto-diseno" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Creación de objeto diseno<a href="estimación-agregada.html#creación-de-objeto-diseno" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Este código comienza definiendo las longitudes máximas de los campos <code>_upm</code> y <code>_estrato</code> en la tabla <code>encuesta</code>, y luego utiliza la función <code>transmute()</code> del paquete <code>dplyr</code> para crear una nueva tabla <code>encuesta</code> que contiene las columnas <code>dam</code>, <code>nombre_dam</code>, <code>upm</code>, <code>estrato</code>, <code>fep</code> y <code>empleo</code>.</p>
+<p>Para la columna <code>dam</code>, se utiliza la variable <code>dam_ee</code> para asignar un valor alfanumérico de dos dígitos para cada región y dominio (comuna). La función <code>as_factor()</code> convierte la variable a factor, con los valores y etiquetas correspondientes. La función <code>str_pad()</code> es utilizada para agregar ceros a la izquierda a la cadena de caracteres si la longitud de la cadena es menor que <code>width</code>.</p>
+<p>Para las columnas <code>upm</code> y <code>estrato</code>, la función <code>str_pad()</code> es utilizada para agregar ceros a la izquierda a la cadena de caracteres si la longitud de la cadena es menor que <code>width</code>.</p>
+<p>Las columnas <code>fep</code> y <code>empleo</code> simplemente se asignan a la tabla encuesta desde las columnas correspondientes de la tabla original.</p>
+<p>Después, se establece la opción <code>survey.lonely.psu</code> como <code>adjust</code>, lo que indica al paquete <code>survey</code> cómo tratar unidades de muestreo solitarias. A continuación, se utiliza la función <code>as_survey_design()</code> para crear un objeto de diseño de encuesta que puede ser utilizado para realizar análisis con el paquete <code>survey</code>.</p>
+<p>Se especifica que la variable <code>estrato</code> se utiliza como <code>estrato</code> y que <code>upm</code> se utiliza como identificador de unidad primaria de muestreo. Además, se incluye la variable <code>fep</code> como peso de diseño de muestreo. Se utiliza la opción <code>nest=T</code> para especificar que se desea crear un diseño anidado, lo que significa que cada unidad primaria de muestreo puede tener varias unidades secundarias de muestreo.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="estimación-agregada.html#cb95-1" aria-hidden="true" tabindex="-1"></a>length_upm <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">nchar</span>(encuesta[[<span class="st">&quot;_upm&quot;</span>]]))</span>
+<span id="cb95-2"><a href="estimación-agregada.html#cb95-2" aria-hidden="true" tabindex="-1"></a>length_estrato <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">nchar</span>(encuesta[[<span class="st">&quot;_estrato&quot;</span>]]))</span>
+<span id="cb95-3"><a href="estimación-agregada.html#cb95-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-4"><a href="estimación-agregada.html#cb95-4" aria-hidden="true" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span></span>
+<span id="cb95-5"><a href="estimación-agregada.html#cb95-5" aria-hidden="true" tabindex="-1"></a>  encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb95-6"><a href="estimación-agregada.html#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb95-7"><a href="estimación-agregada.html#cb95-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">dam =</span> <span class="fu">as_factor</span>(dam_ee,<span class="at">levels  =</span> <span class="st">&quot;values&quot;</span>),</span>
+<span id="cb95-8"><a href="estimación-agregada.html#cb95-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dam =</span> <span class="fu">str_pad</span>(<span class="at">string =</span>dam, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb95-9"><a href="estimación-agregada.html#cb95-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">nombre_dam =</span> <span class="fu">as_factor</span>(dam_ee,<span class="at">levels  =</span> <span class="st">&quot;labels&quot;</span>),</span>
+<span id="cb95-10"><a href="estimación-agregada.html#cb95-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">upm =</span> <span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">`</span><span class="at">_upm</span><span class="st">`</span>, <span class="at">width =</span> length_upm, <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb95-11"><a href="estimación-agregada.html#cb95-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">estrato =</span> <span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">`</span><span class="at">_estrato</span><span class="st">`</span>, <span class="at">width =</span> length_estrato , <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb95-12"><a href="estimación-agregada.html#cb95-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fep =</span> <span class="st">`</span><span class="at">_fep</span><span class="st">`</span>, </span>
+<span id="cb95-13"><a href="estimación-agregada.html#cb95-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">empleo =</span> condact3</span>
+<span id="cb95-14"><a href="estimación-agregada.html#cb95-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb95-15"><a href="estimación-agregada.html#cb95-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-16"><a href="estimación-agregada.html#cb95-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-17"><a href="estimación-agregada.html#cb95-17" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">survey.lonely.psu=</span> <span class="st">&#39;adjust&#39;</span> )</span>
+<span id="cb95-18"><a href="estimación-agregada.html#cb95-18" aria-hidden="true" tabindex="-1"></a>diseno <span class="ot">&lt;-</span> encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb95-19"><a href="estimación-agregada.html#cb95-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(</span>
+<span id="cb95-20"><a href="estimación-agregada.html#cb95-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> estrato,</span>
+<span id="cb95-21"><a href="estimación-agregada.html#cb95-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">ids =</span> upm,</span>
+<span id="cb95-22"><a href="estimación-agregada.html#cb95-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">weights =</span> fep,</span>
+<span id="cb95-23"><a href="estimación-agregada.html#cb95-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">nest=</span>T</span>
+<span id="cb95-24"><a href="estimación-agregada.html#cb95-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+<div id="estimación-del-indicador" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Estimación del indicador<a href="estimación-agregada.html#estimación-del-indicador" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El código proporciona un indicador agregado para los tres categorias de la variable empleo en cada región. Primero, se agrupa <code>diseno</code> por región (<code>dam</code>) y se filtran solo los casos con empleo entre <code>1</code> y <code>3</code>. Luego, se utilizan las funciones <code>survey_ratio()</code> del paquete <code>survey</code> para calcular la proporción de personas en cada categoría de empleo ( <em>Ocupado</em>, <em>Desocupado</em> e <em>Inactivo</em>) en cada región. Por último, se seleccionan las columnas de <code>dam</code>, <code>Ocupado</code>, <code>Desocupado</code> e <code>Inactivo</code> para crear un marco de datos que incluya el indicador agregado.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="estimación-agregada.html#cb96-1" aria-hidden="true" tabindex="-1"></a>indicador_agregado <span class="ot">&lt;-</span></span>
+<span id="cb96-2"><a href="estimación-agregada.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  diseno <span class="sc">%&gt;%</span> <span class="fu">group_by_at</span>(<span class="st">&quot;dam&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb96-3"><a href="estimación-agregada.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(empleo <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb96-4"><a href="estimación-agregada.html#cb96-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb96-5"><a href="estimación-agregada.html#cb96-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">nd =</span> <span class="fu">unweighted</span>(<span class="fu">n</span>()),</span>
+<span id="cb96-6"><a href="estimación-agregada.html#cb96-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado =</span> <span class="fu">survey_ratio</span>(<span class="at">numerator =</span> (empleo <span class="sc">==</span> <span class="dv">1</span>), </span>
+<span id="cb96-7"><a href="estimación-agregada.html#cb96-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">denominator =</span> <span class="dv">1</span>,<span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;ci&quot;</span>), <span class="at">level =</span> <span class="fl">0.95</span> ),</span>
+<span id="cb96-8"><a href="estimación-agregada.html#cb96-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado =</span> <span class="fu">survey_ratio</span>(<span class="at">numerator =</span>( empleo <span class="sc">==</span> <span class="dv">2</span>),<span class="at">denominator =</span> <span class="dv">1</span>,</span>
+<span id="cb96-9"><a href="estimación-agregada.html#cb96-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;ci&quot;</span>), <span class="at">level =</span> <span class="fl">0.95</span>                             </span>
+<span id="cb96-10"><a href="estimación-agregada.html#cb96-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb96-11"><a href="estimación-agregada.html#cb96-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo =</span> <span class="fu">survey_ratio</span>(<span class="at">numerator =</span>  (empleo <span class="sc">==</span> <span class="dv">3</span>), <span class="at">denominator =</span> <span class="dv">1</span>,</span>
+<span id="cb96-12"><a href="estimación-agregada.html#cb96-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;ci&quot;</span>), <span class="at">level =</span> <span class="fl">0.95</span>                             </span>
+<span id="cb96-13"><a href="estimación-agregada.html#cb96-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb96-14"><a href="estimación-agregada.html#cb96-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb96-15"><a href="estimación-agregada.html#cb96-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-16"><a href="estimación-agregada.html#cb96-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-17"><a href="estimación-agregada.html#cb96-17" aria-hidden="true" tabindex="-1"></a>data_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(estimaciones_agregada, indicador_agregado)</span></code></pre></div>
+</div>
 </div>
             </section>
 
@@ -290,7 +357,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="lectura-de-encuesta..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creación-de-objeto-diseno.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="gráfica-de-validación.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -321,7 +388,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/06-Grafico_BENCH.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/CHL/06-Grafico_BENCH.Rmd",
 "text": "Edit"
 },
 "history": {

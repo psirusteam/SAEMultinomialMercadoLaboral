@@ -1,6 +1,6 @@
-tab:unnamed-chunk-4
-tab:unnamed-chunk-5
+tab:unnamed-chunk-6
 tab:unnamed-chunk-7
+tab:unnamed-chunk-11
 estimación-directa-para-las-comunas-de-chile.
 lectura-de-la-encuesta.
 definición-del-diseño-muestral
@@ -27,7 +27,6 @@ obteniendo-la-matriz
 identificando-los-dominios-para-realizar-estimación-del-modelo
 identificando-los-argumentos-para-stan
 preparando-argumentos-para-stan
-preparando-el-modelo-en-stan
 ejecutando-el-modelo-en-stan
 valores-estimados-para-beta
 valores-estimados-para-la-matriz-de-correlación
@@ -35,7 +34,6 @@ validación-dela-convergencia-de-las-cadenas
 evaluación-visual-de-las-cadenas-para-beta
 extrayendo-las-estimaciones-para-theta
 organizando-los-resultados-en-una-matriz.
-resultados-informativos-sobre-el-comportamiento-del-modelo.
 preparando-el-gráfico-comparativo-entre-la-estimación-dir-y-el-modelo
 preparando-el-ppc
 validación-sobre-los-resultados-del-modelo-de-área.
@@ -48,7 +46,6 @@ gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-d
 estimación-puntual
 error-estándar.
 coeficiente-de-varianción.
-convergencia-de-las-cadenas
 estimaciones-ajustadas-por-benchmark
 lectura-de-librerías-3
 lectura-de-las-bases-de-datos
@@ -62,9 +59,6 @@ benchmarking
 seleccionado-variables
 creando-las-dummys
 obtenideno-los-ponderadores
-ocupado
-desocupado
-inactivo
 creando-las-estimaciones-benchmark
 validación-visual-del-benchmark
 lectura-de-librerias
@@ -73,9 +67,6 @@ estimación-agregada
 creación-de-objeto-diseno
 estimación-del-indicador
 gráfica-de-validación
-ocupado-1
-desocupado-1
-inactivo-1
 mapas-de-resultados
 lectura-de-librerías-4
 parametrizando-el-código-1
@@ -84,3 +75,12 @@ definición-del-mapa-con-tmap
 creando-mapa-de-ocupados
 creando-mapa-de-desocupados
 creando-mapa-de-inactivo
+país-colombia.
+lectura-de-la-encuesta-y-estimaciones-directas
+selección-de-dominios
+preparando-insumos-para-stan
+validación-del-modelo
+estimación-de-los-parámetros.
+estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación
+metodología-de-benchmarking
+mapas-del-mercado-de-trabajo.
