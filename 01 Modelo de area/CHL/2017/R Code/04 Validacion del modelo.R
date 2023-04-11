@@ -17,6 +17,7 @@ library(tidyverse)
 library(forcats)
 library(cmdstanr)
 library(bayesplot)
+library(posterior)
 select <- dplyr::select
 
 #### Lectura de bases de datos 
@@ -42,22 +43,22 @@ theta_dir <- indicador_dam1 %>%
             Ocupado, Desocupado, Inactivo) 
 
 ## Estimación del modelo. 
-theta_obs <- fit$summary("theta")
-theta_pred <- fit$summary("theta_pred")
+theta_obs <- summary(fit,pars = "theta")$summary
+theta_pred <-  summary(fit,pars = "theta_pred")$summary
 
 ## Ordenando la matrix de theta 
-theta_obs_ordenado <- matrix(theta_obs$mean, 
+theta_obs_ordenado <- matrix(theta_obs[,"mean"], 
                              nrow = D,
-                             ncol = P,byrow = FALSE) 
+                             ncol = P,byrow = TRUE) 
 
 colnames(theta_obs_ordenado) <- c("Ocupado_mod", "Desocupado_mod", "Inactivo_mod")
 theta_obs_ordenado%<>% as.data.frame()
 theta_obs_ordenado <- cbind(dam2 = indicador_dam1$dam2,
                             theta_obs_ordenado)
 
-theta_pred_ordenado <- matrix(theta_pred$mean, 
+theta_pred_ordenado <- matrix(theta_pred[,"mean"], 
                              nrow = D1,
-                             ncol = P,byrow = FALSE)
+                             ncol = P,byrow = TRUE)
 
 colnames(theta_pred_ordenado) <- c("Ocupado_mod", "Desocupado_mod", "Inactivo_mod")
 theta_pred_ordenado%<>% as.data.frame()
@@ -69,9 +70,9 @@ estimaciones_obs <- full_join(theta_dir,
 
 
 ############## coeficiente de variación 
-theta_obs_ordenado_sd <- matrix(theta_obs$sd, 
+theta_obs_ordenado_sd <- matrix(theta_obs[,"sd"], 
                              nrow = D,
-                             ncol = P,byrow = FALSE) 
+                             ncol = P,byrow = TRUE) 
 
 colnames(theta_obs_ordenado_sd) <- c("Ocupado_mod_sd", "Desocupado_mod_sd", "Inactivo_mod_sd")
 theta_obs_ordenado_sd%<>% as.data.frame()
@@ -84,9 +85,9 @@ colnames(theta_obs_ordenado_cv) <- c("Ocupado_mod_cv", "Desocupado_mod_cv", "Ina
 theta_obs_ordenado_cv <- cbind(dam2 = indicador_dam1$dam2,
                                theta_obs_ordenado_cv)
 
-theta_pred_ordenado_sd <- matrix(theta_pred$sd, 
+theta_pred_ordenado_sd <- matrix(theta_pred[,"sd"], 
                               nrow = D1,
-                              ncol = P,byrow = FALSE)
+                              ncol = P,byrow = TRUE)
 
 colnames(theta_pred_ordenado_sd) <- c("Ocupado_mod_sd", "Desocupado_mod_sd", "Inactivo_mod_sd")
 theta_pred_ordenado_sd%<>% as.data.frame()
@@ -231,8 +232,9 @@ p_ocupado + xlim(0,0.1)|
 ### Gráficos de los ppc 
 color_scheme_set("brightblue")
 theme_set(theme_bw(base_size = 15))
-y_pred_B <- fit$draws(variables = "theta", 
-                      format = "matrix")
+y_pred_B <- as.array(fit, pars = "theta") %>% 
+  as_draws_matrix()
+
 rowsrandom <- sample(nrow(y_pred_B), 100)
 
 theta_1<-  grep(pattern = "1]",x = colnames(y_pred_B),value = TRUE)
@@ -247,7 +249,7 @@ ppc_dens_overlay(y = as.numeric(theta_dir$Ocupado), y_pred1)/
   ppc_dens_overlay(y = as.numeric(theta_dir$Inactivo), y_pred3)
 
 ### Convergencia de las cadenas 
-mcmc_rhat(theta_obs$rhat)
+mcmc_rhat_data(theta_obs[,"Rhat"])
 
 # Ordenando la base con las estimaciones directas y 
 # predichas
