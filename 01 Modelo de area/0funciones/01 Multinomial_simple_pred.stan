@@ -90,10 +90,6 @@ model {
 generated quantities {
   matrix[D1,P] theta_pred;
   matrix[2, 2] Omega;
-  vector<lower=0>[2] sdcomprobar;
-  sdcomprobar[1] = sd(u[1, ]);
-  sdcomprobar[2] = sd(u[2, ]);
-
   Omega = L_u * L_u'; // so that it return the correlation matrix
   
  theta_pred = pred_theta(X_pred, P, beta);
