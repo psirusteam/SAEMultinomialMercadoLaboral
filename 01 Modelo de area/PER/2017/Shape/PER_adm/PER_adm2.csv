@@ -1,0 +1,196 @@
+"OBJECTID","ID_0","ISO","NAME_0","ID_1","NAME_1","ID_2","NAME_2","TYPE_2","ENGTYPE_2","NL_NAME_2","VARNAME_2"
+1,178,"PER","Peru",1,"Amazonas",1,"Bagua","Provincia","Province",NA,NA
+2,178,"PER","Peru",1,"Amazonas",2,"Bongará","Provincia","Province",NA,"Bongart"
+3,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas","Provincia","Province",NA,NA
+4,178,"PER","Peru",1,"Amazonas",4,"Condorcanqui","Provincia","Province",NA,NA
+5,178,"PER","Peru",1,"Amazonas",5,"Luya","Provincia","Province",NA,NA
+6,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza","Provincia","Province",NA,"Rodreguez de Mendoza"
+7,178,"PER","Peru",1,"Amazonas",7,"Utcubamba","Provincia","Province",NA,NA
+8,178,"PER","Peru",2,"Ancash",8,"Aija","Provincia","Province",NA,NA
+9,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi","Provincia","Province",NA,NA
+10,178,"PER","Peru",2,"Ancash",10,"Asunción","Provincia","Province",NA,"Asuncitn"
+11,178,"PER","Peru",2,"Ancash",11,"Bolognesi","Provincia","Province",NA,NA
+12,178,"PER","Peru",2,"Ancash",12,"Carhuaz","Provincia","Province",NA,NA
+13,178,"PER","Peru",2,"Ancash",13,"Carlos Fermin Fitzcarrald","Provincia","Province",NA,NA
+14,178,"PER","Peru",2,"Ancash",14,"Casma","Provincia","Province",NA,NA
+15,178,"PER","Peru",2,"Ancash",15,"Corongo","Provincia","Province",NA,NA
+16,178,"PER","Peru",2,"Ancash",16,"Huaraz","Provincia","Province",NA,NA
+17,178,"PER","Peru",2,"Ancash",17,"Huari","Provincia","Province",NA,NA
+18,178,"PER","Peru",2,"Ancash",18,"Huarmey","Provincia","Province",NA,NA
+19,178,"PER","Peru",2,"Ancash",19,"Huaylas","Provincia","Province",NA,NA
+20,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga","Provincia","Province",NA,NA
+21,178,"PER","Peru",2,"Ancash",21,"Ocros","Provincia","Province",NA,NA
+22,178,"PER","Peru",2,"Ancash",22,"Pallasca","Provincia","Province",NA,NA
+23,178,"PER","Peru",2,"Ancash",23,"Pomabamba","Provincia","Province",NA,NA
+24,178,"PER","Peru",2,"Ancash",24,"Recuay","Provincia","Province",NA,NA
+25,178,"PER","Peru",2,"Ancash",25,"Santa","Provincia","Province",NA,NA
+26,178,"PER","Peru",2,"Ancash",26,"Sihuas","Provincia","Province",NA,NA
+27,178,"PER","Peru",2,"Ancash",27,"Yungay","Provincia","Province",NA,NA
+28,178,"PER","Peru",3,"Apurímac",28,"Abancay","Provincia","Province",NA,NA
+29,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas","Provincia","Province",NA,NA
+30,178,"PER","Peru",3,"Apurímac",30,"Antabamba","Provincia","Province",NA,NA
+31,178,"PER","Peru",3,"Apurímac",31,"Aymaraes","Provincia","Province",NA,NA
+32,178,"PER","Peru",3,"Apurímac",32,"Chincheros","Provincia","Province",NA,NA
+33,178,"PER","Peru",3,"Apurímac",33,"Cotabambas","Provincia","Province",NA,NA
+34,178,"PER","Peru",3,"Apurímac",34,"Grau","Provincia","Province",NA,NA
+35,178,"PER","Peru",4,"Arequipa",35,"Arequipa","Provincia","Province",NA,NA
+36,178,"PER","Peru",4,"Arequipa",36,"Camaná","Provincia","Province",NA,"Camann"
+37,178,"PER","Peru",4,"Arequipa",37,"Caravelí","Provincia","Province",NA,"Caravel"
+38,178,"PER","Peru",4,"Arequipa",38,"Castilla","Provincia","Province",NA,NA
+39,178,"PER","Peru",4,"Arequipa",39,"Caylloma","Provincia","Province",NA,NA
+40,178,"PER","Peru",4,"Arequipa",40,"Condesuyos","Provincia","Province",NA,NA
+41,178,"PER","Peru",4,"Arequipa",41,"Islay","Provincia","Province",NA,NA
+42,178,"PER","Peru",4,"Arequipa",42,"La Unión","Provincia","Province",NA,"La Unitn"
+43,178,"PER","Peru",5,"Ayacucho",43,"Cangallo","Provincia","Province",NA,NA
+44,178,"PER","Peru",5,"Ayacucho",44,"Huamanga","Provincia","Province",NA,NA
+45,178,"PER","Peru",5,"Ayacucho",45,"Huanca Sancos","Provincia","Province",NA,NA
+46,178,"PER","Peru",5,"Ayacucho",46,"Huanta","Provincia","Province",NA,NA
+47,178,"PER","Peru",5,"Ayacucho",47,"La Mar","Provincia","Province",NA,NA
+48,178,"PER","Peru",5,"Ayacucho",48,"Lucanas","Provincia","Province",NA,NA
+49,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas","Provincia","Province",NA,NA
+50,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara","Provincia","Province",NA,NA
+51,178,"PER","Peru",5,"Ayacucho",51,"Sucre","Provincia","Province",NA,NA
+52,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo","Provincia","Province",NA,NA
+53,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán","Provincia","Province",NA,NA
+54,178,"PER","Peru",6,"Cajamarca",54,"Cajabamba","Provincia","Province",NA,NA
+55,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca","Provincia","Province",NA,NA
+56,178,"PER","Peru",6,"Cajamarca",56,"Celendín","Provincia","Province",NA,"Celendtn"
+57,178,"PER","Peru",6,"Cajamarca",57,"Chota","Provincia","Province",NA,NA
+58,178,"PER","Peru",6,"Cajamarca",58,"Contumazá","Provincia","Province",NA,"Contumaz"
+59,178,"PER","Peru",6,"Cajamarca",59,"Cutervo","Provincia","Province",NA,NA
+60,178,"PER","Peru",6,"Cajamarca",60,"Hualgayoc","Provincia","Province",NA,NA
+61,178,"PER","Peru",6,"Cajamarca",61,"Jaén","Provincia","Province",NA,NA
+62,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio","Provincia","Province",NA,NA
+63,178,"PER","Peru",6,"Cajamarca",63,"San Marcos","Provincia","Province",NA,NA
+64,178,"PER","Peru",6,"Cajamarca",64,"San Miguel","Provincia","Province",NA,NA
+65,178,"PER","Peru",6,"Cajamarca",65,"San Pablo","Provincia","Province",NA,NA
+66,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz","Provincia","Province",NA,NA
+67,178,"PER","Peru",7,"Callao",67,"Callao","Provincia","Province",NA,NA
+68,178,"PER","Peru",8,"Cusco",68,"Acomayo","Provincia","Province",NA,NA
+69,178,"PER","Peru",8,"Cusco",69,"Anta","Provincia","Province",NA,NA
+70,178,"PER","Peru",8,"Cusco",70,"Calca","Provincia","Province",NA,NA
+71,178,"PER","Peru",8,"Cusco",71,"Canas","Provincia","Province",NA,NA
+72,178,"PER","Peru",8,"Cusco",72,"Canchis","Provincia","Province",NA,NA
+73,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas","Provincia","Province",NA,NA
+74,178,"PER","Peru",8,"Cusco",74,"Cusco","Provincia","Province",NA,NA
+75,178,"PER","Peru",8,"Cusco",75,"Espinar","Provincia","Province",NA,NA
+76,178,"PER","Peru",8,"Cusco",76,"La Convención","Provincia","Province",NA,"La Convenci"
+77,178,"PER","Peru",8,"Cusco",77,"Paruro","Provincia","Province",NA,NA
+78,178,"PER","Peru",8,"Cusco",78,"Paucartambo","Provincia","Province",NA,NA
+79,178,"PER","Peru",8,"Cusco",79,"Quispicanchi","Provincia","Province",NA,NA
+80,178,"PER","Peru",8,"Cusco",80,"Urubamba","Provincia","Province",NA,NA
+81,178,"PER","Peru",9,"Huánuco",81,"Ambo","Provincia","Province",NA,NA
+82,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo","Provincia","Province",NA,NA
+83,178,"PER","Peru",9,"Huánuco",83,"Huacaybamba","Provincia","Province",NA,NA
+84,178,"PER","Peru",9,"Huánuco",84,"Huamalíes","Provincia","Province",NA,"Huamaltes"
+85,178,"PER","Peru",9,"Huánuco",85,"Huenuco","Provincia","Province",NA,NA
+86,178,"PER","Peru",9,"Huánuco",86,"Lauricocha","Provincia","Province",NA,NA
+87,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado","Provincia","Province",NA,NA
+88,178,"PER","Peru",9,"Huánuco",88,"Marañón","Provincia","Province",NA,"Maraenn"
+89,178,"PER","Peru",9,"Huánuco",89,"Pachitea","Provincia","Province",NA,NA
+90,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca","Provincia","Province",NA,NA
+91,178,"PER","Peru",9,"Huánuco",91,"Yarowilca","Provincia","Province",NA,NA
+92,178,"PER","Peru",10,"Huancavelica",92,"Acobamba","Provincia","Province",NA,NA
+93,178,"PER","Peru",10,"Huancavelica",93,"Angaraes","Provincia","Province",NA,NA
+94,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna","Provincia","Province",NA,NA
+95,178,"PER","Peru",10,"Huancavelica",95,"Churcampa","Provincia","Province",NA,NA
+96,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica","Provincia","Province",NA,NA
+97,178,"PER","Peru",10,"Huancavelica",97,"Huaytara","Provincia","Province",NA,NA
+98,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja","Provincia","Province",NA,NA
+99,178,"PER","Peru",11,"Ica",99,"Chincha","Provincia","Province",NA,NA
+100,178,"PER","Peru",11,"Ica",100,"Ica","Provincia","Province",NA,NA
+101,178,"PER","Peru",11,"Ica",101,"Nazca","Provincia","Province",NA,NA
+102,178,"PER","Peru",11,"Ica",102,"Palpa","Provincia","Province",NA,NA
+103,178,"PER","Peru",11,"Ica",103,"Pisco","Provincia","Province",NA,NA
+104,178,"PER","Peru",12,"Junín",104,"Chanchamayo","Provincia","Province",NA,NA
+105,178,"PER","Peru",12,"Junín",105,"Chupaca","Provincia","Province",NA,NA
+106,178,"PER","Peru",12,"Junín",106,"Concepción","Provincia","Province",NA,"Concepci"
+107,178,"PER","Peru",12,"Junín",107,"Huancayo","Provincia","Province",NA,NA
+108,178,"PER","Peru",12,"Junín",108,"Jauja","Provincia","Province",NA,NA
+109,178,"PER","Peru",12,"Junín",109,"Junín","Provincia","Province",NA,"Junsn"
+110,178,"PER","Peru",12,"Junín",110,"Satipo","Provincia","Province",NA,NA
+111,178,"PER","Peru",12,"Junín",111,"Tarma","Provincia","Province",NA,NA
+112,178,"PER","Peru",12,"Junín",112,"Yauli","Provincia","Province",NA,NA
+113,178,"PER","Peru",13,"La Libertad",113,"Ascope","Provincia","Province",NA,NA
+114,178,"PER","Peru",13,"La Libertad",114,"Bolívar","Provincia","Province",NA,"Bolsvar"
+115,178,"PER","Peru",13,"La Libertad",115,"Chepén","Provincia","Province",NA,NA
+116,178,"PER","Peru",13,"La Libertad",116,"Gran Chimú","Provincia","Province",NA,NA
+117,178,"PER","Peru",13,"La Libertad",117,"Julcan","Provincia","Province",NA,NA
+118,178,"PER","Peru",13,"La Libertad",118,"Otuzco","Provincia","Province",NA,NA
+119,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo","Provincia","Province",NA,NA
+120,178,"PER","Peru",13,"La Libertad",120,"Pataz","Provincia","Province",NA,NA
+121,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión","Provincia","Province",NA,NA
+122,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco","Provincia","Province",NA,NA
+123,178,"PER","Peru",13,"La Libertad",123,"Trujillo","Provincia","Province",NA,NA
+124,178,"PER","Peru",13,"La Libertad",124,"Viru","Provincia","Province",NA,NA
+125,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo","Provincia","Province",NA,NA
+126,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe","Provincia","Province",NA,NA
+127,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque","Provincia","Province",NA,NA
+128,178,"PER","Peru",15,"Lima Province",128,"Lima","Provincia","Province",NA,NA
+129,178,"PER","Peru",16,"Lima",129,"Barranca","Provincia","Province",NA,NA
+130,178,"PER","Peru",16,"Lima",130,"Cañete","Provincia","Province",NA,"Camete"
+131,178,"PER","Peru",16,"Lima",131,"Cajatambo","Provincia","Province",NA,NA
+132,178,"PER","Peru",16,"Lima",132,"Canta","Provincia","Province",NA,NA
+133,178,"PER","Peru",16,"Lima",133,"Huaral","Provincia","Province",NA,NA
+134,178,"PER","Peru",16,"Lima",134,"Huarochiri","Provincia","Province",NA,NA
+135,178,"PER","Peru",16,"Lima",135,"Huaura","Provincia","Province",NA,NA
+136,178,"PER","Peru",16,"Lima",136,"Oyon","Provincia","Province",NA,NA
+137,178,"PER","Peru",16,"Lima",137,"Yauyos","Provincia","Province",NA,NA
+138,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas","Provincia","Province",NA,NA
+139,178,"PER","Peru",17,"Loreto",139,"Loreto","Provincia","Province",NA,NA
+140,178,"PER","Peru",17,"Loreto",140,"Mariscal Ramón Castilla","Provincia","Province",NA,"Mariscal Ram"
+141,178,"PER","Peru",17,"Loreto",141,"Maynas","Provincia","Province",NA,NA
+142,178,"PER","Peru",17,"Loreto",142,"Requena","Provincia","Province",NA,NA
+143,178,"PER","Peru",17,"Loreto",143,"Ucayali","Provincia","Province",NA,NA
+144,178,"PER","Peru",18,"Madre de Dios",144,"Manu","Provincia","Province",NA,NA
+145,178,"PER","Peru",18,"Madre de Dios",145,"Tahuamanu","Provincia","Province",NA,NA
+146,178,"PER","Peru",18,"Madre de Dios",146,"Tambopata","Provincia","Province",NA,NA
+147,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro","Provincia","Province",NA,"General Snnchez Cerro"
+148,178,"PER","Peru",19,"Moquegua",148,"Ilo","Provincia","Province",NA,NA
+149,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto","Provincia","Province",NA,NA
+150,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión","Provincia","Province",NA,NA
+151,178,"PER","Peru",20,"Pasco",151,"Oxapampa","Provincia","Province",NA,NA
+152,178,"PER","Peru",20,"Pasco",152,"Pasco","Provincia","Province",NA,NA
+153,178,"PER","Peru",21,"Piura",153,"Ayabaca","Provincia","Province",NA,NA
+154,178,"PER","Peru",21,"Piura",154,"Huancabamba","Provincia","Province",NA,NA
+155,178,"PER","Peru",21,"Piura",155,"Morropón","Provincia","Province",NA,"Morroptn"
+156,178,"PER","Peru",21,"Piura",156,"Paita","Provincia","Province",NA,NA
+157,178,"PER","Peru",21,"Piura",157,"Piura","Provincia","Province",NA,NA
+158,178,"PER","Peru",21,"Piura",158,"Sechura","Provincia","Province",NA,NA
+159,178,"PER","Peru",21,"Piura",159,"Sullana","Provincia","Province",NA,NA
+160,178,"PER","Peru",21,"Piura",160,"Talara","Provincia","Province",NA,NA
+161,178,"PER","Peru",22,"Puno",161,"Azángaro","Provincia","Province",NA,NA
+162,178,"PER","Peru",22,"Puno",162,"Carabaya","Provincia","Province",NA,NA
+163,178,"PER","Peru",22,"Puno",163,"Chucuíto","Provincia","Province",NA,"Chucunto"
+164,178,"PER","Peru",22,"Puno",164,"El Collao","Provincia","Province",NA,NA
+165,178,"PER","Peru",22,"Puno",165,"Huancane","Provincia","Province",NA,NA
+166,178,"PER","Peru",22,"Puno",166,"Lago Titicaca","Water body","Water body",NA,"Lake Titicaca"
+167,178,"PER","Peru",22,"Puno",167,"Lampa","Provincia","Province",NA,NA
+168,178,"PER","Peru",22,"Puno",168,"Melgar","Provincia","Province",NA,NA
+169,178,"PER","Peru",22,"Puno",169,"Moho","Provincia","Province",NA,NA
+170,178,"PER","Peru",22,"Puno",170,"Puno","Provincia","Province",NA,NA
+171,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina","Provincia","Province",NA,NA
+172,178,"PER","Peru",22,"Puno",172,"San Román","Provincia","Province",NA,NA
+173,178,"PER","Peru",22,"Puno",173,"Sandia","Provincia","Province",NA,NA
+174,178,"PER","Peru",22,"Puno",174,"Yunguyo","Provincia","Province",NA,NA
+175,178,"PER","Peru",23,"San Martín",175,"Bellavista","Provincia","Province",NA,NA
+176,178,"PER","Peru",23,"San Martín",176,"El Dorado","Provincia","Province",NA,NA
+177,178,"PER","Peru",23,"San Martín",177,"Huallaga","Provincia","Province",NA,NA
+178,178,"PER","Peru",23,"San Martín",178,"Lamas","Provincia","Province",NA,NA
+179,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres","Provincia","Province",NA,"Mariscal Ctceres"
+180,178,"PER","Peru",23,"San Martín",180,"Moyobamba","Provincia","Province",NA,NA
+181,178,"PER","Peru",23,"San Martín",181,"Picota","Provincia","Province",NA,NA
+182,178,"PER","Peru",23,"San Martín",182,"Rioja","Provincia","Province",NA,NA
+183,178,"PER","Peru",23,"San Martín",183,"San Martín","Provincia","Province",NA,NA
+184,178,"PER","Peru",23,"San Martín",184,"Tocache","Provincia","Province",NA,NA
+185,178,"PER","Peru",24,"Tacna",185,"Candarave","Provincia","Province",NA,NA
+186,178,"PER","Peru",24,"Tacna",186,"Jorge Basadre","Provincia","Province",NA,NA
+187,178,"PER","Peru",24,"Tacna",187,"Tacna","Provincia","Province",NA,NA
+188,178,"PER","Peru",24,"Tacna",188,"Tarata","Provincia","Province",NA,NA
+189,178,"PER","Peru",25,"Tumbes",189,"Contralmirante Villar","Provincia","Province",NA,NA
+190,178,"PER","Peru",25,"Tumbes",190,"Tumbes","Provincia","Province",NA,NA
+191,178,"PER","Peru",25,"Tumbes",191,"Zarumilla","Provincia","Province",NA,NA
+192,178,"PER","Peru",26,"Ucayali",192,"Atalaya","Provincia","Province",NA,NA
+193,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo","Provincia","Province",NA,NA
+194,178,"PER","Peru",26,"Ucayali",194,"Padre Abad","Provincia","Province",NA,NA
+195,178,"PER","Peru",26,"Ucayali",195,"Purús","Provincia","Province",NA,"Purss"

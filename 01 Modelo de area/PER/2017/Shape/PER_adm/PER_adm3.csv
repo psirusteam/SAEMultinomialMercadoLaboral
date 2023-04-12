@@ -1,0 +1,1816 @@
+"OBJECTID","ID_0","ISO","NAME_0","ID_1","NAME_1","ID_2","NAME_2","ID_3","NAME_3","TYPE_3","ENGTYPE_3","NL_NAME_3","VARNAME_3"
+1,178,"PER","Peru",1,"Amazonas",1,"Bagua",1,"Aramango","Distrito","District",NA,NA
+2,178,"PER","Peru",1,"Amazonas",1,"Bagua",2,"Copallin","Distrito","District",NA,NA
+3,178,"PER","Peru",1,"Amazonas",1,"Bagua",3,"El Parco","Distrito","District",NA,NA
+4,178,"PER","Peru",1,"Amazonas",1,"Bagua",4,"Imaza","Distrito","District",NA,NA
+5,178,"PER","Peru",1,"Amazonas",1,"Bagua",5,"La Peca","Distrito","District",NA,NA
+6,178,"PER","Peru",1,"Amazonas",2,"Bongará",6,"Chisquilla","Distrito","District",NA,NA
+7,178,"PER","Peru",1,"Amazonas",2,"Bongará",7,"Churuja","Distrito","District",NA,NA
+8,178,"PER","Peru",1,"Amazonas",2,"Bongará",8,"Corosha","Distrito","District",NA,NA
+9,178,"PER","Peru",1,"Amazonas",2,"Bongará",9,"Cuispes","Distrito","District",NA,NA
+10,178,"PER","Peru",1,"Amazonas",2,"Bongará",10,"Florida","Distrito","District",NA,NA
+11,178,"PER","Peru",1,"Amazonas",2,"Bongará",11,"Jazan","Distrito","District",NA,NA
+12,178,"PER","Peru",1,"Amazonas",2,"Bongará",12,"Jumbilla","Distrito","District",NA,NA
+13,178,"PER","Peru",1,"Amazonas",2,"Bongará",13,"Recta","Distrito","District",NA,NA
+14,178,"PER","Peru",1,"Amazonas",2,"Bongará",14,"San Carlos","Distrito","District",NA,NA
+15,178,"PER","Peru",1,"Amazonas",2,"Bongará",15,"Shipasbamba","Distrito","District",NA,NA
+16,178,"PER","Peru",1,"Amazonas",2,"Bongará",16,"Valera","Distrito","District",NA,NA
+17,178,"PER","Peru",1,"Amazonas",2,"Bongará",17,"Yambrasbamba","Distrito","District",NA,NA
+18,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",18,"Asuncion","Distrito","District",NA,NA
+19,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",19,"Balsas","Distrito","District",NA,NA
+20,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",20,"Chachapoyas","Distrito","District",NA,NA
+21,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",21,"Cheto","Distrito","District",NA,NA
+22,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",22,"Chiliquin","Distrito","District",NA,NA
+23,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",23,"Chuquibamba","Distrito","District",NA,NA
+24,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",24,"Granada","Distrito","District",NA,NA
+25,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",25,"Huancas","Distrito","District",NA,NA
+26,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",26,"La Jalca","Distrito","District",NA,NA
+27,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",27,"Leimebamba","Distrito","District",NA,NA
+28,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",28,"Levanto","Distrito","District",NA,NA
+29,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",29,"Magdalena","Distrito","District",NA,NA
+30,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",30,"Mariscal Castilla","Distrito","District",NA,NA
+31,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",31,"Molinopampa","Distrito","District",NA,NA
+32,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",32,"Montevideo","Distrito","District",NA,NA
+33,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",33,"Olleros","Distrito","District",NA,NA
+34,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",34,"Quinjalca","Distrito","District",NA,NA
+35,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",35,"San Francisco de Daguas","Distrito","District",NA,NA
+36,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",36,"San Isidro de Maino","Distrito","District",NA,NA
+37,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",37,"Soloco","Distrito","District",NA,NA
+38,178,"PER","Peru",1,"Amazonas",3,"Chachapoyas",38,"Sonche","Distrito","District",NA,NA
+39,178,"PER","Peru",1,"Amazonas",4,"Condorcanqui",39,"El Cenepa","Distrito","District",NA,NA
+40,178,"PER","Peru",1,"Amazonas",4,"Condorcanqui",40,"Nieva","Distrito","District",NA,NA
+41,178,"PER","Peru",1,"Amazonas",4,"Condorcanqui",41,"Rio Santiago","Distrito","District",NA,NA
+42,178,"PER","Peru",1,"Amazonas",5,"Luya",42,"Camporredondo","Distrito","District",NA,NA
+43,178,"PER","Peru",1,"Amazonas",5,"Luya",43,"Cocabamba","Distrito","District",NA,NA
+44,178,"PER","Peru",1,"Amazonas",5,"Luya",44,"Colcamar","Distrito","District",NA,NA
+45,178,"PER","Peru",1,"Amazonas",5,"Luya",45,"Conila","Distrito","District",NA,NA
+46,178,"PER","Peru",1,"Amazonas",5,"Luya",46,"Inguilpata","Distrito","District",NA,NA
+47,178,"PER","Peru",1,"Amazonas",5,"Luya",47,"Lamud","Distrito","District",NA,NA
+48,178,"PER","Peru",1,"Amazonas",5,"Luya",48,"Longuita","Distrito","District",NA,NA
+49,178,"PER","Peru",1,"Amazonas",5,"Luya",49,"Lonya Chico","Distrito","District",NA,NA
+50,178,"PER","Peru",1,"Amazonas",5,"Luya",50,"Luya Viejo","Distrito","District",NA,NA
+51,178,"PER","Peru",1,"Amazonas",5,"Luya",51,"Luya","Distrito","District",NA,NA
+52,178,"PER","Peru",1,"Amazonas",5,"Luya",52,"Maria","Distrito","District",NA,NA
+53,178,"PER","Peru",1,"Amazonas",5,"Luya",53,"Ocalli","Distrito","District",NA,NA
+54,178,"PER","Peru",1,"Amazonas",5,"Luya",54,"Ocumal","Distrito","District",NA,NA
+55,178,"PER","Peru",1,"Amazonas",5,"Luya",55,"Pisuquia","Distrito","District",NA,NA
+56,178,"PER","Peru",1,"Amazonas",5,"Luya",56,"Providencia","Distrito","District",NA,NA
+57,178,"PER","Peru",1,"Amazonas",5,"Luya",57,"San Cristobal","Distrito","District",NA,NA
+58,178,"PER","Peru",1,"Amazonas",5,"Luya",58,"San Francisco del Yeso","Distrito","District",NA,NA
+59,178,"PER","Peru",1,"Amazonas",5,"Luya",59,"San Jeronimo","Distrito","District",NA,NA
+60,178,"PER","Peru",1,"Amazonas",5,"Luya",60,"San Juan de Lopecancha","Distrito","District",NA,NA
+61,178,"PER","Peru",1,"Amazonas",5,"Luya",61,"Santa Catalina","Distrito","District",NA,NA
+62,178,"PER","Peru",1,"Amazonas",5,"Luya",62,"Santo Tomas","Distrito","District",NA,NA
+63,178,"PER","Peru",1,"Amazonas",5,"Luya",63,"Tingo","Distrito","District",NA,NA
+64,178,"PER","Peru",1,"Amazonas",5,"Luya",64,"Trita","Distrito","District",NA,NA
+65,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",65,"Chirimoto","Distrito","District",NA,NA
+66,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",66,"Cochamal","Distrito","District",NA,NA
+67,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",67,"Huambo","Distrito","District",NA,NA
+68,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",68,"Limabamba","Distrito","District",NA,NA
+69,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",69,"Longar","Distrito","District",NA,NA
+70,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",70,"Mariscal Benavides","Distrito","District",NA,NA
+71,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",71,"Milpuc","Distrito","District",NA,NA
+72,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",72,"Omia","Distrito","District",NA,NA
+73,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",73,"San Nicolas","Distrito","District",NA,NA
+74,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",74,"Santa Rosa","Distrito","District",NA,NA
+75,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",75,"Totora","Distrito","District",NA,NA
+76,178,"PER","Peru",1,"Amazonas",6,"Rodríguez de Mendoza",76,"Vista Alegre","Distrito","District",NA,NA
+77,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",77,"Bagua Grande","Distrito","District",NA,NA
+78,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",78,"Cajaruro","Distrito","District",NA,NA
+79,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",79,"Cumba","Distrito","District",NA,NA
+80,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",80,"El Milagro","Distrito","District",NA,NA
+81,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",81,"Jamalca","Distrito","District",NA,NA
+82,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",82,"Lonya Grande","Distrito","District",NA,NA
+83,178,"PER","Peru",1,"Amazonas",7,"Utcubamba",83,"Yamon","Distrito","District",NA,NA
+84,178,"PER","Peru",2,"Ancash",8,"Aija",84,"Aija","Distrito","District",NA,NA
+85,178,"PER","Peru",2,"Ancash",8,"Aija",85,"Coris","Distrito","District",NA,NA
+86,178,"PER","Peru",2,"Ancash",8,"Aija",86,"Huacllan","Distrito","District",NA,NA
+87,178,"PER","Peru",2,"Ancash",8,"Aija",87,"La Merced","Distrito","District",NA,NA
+88,178,"PER","Peru",2,"Ancash",8,"Aija",88,"Succha","Distrito","District",NA,NA
+89,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",89,"Aczo","Distrito","District",NA,NA
+90,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",90,"Chaccho","Distrito","District",NA,NA
+91,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",91,"Chingas","Distrito","District",NA,NA
+92,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",92,"Llamellin","Distrito","District",NA,NA
+93,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",93,"Mirgas","Distrito","District",NA,NA
+94,178,"PER","Peru",2,"Ancash",9,"Antonio Raymondi",94,"San Juan de Rontoy","Distrito","District",NA,NA
+95,178,"PER","Peru",2,"Ancash",10,"Asunción",95,"Acochaca","Distrito","District",NA,NA
+96,178,"PER","Peru",2,"Ancash",10,"Asunción",96,"Chacas","Distrito","District",NA,NA
+97,178,"PER","Peru",2,"Ancash",11,"Bolognesi",97,"Abelardo Pardo Lezameta","Distrito","District",NA,NA
+98,178,"PER","Peru",2,"Ancash",11,"Bolognesi",98,"Antonio Raymondi","Distrito","District",NA,NA
+99,178,"PER","Peru",2,"Ancash",11,"Bolognesi",99,"Aquia","Distrito","District",NA,NA
+100,178,"PER","Peru",2,"Ancash",11,"Bolognesi",100,"Cajacay","Distrito","District",NA,NA
+101,178,"PER","Peru",2,"Ancash",11,"Bolognesi",101,"Canis","Distrito","District",NA,NA
+102,178,"PER","Peru",2,"Ancash",11,"Bolognesi",102,"Chiquian","Distrito","District",NA,NA
+103,178,"PER","Peru",2,"Ancash",11,"Bolognesi",103,"Colquioc","Distrito","District",NA,NA
+104,178,"PER","Peru",2,"Ancash",11,"Bolognesi",104,"Huallanca","Distrito","District",NA,NA
+105,178,"PER","Peru",2,"Ancash",11,"Bolognesi",105,"Huasta","Distrito","District",NA,NA
+106,178,"PER","Peru",2,"Ancash",11,"Bolognesi",106,"Huayllacayan","Distrito","District",NA,NA
+107,178,"PER","Peru",2,"Ancash",11,"Bolognesi",107,"La Primavera","Distrito","District",NA,NA
+108,178,"PER","Peru",2,"Ancash",11,"Bolognesi",108,"Mangas","Distrito","District",NA,NA
+109,178,"PER","Peru",2,"Ancash",11,"Bolognesi",109,"Pacllon","Distrito","District",NA,NA
+110,178,"PER","Peru",2,"Ancash",11,"Bolognesi",110,"San Miguel de Corpanqui","Distrito","District",NA,NA
+111,178,"PER","Peru",2,"Ancash",11,"Bolognesi",111,"Ticllos","Distrito","District",NA,NA
+112,178,"PER","Peru",2,"Ancash",12,"Carhuaz",112,"Acopampa","Distrito","District",NA,NA
+113,178,"PER","Peru",2,"Ancash",12,"Carhuaz",113,"Amashca","Distrito","District",NA,NA
+114,178,"PER","Peru",2,"Ancash",12,"Carhuaz",114,"Anta","Distrito","District",NA,NA
+115,178,"PER","Peru",2,"Ancash",12,"Carhuaz",115,"Ataquero","Distrito","District",NA,NA
+116,178,"PER","Peru",2,"Ancash",12,"Carhuaz",116,"Carhuaz","Distrito","District",NA,NA
+117,178,"PER","Peru",2,"Ancash",12,"Carhuaz",117,"Marcara","Distrito","District",NA,NA
+118,178,"PER","Peru",2,"Ancash",12,"Carhuaz",118,"Pariahuanca","Distrito","District",NA,NA
+119,178,"PER","Peru",2,"Ancash",12,"Carhuaz",119,"San Miguel de Aco","Distrito","District",NA,NA
+120,178,"PER","Peru",2,"Ancash",12,"Carhuaz",120,"Shilla","Distrito","District",NA,NA
+121,178,"PER","Peru",2,"Ancash",12,"Carhuaz",121,"Tinco","Distrito","District",NA,NA
+122,178,"PER","Peru",2,"Ancash",12,"Carhuaz",122,"Yungar","Distrito","District",NA,NA
+123,178,"PER","Peru",2,"Ancash",13,"Carlos Fermin Fitzcarrald",123,"San Luis","Distrito","District",NA,NA
+124,178,"PER","Peru",2,"Ancash",13,"Carlos Fermin Fitzcarrald",124,"San Nicolas","Distrito","District",NA,NA
+125,178,"PER","Peru",2,"Ancash",13,"Carlos Fermin Fitzcarrald",125,"Yauya","Distrito","District",NA,NA
+126,178,"PER","Peru",2,"Ancash",14,"Casma",126,"Buena Vista Alta","Distrito","District",NA,NA
+127,178,"PER","Peru",2,"Ancash",14,"Casma",127,"Casma","Distrito","District",NA,NA
+128,178,"PER","Peru",2,"Ancash",14,"Casma",128,"Comandante Noel","Distrito","District",NA,NA
+129,178,"PER","Peru",2,"Ancash",14,"Casma",129,"Yautan","Distrito","District",NA,NA
+130,178,"PER","Peru",2,"Ancash",15,"Corongo",130,"Aco","Distrito","District",NA,NA
+131,178,"PER","Peru",2,"Ancash",15,"Corongo",131,"Bambas","Distrito","District",NA,NA
+132,178,"PER","Peru",2,"Ancash",15,"Corongo",132,"Corongo","Distrito","District",NA,NA
+133,178,"PER","Peru",2,"Ancash",15,"Corongo",133,"Cusca","Distrito","District",NA,NA
+134,178,"PER","Peru",2,"Ancash",15,"Corongo",134,"La Pampa","Distrito","District",NA,NA
+135,178,"PER","Peru",2,"Ancash",15,"Corongo",135,"Yanac","Distrito","District",NA,NA
+136,178,"PER","Peru",2,"Ancash",15,"Corongo",136,"Yupan","Distrito","District",NA,NA
+137,178,"PER","Peru",2,"Ancash",16,"Huaraz",137,"Cochabamba","Distrito","District",NA,NA
+138,178,"PER","Peru",2,"Ancash",16,"Huaraz",138,"Colcabamba","Distrito","District",NA,NA
+139,178,"PER","Peru",2,"Ancash",16,"Huaraz",139,"Huanchay","Distrito","District",NA,NA
+140,178,"PER","Peru",2,"Ancash",16,"Huaraz",140,"Huaraz","Distrito","District",NA,NA
+141,178,"PER","Peru",2,"Ancash",16,"Huaraz",141,"Independencia","Distrito","District",NA,NA
+142,178,"PER","Peru",2,"Ancash",16,"Huaraz",142,"Jangas","Distrito","District",NA,NA
+143,178,"PER","Peru",2,"Ancash",16,"Huaraz",143,"La Libertad","Distrito","District",NA,NA
+144,178,"PER","Peru",2,"Ancash",16,"Huaraz",144,"Olleros","Distrito","District",NA,NA
+145,178,"PER","Peru",2,"Ancash",16,"Huaraz",145,"Pampas","Distrito","District",NA,NA
+146,178,"PER","Peru",2,"Ancash",16,"Huaraz",146,"Pariacoto","Distrito","District",NA,NA
+147,178,"PER","Peru",2,"Ancash",16,"Huaraz",147,"Pira","Distrito","District",NA,NA
+148,178,"PER","Peru",2,"Ancash",16,"Huaraz",148,"Tarica","Distrito","District",NA,NA
+149,178,"PER","Peru",2,"Ancash",17,"Huari",149,"Anra","Distrito","District",NA,NA
+150,178,"PER","Peru",2,"Ancash",17,"Huari",150,"Cajay","Distrito","District",NA,NA
+151,178,"PER","Peru",2,"Ancash",17,"Huari",151,"Chavin de Huantar","Distrito","District",NA,NA
+152,178,"PER","Peru",2,"Ancash",17,"Huari",152,"Huacachi","Distrito","District",NA,NA
+153,178,"PER","Peru",2,"Ancash",17,"Huari",153,"Huacchis","Distrito","District",NA,NA
+154,178,"PER","Peru",2,"Ancash",17,"Huari",154,"Huachis","Distrito","District",NA,NA
+155,178,"PER","Peru",2,"Ancash",17,"Huari",155,"Huantar","Distrito","District",NA,NA
+156,178,"PER","Peru",2,"Ancash",17,"Huari",156,"Huari","Distrito","District",NA,NA
+157,178,"PER","Peru",2,"Ancash",17,"Huari",157,"Masin","Distrito","District",NA,NA
+158,178,"PER","Peru",2,"Ancash",17,"Huari",158,"Paucas","Distrito","District",NA,NA
+159,178,"PER","Peru",2,"Ancash",17,"Huari",159,"Ponto","Distrito","District",NA,NA
+160,178,"PER","Peru",2,"Ancash",17,"Huari",160,"Rahuapampa","Distrito","District",NA,NA
+161,178,"PER","Peru",2,"Ancash",17,"Huari",161,"Rapayan","Distrito","District",NA,NA
+162,178,"PER","Peru",2,"Ancash",17,"Huari",162,"San Marcos","Distrito","District",NA,NA
+163,178,"PER","Peru",2,"Ancash",17,"Huari",163,"San Pedro de Chana","Distrito","District",NA,NA
+164,178,"PER","Peru",2,"Ancash",17,"Huari",164,"Uco","Distrito","District",NA,NA
+165,178,"PER","Peru",2,"Ancash",18,"Huarmey",165,"Cochapeti","Distrito","District",NA,NA
+166,178,"PER","Peru",2,"Ancash",18,"Huarmey",166,"Culebras","Distrito","District",NA,NA
+167,178,"PER","Peru",2,"Ancash",18,"Huarmey",167,"Huarmey","Distrito","District",NA,NA
+168,178,"PER","Peru",2,"Ancash",18,"Huarmey",168,"Huayan","Distrito","District",NA,NA
+169,178,"PER","Peru",2,"Ancash",18,"Huarmey",169,"Malvas","Distrito","District",NA,NA
+170,178,"PER","Peru",2,"Ancash",19,"Huaylas",170,"Caraz","Distrito","District",NA,NA
+171,178,"PER","Peru",2,"Ancash",19,"Huaylas",171,"Huallanca","Distrito","District",NA,NA
+172,178,"PER","Peru",2,"Ancash",19,"Huaylas",172,"Huata","Distrito","District",NA,NA
+173,178,"PER","Peru",2,"Ancash",19,"Huaylas",173,"Huaylas","Distrito","District",NA,NA
+174,178,"PER","Peru",2,"Ancash",19,"Huaylas",174,"Mato","Distrito","District",NA,NA
+175,178,"PER","Peru",2,"Ancash",19,"Huaylas",175,"Pamparomas","Distrito","District",NA,NA
+176,178,"PER","Peru",2,"Ancash",19,"Huaylas",176,"Pueblo Libre","Distrito","District",NA,NA
+177,178,"PER","Peru",2,"Ancash",19,"Huaylas",177,"Santa Cruz","Distrito","District",NA,NA
+178,178,"PER","Peru",2,"Ancash",19,"Huaylas",178,"Santo Toribio","Distrito","District",NA,NA
+179,178,"PER","Peru",2,"Ancash",19,"Huaylas",179,"Yuracmarca","Distrito","District",NA,NA
+180,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",180,"Casca","Distrito","District",NA,NA
+181,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",181,"Eleazar Guzman Barron","Distrito","District",NA,NA
+182,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",182,"Fidel Olivas Escudero","Distrito","District",NA,NA
+183,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",183,"Llama","Distrito","District",NA,NA
+184,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",184,"Llumpa","Distrito","District",NA,NA
+185,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",185,"Lucma","Distrito","District",NA,NA
+186,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",186,"Musga","Distrito","District",NA,NA
+187,178,"PER","Peru",2,"Ancash",20,"Mariscal Luzuriaga",187,"Piscobamba","Distrito","District",NA,NA
+188,178,"PER","Peru",2,"Ancash",21,"Ocros",188,"Acas","Distrito","District",NA,NA
+189,178,"PER","Peru",2,"Ancash",21,"Ocros",189,"Cajamarquilla","Distrito","District",NA,NA
+190,178,"PER","Peru",2,"Ancash",21,"Ocros",190,"Carhuapampa","Distrito","District",NA,NA
+191,178,"PER","Peru",2,"Ancash",21,"Ocros",191,"Cochas","Distrito","District",NA,NA
+192,178,"PER","Peru",2,"Ancash",21,"Ocros",192,"Congas","Distrito","District",NA,NA
+193,178,"PER","Peru",2,"Ancash",21,"Ocros",193,"Llipa","Distrito","District",NA,NA
+194,178,"PER","Peru",2,"Ancash",21,"Ocros",194,"Ocros","Distrito","District",NA,NA
+195,178,"PER","Peru",2,"Ancash",21,"Ocros",195,"San Cristobal de Rajan","Distrito","District",NA,NA
+196,178,"PER","Peru",2,"Ancash",21,"Ocros",196,"San Pedro","Distrito","District",NA,NA
+197,178,"PER","Peru",2,"Ancash",21,"Ocros",197,"Santiago de Chilcas","Distrito","District",NA,NA
+198,178,"PER","Peru",2,"Ancash",22,"Pallasca",198,"Bolognesi","Distrito","District",NA,NA
+199,178,"PER","Peru",2,"Ancash",22,"Pallasca",199,"Cabana","Distrito","District",NA,NA
+200,178,"PER","Peru",2,"Ancash",22,"Pallasca",200,"Conchucos","Distrito","District",NA,NA
+201,178,"PER","Peru",2,"Ancash",22,"Pallasca",201,"Huacaschuque","Distrito","District",NA,NA
+202,178,"PER","Peru",2,"Ancash",22,"Pallasca",202,"Huandoval","Distrito","District",NA,NA
+203,178,"PER","Peru",2,"Ancash",22,"Pallasca",203,"Lacabamba","Distrito","District",NA,NA
+204,178,"PER","Peru",2,"Ancash",22,"Pallasca",204,"Llapo","Distrito","District",NA,NA
+205,178,"PER","Peru",2,"Ancash",22,"Pallasca",205,"Pallasca","Distrito","District",NA,NA
+206,178,"PER","Peru",2,"Ancash",22,"Pallasca",206,"Pampas","Distrito","District",NA,NA
+207,178,"PER","Peru",2,"Ancash",22,"Pallasca",207,"Santa Rosa","Distrito","District",NA,NA
+208,178,"PER","Peru",2,"Ancash",22,"Pallasca",208,"Tauca","Distrito","District",NA,NA
+209,178,"PER","Peru",2,"Ancash",23,"Pomabamba",209,"Huayllan","Distrito","District",NA,NA
+210,178,"PER","Peru",2,"Ancash",23,"Pomabamba",210,"Parobamba","Distrito","District",NA,NA
+211,178,"PER","Peru",2,"Ancash",23,"Pomabamba",211,"Pomabamba","Distrito","District",NA,NA
+212,178,"PER","Peru",2,"Ancash",23,"Pomabamba",212,"Quinuabamba","Distrito","District",NA,NA
+213,178,"PER","Peru",2,"Ancash",24,"Recuay",213,"Catac","Distrito","District",NA,NA
+214,178,"PER","Peru",2,"Ancash",24,"Recuay",214,"Cotaparaco","Distrito","District",NA,NA
+215,178,"PER","Peru",2,"Ancash",24,"Recuay",215,"Huayllapampa","Distrito","District",NA,NA
+216,178,"PER","Peru",2,"Ancash",24,"Recuay",216,"Llacllin","Distrito","District",NA,NA
+217,178,"PER","Peru",2,"Ancash",24,"Recuay",217,"Marca","Distrito","District",NA,NA
+218,178,"PER","Peru",2,"Ancash",24,"Recuay",218,"Pampas Chico","Distrito","District",NA,NA
+219,178,"PER","Peru",2,"Ancash",24,"Recuay",219,"Pararin","Distrito","District",NA,NA
+220,178,"PER","Peru",2,"Ancash",24,"Recuay",220,"Recuay","Distrito","District",NA,NA
+221,178,"PER","Peru",2,"Ancash",24,"Recuay",221,"Tapacocha","Distrito","District",NA,NA
+222,178,"PER","Peru",2,"Ancash",24,"Recuay",222,"Ticapampa","Distrito","District",NA,NA
+223,178,"PER","Peru",2,"Ancash",25,"Santa",223,"Caceres del Peru","Distrito","District",NA,NA
+224,178,"PER","Peru",2,"Ancash",25,"Santa",224,"Chimbote","Distrito","District",NA,NA
+225,178,"PER","Peru",2,"Ancash",25,"Santa",225,"Coishco","Distrito","District",NA,NA
+226,178,"PER","Peru",2,"Ancash",25,"Santa",226,"Macate","Distrito","District",NA,NA
+227,178,"PER","Peru",2,"Ancash",25,"Santa",227,"Moro","Distrito","District",NA,NA
+228,178,"PER","Peru",2,"Ancash",25,"Santa",228,"Nepeña","Distrito","District",NA,NA
+229,178,"PER","Peru",2,"Ancash",25,"Santa",229,"Nuevo Chimbote","Distrito","District",NA,NA
+230,178,"PER","Peru",2,"Ancash",25,"Santa",230,"Samanco","Distrito","District",NA,NA
+231,178,"PER","Peru",2,"Ancash",25,"Santa",231,"Santa","Distrito","District",NA,NA
+232,178,"PER","Peru",2,"Ancash",26,"Sihuas",232,"Acobamba","Distrito","District",NA,NA
+233,178,"PER","Peru",2,"Ancash",26,"Sihuas",233,"Alfonso Ugarte","Distrito","District",NA,NA
+234,178,"PER","Peru",2,"Ancash",26,"Sihuas",234,"Cashapampa","Distrito","District",NA,NA
+235,178,"PER","Peru",2,"Ancash",26,"Sihuas",235,"Chingalpo","Distrito","District",NA,NA
+236,178,"PER","Peru",2,"Ancash",26,"Sihuas",236,"Huayllabamba","Distrito","District",NA,NA
+237,178,"PER","Peru",2,"Ancash",26,"Sihuas",237,"Quiches","Distrito","District",NA,NA
+238,178,"PER","Peru",2,"Ancash",26,"Sihuas",238,"Ragash","Distrito","District",NA,NA
+239,178,"PER","Peru",2,"Ancash",26,"Sihuas",239,"San Juan","Distrito","District",NA,NA
+240,178,"PER","Peru",2,"Ancash",26,"Sihuas",240,"Sicsibamba","Distrito","District",NA,NA
+241,178,"PER","Peru",2,"Ancash",26,"Sihuas",241,"Sihuas","Distrito","District",NA,NA
+242,178,"PER","Peru",2,"Ancash",27,"Yungay",242,"Cascapara","Distrito","District",NA,NA
+243,178,"PER","Peru",2,"Ancash",27,"Yungay",243,"Mancos","Distrito","District",NA,NA
+244,178,"PER","Peru",2,"Ancash",27,"Yungay",244,"Matacoto","Distrito","District",NA,NA
+245,178,"PER","Peru",2,"Ancash",27,"Yungay",245,"Quillo","Distrito","District",NA,NA
+246,178,"PER","Peru",2,"Ancash",27,"Yungay",246,"Ranrahirca","Distrito","District",NA,NA
+247,178,"PER","Peru",2,"Ancash",27,"Yungay",247,"Shupluy","Distrito","District",NA,NA
+248,178,"PER","Peru",2,"Ancash",27,"Yungay",248,"Yanama","Distrito","District",NA,NA
+249,178,"PER","Peru",2,"Ancash",27,"Yungay",249,"Yungay","Distrito","District",NA,NA
+250,178,"PER","Peru",3,"Apurímac",28,"Abancay",250,"Abancay","Distrito","District",NA,NA
+251,178,"PER","Peru",3,"Apurímac",28,"Abancay",251,"Chacoche","Distrito","District",NA,NA
+252,178,"PER","Peru",3,"Apurímac",28,"Abancay",252,"Circa","Distrito","District",NA,NA
+253,178,"PER","Peru",3,"Apurímac",28,"Abancay",253,"Curahuasi","Distrito","District",NA,NA
+254,178,"PER","Peru",3,"Apurímac",28,"Abancay",254,"Huanipaca","Distrito","District",NA,NA
+255,178,"PER","Peru",3,"Apurímac",28,"Abancay",255,"Lambrama","Distrito","District",NA,NA
+256,178,"PER","Peru",3,"Apurímac",28,"Abancay",256,"Pichirhua","Distrito","District",NA,NA
+257,178,"PER","Peru",3,"Apurímac",28,"Abancay",257,"San Pedro de Cachora","Distrito","District",NA,NA
+258,178,"PER","Peru",3,"Apurímac",28,"Abancay",258,"Tamburco","Distrito","District",NA,NA
+259,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",259,"Andahuaylas","Distrito","District",NA,NA
+260,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",260,"Andarapa","Distrito","District",NA,NA
+261,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",261,"Chiara","Distrito","District",NA,NA
+262,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",262,"Huancarama","Distrito","District",NA,NA
+263,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",263,"Huancaray","Distrito","District",NA,NA
+264,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",264,"Huayana","Distrito","District",NA,NA
+265,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",265,"Kaquiabamba","Distrito","District",NA,NA
+266,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",266,"Kishuara","Distrito","District",NA,NA
+267,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",267,"Pacobamba","Distrito","District",NA,NA
+268,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",268,"Pacucha","Distrito","District",NA,NA
+269,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",269,"Pampachiri","Distrito","District",NA,NA
+270,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",270,"Pomacocha","Distrito","District",NA,NA
+271,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",271,"San Antonio de Cachi","Distrito","District",NA,NA
+272,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",272,"San Jeronimo","Distrito","District",NA,NA
+273,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",273,"San Miguel de Chaccrampa","Distrito","District",NA,NA
+274,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",274,"Santa Maria de Chicmo","Distrito","District",NA,NA
+275,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",275,"Talavera","Distrito","District",NA,NA
+276,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",276,"Tumay Huaraca","Distrito","District",NA,NA
+277,178,"PER","Peru",3,"Apurímac",29,"Andahuaylas",277,"Turpo","Distrito","District",NA,NA
+278,178,"PER","Peru",3,"Apurímac",30,"Antabamba",278,"Antabamba","Distrito","District",NA,NA
+279,178,"PER","Peru",3,"Apurímac",30,"Antabamba",279,"El Oro","Distrito","District",NA,NA
+280,178,"PER","Peru",3,"Apurímac",30,"Antabamba",280,"Huaquirca","Distrito","District",NA,NA
+281,178,"PER","Peru",3,"Apurímac",30,"Antabamba",281,"Juan Espinoza Medrano","Distrito","District",NA,NA
+282,178,"PER","Peru",3,"Apurímac",30,"Antabamba",282,"Oropesa","Distrito","District",NA,NA
+283,178,"PER","Peru",3,"Apurímac",30,"Antabamba",283,"Pachaconas","Distrito","District",NA,NA
+284,178,"PER","Peru",3,"Apurímac",30,"Antabamba",284,"Sabaino","Distrito","District",NA,NA
+285,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",285,"Capaya","Distrito","District",NA,NA
+286,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",286,"Caraybamba","Distrito","District",NA,NA
+287,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",287,"Chalhuanca","Distrito","District",NA,NA
+288,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",288,"Chapimarca","Distrito","District",NA,NA
+289,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",289,"Colcabamba","Distrito","District",NA,NA
+290,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",290,"Cotaruse","Distrito","District",NA,NA
+291,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",291,"Huayllo","Distrito","District",NA,NA
+292,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",292,"Justo Apu Sahuaraura","Distrito","District",NA,NA
+293,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",293,"Lucre","Distrito","District",NA,NA
+294,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",294,"Pocohuanca","Distrito","District",NA,NA
+295,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",295,"Sañayca","Distrito","District",NA,NA
+296,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",296,"San Juan de Chacña","Distrito","District",NA,NA
+297,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",297,"Soraya","Distrito","District",NA,NA
+298,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",298,"Tapairihua","Distrito","District",NA,NA
+299,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",299,"Tintay","Distrito","District",NA,NA
+300,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",300,"Toraya","Distrito","District",NA,NA
+301,178,"PER","Peru",3,"Apurímac",31,"Aymaraes",301,"Yanaca","Distrito","District",NA,NA
+302,178,"PER","Peru",3,"Apurímac",32,"Chincheros",302,"Anco-Huallo","Distrito","District",NA,NA
+303,178,"PER","Peru",3,"Apurímac",32,"Chincheros",303,"Chincheros","Distrito","District",NA,NA
+304,178,"PER","Peru",3,"Apurímac",32,"Chincheros",304,"Cocharcas","Distrito","District",NA,NA
+305,178,"PER","Peru",3,"Apurímac",32,"Chincheros",305,"Huaccana","Distrito","District",NA,NA
+306,178,"PER","Peru",3,"Apurímac",32,"Chincheros",306,"Ocobamba","Distrito","District",NA,NA
+307,178,"PER","Peru",3,"Apurímac",32,"Chincheros",307,"Ongoy","Distrito","District",NA,NA
+308,178,"PER","Peru",3,"Apurímac",32,"Chincheros",308,"Ranracancha","Distrito","District",NA,NA
+309,178,"PER","Peru",3,"Apurímac",32,"Chincheros",309,"Uranmarca","Distrito","District",NA,NA
+310,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",310,"Challhuahuacho","Distrito","District",NA,NA
+311,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",311,"Cotabambas","Distrito","District",NA,NA
+312,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",312,"Coyllurqui","Distrito","District",NA,NA
+313,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",313,"Haquira","Distrito","District",NA,NA
+314,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",314,"Mara","Distrito","District",NA,NA
+315,178,"PER","Peru",3,"Apurímac",33,"Cotabambas",315,"Tambobamba","Distrito","District",NA,NA
+316,178,"PER","Peru",3,"Apurímac",34,"Grau",316,"Chuquibambilla","Distrito","District",NA,NA
+317,178,"PER","Peru",3,"Apurímac",34,"Grau",317,"Curasco","Distrito","District",NA,NA
+318,178,"PER","Peru",3,"Apurímac",34,"Grau",318,"Curpahuasi","Distrito","District",NA,NA
+319,178,"PER","Peru",3,"Apurímac",34,"Grau",319,"Gamarra","Distrito","District",NA,NA
+320,178,"PER","Peru",3,"Apurímac",34,"Grau",320,"Huayllati","Distrito","District",NA,NA
+321,178,"PER","Peru",3,"Apurímac",34,"Grau",321,"Mamara","Distrito","District",NA,NA
+322,178,"PER","Peru",3,"Apurímac",34,"Grau",322,"Micaela Bastidas","Distrito","District",NA,NA
+323,178,"PER","Peru",3,"Apurímac",34,"Grau",323,"Pataypampa","Distrito","District",NA,NA
+324,178,"PER","Peru",3,"Apurímac",34,"Grau",324,"Progreso","Distrito","District",NA,NA
+325,178,"PER","Peru",3,"Apurímac",34,"Grau",325,"San Antonio","Distrito","District",NA,NA
+326,178,"PER","Peru",3,"Apurímac",34,"Grau",326,"Santa Rosa","Distrito","District",NA,NA
+327,178,"PER","Peru",3,"Apurímac",34,"Grau",327,"Turpay","Distrito","District",NA,NA
+328,178,"PER","Peru",3,"Apurímac",34,"Grau",328,"Vilcabamba","Distrito","District",NA,NA
+329,178,"PER","Peru",3,"Apurímac",34,"Grau",329,"Virundo","Distrito","District",NA,NA
+330,178,"PER","Peru",4,"Arequipa",35,"Arequipa",330,"Alto Selva Alegre","Distrito","District",NA,NA
+331,178,"PER","Peru",4,"Arequipa",35,"Arequipa",331,"Arequipa","Distrito","District",NA,NA
+332,178,"PER","Peru",4,"Arequipa",35,"Arequipa",332,"Cayma","Distrito","District",NA,NA
+333,178,"PER","Peru",4,"Arequipa",35,"Arequipa",333,"Cerro Colorado","Distrito","District",NA,NA
+334,178,"PER","Peru",4,"Arequipa",35,"Arequipa",334,"Characato","Distrito","District",NA,NA
+335,178,"PER","Peru",4,"Arequipa",35,"Arequipa",335,"Chiguata","Distrito","District",NA,NA
+336,178,"PER","Peru",4,"Arequipa",35,"Arequipa",336,"Jacobo Hunter","Distrito","District",NA,NA
+337,178,"PER","Peru",4,"Arequipa",35,"Arequipa",337,"Jose Luis Bustamante Y Rivero","Distrito","District",NA,NA
+338,178,"PER","Peru",4,"Arequipa",35,"Arequipa",338,"La Joya","Distrito","District",NA,NA
+339,178,"PER","Peru",4,"Arequipa",35,"Arequipa",339,"Laguna Loriscota","Distrito","District",NA,NA
+340,178,"PER","Peru",4,"Arequipa",35,"Arequipa",340,"Mariano Melgar","Distrito","District",NA,NA
+341,178,"PER","Peru",4,"Arequipa",35,"Arequipa",341,"Miraflores","Distrito","District",NA,NA
+342,178,"PER","Peru",4,"Arequipa",35,"Arequipa",342,"Mollebaya","Distrito","District",NA,NA
+343,178,"PER","Peru",4,"Arequipa",35,"Arequipa",343,"Paucarpata","Distrito","District",NA,NA
+344,178,"PER","Peru",4,"Arequipa",35,"Arequipa",344,"Pocsi","Distrito","District",NA,NA
+345,178,"PER","Peru",4,"Arequipa",35,"Arequipa",345,"Polobaya","Distrito","District",NA,NA
+346,178,"PER","Peru",4,"Arequipa",35,"Arequipa",346,"Quequeña","Distrito","District",NA,NA
+347,178,"PER","Peru",4,"Arequipa",35,"Arequipa",347,"Sabandia","Distrito","District",NA,NA
+348,178,"PER","Peru",4,"Arequipa",35,"Arequipa",348,"Sachaca","Distrito","District",NA,NA
+349,178,"PER","Peru",4,"Arequipa",35,"Arequipa",349,"San Juan de Siguas","Distrito","District",NA,NA
+350,178,"PER","Peru",4,"Arequipa",35,"Arequipa",350,"San Juan de Tarucani","Distrito","District",NA,NA
+351,178,"PER","Peru",4,"Arequipa",35,"Arequipa",351,"Santa Isabel de Siguas","Distrito","District",NA,NA
+352,178,"PER","Peru",4,"Arequipa",35,"Arequipa",352,"Santa Rita de Siguas","Distrito","District",NA,NA
+353,178,"PER","Peru",4,"Arequipa",35,"Arequipa",353,"Socabaya","Distrito","District",NA,NA
+354,178,"PER","Peru",4,"Arequipa",35,"Arequipa",354,"Tiabaya","Distrito","District",NA,NA
+355,178,"PER","Peru",4,"Arequipa",35,"Arequipa",355,"Uchumayo","Distrito","District",NA,NA
+356,178,"PER","Peru",4,"Arequipa",35,"Arequipa",356,"Vitor","Distrito","District",NA,NA
+357,178,"PER","Peru",4,"Arequipa",35,"Arequipa",357,"Yanahuara","Distrito","District",NA,NA
+358,178,"PER","Peru",4,"Arequipa",35,"Arequipa",358,"Yarabamba","Distrito","District",NA,NA
+359,178,"PER","Peru",4,"Arequipa",35,"Arequipa",359,"Yura","Distrito","District",NA,NA
+360,178,"PER","Peru",4,"Arequipa",36,"Camaná",360,"Camana","Distrito","District",NA,NA
+361,178,"PER","Peru",4,"Arequipa",36,"Camaná",361,"Jose Maria Quimper","Distrito","District",NA,NA
+362,178,"PER","Peru",4,"Arequipa",36,"Camaná",362,"Mariano Nicolas Valcarcel","Distrito","District",NA,NA
+363,178,"PER","Peru",4,"Arequipa",36,"Camaná",363,"Mariscal Caceres","Distrito","District",NA,NA
+364,178,"PER","Peru",4,"Arequipa",36,"Camaná",364,"Nicolas de Pierola","Distrito","District",NA,NA
+365,178,"PER","Peru",4,"Arequipa",36,"Camaná",365,"Ocoña","Distrito","District",NA,NA
+366,178,"PER","Peru",4,"Arequipa",36,"Camaná",366,"Quilca","Distrito","District",NA,NA
+367,178,"PER","Peru",4,"Arequipa",36,"Camaná",367,"Samuel Pastor","Distrito","District",NA,NA
+368,178,"PER","Peru",4,"Arequipa",37,"Caravelí",368,"Acari","Distrito","District",NA,NA
+369,178,"PER","Peru",4,"Arequipa",37,"Caravelí",369,"Atico","Distrito","District",NA,NA
+370,178,"PER","Peru",4,"Arequipa",37,"Caravelí",370,"Atiquipa","Distrito","District",NA,NA
+371,178,"PER","Peru",4,"Arequipa",37,"Caravelí",371,"Bella Union","Distrito","District",NA,NA
+372,178,"PER","Peru",4,"Arequipa",37,"Caravelí",372,"Cahuacho","Distrito","District",NA,NA
+373,178,"PER","Peru",4,"Arequipa",37,"Caravelí",373,"Caraveli","Distrito","District",NA,NA
+374,178,"PER","Peru",4,"Arequipa",37,"Caravelí",374,"Chala","Distrito","District",NA,NA
+375,178,"PER","Peru",4,"Arequipa",37,"Caravelí",375,"Chaparra","Distrito","District",NA,NA
+376,178,"PER","Peru",4,"Arequipa",37,"Caravelí",376,"Huanuhuanu","Distrito","District",NA,NA
+377,178,"PER","Peru",4,"Arequipa",37,"Caravelí",377,"Jaqui","Distrito","District",NA,NA
+378,178,"PER","Peru",4,"Arequipa",37,"Caravelí",378,"Lomas","Distrito","District",NA,NA
+379,178,"PER","Peru",4,"Arequipa",37,"Caravelí",379,"Quicacha","Distrito","District",NA,NA
+380,178,"PER","Peru",4,"Arequipa",37,"Caravelí",380,"Yauca","Distrito","District",NA,NA
+381,178,"PER","Peru",4,"Arequipa",38,"Castilla",381,"Andagua","Distrito","District",NA,NA
+382,178,"PER","Peru",4,"Arequipa",38,"Castilla",382,"Aplao","Distrito","District",NA,NA
+383,178,"PER","Peru",4,"Arequipa",38,"Castilla",383,"Ayo","Distrito","District",NA,NA
+384,178,"PER","Peru",4,"Arequipa",38,"Castilla",384,"Chachas","Distrito","District",NA,NA
+385,178,"PER","Peru",4,"Arequipa",38,"Castilla",385,"Chilcaymarca","Distrito","District",NA,NA
+386,178,"PER","Peru",4,"Arequipa",38,"Castilla",386,"Choco","Distrito","District",NA,NA
+387,178,"PER","Peru",4,"Arequipa",38,"Castilla",387,"Huancarqui","Distrito","District",NA,NA
+388,178,"PER","Peru",4,"Arequipa",38,"Castilla",388,"Machaguay","Distrito","District",NA,NA
+389,178,"PER","Peru",4,"Arequipa",38,"Castilla",389,"Orcopampa","Distrito","District",NA,NA
+390,178,"PER","Peru",4,"Arequipa",38,"Castilla",390,"Pampacolca","Distrito","District",NA,NA
+391,178,"PER","Peru",4,"Arequipa",38,"Castilla",391,"Tipan","Distrito","District",NA,NA
+392,178,"PER","Peru",4,"Arequipa",38,"Castilla",392,"Uñon","Distrito","District",NA,NA
+393,178,"PER","Peru",4,"Arequipa",38,"Castilla",393,"Uraca","Distrito","District",NA,NA
+394,178,"PER","Peru",4,"Arequipa",38,"Castilla",394,"Viraco","Distrito","District",NA,NA
+395,178,"PER","Peru",4,"Arequipa",39,"Caylloma",395,"Achoma","Distrito","District",NA,NA
+396,178,"PER","Peru",4,"Arequipa",39,"Caylloma",396,"Cabanaconde","Distrito","District",NA,NA
+397,178,"PER","Peru",4,"Arequipa",39,"Caylloma",397,"Callalli","Distrito","District",NA,NA
+398,178,"PER","Peru",4,"Arequipa",39,"Caylloma",398,"Caylloma","Distrito","District",NA,NA
+399,178,"PER","Peru",4,"Arequipa",39,"Caylloma",399,"Chivay","Distrito","District",NA,NA
+400,178,"PER","Peru",4,"Arequipa",39,"Caylloma",400,"Coporaque","Distrito","District",NA,NA
+401,178,"PER","Peru",4,"Arequipa",39,"Caylloma",401,"Huambo","Distrito","District",NA,NA
+402,178,"PER","Peru",4,"Arequipa",39,"Caylloma",402,"Huanca","Distrito","District",NA,NA
+403,178,"PER","Peru",4,"Arequipa",39,"Caylloma",403,"Ichupampa","Distrito","District",NA,NA
+404,178,"PER","Peru",4,"Arequipa",39,"Caylloma",404,"Lari","Distrito","District",NA,NA
+405,178,"PER","Peru",4,"Arequipa",39,"Caylloma",405,"Lluta","Distrito","District",NA,NA
+406,178,"PER","Peru",4,"Arequipa",39,"Caylloma",406,"Maca","Distrito","District",NA,NA
+407,178,"PER","Peru",4,"Arequipa",39,"Caylloma",407,"Madrigal","Distrito","District",NA,NA
+408,178,"PER","Peru",4,"Arequipa",39,"Caylloma",408,"San Antonio de Chuca","Distrito","District",NA,NA
+409,178,"PER","Peru",4,"Arequipa",39,"Caylloma",409,"Sibayo","Distrito","District",NA,NA
+410,178,"PER","Peru",4,"Arequipa",39,"Caylloma",410,"Tapay","Distrito","District",NA,NA
+411,178,"PER","Peru",4,"Arequipa",39,"Caylloma",411,"Tisco","Distrito","District",NA,NA
+412,178,"PER","Peru",4,"Arequipa",39,"Caylloma",412,"Tuti","Distrito","District",NA,NA
+413,178,"PER","Peru",4,"Arequipa",39,"Caylloma",413,"Yanque","Distrito","District",NA,NA
+414,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",414,"Andaray","Distrito","District",NA,NA
+415,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",415,"Cayarani","Distrito","District",NA,NA
+416,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",416,"Chichas","Distrito","District",NA,NA
+417,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",417,"Chuquibamba","Distrito","District",NA,NA
+418,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",418,"Iray","Distrito","District",NA,NA
+419,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",419,"Rio Grande","Distrito","District",NA,NA
+420,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",420,"Salamanca","Distrito","District",NA,NA
+421,178,"PER","Peru",4,"Arequipa",40,"Condesuyos",421,"Yanaquihua","Distrito","District",NA,NA
+422,178,"PER","Peru",4,"Arequipa",41,"Islay",422,"Cocachacra","Distrito","District",NA,NA
+423,178,"PER","Peru",4,"Arequipa",41,"Islay",423,"Dean Valdivia","Distrito","District",NA,NA
+424,178,"PER","Peru",4,"Arequipa",41,"Islay",424,"Islay","Distrito","District",NA,NA
+425,178,"PER","Peru",4,"Arequipa",41,"Islay",425,"Mejia","Distrito","District",NA,NA
+426,178,"PER","Peru",4,"Arequipa",41,"Islay",426,"Mollendo","Distrito","District",NA,NA
+427,178,"PER","Peru",4,"Arequipa",41,"Islay",427,"Punta de Bombon","Distrito","District",NA,NA
+428,178,"PER","Peru",4,"Arequipa",42,"La Unión",428,"Alca","Distrito","District",NA,NA
+429,178,"PER","Peru",4,"Arequipa",42,"La Unión",429,"Charcana","Distrito","District",NA,NA
+430,178,"PER","Peru",4,"Arequipa",42,"La Unión",430,"Cotahuasi","Distrito","District",NA,NA
+431,178,"PER","Peru",4,"Arequipa",42,"La Unión",431,"Huaynacotas","Distrito","District",NA,NA
+432,178,"PER","Peru",4,"Arequipa",42,"La Unión",432,"Pampamarca","Distrito","District",NA,NA
+433,178,"PER","Peru",4,"Arequipa",42,"La Unión",433,"Puyca","Distrito","District",NA,NA
+434,178,"PER","Peru",4,"Arequipa",42,"La Unión",434,"Quechualla","Distrito","District",NA,NA
+435,178,"PER","Peru",4,"Arequipa",42,"La Unión",435,"Sayla","Distrito","District",NA,NA
+436,178,"PER","Peru",4,"Arequipa",42,"La Unión",436,"Tauria","Distrito","District",NA,NA
+437,178,"PER","Peru",4,"Arequipa",42,"La Unión",437,"Tomepampa","Distrito","District",NA,NA
+438,178,"PER","Peru",4,"Arequipa",42,"La Unión",438,"Toro","Distrito","District",NA,NA
+439,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",439,"Cangallo","Distrito","District",NA,NA
+440,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",440,"Chuschi","Distrito","District",NA,NA
+441,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",441,"Los Morochucos","Distrito","District",NA,NA
+442,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",442,"Maria Parado de Bellido","Distrito","District",NA,NA
+443,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",443,"Paras","Distrito","District",NA,NA
+444,178,"PER","Peru",5,"Ayacucho",43,"Cangallo",444,"Totos","Distrito","District",NA,NA
+445,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",445,"Acocro","Distrito","District",NA,NA
+446,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",446,"Acos Vinchos","Distrito","District",NA,NA
+447,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",447,"Ayacucho","Distrito","District",NA,NA
+448,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",448,"Carmen Alto","Distrito","District",NA,NA
+449,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",449,"Chiara","Distrito","District",NA,NA
+450,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",450,"Ocros","Distrito","District",NA,NA
+451,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",451,"Pacaycasa","Distrito","District",NA,NA
+452,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",452,"Quinua","Distrito","District",NA,NA
+453,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",453,"San Jose de Ticllas","Distrito","District",NA,NA
+454,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",454,"San Juan Bautista","Distrito","District",NA,NA
+455,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",455,"Santiago de Pischa","Distrito","District",NA,NA
+456,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",456,"Socos","Distrito","District",NA,NA
+457,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",457,"Tambillo","Distrito","District",NA,NA
+458,178,"PER","Peru",5,"Ayacucho",44,"Huamanga",458,"Vinchos","Distrito","District",NA,NA
+459,178,"PER","Peru",5,"Ayacucho",45,"Huanca Sancos",459,"Carapo","Distrito","District",NA,NA
+460,178,"PER","Peru",5,"Ayacucho",45,"Huanca Sancos",460,"Sacsamarca","Distrito","District",NA,NA
+461,178,"PER","Peru",5,"Ayacucho",45,"Huanca Sancos",461,"Sancos","Distrito","District",NA,NA
+462,178,"PER","Peru",5,"Ayacucho",45,"Huanca Sancos",462,"Santiago de Lucanamarca","Distrito","District",NA,NA
+463,178,"PER","Peru",5,"Ayacucho",46,"Huanta",463,"Ayahuanco","Distrito","District",NA,NA
+464,178,"PER","Peru",5,"Ayacucho",46,"Huanta",464,"Huamanguilla","Distrito","District",NA,NA
+465,178,"PER","Peru",5,"Ayacucho",46,"Huanta",465,"Huanta","Distrito","District",NA,NA
+466,178,"PER","Peru",5,"Ayacucho",46,"Huanta",466,"Iguain","Distrito","District",NA,NA
+467,178,"PER","Peru",5,"Ayacucho",46,"Huanta",467,"Luricocha","Distrito","District",NA,NA
+468,178,"PER","Peru",5,"Ayacucho",46,"Huanta",468,"Santillana","Distrito","District",NA,NA
+469,178,"PER","Peru",5,"Ayacucho",46,"Huanta",469,"Sivia","Distrito","District",NA,NA
+470,178,"PER","Peru",5,"Ayacucho",47,"La Mar",470,"Anco","Distrito","District",NA,NA
+471,178,"PER","Peru",5,"Ayacucho",47,"La Mar",471,"Ayna","Distrito","District",NA,NA
+472,178,"PER","Peru",5,"Ayacucho",47,"La Mar",472,"Chilcas","Distrito","District",NA,NA
+473,178,"PER","Peru",5,"Ayacucho",47,"La Mar",473,"Chungui","Distrito","District",NA,NA
+474,178,"PER","Peru",5,"Ayacucho",47,"La Mar",474,"Luis Carranza","Distrito","District",NA,NA
+475,178,"PER","Peru",5,"Ayacucho",47,"La Mar",475,"San Miguel","Distrito","District",NA,NA
+476,178,"PER","Peru",5,"Ayacucho",47,"La Mar",476,"Santa Rosa","Distrito","District",NA,NA
+477,178,"PER","Peru",5,"Ayacucho",47,"La Mar",477,"Tambo","Distrito","District",NA,NA
+478,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",478,"Aucara","Distrito","District",NA,NA
+479,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",479,"Cabana","Distrito","District",NA,NA
+480,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",480,"Carmen Salcedo","Distrito","District",NA,NA
+481,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",481,"Chaviña","Distrito","District",NA,NA
+482,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",482,"Chipao","Distrito","District",NA,NA
+483,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",483,"Huac-Huas","Distrito","District",NA,NA
+484,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",484,"Laramate","Distrito","District",NA,NA
+485,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",485,"Leoncio Prado","Distrito","District",NA,NA
+486,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",486,"Llauta","Distrito","District",NA,NA
+487,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",487,"Lucanas","Distrito","District",NA,NA
+488,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",488,"Ocana","Distrito","District",NA,NA
+489,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",489,"Otoca","Distrito","District",NA,NA
+490,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",490,"Puquio","Distrito","District",NA,NA
+491,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",491,"Saisa","Distrito","District",NA,NA
+492,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",492,"San Cristobal","Distrito","District",NA,NA
+493,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",493,"San Juan","Distrito","District",NA,NA
+494,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",494,"San Pedro de Palco","Distrito","District",NA,NA
+495,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",495,"San Pedro","Distrito","District",NA,NA
+496,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",496,"Sancos","Distrito","District",NA,NA
+497,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",497,"Santa Ana de Huaycahuacho","Distrito","District",NA,NA
+498,178,"PER","Peru",5,"Ayacucho",48,"Lucanas",498,"Santa Lucia","Distrito","District",NA,NA
+499,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",499,"Chumpi","Distrito","District",NA,NA
+500,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",500,"Coracora","Distrito","District",NA,NA
+501,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",501,"Coronel Castañeda","Distrito","District",NA,NA
+502,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",502,"Laguna Parinacochas","Distrito","District",NA,NA
+503,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",503,"Pacapausa","Distrito","District",NA,NA
+504,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",504,"Pullo","Distrito","District",NA,NA
+505,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",505,"Puyusca","Distrito","District",NA,NA
+506,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",506,"San Francisco de Ravacayco","Distrito","District",NA,NA
+507,178,"PER","Peru",5,"Ayacucho",49,"Parinacochas",507,"Upahuacho","Distrito","District",NA,NA
+508,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",508,"Colta","Distrito","District",NA,NA
+509,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",509,"Corculla","Distrito","District",NA,NA
+510,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",510,"Lampa","Distrito","District",NA,NA
+511,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",511,"Marcabamba","Distrito","District",NA,NA
+512,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",512,"Oyolo","Distrito","District",NA,NA
+513,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",513,"Pararca","Distrito","District",NA,NA
+514,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",514,"Pausa","Distrito","District",NA,NA
+515,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",515,"San Javier de Alpabamba","Distrito","District",NA,NA
+516,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",516,"San Jose de Ushua","Distrito","District",NA,NA
+517,178,"PER","Peru",5,"Ayacucho",50,"Paucar del Sara Sara",517,"Sara Sara","Distrito","District",NA,NA
+518,178,"PER","Peru",5,"Ayacucho",51,"Sucre",518,"Belen","Distrito","District",NA,NA
+519,178,"PER","Peru",5,"Ayacucho",51,"Sucre",519,"Chalcos","Distrito","District",NA,NA
+520,178,"PER","Peru",5,"Ayacucho",51,"Sucre",520,"Chilcayoc","Distrito","District",NA,NA
+521,178,"PER","Peru",5,"Ayacucho",51,"Sucre",521,"Huacaña","Distrito","District",NA,NA
+522,178,"PER","Peru",5,"Ayacucho",51,"Sucre",522,"Morcolla","Distrito","District",NA,NA
+523,178,"PER","Peru",5,"Ayacucho",51,"Sucre",523,"Paico","Distrito","District",NA,NA
+524,178,"PER","Peru",5,"Ayacucho",51,"Sucre",524,"Querobamba","Distrito","District",NA,NA
+525,178,"PER","Peru",5,"Ayacucho",51,"Sucre",525,"San Pedro de Larcay","Distrito","District",NA,NA
+526,178,"PER","Peru",5,"Ayacucho",51,"Sucre",526,"San Salvador de Quije","Distrito","District",NA,NA
+527,178,"PER","Peru",5,"Ayacucho",51,"Sucre",527,"Santiago de Paucaray","Distrito","District",NA,NA
+528,178,"PER","Peru",5,"Ayacucho",51,"Sucre",528,"Soras","Distrito","District",NA,NA
+529,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",529,"Alcamenca","Distrito","District",NA,NA
+530,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",530,"Apongo","Distrito","District",NA,NA
+531,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",531,"Asquipata","Distrito","District",NA,NA
+532,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",532,"Canaria","Distrito","District",NA,NA
+533,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",533,"Cayara","Distrito","District",NA,NA
+534,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",534,"Colca","Distrito","District",NA,NA
+535,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",535,"Huamanquiquia","Distrito","District",NA,NA
+536,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",536,"Huancapi","Distrito","District",NA,NA
+537,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",537,"Huancaraylla","Distrito","District",NA,NA
+538,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",538,"Huaya","Distrito","District",NA,NA
+539,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",539,"Sarhua","Distrito","District",NA,NA
+540,178,"PER","Peru",5,"Ayacucho",52,"Victor Fajardo",540,"Vilcanchos","Distrito","District",NA,NA
+541,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",541,"Accomarca","Distrito","District",NA,NA
+542,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",542,"Carhuanca","Distrito","District",NA,NA
+543,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",543,"Concepcion","Distrito","District",NA,NA
+544,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",544,"Huambalpa","Distrito","District",NA,NA
+545,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",545,"Independencia","Distrito","District",NA,NA
+546,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",546,"Saurama","Distrito","District",NA,NA
+547,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",547,"Vilcas Huaman","Distrito","District",NA,NA
+548,178,"PER","Peru",5,"Ayacucho",53,"Vilcas Huamán",548,"Vischongo","Distrito","District",NA,NA
+549,178,"PER","Peru",6,"Cajamarca",54,"Cajabamba",549,"Cachachi","Distrito","District",NA,NA
+550,178,"PER","Peru",6,"Cajamarca",54,"Cajabamba",550,"Cajabamba","Distrito","District",NA,NA
+551,178,"PER","Peru",6,"Cajamarca",54,"Cajabamba",551,"Condebamba","Distrito","District",NA,NA
+552,178,"PER","Peru",6,"Cajamarca",54,"Cajabamba",552,"Sitacocha","Distrito","District",NA,NA
+553,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",553,"Asuncion","Distrito","District",NA,NA
+554,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",554,"Cajamarca","Distrito","District",NA,NA
+555,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",555,"Chetilla","Distrito","District",NA,NA
+556,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",556,"Cospan","Distrito","District",NA,NA
+557,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",557,"Encañada","Distrito","District",NA,NA
+558,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",558,"Jesus","Distrito","District",NA,NA
+559,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",559,"Llacanora","Distrito","District",NA,NA
+560,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",560,"Los Baños del Inca","Distrito","District",NA,NA
+561,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",561,"Magdalena","Distrito","District",NA,NA
+562,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",562,"Matara","Distrito","District",NA,NA
+563,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",563,"Namora","Distrito","District",NA,NA
+564,178,"PER","Peru",6,"Cajamarca",55,"Cajamarca",564,"San Juan","Distrito","District",NA,NA
+565,178,"PER","Peru",6,"Cajamarca",56,"Celendín",565,"Celendin","Distrito","District",NA,NA
+566,178,"PER","Peru",6,"Cajamarca",56,"Celendín",566,"Chumuch","Distrito","District",NA,NA
+567,178,"PER","Peru",6,"Cajamarca",56,"Celendín",567,"Cortegana","Distrito","District",NA,NA
+568,178,"PER","Peru",6,"Cajamarca",56,"Celendín",568,"Huasmin","Distrito","District",NA,NA
+569,178,"PER","Peru",6,"Cajamarca",56,"Celendín",569,"Jorge Chavez","Distrito","District",NA,NA
+570,178,"PER","Peru",6,"Cajamarca",56,"Celendín",570,"Jose Galvez","Distrito","District",NA,NA
+571,178,"PER","Peru",6,"Cajamarca",56,"Celendín",571,"La Libertad de Pallan","Distrito","District",NA,NA
+572,178,"PER","Peru",6,"Cajamarca",56,"Celendín",572,"Miguel Iglesias","Distrito","District",NA,NA
+573,178,"PER","Peru",6,"Cajamarca",56,"Celendín",573,"Oxamarca","Distrito","District",NA,NA
+574,178,"PER","Peru",6,"Cajamarca",56,"Celendín",574,"Sorochuco","Distrito","District",NA,NA
+575,178,"PER","Peru",6,"Cajamarca",56,"Celendín",575,"Sucre","Distrito","District",NA,NA
+576,178,"PER","Peru",6,"Cajamarca",56,"Celendín",576,"Utco","Distrito","District",NA,NA
+577,178,"PER","Peru",6,"Cajamarca",57,"Chota",577,"Anguia","Distrito","District",NA,NA
+578,178,"PER","Peru",6,"Cajamarca",57,"Chota",578,"Chadin","Distrito","District",NA,NA
+579,178,"PER","Peru",6,"Cajamarca",57,"Chota",579,"Chalamarca","Distrito","District",NA,NA
+580,178,"PER","Peru",6,"Cajamarca",57,"Chota",580,"Chiguirip","Distrito","District",NA,NA
+581,178,"PER","Peru",6,"Cajamarca",57,"Chota",581,"Chimban","Distrito","District",NA,NA
+582,178,"PER","Peru",6,"Cajamarca",57,"Chota",582,"Choropampa","Distrito","District",NA,NA
+583,178,"PER","Peru",6,"Cajamarca",57,"Chota",583,"Chota","Distrito","District",NA,NA
+584,178,"PER","Peru",6,"Cajamarca",57,"Chota",584,"Cochabamba","Distrito","District",NA,NA
+585,178,"PER","Peru",6,"Cajamarca",57,"Chota",585,"Conchan","Distrito","District",NA,NA
+586,178,"PER","Peru",6,"Cajamarca",57,"Chota",586,"Huambos","Distrito","District",NA,NA
+587,178,"PER","Peru",6,"Cajamarca",57,"Chota",587,"Lajas","Distrito","District",NA,NA
+588,178,"PER","Peru",6,"Cajamarca",57,"Chota",588,"Llama","Distrito","District",NA,NA
+589,178,"PER","Peru",6,"Cajamarca",57,"Chota",589,"Miracosta","Distrito","District",NA,NA
+590,178,"PER","Peru",6,"Cajamarca",57,"Chota",590,"Paccha","Distrito","District",NA,NA
+591,178,"PER","Peru",6,"Cajamarca",57,"Chota",591,"Pion","Distrito","District",NA,NA
+592,178,"PER","Peru",6,"Cajamarca",57,"Chota",592,"Querocoto","Distrito","District",NA,NA
+593,178,"PER","Peru",6,"Cajamarca",57,"Chota",593,"San Juan de Licupis","Distrito","District",NA,NA
+594,178,"PER","Peru",6,"Cajamarca",57,"Chota",594,"Tacabamba","Distrito","District",NA,NA
+595,178,"PER","Peru",6,"Cajamarca",57,"Chota",595,"Tocmoche","Distrito","District",NA,NA
+596,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",596,"Chilete","Distrito","District",NA,NA
+597,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",597,"Contumaza","Distrito","District",NA,NA
+598,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",598,"Cupisnique","Distrito","District",NA,NA
+599,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",599,"Guzmango","Distrito","District",NA,NA
+600,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",600,"San Benito","Distrito","District",NA,NA
+601,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",601,"Santa Cruz de Toled","Distrito","District",NA,NA
+602,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",602,"Tantarica","Distrito","District",NA,NA
+603,178,"PER","Peru",6,"Cajamarca",58,"Contumazá",603,"Yonan","Distrito","District",NA,NA
+604,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",604,"Callayuc","Distrito","District",NA,NA
+605,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",605,"Choros","Distrito","District",NA,NA
+606,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",606,"Cujillo","Distrito","District",NA,NA
+607,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",607,"Cutervo","Distrito","District",NA,NA
+608,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",608,"La Ramada","Distrito","District",NA,NA
+609,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",609,"Pimpingos","Distrito","District",NA,NA
+610,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",610,"Querocotillo","Distrito","District",NA,NA
+611,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",611,"San Andres de Cutervo","Distrito","District",NA,NA
+612,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",612,"San Juan de Cutervo","Distrito","District",NA,NA
+613,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",613,"San Luis de Lucma","Distrito","District",NA,NA
+614,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",614,"Santa Cruz","Distrito","District",NA,NA
+615,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",615,"Santo Domingo de la Capilla","Distrito","District",NA,NA
+616,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",616,"Santo Tomas","Distrito","District",NA,NA
+617,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",617,"Socota","Distrito","District",NA,NA
+618,178,"PER","Peru",6,"Cajamarca",59,"Cutervo",618,"Toribio Casanova","Distrito","District",NA,NA
+619,178,"PER","Peru",6,"Cajamarca",60,"Hualgayoc",619,"Bambamarca","Distrito","District",NA,NA
+620,178,"PER","Peru",6,"Cajamarca",60,"Hualgayoc",620,"Chugur","Distrito","District",NA,NA
+621,178,"PER","Peru",6,"Cajamarca",60,"Hualgayoc",621,"Hualgayoc","Distrito","District",NA,NA
+622,178,"PER","Peru",6,"Cajamarca",61,"Jaén",622,"Bellavista","Distrito","District",NA,NA
+623,178,"PER","Peru",6,"Cajamarca",61,"Jaén",623,"Chontali","Distrito","District",NA,NA
+624,178,"PER","Peru",6,"Cajamarca",61,"Jaén",624,"Colasay","Distrito","District",NA,NA
+625,178,"PER","Peru",6,"Cajamarca",61,"Jaén",625,"Huabal","Distrito","District",NA,NA
+626,178,"PER","Peru",6,"Cajamarca",61,"Jaén",626,"Jaen","Distrito","District",NA,NA
+627,178,"PER","Peru",6,"Cajamarca",61,"Jaén",627,"Las Pirias","Distrito","District",NA,NA
+628,178,"PER","Peru",6,"Cajamarca",61,"Jaén",628,"Pomahuaca","Distrito","District",NA,NA
+629,178,"PER","Peru",6,"Cajamarca",61,"Jaén",629,"Pucara","Distrito","District",NA,NA
+630,178,"PER","Peru",6,"Cajamarca",61,"Jaén",630,"Sallique","Distrito","District",NA,NA
+631,178,"PER","Peru",6,"Cajamarca",61,"Jaén",631,"San Felipe","Distrito","District",NA,NA
+632,178,"PER","Peru",6,"Cajamarca",61,"Jaén",632,"San Jose del Alto","Distrito","District",NA,NA
+633,178,"PER","Peru",6,"Cajamarca",61,"Jaén",633,"Santa Rosa","Distrito","District",NA,NA
+634,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",634,"Chirinos","Distrito","District",NA,NA
+635,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",635,"Huarango","Distrito","District",NA,NA
+636,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",636,"La Coipa","Distrito","District",NA,NA
+637,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",637,"Namballe","Distrito","District",NA,NA
+638,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",638,"San Ignacio","Distrito","District",NA,NA
+639,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",639,"San Jose de Lourdes","Distrito","District",NA,NA
+640,178,"PER","Peru",6,"Cajamarca",62,"San Ignacio",640,"Tabaconas","Distrito","District",NA,NA
+641,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",641,"Chancay","Distrito","District",NA,NA
+642,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",642,"Eduardo Villanueva","Distrito","District",NA,NA
+643,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",643,"Gregorio Pita","Distrito","District",NA,NA
+644,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",644,"Ichocan","Distrito","District",NA,NA
+645,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",645,"Jose Manuel Quiroz","Distrito","District",NA,NA
+646,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",646,"Jose Sabogal","Distrito","District",NA,NA
+647,178,"PER","Peru",6,"Cajamarca",63,"San Marcos",647,"Pedro Galvez","Distrito","District",NA,NA
+648,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",648,"Bolivar","Distrito","District",NA,NA
+649,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",649,"Calquis","Distrito","District",NA,NA
+650,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",650,"Catilluc","Distrito","District",NA,NA
+651,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",651,"El Prado","Distrito","District",NA,NA
+652,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",652,"La Florida","Distrito","District",NA,NA
+653,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",653,"Llapa","Distrito","District",NA,NA
+654,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",654,"Nanchoc","Distrito","District",NA,NA
+655,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",655,"Niepos","Distrito","District",NA,NA
+656,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",656,"San Gregorio","Distrito","District",NA,NA
+657,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",657,"San Miguel","Distrito","District",NA,NA
+658,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",658,"San Silvestre de Cochan","Distrito","District",NA,NA
+659,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",659,"Tongod","Distrito","District",NA,NA
+660,178,"PER","Peru",6,"Cajamarca",64,"San Miguel",660,"Union Agua Blanca","Distrito","District",NA,NA
+661,178,"PER","Peru",6,"Cajamarca",65,"San Pablo",661,"San Bernardino","Distrito","District",NA,NA
+662,178,"PER","Peru",6,"Cajamarca",65,"San Pablo",662,"San Luis","Distrito","District",NA,NA
+663,178,"PER","Peru",6,"Cajamarca",65,"San Pablo",663,"San Pablo","Distrito","District",NA,NA
+664,178,"PER","Peru",6,"Cajamarca",65,"San Pablo",664,"Tumbaden","Distrito","District",NA,NA
+665,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",665,"Andabamba","Distrito","District",NA,NA
+666,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",666,"Catache","Distrito","District",NA,NA
+667,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",667,"Chancayba","Distrito","District",NA,NA
+668,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",668,"La Esperanza","Distrito","District",NA,NA
+669,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",669,"Ninabamba","Distrito","District",NA,NA
+670,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",670,"Pulan","Distrito","District",NA,NA
+671,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",671,"Santa Cruz","Distrito","District",NA,NA
+672,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",672,"Saucepampa","Distrito","District",NA,NA
+673,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",673,"Sexi","Distrito","District",NA,NA
+674,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",674,"Uticyacu","Distrito","District",NA,NA
+675,178,"PER","Peru",6,"Cajamarca",66,"Santa Cruz",675,"Yauyucan","Distrito","District",NA,NA
+676,178,"PER","Peru",7,"Callao",67,"Callao",676,"Callao","Distrito","District",NA,NA
+677,178,"PER","Peru",7,"Callao",67,"Callao",677,"Ventanilla","Distrito","District",NA,NA
+678,178,"PER","Peru",8,"Cusco",68,"Acomayo",678,"Acomayo","Distrito","District",NA,NA
+679,178,"PER","Peru",8,"Cusco",68,"Acomayo",679,"Acopia","Distrito","District",NA,NA
+680,178,"PER","Peru",8,"Cusco",68,"Acomayo",680,"Acos","Distrito","District",NA,NA
+681,178,"PER","Peru",8,"Cusco",68,"Acomayo",681,"Mosoc Llacta","Distrito","District",NA,NA
+682,178,"PER","Peru",8,"Cusco",68,"Acomayo",682,"Pomacanchi","Distrito","District",NA,NA
+683,178,"PER","Peru",8,"Cusco",68,"Acomayo",683,"Rondocan","Distrito","District",NA,NA
+684,178,"PER","Peru",8,"Cusco",68,"Acomayo",684,"Sangarara","Distrito","District",NA,NA
+685,178,"PER","Peru",8,"Cusco",69,"Anta",685,"Ancahuasi","Distrito","District",NA,NA
+686,178,"PER","Peru",8,"Cusco",69,"Anta",686,"Anta","Distrito","District",NA,NA
+687,178,"PER","Peru",8,"Cusco",69,"Anta",687,"Cachimayo","Distrito","District",NA,NA
+688,178,"PER","Peru",8,"Cusco",69,"Anta",688,"Chinchaypujio","Distrito","District",NA,NA
+689,178,"PER","Peru",8,"Cusco",69,"Anta",689,"Huarocondo","Distrito","District",NA,NA
+690,178,"PER","Peru",8,"Cusco",69,"Anta",690,"Limatambo","Distrito","District",NA,NA
+691,178,"PER","Peru",8,"Cusco",69,"Anta",691,"Mollepata","Distrito","District",NA,NA
+692,178,"PER","Peru",8,"Cusco",69,"Anta",692,"Pucyura","Distrito","District",NA,NA
+693,178,"PER","Peru",8,"Cusco",69,"Anta",693,"Zurite","Distrito","District",NA,NA
+694,178,"PER","Peru",8,"Cusco",70,"Calca",694,"Calca","Distrito","District",NA,NA
+695,178,"PER","Peru",8,"Cusco",70,"Calca",695,"Coya","Distrito","District",NA,NA
+696,178,"PER","Peru",8,"Cusco",70,"Calca",696,"Lamay","Distrito","District",NA,NA
+697,178,"PER","Peru",8,"Cusco",70,"Calca",697,"Lares","Distrito","District",NA,NA
+698,178,"PER","Peru",8,"Cusco",70,"Calca",698,"Pisac","Distrito","District",NA,NA
+699,178,"PER","Peru",8,"Cusco",70,"Calca",699,"San Salvador","Distrito","District",NA,NA
+700,178,"PER","Peru",8,"Cusco",70,"Calca",700,"Taray","Distrito","District",NA,NA
+701,178,"PER","Peru",8,"Cusco",70,"Calca",701,"Yanatile","Distrito","District",NA,NA
+702,178,"PER","Peru",8,"Cusco",71,"Canas",702,"Checca","Distrito","District",NA,NA
+703,178,"PER","Peru",8,"Cusco",71,"Canas",703,"Kunturkanki","Distrito","District",NA,NA
+704,178,"PER","Peru",8,"Cusco",71,"Canas",704,"Laguna Languilayo","Distrito","District",NA,NA
+705,178,"PER","Peru",8,"Cusco",71,"Canas",705,"Langui","Distrito","District",NA,NA
+706,178,"PER","Peru",8,"Cusco",71,"Canas",706,"Layo","Distrito","District",NA,NA
+707,178,"PER","Peru",8,"Cusco",71,"Canas",707,"Pampamarca","Distrito","District",NA,NA
+708,178,"PER","Peru",8,"Cusco",71,"Canas",708,"Quehue","Distrito","District",NA,NA
+709,178,"PER","Peru",8,"Cusco",71,"Canas",709,"Tupac Amaru","Distrito","District",NA,NA
+710,178,"PER","Peru",8,"Cusco",71,"Canas",710,"Yanaoca","Distrito","District",NA,NA
+711,178,"PER","Peru",8,"Cusco",72,"Canchis",711,"Checacupe","Distrito","District",NA,NA
+712,178,"PER","Peru",8,"Cusco",72,"Canchis",712,"Combapata","Distrito","District",NA,NA
+713,178,"PER","Peru",8,"Cusco",72,"Canchis",713,"Marangani","Distrito","District",NA,NA
+714,178,"PER","Peru",8,"Cusco",72,"Canchis",714,"Pitumarca","Distrito","District",NA,NA
+715,178,"PER","Peru",8,"Cusco",72,"Canchis",715,"San Pablo","Distrito","District",NA,NA
+716,178,"PER","Peru",8,"Cusco",72,"Canchis",716,"San Pedro","Distrito","District",NA,NA
+717,178,"PER","Peru",8,"Cusco",72,"Canchis",717,"Sicuani","Distrito","District",NA,NA
+718,178,"PER","Peru",8,"Cusco",72,"Canchis",718,"Tinta","Distrito","District",NA,NA
+719,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",719,"Capacmarca","Distrito","District",NA,NA
+720,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",720,"Chamaca","Distrito","District",NA,NA
+721,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",721,"Colquemarca","Distrito","District",NA,NA
+722,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",722,"Livitaca","Distrito","District",NA,NA
+723,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",723,"Llusco","Distrito","District",NA,NA
+724,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",724,"Quiñota","Distrito","District",NA,NA
+725,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",725,"Santo Tomas","Distrito","District",NA,NA
+726,178,"PER","Peru",8,"Cusco",73,"Chumbivilcas",726,"Velille","Distrito","District",NA,NA
+727,178,"PER","Peru",8,"Cusco",74,"Cusco",727,"Ccorca","Distrito","District",NA,NA
+728,178,"PER","Peru",8,"Cusco",74,"Cusco",728,"Cusco","Distrito","District",NA,NA
+729,178,"PER","Peru",8,"Cusco",74,"Cusco",729,"Poroy","Distrito","District",NA,NA
+730,178,"PER","Peru",8,"Cusco",74,"Cusco",730,"San Jeronimo","Distrito","District",NA,NA
+731,178,"PER","Peru",8,"Cusco",74,"Cusco",731,"San Sebastian","Distrito","District",NA,NA
+732,178,"PER","Peru",8,"Cusco",74,"Cusco",732,"Santiago","Distrito","District",NA,NA
+733,178,"PER","Peru",8,"Cusco",74,"Cusco",733,"Saylla","Distrito","District",NA,NA
+734,178,"PER","Peru",8,"Cusco",74,"Cusco",734,"Wanchaq","Distrito","District",NA,NA
+735,178,"PER","Peru",8,"Cusco",75,"Espinar",735,"Alto Pichigua","Distrito","District",NA,NA
+736,178,"PER","Peru",8,"Cusco",75,"Espinar",736,"Condoroma","Distrito","District",NA,NA
+737,178,"PER","Peru",8,"Cusco",75,"Espinar",737,"Coporaque","Distrito","District",NA,NA
+738,178,"PER","Peru",8,"Cusco",75,"Espinar",738,"Espinar","Distrito","District",NA,NA
+739,178,"PER","Peru",8,"Cusco",75,"Espinar",739,"Ocoruro","Distrito","District",NA,NA
+740,178,"PER","Peru",8,"Cusco",75,"Espinar",740,"Pallpata","Distrito","District",NA,NA
+741,178,"PER","Peru",8,"Cusco",75,"Espinar",741,"Pichigua","Distrito","District",NA,NA
+742,178,"PER","Peru",8,"Cusco",75,"Espinar",742,"Suyckutambo","Distrito","District",NA,NA
+743,178,"PER","Peru",8,"Cusco",76,"La Convención",743,"Echarate","Distrito","District",NA,NA
+744,178,"PER","Peru",8,"Cusco",76,"La Convención",744,"Huayopata","Distrito","District",NA,NA
+745,178,"PER","Peru",8,"Cusco",76,"La Convención",745,"Maranura","Distrito","District",NA,NA
+746,178,"PER","Peru",8,"Cusco",76,"La Convención",746,"Ocobamba","Distrito","District",NA,NA
+747,178,"PER","Peru",8,"Cusco",76,"La Convención",747,"Pichari","Distrito","District",NA,NA
+748,178,"PER","Peru",8,"Cusco",76,"La Convención",748,"Quellouno","Distrito","District",NA,NA
+749,178,"PER","Peru",8,"Cusco",76,"La Convención",749,"Quimbiri","Distrito","District",NA,NA
+750,178,"PER","Peru",8,"Cusco",76,"La Convención",750,"Santa Ana","Distrito","District",NA,NA
+751,178,"PER","Peru",8,"Cusco",76,"La Convención",751,"Santa Teresa","Distrito","District",NA,NA
+752,178,"PER","Peru",8,"Cusco",76,"La Convención",752,"Vilcabamba","Distrito","District",NA,NA
+753,178,"PER","Peru",8,"Cusco",77,"Paruro",753,"Accha","Distrito","District",NA,NA
+754,178,"PER","Peru",8,"Cusco",77,"Paruro",754,"Ccapi","Distrito","District",NA,NA
+755,178,"PER","Peru",8,"Cusco",77,"Paruro",755,"Colcha","Distrito","District",NA,NA
+756,178,"PER","Peru",8,"Cusco",77,"Paruro",756,"Huanoquite","Distrito","District",NA,NA
+757,178,"PER","Peru",8,"Cusco",77,"Paruro",757,"Omacha","Distrito","District",NA,NA
+758,178,"PER","Peru",8,"Cusco",77,"Paruro",758,"Paccaritambo","Distrito","District",NA,NA
+759,178,"PER","Peru",8,"Cusco",77,"Paruro",759,"Paruro","Distrito","District",NA,NA
+760,178,"PER","Peru",8,"Cusco",77,"Paruro",760,"Pillpinto","Distrito","District",NA,NA
+761,178,"PER","Peru",8,"Cusco",77,"Paruro",761,"Yaurisque","Distrito","District",NA,NA
+762,178,"PER","Peru",8,"Cusco",78,"Paucartambo",762,"Caicay","Distrito","District",NA,NA
+763,178,"PER","Peru",8,"Cusco",78,"Paucartambo",763,"Challabamba","Distrito","District",NA,NA
+764,178,"PER","Peru",8,"Cusco",78,"Paucartambo",764,"Colquepata","Distrito","District",NA,NA
+765,178,"PER","Peru",8,"Cusco",78,"Paucartambo",765,"Huancarani","Distrito","District",NA,NA
+766,178,"PER","Peru",8,"Cusco",78,"Paucartambo",766,"Kosñipata","Distrito","District",NA,NA
+767,178,"PER","Peru",8,"Cusco",78,"Paucartambo",767,"Paucartambo","Distrito","District",NA,NA
+768,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",768,"Andahuaylillas","Distrito","District",NA,NA
+769,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",769,"Camanti","Distrito","District",NA,NA
+770,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",770,"Ccarhuayo","Distrito","District",NA,NA
+771,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",771,"Ccatca","Distrito","District",NA,NA
+772,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",772,"Cusipata","Distrito","District",NA,NA
+773,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",773,"Huaro","Distrito","District",NA,NA
+774,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",774,"Lucre","Distrito","District",NA,NA
+775,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",775,"Marcapata","Distrito","District",NA,NA
+776,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",776,"Ocongate","Distrito","District",NA,NA
+777,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",777,"Oropesa","Distrito","District",NA,NA
+778,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",778,"Quiquijana","Distrito","District",NA,NA
+779,178,"PER","Peru",8,"Cusco",79,"Quispicanchi",779,"Urcos","Distrito","District",NA,NA
+780,178,"PER","Peru",8,"Cusco",80,"Urubamba",780,"Chinchero","Distrito","District",NA,NA
+781,178,"PER","Peru",8,"Cusco",80,"Urubamba",781,"Huayllabamba","Distrito","District",NA,NA
+782,178,"PER","Peru",8,"Cusco",80,"Urubamba",782,"Machupicchu","Distrito","District",NA,NA
+783,178,"PER","Peru",8,"Cusco",80,"Urubamba",783,"Maras","Distrito","District",NA,NA
+784,178,"PER","Peru",8,"Cusco",80,"Urubamba",784,"Ollantaytambo","Distrito","District",NA,NA
+785,178,"PER","Peru",8,"Cusco",80,"Urubamba",785,"Urubamba","Distrito","District",NA,NA
+786,178,"PER","Peru",8,"Cusco",80,"Urubamba",786,"Yucay","Distrito","District",NA,NA
+787,178,"PER","Peru",9,"Huánuco",81,"Ambo",787,"Ambo","Distrito","District",NA,NA
+788,178,"PER","Peru",9,"Huánuco",81,"Ambo",788,"Cayna","Distrito","District",NA,NA
+789,178,"PER","Peru",9,"Huánuco",81,"Ambo",789,"Colpas","Distrito","District",NA,NA
+790,178,"PER","Peru",9,"Huánuco",81,"Ambo",790,"Conchamarca","Distrito","District",NA,NA
+791,178,"PER","Peru",9,"Huánuco",81,"Ambo",791,"Huacar","Distrito","District",NA,NA
+792,178,"PER","Peru",9,"Huánuco",81,"Ambo",792,"San Francisco","Distrito","District",NA,NA
+793,178,"PER","Peru",9,"Huánuco",81,"Ambo",793,"San Rafael","Distrito","District",NA,NA
+794,178,"PER","Peru",9,"Huánuco",81,"Ambo",794,"Tomay Kichwa","Distrito","District",NA,NA
+795,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",795,"Chuquis","Distrito","District",NA,NA
+796,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",796,"La Union","Distrito","District",NA,NA
+797,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",797,"Marias","Distrito","District",NA,NA
+798,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",798,"Pachas","Distrito","District",NA,NA
+799,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",799,"Quivilla","Distrito","District",NA,NA
+800,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",800,"Ripan","Distrito","District",NA,NA
+801,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",801,"Shunqui","Distrito","District",NA,NA
+802,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",802,"Sillapata","Distrito","District",NA,NA
+803,178,"PER","Peru",9,"Huánuco",82,"Dos de Mayo",803,"Yanas","Distrito","District",NA,NA
+804,178,"PER","Peru",9,"Huánuco",83,"Huacaybamba",804,"Canchabamba","Distrito","District",NA,NA
+805,178,"PER","Peru",9,"Huánuco",83,"Huacaybamba",805,"Cochabamba","Distrito","District",NA,NA
+806,178,"PER","Peru",9,"Huánuco",83,"Huacaybamba",806,"Huacaybamba","Distrito","District",NA,NA
+807,178,"PER","Peru",9,"Huánuco",83,"Huacaybamba",807,"Pinra","Distrito","District",NA,NA
+808,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",808,"Arancay","Distrito","District",NA,NA
+809,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",809,"Chavin de Pariarca","Distrito","District",NA,NA
+810,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",810,"Jacas Grande","Distrito","District",NA,NA
+811,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",811,"Jircan","Distrito","District",NA,NA
+812,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",812,"Llata","Distrito","District",NA,NA
+813,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",813,"Miraflores","Distrito","District",NA,NA
+814,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",814,"Monzon","Distrito","District",NA,NA
+815,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",815,"Puños","Distrito","District",NA,NA
+816,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",816,"Punchao","Distrito","District",NA,NA
+817,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",817,"Singa","Distrito","District",NA,NA
+818,178,"PER","Peru",9,"Huánuco",84,"Huamalíes",818,"Tantamayo","Distrito","District",NA,NA
+819,178,"PER","Peru",9,"Huánuco",85,"Huenuco",819,"Amarilis","Distrito","District",NA,NA
+820,178,"PER","Peru",9,"Huánuco",85,"Huenuco",820,"Chinchao","Distrito","District",NA,NA
+821,178,"PER","Peru",9,"Huánuco",85,"Huenuco",821,"Churubamba","Distrito","District",NA,NA
+822,178,"PER","Peru",9,"Huánuco",85,"Huenuco",822,"Huanuco","Distrito","District",NA,NA
+823,178,"PER","Peru",9,"Huánuco",85,"Huenuco",823,"Margos","Distrito","District",NA,NA
+824,178,"PER","Peru",9,"Huánuco",85,"Huenuco",824,"Quisqui","Distrito","District",NA,NA
+825,178,"PER","Peru",9,"Huánuco",85,"Huenuco",825,"San Francisco de Cayran","Distrito","District",NA,NA
+826,178,"PER","Peru",9,"Huánuco",85,"Huenuco",826,"San Pedro de Chaulan","Distrito","District",NA,NA
+827,178,"PER","Peru",9,"Huánuco",85,"Huenuco",827,"Santa Maria del Valle","Distrito","District",NA,NA
+828,178,"PER","Peru",9,"Huánuco",85,"Huenuco",828,"Yarumayo","Distrito","District",NA,NA
+829,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",829,"Baños","Distrito","District",NA,NA
+830,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",830,"Jesus","Distrito","District",NA,NA
+831,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",831,"Jivia","Distrito","District",NA,NA
+832,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",832,"Queropalca","Distrito","District",NA,NA
+833,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",833,"Rondos","Distrito","District",NA,NA
+834,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",834,"San Francisco de Asis","Distrito","District",NA,NA
+835,178,"PER","Peru",9,"Huánuco",86,"Lauricocha",835,"San Miguel de Cauri","Distrito","District",NA,NA
+836,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",836,"Daniel Alomias Robles","Distrito","District",NA,NA
+837,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",837,"Hermilio Valdizan","Distrito","District",NA,NA
+838,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",838,"Jose Crespo Y Castillo","Distrito","District",NA,NA
+839,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",839,"Luyando","Distrito","District",NA,NA
+840,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",840,"Mariano Damaso Beraun","Distrito","District",NA,NA
+841,178,"PER","Peru",9,"Huánuco",87,"Leoncio Prado",841,"Rupa-Rupa","Distrito","District",NA,NA
+842,178,"PER","Peru",9,"Huánuco",88,"Marañón",842,"Cholon","Distrito","District",NA,NA
+843,178,"PER","Peru",9,"Huánuco",88,"Marañón",843,"Huacrachuco","Distrito","District",NA,NA
+844,178,"PER","Peru",9,"Huánuco",88,"Marañón",844,"San Buenaventura","Distrito","District",NA,NA
+845,178,"PER","Peru",9,"Huánuco",89,"Pachitea",845,"Chaglla","Distrito","District",NA,NA
+846,178,"PER","Peru",9,"Huánuco",89,"Pachitea",846,"Molino","Distrito","District",NA,NA
+847,178,"PER","Peru",9,"Huánuco",89,"Pachitea",847,"Panao","Distrito","District",NA,NA
+848,178,"PER","Peru",9,"Huánuco",89,"Pachitea",848,"Umari","Distrito","District",NA,NA
+849,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca",849,"Codo del Pozuzo","Distrito","District",NA,NA
+850,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca",850,"Honoria","Distrito","District",NA,NA
+851,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca",851,"Puerto Inca","Distrito","District",NA,NA
+852,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca",852,"Tournavista","Distrito","District",NA,NA
+853,178,"PER","Peru",9,"Huánuco",90,"Puerto Inca",853,"Yuyapichis","Distrito","District",NA,NA
+854,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",854,"Cahuac","Distrito","District",NA,NA
+855,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",855,"Chacabamba","Distrito","District",NA,NA
+856,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",856,"Chavinillo","Distrito","District",NA,NA
+857,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",857,"Chupan","Distrito","District",NA,NA
+858,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",858,"Jacas Chico","Distrito","District",NA,NA
+859,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",859,"Obas","Distrito","District",NA,NA
+860,178,"PER","Peru",9,"Huánuco",91,"Yarowilca",860,"Pampamarca","Distrito","District",NA,NA
+861,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",861,"Acobamba","Distrito","District",NA,NA
+862,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",862,"Andabamba","Distrito","District",NA,NA
+863,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",863,"Anta","Distrito","District",NA,NA
+864,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",864,"Caja","Distrito","District",NA,NA
+865,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",865,"Marcas","Distrito","District",NA,NA
+866,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",866,"Paucara","Distrito","District",NA,NA
+867,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",867,"Pomacocha","Distrito","District",NA,NA
+868,178,"PER","Peru",10,"Huancavelica",92,"Acobamba",868,"Rosario","Distrito","District",NA,NA
+869,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",869,"Anchonga","Distrito","District",NA,NA
+870,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",870,"Callanmarca","Distrito","District",NA,NA
+871,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",871,"Ccochaccasa","Distrito","District",NA,NA
+872,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",872,"Chincho","Distrito","District",NA,NA
+873,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",873,"Congalla","Distrito","District",NA,NA
+874,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",874,"Huanca-Huanca","Distrito","District",NA,NA
+875,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",875,"Huayllay Grande","Distrito","District",NA,NA
+876,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",876,"Julcamarca","Distrito","District",NA,NA
+877,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",877,"Lircay","Distrito","District",NA,NA
+878,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",878,"San Antonio de Antaparco","Distrito","District",NA,NA
+879,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",879,"Santo Tomas de Pata","Distrito","District",NA,NA
+880,178,"PER","Peru",10,"Huancavelica",93,"Angaraes",880,"Secclla","Distrito","District",NA,NA
+881,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",881,"Arma","Distrito","District",NA,NA
+882,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",882,"Aurahua","Distrito","District",NA,NA
+883,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",883,"Capillas","Distrito","District",NA,NA
+884,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",884,"Castrovirreyna","Distrito","District",NA,NA
+885,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",885,"Chupamarca","Distrito","District",NA,NA
+886,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",886,"Cocas","Distrito","District",NA,NA
+887,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",887,"Huachos","Distrito","District",NA,NA
+888,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",888,"Huamatambo","Distrito","District",NA,NA
+889,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",889,"Mollepampa","Distrito","District",NA,NA
+890,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",890,"San Juan","Distrito","District",NA,NA
+891,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",891,"Santa Ana","Distrito","District",NA,NA
+892,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",892,"Tantara","Distrito","District",NA,NA
+893,178,"PER","Peru",10,"Huancavelica",94,"Castrovirreyna",893,"Ticrapo","Distrito","District",NA,NA
+894,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",894,"Anco","Distrito","District",NA,NA
+895,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",895,"Chinchihuasi","Distrito","District",NA,NA
+896,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",896,"Churcampa","Distrito","District",NA,NA
+897,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",897,"El Carmen","Distrito","District",NA,NA
+898,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",898,"La Merced","Distrito","District",NA,NA
+899,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",899,"Locroja","Distrito","District",NA,NA
+900,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",900,"Paucarbamba","Distrito","District",NA,NA
+901,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",901,"San Miguel de Mayocc","Distrito","District",NA,NA
+902,178,"PER","Peru",10,"Huancavelica",95,"Churcampa",902,"San Pedro de Coris","Distrito","District",NA,NA
+903,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",903,"Acobambilla","Distrito","District",NA,NA
+904,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",904,"Acoria","Distrito","District",NA,NA
+905,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",905,"Conayca","Distrito","District",NA,NA
+906,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",906,"Cuenca","Distrito","District",NA,NA
+907,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",907,"Huachocolpa","Distrito","District",NA,NA
+908,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",908,"Huancavelica","Distrito","District",NA,NA
+909,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",909,"Huayllahuara","Distrito","District",NA,NA
+910,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",910,"Izcuchaca","Distrito","District",NA,NA
+911,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",911,"Laria","Distrito","District",NA,NA
+912,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",912,"Manta","Distrito","District",NA,NA
+913,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",913,"Mariscal Caceres","Distrito","District",NA,NA
+914,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",914,"Moya","Distrito","District",NA,NA
+915,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",915,"Nuevo Occoro","Distrito","District",NA,NA
+916,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",916,"Palca","Distrito","District",NA,NA
+917,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",917,"Pilchaca","Distrito","District",NA,NA
+918,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",918,"Vilca","Distrito","District",NA,NA
+919,178,"PER","Peru",10,"Huancavelica",96,"Huancavelica",919,"Yauli","Distrito","District",NA,NA
+920,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",920,"Ayavi","Distrito","District",NA,NA
+921,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",921,"Cordova","Distrito","District",NA,NA
+922,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",922,"Huayacundo Arma","Distrito","District",NA,NA
+923,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",923,"Huaytara","Distrito","District",NA,NA
+924,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",924,"Laramarca","Distrito","District",NA,NA
+925,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",925,"Ocoyo","Distrito","District",NA,NA
+926,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",926,"Pilpichaca","Distrito","District",NA,NA
+927,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",927,"Querco","Distrito","District",NA,NA
+928,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",928,"Quito-Arma","Distrito","District",NA,NA
+929,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",929,"San Antonio de Cusicancha","Distrito","District",NA,NA
+930,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",930,"San Francisco de Sangayaico","Distrito","District",NA,NA
+931,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",931,"San Isidro","Distrito","District",NA,NA
+932,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",932,"Santiago de Chocorvos","Distrito","District",NA,NA
+933,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",933,"Santiago de Quirahuara","Distrito","District",NA,NA
+934,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",934,"Santo Domingo de Capillas","Distrito","District",NA,NA
+935,178,"PER","Peru",10,"Huancavelica",97,"Huaytara",935,"Tambo","Distrito","District",NA,NA
+936,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",936,"Acostambo","Distrito","District",NA,NA
+937,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",937,"Acraquia","Distrito","District",NA,NA
+938,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",938,"Ahuaycha","Distrito","District",NA,NA
+939,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",939,"Ahuimpuquio","Distrito","District",NA,NA
+940,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",940,"Colcabamba","Distrito","District",NA,NA
+941,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",941,"Daniel Hernandez","Distrito","District",NA,NA
+942,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",942,"Huachocolpa","Distrito","District",NA,NA
+943,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",943,"Huando","Distrito","District",NA,NA
+944,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",944,"Huaribamba","Distrito","District",NA,NA
+945,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",945,"Pachamarca","Distrito","District",NA,NA
+946,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",946,"Pampas","Distrito","District",NA,NA
+947,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",947,"Pazos","Distrito","District",NA,NA
+948,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",948,"Quishuar","Distrito","District",NA,NA
+949,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",949,"Salcabamba","Distrito","District",NA,NA
+950,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",950,"Salcahuasi","Distrito","District",NA,NA
+951,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",951,"San Marcos de Rocchac","Distrito","District",NA,NA
+952,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",952,"Surcubamba","Distrito","District",NA,NA
+953,178,"PER","Peru",10,"Huancavelica",98,"Tayacaja",953,"Tintay Puncu","Distrito","District",NA,NA
+954,178,"PER","Peru",11,"Ica",99,"Chincha",954,"Alto Laran","Distrito","District",NA,NA
+955,178,"PER","Peru",11,"Ica",99,"Chincha",955,"Chavin","Distrito","District",NA,NA
+956,178,"PER","Peru",11,"Ica",99,"Chincha",956,"Chincha Alta","Distrito","District",NA,NA
+957,178,"PER","Peru",11,"Ica",99,"Chincha",957,"Chincha Baja","Distrito","District",NA,NA
+958,178,"PER","Peru",11,"Ica",99,"Chincha",958,"El Carmen","Distrito","District",NA,NA
+959,178,"PER","Peru",11,"Ica",99,"Chincha",959,"Grocio Prado","Distrito","District",NA,NA
+960,178,"PER","Peru",11,"Ica",99,"Chincha",960,"Pueblo Nuevo","Distrito","District",NA,NA
+961,178,"PER","Peru",11,"Ica",99,"Chincha",961,"San Juan de Yanac","Distrito","District",NA,NA
+962,178,"PER","Peru",11,"Ica",99,"Chincha",962,"San Pedro de Huacarpana","Distrito","District",NA,NA
+963,178,"PER","Peru",11,"Ica",99,"Chincha",963,"Sunampe","Distrito","District",NA,NA
+964,178,"PER","Peru",11,"Ica",99,"Chincha",964,"Tambo de Mora","Distrito","District",NA,NA
+965,178,"PER","Peru",11,"Ica",100,"Ica",965,"Ica","Distrito","District",NA,NA
+966,178,"PER","Peru",11,"Ica",100,"Ica",966,"La Tingui","Distrito","District",NA,NA
+967,178,"PER","Peru",11,"Ica",100,"Ica",967,"Los Aquijes","Distrito","District",NA,NA
+968,178,"PER","Peru",11,"Ica",100,"Ica",968,"Ocucaje","Distrito","District",NA,NA
+969,178,"PER","Peru",11,"Ica",100,"Ica",969,"Pachacutec","Distrito","District",NA,NA
+970,178,"PER","Peru",11,"Ica",100,"Ica",970,"Parcona","Distrito","District",NA,NA
+971,178,"PER","Peru",11,"Ica",100,"Ica",971,"Pueblo Nuevo","Distrito","District",NA,NA
+972,178,"PER","Peru",11,"Ica",100,"Ica",972,"Salas","Distrito","District",NA,NA
+973,178,"PER","Peru",11,"Ica",100,"Ica",973,"San Jose de Los Molinos","Distrito","District",NA,NA
+974,178,"PER","Peru",11,"Ica",100,"Ica",974,"San Juan Bautista","Distrito","District",NA,NA
+975,178,"PER","Peru",11,"Ica",100,"Ica",975,"Santiago","Distrito","District",NA,NA
+976,178,"PER","Peru",11,"Ica",100,"Ica",976,"Subtanjalla","Distrito","District",NA,NA
+977,178,"PER","Peru",11,"Ica",100,"Ica",977,"Tate","Distrito","District",NA,NA
+978,178,"PER","Peru",11,"Ica",100,"Ica",978,"Yauca del Rosario","Distrito","District",NA,NA
+979,178,"PER","Peru",11,"Ica",101,"Nazca",979,"Changuillo","Distrito","District",NA,NA
+980,178,"PER","Peru",11,"Ica",101,"Nazca",980,"El Ingenio","Distrito","District",NA,NA
+981,178,"PER","Peru",11,"Ica",101,"Nazca",981,"Marcona","Distrito","District",NA,NA
+982,178,"PER","Peru",11,"Ica",101,"Nazca",982,"Nazca","Distrito","District",NA,NA
+983,178,"PER","Peru",11,"Ica",101,"Nazca",983,"Vista Alegre","Distrito","District",NA,NA
+984,178,"PER","Peru",11,"Ica",102,"Palpa",984,"Llipata","Distrito","District",NA,NA
+985,178,"PER","Peru",11,"Ica",102,"Palpa",985,"Palpa","Distrito","District",NA,NA
+986,178,"PER","Peru",11,"Ica",102,"Palpa",986,"Rio Grande","Distrito","District",NA,NA
+987,178,"PER","Peru",11,"Ica",102,"Palpa",987,"Santa Cruz","Distrito","District",NA,NA
+988,178,"PER","Peru",11,"Ica",102,"Palpa",988,"Tibillo","Distrito","District",NA,NA
+989,178,"PER","Peru",11,"Ica",103,"Pisco",989,"Huancano","Distrito","District",NA,NA
+990,178,"PER","Peru",11,"Ica",103,"Pisco",990,"Humay","Distrito","District",NA,NA
+991,178,"PER","Peru",11,"Ica",103,"Pisco",991,"Independencia","Distrito","District",NA,NA
+992,178,"PER","Peru",11,"Ica",103,"Pisco",992,"Paracas","Distrito","District",NA,NA
+993,178,"PER","Peru",11,"Ica",103,"Pisco",993,"Pisco","Distrito","District",NA,NA
+994,178,"PER","Peru",11,"Ica",103,"Pisco",994,"San Andres","Distrito","District",NA,NA
+995,178,"PER","Peru",11,"Ica",103,"Pisco",995,"San Clemente","Distrito","District",NA,NA
+996,178,"PER","Peru",11,"Ica",103,"Pisco",996,"Tupac Amaru Inca","Distrito","District",NA,NA
+997,178,"PER","Peru",12,"Junín",104,"Chanchamayo",997,"Chanchamayo","Distrito","District",NA,NA
+998,178,"PER","Peru",12,"Junín",104,"Chanchamayo",998,"Perene","Distrito","District",NA,NA
+999,178,"PER","Peru",12,"Junín",104,"Chanchamayo",999,"Pichanaqui","Distrito","District",NA,NA
+1000,178,"PER","Peru",12,"Junín",104,"Chanchamayo",1000,"San Luis de Shuaro","Distrito","District",NA,NA
+1001,178,"PER","Peru",12,"Junín",104,"Chanchamayo",1001,"San Ramon","Distrito","District",NA,NA
+1002,178,"PER","Peru",12,"Junín",104,"Chanchamayo",1002,"Vitoc","Distrito","District",NA,NA
+1003,178,"PER","Peru",12,"Junín",105,"Chupaca",1003,"3 de Diciembre","Distrito","District",NA,NA
+1004,178,"PER","Peru",12,"Junín",105,"Chupaca",1004,"Ahuac","Distrito","District",NA,NA
+1005,178,"PER","Peru",12,"Junín",105,"Chupaca",1005,"Chongos Bajo","Distrito","District",NA,NA
+1006,178,"PER","Peru",12,"Junín",105,"Chupaca",1006,"Chupaca","Distrito","District",NA,NA
+1007,178,"PER","Peru",12,"Junín",105,"Chupaca",1007,"Huachac","Distrito","District",NA,NA
+1008,178,"PER","Peru",12,"Junín",105,"Chupaca",1008,"Huamancaca Chico","Distrito","District",NA,NA
+1009,178,"PER","Peru",12,"Junín",105,"Chupaca",1009,"San Juan de Iscos","Distrito","District",NA,NA
+1010,178,"PER","Peru",12,"Junín",105,"Chupaca",1010,"San Juan de Jarpa","Distrito","District",NA,NA
+1011,178,"PER","Peru",12,"Junín",105,"Chupaca",1011,"Yanacancha","Distrito","District",NA,NA
+1012,178,"PER","Peru",12,"Junín",106,"Concepción",1012,"Aco","Distrito","District",NA,NA
+1013,178,"PER","Peru",12,"Junín",106,"Concepción",1013,"Andamarca","Distrito","District",NA,NA
+1014,178,"PER","Peru",12,"Junín",106,"Concepción",1014,"Chambara","Distrito","District",NA,NA
+1015,178,"PER","Peru",12,"Junín",106,"Concepción",1015,"Cochas","Distrito","District",NA,NA
+1016,178,"PER","Peru",12,"Junín",106,"Concepción",1016,"Comas","Distrito","District",NA,NA
+1017,178,"PER","Peru",12,"Junín",106,"Concepción",1017,"Concepcion","Distrito","District",NA,NA
+1018,178,"PER","Peru",12,"Junín",106,"Concepción",1018,"Heroinas Toledo","Distrito","District",NA,NA
+1019,178,"PER","Peru",12,"Junín",106,"Concepción",1019,"Manzanares","Distrito","District",NA,NA
+1020,178,"PER","Peru",12,"Junín",106,"Concepción",1020,"Mariscal Castilla","Distrito","District",NA,NA
+1021,178,"PER","Peru",12,"Junín",106,"Concepción",1021,"Matahuasi","Distrito","District",NA,NA
+1022,178,"PER","Peru",12,"Junín",106,"Concepción",1022,"Mito","Distrito","District",NA,NA
+1023,178,"PER","Peru",12,"Junín",106,"Concepción",1023,"Nueve de Julio","Distrito","District",NA,NA
+1024,178,"PER","Peru",12,"Junín",106,"Concepción",1024,"Orcotuna","Distrito","District",NA,NA
+1025,178,"PER","Peru",12,"Junín",106,"Concepción",1025,"San Jose de Quero","Distrito","District",NA,NA
+1026,178,"PER","Peru",12,"Junín",106,"Concepción",1026,"Santa Rosa de Ocopa","Distrito","District",NA,NA
+1027,178,"PER","Peru",12,"Junín",107,"Huancayo",1027,"Carhuacallanga","Distrito","District",NA,NA
+1028,178,"PER","Peru",12,"Junín",107,"Huancayo",1028,"Chacapampa","Distrito","District",NA,NA
+1029,178,"PER","Peru",12,"Junín",107,"Huancayo",1029,"Chicche","Distrito","District",NA,NA
+1030,178,"PER","Peru",12,"Junín",107,"Huancayo",1030,"Chilca","Distrito","District",NA,NA
+1031,178,"PER","Peru",12,"Junín",107,"Huancayo",1031,"Chongos Alto","Distrito","District",NA,NA
+1032,178,"PER","Peru",12,"Junín",107,"Huancayo",1032,"Chupuro","Distrito","District",NA,NA
+1033,178,"PER","Peru",12,"Junín",107,"Huancayo",1033,"Colca","Distrito","District",NA,NA
+1034,178,"PER","Peru",12,"Junín",107,"Huancayo",1034,"Cullhuas","Distrito","District",NA,NA
+1035,178,"PER","Peru",12,"Junín",107,"Huancayo",1035,"El Tambo","Distrito","District",NA,NA
+1036,178,"PER","Peru",12,"Junín",107,"Huancayo",1036,"Huacrapuquio","Distrito","District",NA,NA
+1037,178,"PER","Peru",12,"Junín",107,"Huancayo",1037,"Hualhuas","Distrito","District",NA,NA
+1038,178,"PER","Peru",12,"Junín",107,"Huancayo",1038,"Huancan","Distrito","District",NA,NA
+1039,178,"PER","Peru",12,"Junín",107,"Huancayo",1039,"Huancayo","Distrito","District",NA,NA
+1040,178,"PER","Peru",12,"Junín",107,"Huancayo",1040,"Huasicancha","Distrito","District",NA,NA
+1041,178,"PER","Peru",12,"Junín",107,"Huancayo",1041,"Huayucachi","Distrito","District",NA,NA
+1042,178,"PER","Peru",12,"Junín",107,"Huancayo",1042,"Ingenio","Distrito","District",NA,NA
+1043,178,"PER","Peru",12,"Junín",107,"Huancayo",1043,"Pariahuanca","Distrito","District",NA,NA
+1044,178,"PER","Peru",12,"Junín",107,"Huancayo",1044,"Pilcomayo","Distrito","District",NA,NA
+1045,178,"PER","Peru",12,"Junín",107,"Huancayo",1045,"Pucara","Distrito","District",NA,NA
+1046,178,"PER","Peru",12,"Junín",107,"Huancayo",1046,"Quichuay","Distrito","District",NA,NA
+1047,178,"PER","Peru",12,"Junín",107,"Huancayo",1047,"Quilcas","Distrito","District",NA,NA
+1048,178,"PER","Peru",12,"Junín",107,"Huancayo",1048,"Saño","Distrito","District",NA,NA
+1049,178,"PER","Peru",12,"Junín",107,"Huancayo",1049,"San Agustin","Distrito","District",NA,NA
+1050,178,"PER","Peru",12,"Junín",107,"Huancayo",1050,"San Jeronimo de Tunan","Distrito","District",NA,NA
+1051,178,"PER","Peru",12,"Junín",107,"Huancayo",1051,"Santo Domingo de Acobamba","Distrito","District",NA,NA
+1052,178,"PER","Peru",12,"Junín",107,"Huancayo",1052,"Sapallanga","Distrito","District",NA,NA
+1053,178,"PER","Peru",12,"Junín",107,"Huancayo",1053,"Sicaya","Distrito","District",NA,NA
+1054,178,"PER","Peru",12,"Junín",107,"Huancayo",1054,"Viques","Distrito","District",NA,NA
+1055,178,"PER","Peru",12,"Junín",108,"Jauja",1055,"Acolla","Distrito","District",NA,NA
+1056,178,"PER","Peru",12,"Junín",108,"Jauja",1056,"Apata","Distrito","District",NA,NA
+1057,178,"PER","Peru",12,"Junín",108,"Jauja",1057,"Ataura","Distrito","District",NA,NA
+1058,178,"PER","Peru",12,"Junín",108,"Jauja",1058,"Canchayllo","Distrito","District",NA,NA
+1059,178,"PER","Peru",12,"Junín",108,"Jauja",1059,"Curicaca","Distrito","District",NA,NA
+1060,178,"PER","Peru",12,"Junín",108,"Jauja",1060,"El Mantaro","Distrito","District",NA,NA
+1061,178,"PER","Peru",12,"Junín",108,"Jauja",1061,"Huamali","Distrito","District",NA,NA
+1062,178,"PER","Peru",12,"Junín",108,"Jauja",1062,"Huaripampa","Distrito","District",NA,NA
+1063,178,"PER","Peru",12,"Junín",108,"Jauja",1063,"Huertas","Distrito","District",NA,NA
+1064,178,"PER","Peru",12,"Junín",108,"Jauja",1064,"Janjaillo","Distrito","District",NA,NA
+1065,178,"PER","Peru",12,"Junín",108,"Jauja",1065,"Jauja","Distrito","District",NA,NA
+1066,178,"PER","Peru",12,"Junín",108,"Jauja",1066,"Julcan","Distrito","District",NA,NA
+1067,178,"PER","Peru",12,"Junín",108,"Jauja",1067,"Leonor Ordoñez","Distrito","District",NA,NA
+1068,178,"PER","Peru",12,"Junín",108,"Jauja",1068,"Llocllapampa","Distrito","District",NA,NA
+1069,178,"PER","Peru",12,"Junín",108,"Jauja",1069,"Marco","Distrito","District",NA,NA
+1070,178,"PER","Peru",12,"Junín",108,"Jauja",1070,"Masma Chicche","Distrito","District",NA,NA
+1071,178,"PER","Peru",12,"Junín",108,"Jauja",1071,"Masma","Distrito","District",NA,NA
+1072,178,"PER","Peru",12,"Junín",108,"Jauja",1072,"Molinos","Distrito","District",NA,NA
+1073,178,"PER","Peru",12,"Junín",108,"Jauja",1073,"Monobamba","Distrito","District",NA,NA
+1074,178,"PER","Peru",12,"Junín",108,"Jauja",1074,"Muqui","Distrito","District",NA,NA
+1075,178,"PER","Peru",12,"Junín",108,"Jauja",1075,"Muquiyauyo","Distrito","District",NA,NA
+1076,178,"PER","Peru",12,"Junín",108,"Jauja",1076,"Paca","Distrito","District",NA,NA
+1077,178,"PER","Peru",12,"Junín",108,"Jauja",1077,"Paccha","Distrito","District",NA,NA
+1078,178,"PER","Peru",12,"Junín",108,"Jauja",1078,"Pancan","Distrito","District",NA,NA
+1079,178,"PER","Peru",12,"Junín",108,"Jauja",1079,"Parco","Distrito","District",NA,NA
+1080,178,"PER","Peru",12,"Junín",108,"Jauja",1080,"Pomacancha","Distrito","District",NA,NA
+1081,178,"PER","Peru",12,"Junín",108,"Jauja",1081,"Ricran","Distrito","District",NA,NA
+1082,178,"PER","Peru",12,"Junín",108,"Jauja",1082,"San Lorenzo","Distrito","District",NA,NA
+1083,178,"PER","Peru",12,"Junín",108,"Jauja",1083,"San Pedro de Chunan","Distrito","District",NA,NA
+1084,178,"PER","Peru",12,"Junín",108,"Jauja",1084,"Sausa","Distrito","District",NA,NA
+1085,178,"PER","Peru",12,"Junín",108,"Jauja",1085,"Sincos","Distrito","District",NA,NA
+1086,178,"PER","Peru",12,"Junín",108,"Jauja",1086,"Tunan Marca","Distrito","District",NA,NA
+1087,178,"PER","Peru",12,"Junín",108,"Jauja",1087,"Yauli","Distrito","District",NA,NA
+1088,178,"PER","Peru",12,"Junín",108,"Jauja",1088,"Yauyos","Distrito","District",NA,NA
+1089,178,"PER","Peru",12,"Junín",109,"Junín",1089,"Carhuamayo","Distrito","District",NA,NA
+1090,178,"PER","Peru",12,"Junín",109,"Junín",1090,"Junin","Distrito","District",NA,NA
+1091,178,"PER","Peru",12,"Junín",109,"Junín",1091,"Lago Chinchay Cocha Junin","Distrito","District",NA,NA
+1092,178,"PER","Peru",12,"Junín",109,"Junín",1092,"Ondores","Distrito","District",NA,NA
+1093,178,"PER","Peru",12,"Junín",109,"Junín",1093,"Ulcumayo","Distrito","District",NA,NA
+1094,178,"PER","Peru",12,"Junín",110,"Satipo",1094,"Coviriali","Distrito","District",NA,NA
+1095,178,"PER","Peru",12,"Junín",110,"Satipo",1095,"Llaylla","Distrito","District",NA,NA
+1096,178,"PER","Peru",12,"Junín",110,"Satipo",1096,"Mazamari","Distrito","District",NA,NA
+1097,178,"PER","Peru",12,"Junín",110,"Satipo",1097,"Pampa Hermosa","Distrito","District",NA,NA
+1098,178,"PER","Peru",12,"Junín",110,"Satipo",1098,"Pangoa","Distrito","District",NA,NA
+1099,178,"PER","Peru",12,"Junín",110,"Satipo",1099,"Rio Negro","Distrito","District",NA,NA
+1100,178,"PER","Peru",12,"Junín",110,"Satipo",1100,"Rio Tambo","Distrito","District",NA,NA
+1101,178,"PER","Peru",12,"Junín",110,"Satipo",1101,"Satipo","Distrito","District",NA,NA
+1102,178,"PER","Peru",12,"Junín",111,"Tarma",1102,"Acobamba","Distrito","District",NA,NA
+1103,178,"PER","Peru",12,"Junín",111,"Tarma",1103,"Huaricolca","Distrito","District",NA,NA
+1104,178,"PER","Peru",12,"Junín",111,"Tarma",1104,"Huasahuasi","Distrito","District",NA,NA
+1105,178,"PER","Peru",12,"Junín",111,"Tarma",1105,"La Union","Distrito","District",NA,NA
+1106,178,"PER","Peru",12,"Junín",111,"Tarma",1106,"Palca","Distrito","District",NA,NA
+1107,178,"PER","Peru",12,"Junín",111,"Tarma",1107,"Palcamayo","Distrito","District",NA,NA
+1108,178,"PER","Peru",12,"Junín",111,"Tarma",1108,"San Pedro de Cajas","Distrito","District",NA,NA
+1109,178,"PER","Peru",12,"Junín",111,"Tarma",1109,"Tapo","Distrito","District",NA,NA
+1110,178,"PER","Peru",12,"Junín",111,"Tarma",1110,"Tarma","Distrito","District",NA,NA
+1111,178,"PER","Peru",12,"Junín",112,"Yauli",1111,"Chacapalpa","Distrito","District",NA,NA
+1112,178,"PER","Peru",12,"Junín",112,"Yauli",1112,"Huay-Huay","Distrito","District",NA,NA
+1113,178,"PER","Peru",12,"Junín",112,"Yauli",1113,"La Oroya","Distrito","District",NA,NA
+1114,178,"PER","Peru",12,"Junín",112,"Yauli",1114,"Marcapomacocha","Distrito","District",NA,NA
+1115,178,"PER","Peru",12,"Junín",112,"Yauli",1115,"Morococha","Distrito","District",NA,NA
+1116,178,"PER","Peru",12,"Junín",112,"Yauli",1116,"Paccha","Distrito","District",NA,NA
+1117,178,"PER","Peru",12,"Junín",112,"Yauli",1117,"Santa Barbara de Carhuacayan","Distrito","District",NA,NA
+1118,178,"PER","Peru",12,"Junín",112,"Yauli",1118,"Santa Rosa de Sacco","Distrito","District",NA,NA
+1119,178,"PER","Peru",12,"Junín",112,"Yauli",1119,"Suitucancha","Distrito","District",NA,NA
+1120,178,"PER","Peru",12,"Junín",112,"Yauli",1120,"Yauli","Distrito","District",NA,NA
+1121,178,"PER","Peru",13,"La Libertad",113,"Ascope",1121,"Ascope","Distrito","District",NA,NA
+1122,178,"PER","Peru",13,"La Libertad",113,"Ascope",1122,"Chicama","Distrito","District",NA,NA
+1123,178,"PER","Peru",13,"La Libertad",113,"Ascope",1123,"Chocope","Distrito","District",NA,NA
+1124,178,"PER","Peru",13,"La Libertad",113,"Ascope",1124,"Magdalena de Cao","Distrito","District",NA,NA
+1125,178,"PER","Peru",13,"La Libertad",113,"Ascope",1125,"Paijan","Distrito","District",NA,NA
+1126,178,"PER","Peru",13,"La Libertad",113,"Ascope",1126,"Razuri","Distrito","District",NA,NA
+1127,178,"PER","Peru",13,"La Libertad",113,"Ascope",1127,"Santiago de Cao","Distrito","District",NA,NA
+1128,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1128,"Bambamarca","Distrito","District",NA,NA
+1129,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1129,"Bolivar","Distrito","District",NA,NA
+1130,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1130,"Condormarca","Distrito","District",NA,NA
+1131,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1131,"Longotea","Distrito","District",NA,NA
+1132,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1132,"Uchumarca","Distrito","District",NA,NA
+1133,178,"PER","Peru",13,"La Libertad",114,"Bolívar",1133,"Ucuncha","Distrito","District",NA,NA
+1134,178,"PER","Peru",13,"La Libertad",115,"Chepén",1134,"Chepen","Distrito","District",NA,NA
+1135,178,"PER","Peru",13,"La Libertad",115,"Chepén",1135,"Pacanga","Distrito","District",NA,NA
+1136,178,"PER","Peru",13,"La Libertad",115,"Chepén",1136,"Pueblo Nuevo","Distrito","District",NA,NA
+1137,178,"PER","Peru",13,"La Libertad",116,"Gran Chimú",1137,"Cascas","Distrito","District",NA,NA
+1138,178,"PER","Peru",13,"La Libertad",116,"Gran Chimú",1138,"Lucma","Distrito","District",NA,NA
+1139,178,"PER","Peru",13,"La Libertad",116,"Gran Chimú",1139,"Marmot","Distrito","District",NA,NA
+1140,178,"PER","Peru",13,"La Libertad",116,"Gran Chimú",1140,"Sayapullo","Distrito","District",NA,NA
+1141,178,"PER","Peru",13,"La Libertad",117,"Julcan",1141,"Calamarca","Distrito","District",NA,NA
+1142,178,"PER","Peru",13,"La Libertad",117,"Julcan",1142,"Carabamba","Distrito","District",NA,NA
+1143,178,"PER","Peru",13,"La Libertad",117,"Julcan",1143,"Huaso","Distrito","District",NA,NA
+1144,178,"PER","Peru",13,"La Libertad",117,"Julcan",1144,"Julcan","Distrito","District",NA,NA
+1145,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1145,"Agallpampa","Distrito","District",NA,NA
+1146,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1146,"Charat","Distrito","District",NA,NA
+1147,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1147,"Huaranchal","Distrito","District",NA,NA
+1148,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1148,"La Cuesta","Distrito","District",NA,NA
+1149,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1149,"Mache","Distrito","District",NA,NA
+1150,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1150,"Otuzco","Distrito","District",NA,NA
+1151,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1151,"Paranday","Distrito","District",NA,NA
+1152,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1152,"Salpo","Distrito","District",NA,NA
+1153,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1153,"Sinsicap","Distrito","District",NA,NA
+1154,178,"PER","Peru",13,"La Libertad",118,"Otuzco",1154,"Usquil","Distrito","District",NA,NA
+1155,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo",1155,"Guadalupe","Distrito","District",NA,NA
+1156,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo",1156,"Jequetepeque","Distrito","District",NA,NA
+1157,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo",1157,"Pacasmayo","Distrito","District",NA,NA
+1158,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo",1158,"San Jose","Distrito","District",NA,NA
+1159,178,"PER","Peru",13,"La Libertad",119,"Pacasmayo",1159,"San Pedro de Lloc","Distrito","District",NA,NA
+1160,178,"PER","Peru",13,"La Libertad",120,"Pataz",1160,"Buldibuyo","Distrito","District",NA,NA
+1161,178,"PER","Peru",13,"La Libertad",120,"Pataz",1161,"Chillia","Distrito","District",NA,NA
+1162,178,"PER","Peru",13,"La Libertad",120,"Pataz",1162,"Huancaspata","Distrito","District",NA,NA
+1163,178,"PER","Peru",13,"La Libertad",120,"Pataz",1163,"Huaylillas","Distrito","District",NA,NA
+1164,178,"PER","Peru",13,"La Libertad",120,"Pataz",1164,"Huayo","Distrito","District",NA,NA
+1165,178,"PER","Peru",13,"La Libertad",120,"Pataz",1165,"Ongon","Distrito","District",NA,NA
+1166,178,"PER","Peru",13,"La Libertad",120,"Pataz",1166,"Parcoy","Distrito","District",NA,NA
+1167,178,"PER","Peru",13,"La Libertad",120,"Pataz",1167,"Pataz","Distrito","District",NA,NA
+1168,178,"PER","Peru",13,"La Libertad",120,"Pataz",1168,"Pias","Distrito","District",NA,NA
+1169,178,"PER","Peru",13,"La Libertad",120,"Pataz",1169,"Santiago de Challas","Distrito","District",NA,NA
+1170,178,"PER","Peru",13,"La Libertad",120,"Pataz",1170,"Taurija","Distrito","District",NA,NA
+1171,178,"PER","Peru",13,"La Libertad",120,"Pataz",1171,"Tayabamba","Distrito","District",NA,NA
+1172,178,"PER","Peru",13,"La Libertad",120,"Pataz",1172,"Urpay","Distrito","District",NA,NA
+1173,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1173,"Chugay","Distrito","District",NA,NA
+1174,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1174,"Cochorco","Distrito","District",NA,NA
+1175,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1175,"Curgos","Distrito","District",NA,NA
+1176,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1176,"Huamachuco","Distrito","District",NA,NA
+1177,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1177,"Marcabal","Distrito","District",NA,NA
+1178,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1178,"Sanagoran","Distrito","District",NA,NA
+1179,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1179,"Sarin","Distrito","District",NA,NA
+1180,178,"PER","Peru",13,"La Libertad",121,"Sánchez Carrión",1180,"Sartimbamba","Distrito","District",NA,NA
+1181,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1181,"Angasmarca","Distrito","District",NA,NA
+1182,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1182,"Cachicadan","Distrito","District",NA,NA
+1183,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1183,"Mollebamba","Distrito","District",NA,NA
+1184,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1184,"Mollepata","Distrito","District",NA,NA
+1185,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1185,"Quiruvilca","Distrito","District",NA,NA
+1186,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1186,"Santa Cruz de Chuca","Distrito","District",NA,NA
+1187,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1187,"Santiago de Chuco","Distrito","District",NA,NA
+1188,178,"PER","Peru",13,"La Libertad",122,"Santiago de Chuco",1188,"Sitabamba","Distrito","District",NA,NA
+1189,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1189,"El Porvenir","Distrito","District",NA,NA
+1190,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1190,"Florencia de Mora","Distrito","District",NA,NA
+1191,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1191,"Huanchaco","Distrito","District",NA,NA
+1192,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1192,"La Esperanza","Distrito","District",NA,NA
+1193,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1193,"Laredo","Distrito","District",NA,NA
+1194,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1194,"Moche","Distrito","District",NA,NA
+1195,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1195,"Poroto","Distrito","District",NA,NA
+1196,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1196,"Salaverry","Distrito","District",NA,NA
+1197,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1197,"Simbal","Distrito","District",NA,NA
+1198,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1198,"Trujillo","Distrito","District",NA,NA
+1199,178,"PER","Peru",13,"La Libertad",123,"Trujillo",1199,"Victor Larco Herrera","Distrito","District",NA,NA
+1200,178,"PER","Peru",13,"La Libertad",124,"Viru",1200,"Chao","Distrito","District",NA,NA
+1201,178,"PER","Peru",13,"La Libertad",124,"Viru",1201,"Guadalupito","Distrito","District",NA,NA
+1202,178,"PER","Peru",13,"La Libertad",124,"Viru",1202,"Viru","Distrito","District",NA,NA
+1203,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1203,"Chiclayo","Distrito","District",NA,NA
+1204,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1204,"Chongoyape","Distrito","District",NA,NA
+1205,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1205,"Eten Puerto","Distrito","District",NA,NA
+1206,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1206,"Eten","Distrito","District",NA,NA
+1207,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1207,"Jose Leonardo Ortiz","Distrito","District",NA,NA
+1208,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1208,"La Victoria","Distrito","District",NA,NA
+1209,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1209,"Lagunas","Distrito","District",NA,NA
+1210,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1210,"Monsefu","Distrito","District",NA,NA
+1211,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1211,"Nueva Arica","Distrito","District",NA,NA
+1212,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1212,"Oyotun","Distrito","District",NA,NA
+1213,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1213,"Picsi","Distrito","District",NA,NA
+1214,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1214,"Pimentel","Distrito","District",NA,NA
+1215,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1215,"Reque","Distrito","District",NA,NA
+1216,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1216,"Saña","Distrito","District",NA,NA
+1217,178,"PER","Peru",14,"Lambayeque",125,"Chiclayo",1217,"Santa Rosa","Distrito","District",NA,NA
+1218,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1218,"Cañaris","Distrito","District",NA,NA
+1219,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1219,"Ferreñafe","Distrito","District",NA,NA
+1220,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1220,"Incahuasi","Distrito","District",NA,NA
+1221,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1221,"Manuel Antonio Mesones Muro","Distrito","District",NA,NA
+1222,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1222,"Pitipo","Distrito","District",NA,NA
+1223,178,"PER","Peru",14,"Lambayeque",126,"Ferreñafe",1223,"Pueblo Nuevo","Distrito","District",NA,NA
+1224,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1224,"Chochope","Distrito","District",NA,NA
+1225,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1225,"Illimo","Distrito","District",NA,NA
+1226,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1226,"Jayanca","Distrito","District",NA,NA
+1227,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1227,"Lambayeque","Distrito","District",NA,NA
+1228,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1228,"Mochumi","Distrito","District",NA,NA
+1229,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1229,"Morrope","Distrito","District",NA,NA
+1230,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1230,"Motupe","Distrito","District",NA,NA
+1231,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1231,"Olmos","Distrito","District",NA,NA
+1232,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1232,"Pacora","Distrito","District",NA,NA
+1233,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1233,"Salas","Distrito","District",NA,NA
+1234,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1234,"San Jose","Distrito","District",NA,NA
+1235,178,"PER","Peru",14,"Lambayeque",127,"Lambayeque",1235,"Tucume","Distrito","District",NA,NA
+1236,178,"PER","Peru",15,"Lima Province",128,"Lima",1236,"Ancon","Distrito","District",NA,NA
+1237,178,"PER","Peru",15,"Lima Province",128,"Lima",1237,"Ate","Distrito","District",NA,NA
+1238,178,"PER","Peru",15,"Lima Province",128,"Lima",1238,"Barranco","Distrito","District",NA,NA
+1239,178,"PER","Peru",15,"Lima Province",128,"Lima",1239,"Breña","Distrito","District",NA,NA
+1240,178,"PER","Peru",15,"Lima Province",128,"Lima",1240,"Carabayllo","Distrito","District",NA,NA
+1241,178,"PER","Peru",15,"Lima Province",128,"Lima",1241,"Chaclacayo","Distrito","District",NA,NA
+1242,178,"PER","Peru",15,"Lima Province",128,"Lima",1242,"Chorrillos","Distrito","District",NA,NA
+1243,178,"PER","Peru",15,"Lima Province",128,"Lima",1243,"Cieneguilla","Distrito","District",NA,NA
+1244,178,"PER","Peru",15,"Lima Province",128,"Lima",1244,"Comas","Distrito","District",NA,NA
+1245,178,"PER","Peru",15,"Lima Province",128,"Lima",1245,"El Agustino","Distrito","District",NA,NA
+1246,178,"PER","Peru",15,"Lima Province",128,"Lima",1246,"Independencia","Distrito","District",NA,NA
+1247,178,"PER","Peru",15,"Lima Province",128,"Lima",1247,"Jesus Maria","Distrito","District",NA,NA
+1248,178,"PER","Peru",15,"Lima Province",128,"Lima",1248,"La Molina","Distrito","District",NA,NA
+1249,178,"PER","Peru",15,"Lima Province",128,"Lima",1249,"La Victoria","Distrito","District",NA,NA
+1250,178,"PER","Peru",15,"Lima Province",128,"Lima",1250,"Lima","Distrito","District",NA,NA
+1251,178,"PER","Peru",15,"Lima Province",128,"Lima",1251,"Lince","Distrito","District",NA,NA
+1252,178,"PER","Peru",15,"Lima Province",128,"Lima",1252,"Los Olivos","Distrito","District",NA,NA
+1253,178,"PER","Peru",15,"Lima Province",128,"Lima",1253,"Lurigancho","Distrito","District",NA,NA
+1254,178,"PER","Peru",15,"Lima Province",128,"Lima",1254,"Lurin","Distrito","District",NA,NA
+1255,178,"PER","Peru",15,"Lima Province",128,"Lima",1255,"Magdalena del Mar","Distrito","District",NA,NA
+1256,178,"PER","Peru",15,"Lima Province",128,"Lima",1256,"Magdalena Vieja","Distrito","District",NA,NA
+1257,178,"PER","Peru",15,"Lima Province",128,"Lima",1257,"Miraflores","Distrito","District",NA,NA
+1258,178,"PER","Peru",15,"Lima Province",128,"Lima",1258,"Pachacamac","Distrito","District",NA,NA
+1259,178,"PER","Peru",15,"Lima Province",128,"Lima",1259,"Pucusana","Distrito","District",NA,NA
+1260,178,"PER","Peru",15,"Lima Province",128,"Lima",1260,"Puente Piedra","Distrito","District",NA,NA
+1261,178,"PER","Peru",15,"Lima Province",128,"Lima",1261,"Punta Hermosa","Distrito","District",NA,NA
+1262,178,"PER","Peru",15,"Lima Province",128,"Lima",1262,"Punta Negra","Distrito","District",NA,NA
+1263,178,"PER","Peru",15,"Lima Province",128,"Lima",1263,"Rimac","Distrito","District",NA,NA
+1264,178,"PER","Peru",15,"Lima Province",128,"Lima",1264,"San Bartolo","Distrito","District",NA,NA
+1265,178,"PER","Peru",15,"Lima Province",128,"Lima",1265,"San Borja","Distrito","District",NA,NA
+1266,178,"PER","Peru",15,"Lima Province",128,"Lima",1266,"San Isidro","Distrito","District",NA,NA
+1267,178,"PER","Peru",15,"Lima Province",128,"Lima",1267,"San Juan de Lurigancho","Distrito","District",NA,NA
+1268,178,"PER","Peru",15,"Lima Province",128,"Lima",1268,"San Juan de Miraflores","Distrito","District",NA,NA
+1269,178,"PER","Peru",15,"Lima Province",128,"Lima",1269,"San Luis","Distrito","District",NA,NA
+1270,178,"PER","Peru",15,"Lima Province",128,"Lima",1270,"San Martin de Porres","Distrito","District",NA,NA
+1271,178,"PER","Peru",15,"Lima Province",128,"Lima",1271,"San Miguel","Distrito","District",NA,NA
+1272,178,"PER","Peru",15,"Lima Province",128,"Lima",1272,"Santa Anita","Distrito","District",NA,NA
+1273,178,"PER","Peru",15,"Lima Province",128,"Lima",1273,"Santa Maria del Mar","Distrito","District",NA,NA
+1274,178,"PER","Peru",15,"Lima Province",128,"Lima",1274,"Santa Rosa","Distrito","District",NA,NA
+1275,178,"PER","Peru",15,"Lima Province",128,"Lima",1275,"Santiago de Surco","Distrito","District",NA,NA
+1276,178,"PER","Peru",15,"Lima Province",128,"Lima",1276,"Surquillo","Distrito","District",NA,NA
+1277,178,"PER","Peru",15,"Lima Province",128,"Lima",1277,"Villa El Salvador","Distrito","District",NA,NA
+1278,178,"PER","Peru",15,"Lima Province",128,"Lima",1278,"Villa Maria del Triunfo","Distrito","District",NA,NA
+1279,178,"PER","Peru",16,"Lima",129,"Barranca",1279,"Barranca","Distrito","District",NA,NA
+1280,178,"PER","Peru",16,"Lima",129,"Barranca",1280,"Paramonga","Distrito","District",NA,NA
+1281,178,"PER","Peru",16,"Lima",129,"Barranca",1281,"Pativilca","Distrito","District",NA,NA
+1282,178,"PER","Peru",16,"Lima",129,"Barranca",1282,"Supe Puerto","Distrito","District",NA,NA
+1283,178,"PER","Peru",16,"Lima",129,"Barranca",1283,"Supe","Distrito","District",NA,NA
+1284,178,"PER","Peru",16,"Lima",130,"Cañete",1284,"Asia","Distrito","District",NA,NA
+1285,178,"PER","Peru",16,"Lima",130,"Cañete",1285,"Calango","Distrito","District",NA,NA
+1286,178,"PER","Peru",16,"Lima",130,"Cañete",1286,"Cerro Azul","Distrito","District",NA,NA
+1287,178,"PER","Peru",16,"Lima",130,"Cañete",1287,"Chilca","Distrito","District",NA,NA
+1288,178,"PER","Peru",16,"Lima",130,"Cañete",1288,"Coayllo","Distrito","District",NA,NA
+1289,178,"PER","Peru",16,"Lima",130,"Cañete",1289,"Imperial","Distrito","District",NA,NA
+1290,178,"PER","Peru",16,"Lima",130,"Cañete",1290,"Lunahuana","Distrito","District",NA,NA
+1291,178,"PER","Peru",16,"Lima",130,"Cañete",1291,"Mala","Distrito","District",NA,NA
+1292,178,"PER","Peru",16,"Lima",130,"Cañete",1292,"Nuevo Imperial","Distrito","District",NA,NA
+1293,178,"PER","Peru",16,"Lima",130,"Cañete",1293,"Pacaran","Distrito","District",NA,NA
+1294,178,"PER","Peru",16,"Lima",130,"Cañete",1294,"Quilmana","Distrito","District",NA,NA
+1295,178,"PER","Peru",16,"Lima",130,"Cañete",1295,"San Antonio","Distrito","District",NA,NA
+1296,178,"PER","Peru",16,"Lima",130,"Cañete",1296,"San Luis","Distrito","District",NA,NA
+1297,178,"PER","Peru",16,"Lima",130,"Cañete",1297,"San Vicente de Cañete","Distrito","District",NA,NA
+1298,178,"PER","Peru",16,"Lima",130,"Cañete",1298,"Santa Cruz de Flores","Distrito","District",NA,NA
+1299,178,"PER","Peru",16,"Lima",130,"Cañete",1299,"Zuñiga","Distrito","District",NA,NA
+1300,178,"PER","Peru",16,"Lima",131,"Cajatambo",1300,"Cajatambo","Distrito","District",NA,NA
+1301,178,"PER","Peru",16,"Lima",131,"Cajatambo",1301,"Copa","Distrito","District",NA,NA
+1302,178,"PER","Peru",16,"Lima",131,"Cajatambo",1302,"Gorgor","Distrito","District",NA,NA
+1303,178,"PER","Peru",16,"Lima",131,"Cajatambo",1303,"Huancapon","Distrito","District",NA,NA
+1304,178,"PER","Peru",16,"Lima",131,"Cajatambo",1304,"Manas","Distrito","District",NA,NA
+1305,178,"PER","Peru",16,"Lima",132,"Canta",1305,"Arahuay","Distrito","District",NA,NA
+1306,178,"PER","Peru",16,"Lima",132,"Canta",1306,"Canta","Distrito","District",NA,NA
+1307,178,"PER","Peru",16,"Lima",132,"Canta",1307,"Huamantanga","Distrito","District",NA,NA
+1308,178,"PER","Peru",16,"Lima",132,"Canta",1308,"Huaros","Distrito","District",NA,NA
+1309,178,"PER","Peru",16,"Lima",132,"Canta",1309,"Lachaqui","Distrito","District",NA,NA
+1310,178,"PER","Peru",16,"Lima",132,"Canta",1310,"San Buenaventura","Distrito","District",NA,NA
+1311,178,"PER","Peru",16,"Lima",132,"Canta",1311,"Santa Rosa de Quives","Distrito","District",NA,NA
+1312,178,"PER","Peru",16,"Lima",133,"Huaral",1312,"Atavillos Alto","Distrito","District",NA,NA
+1313,178,"PER","Peru",16,"Lima",133,"Huaral",1313,"Atavillos Bajo","Distrito","District",NA,NA
+1314,178,"PER","Peru",16,"Lima",133,"Huaral",1314,"Aucallama","Distrito","District",NA,NA
+1315,178,"PER","Peru",16,"Lima",133,"Huaral",1315,"Chancay","Distrito","District",NA,NA
+1316,178,"PER","Peru",16,"Lima",133,"Huaral",1316,"Huaral","Distrito","District",NA,NA
+1317,178,"PER","Peru",16,"Lima",133,"Huaral",1317,"Ihuari","Distrito","District",NA,NA
+1318,178,"PER","Peru",16,"Lima",133,"Huaral",1318,"Lampian","Distrito","District",NA,NA
+1319,178,"PER","Peru",16,"Lima",133,"Huaral",1319,"Pacaraos","Distrito","District",NA,NA
+1320,178,"PER","Peru",16,"Lima",133,"Huaral",1320,"San Miguel de Acos","Distrito","District",NA,NA
+1321,178,"PER","Peru",16,"Lima",133,"Huaral",1321,"Santa Cruz de Andamarca","Distrito","District",NA,NA
+1322,178,"PER","Peru",16,"Lima",133,"Huaral",1322,"Sumbilca","Distrito","District",NA,NA
+1323,178,"PER","Peru",16,"Lima",133,"Huaral",1323,"Veintisiete de Noviembre","Distrito","District",NA,NA
+1324,178,"PER","Peru",16,"Lima",134,"Huarochiri",1324,"Antioquia","Distrito","District",NA,NA
+1325,178,"PER","Peru",16,"Lima",134,"Huarochiri",1325,"Callahuanca","Distrito","District",NA,NA
+1326,178,"PER","Peru",16,"Lima",134,"Huarochiri",1326,"Carampoma","Distrito","District",NA,NA
+1327,178,"PER","Peru",16,"Lima",134,"Huarochiri",1327,"Chicla","Distrito","District",NA,NA
+1328,178,"PER","Peru",16,"Lima",134,"Huarochiri",1328,"Cuenca","Distrito","District",NA,NA
+1329,178,"PER","Peru",16,"Lima",134,"Huarochiri",1329,"Huachupampa","Distrito","District",NA,NA
+1330,178,"PER","Peru",16,"Lima",134,"Huarochiri",1330,"Huanza","Distrito","District",NA,NA
+1331,178,"PER","Peru",16,"Lima",134,"Huarochiri",1331,"Huarochiri","Distrito","District",NA,NA
+1332,178,"PER","Peru",16,"Lima",134,"Huarochiri",1332,"Lahuaytambo","Distrito","District",NA,NA
+1333,178,"PER","Peru",16,"Lima",134,"Huarochiri",1333,"Langa","Distrito","District",NA,NA
+1334,178,"PER","Peru",16,"Lima",134,"Huarochiri",1334,"Laraos","Distrito","District",NA,NA
+1335,178,"PER","Peru",16,"Lima",134,"Huarochiri",1335,"Mariatana","Distrito","District",NA,NA
+1336,178,"PER","Peru",16,"Lima",134,"Huarochiri",1336,"Matucana","Distrito","District",NA,NA
+1337,178,"PER","Peru",16,"Lima",134,"Huarochiri",1337,"Ricardo Palma","Distrito","District",NA,NA
+1338,178,"PER","Peru",16,"Lima",134,"Huarochiri",1338,"San Andres de Tupicocha","Distrito","District",NA,NA
+1339,178,"PER","Peru",16,"Lima",134,"Huarochiri",1339,"San Antonio","Distrito","District",NA,NA
+1340,178,"PER","Peru",16,"Lima",134,"Huarochiri",1340,"San Bartolome","Distrito","District",NA,NA
+1341,178,"PER","Peru",16,"Lima",134,"Huarochiri",1341,"San Damian","Distrito","District",NA,NA
+1342,178,"PER","Peru",16,"Lima",134,"Huarochiri",1342,"San Juan de Iris","Distrito","District",NA,NA
+1343,178,"PER","Peru",16,"Lima",134,"Huarochiri",1343,"San Juan de Tantaranche","Distrito","District",NA,NA
+1344,178,"PER","Peru",16,"Lima",134,"Huarochiri",1344,"San Lorenzo de Quinti","Distrito","District",NA,NA
+1345,178,"PER","Peru",16,"Lima",134,"Huarochiri",1345,"San Mateo de Otao","Distrito","District",NA,NA
+1346,178,"PER","Peru",16,"Lima",134,"Huarochiri",1346,"San Mateo","Distrito","District",NA,NA
+1347,178,"PER","Peru",16,"Lima",134,"Huarochiri",1347,"San Pedro de Casta","Distrito","District",NA,NA
+1348,178,"PER","Peru",16,"Lima",134,"Huarochiri",1348,"San Pedro de Huancayre","Distrito","District",NA,NA
+1349,178,"PER","Peru",16,"Lima",134,"Huarochiri",1349,"Sangallaya","Distrito","District",NA,NA
+1350,178,"PER","Peru",16,"Lima",134,"Huarochiri",1350,"Santa Cruz de Cocachacra","Distrito","District",NA,NA
+1351,178,"PER","Peru",16,"Lima",134,"Huarochiri",1351,"Santa Eulalia","Distrito","District",NA,NA
+1352,178,"PER","Peru",16,"Lima",134,"Huarochiri",1352,"Santiago de Anchucaya","Distrito","District",NA,NA
+1353,178,"PER","Peru",16,"Lima",134,"Huarochiri",1353,"Santiago de Tuna","Distrito","District",NA,NA
+1354,178,"PER","Peru",16,"Lima",134,"Huarochiri",1354,"Santo Domingo de Los Olleros","Distrito","District",NA,NA
+1355,178,"PER","Peru",16,"Lima",134,"Huarochiri",1355,"Surco","Distrito","District",NA,NA
+1356,178,"PER","Peru",16,"Lima",135,"Huaura",1356,"Ambar","Distrito","District",NA,NA
+1357,178,"PER","Peru",16,"Lima",135,"Huaura",1357,"Caleta de Carquin","Distrito","District",NA,NA
+1358,178,"PER","Peru",16,"Lima",135,"Huaura",1358,"Checras","Distrito","District",NA,NA
+1359,178,"PER","Peru",16,"Lima",135,"Huaura",1359,"Huacho","Distrito","District",NA,NA
+1360,178,"PER","Peru",16,"Lima",135,"Huaura",1360,"Hualmay","Distrito","District",NA,NA
+1361,178,"PER","Peru",16,"Lima",135,"Huaura",1361,"Huaura","Distrito","District",NA,NA
+1362,178,"PER","Peru",16,"Lima",135,"Huaura",1362,"Leoncio Prado","Distrito","District",NA,NA
+1363,178,"PER","Peru",16,"Lima",135,"Huaura",1363,"Paccho","Distrito","District",NA,NA
+1364,178,"PER","Peru",16,"Lima",135,"Huaura",1364,"Santa Leonor","Distrito","District",NA,NA
+1365,178,"PER","Peru",16,"Lima",135,"Huaura",1365,"Santa Maria","Distrito","District",NA,NA
+1366,178,"PER","Peru",16,"Lima",135,"Huaura",1366,"Sayan","Distrito","District",NA,NA
+1367,178,"PER","Peru",16,"Lima",135,"Huaura",1367,"Vegueta","Distrito","District",NA,NA
+1368,178,"PER","Peru",16,"Lima",136,"Oyon",1368,"Andajes","Distrito","District",NA,NA
+1369,178,"PER","Peru",16,"Lima",136,"Oyon",1369,"Caujul","Distrito","District",NA,NA
+1370,178,"PER","Peru",16,"Lima",136,"Oyon",1370,"Cochamarca","Distrito","District",NA,NA
+1371,178,"PER","Peru",16,"Lima",136,"Oyon",1371,"Navan","Distrito","District",NA,NA
+1372,178,"PER","Peru",16,"Lima",136,"Oyon",1372,"Oyon","Distrito","District",NA,NA
+1373,178,"PER","Peru",16,"Lima",136,"Oyon",1373,"Pachangara","Distrito","District",NA,NA
+1374,178,"PER","Peru",16,"Lima",137,"Yauyos",1374,"Alis","Distrito","District",NA,NA
+1375,178,"PER","Peru",16,"Lima",137,"Yauyos",1375,"Ayauca","Distrito","District",NA,NA
+1376,178,"PER","Peru",16,"Lima",137,"Yauyos",1376,"Ayaviri","Distrito","District",NA,NA
+1377,178,"PER","Peru",16,"Lima",137,"Yauyos",1377,"Azangaro","Distrito","District",NA,NA
+1378,178,"PER","Peru",16,"Lima",137,"Yauyos",1378,"Cacra","Distrito","District",NA,NA
+1379,178,"PER","Peru",16,"Lima",137,"Yauyos",1379,"Carania","Distrito","District",NA,NA
+1380,178,"PER","Peru",16,"Lima",137,"Yauyos",1380,"Catahuasi","Distrito","District",NA,NA
+1381,178,"PER","Peru",16,"Lima",137,"Yauyos",1381,"Chocos","Distrito","District",NA,NA
+1382,178,"PER","Peru",16,"Lima",137,"Yauyos",1382,"Cochas","Distrito","District",NA,NA
+1383,178,"PER","Peru",16,"Lima",137,"Yauyos",1383,"Colonia","Distrito","District",NA,NA
+1384,178,"PER","Peru",16,"Lima",137,"Yauyos",1384,"Hongos","Distrito","District",NA,NA
+1385,178,"PER","Peru",16,"Lima",137,"Yauyos",1385,"Huañec","Distrito","District",NA,NA
+1386,178,"PER","Peru",16,"Lima",137,"Yauyos",1386,"Huampara","Distrito","District",NA,NA
+1387,178,"PER","Peru",16,"Lima",137,"Yauyos",1387,"Huancaya","Distrito","District",NA,NA
+1388,178,"PER","Peru",16,"Lima",137,"Yauyos",1388,"Huangascar","Distrito","District",NA,NA
+1389,178,"PER","Peru",16,"Lima",137,"Yauyos",1389,"Huantan","Distrito","District",NA,NA
+1390,178,"PER","Peru",16,"Lima",137,"Yauyos",1390,"Laraos","Distrito","District",NA,NA
+1391,178,"PER","Peru",16,"Lima",137,"Yauyos",1391,"Lincha","Distrito","District",NA,NA
+1392,178,"PER","Peru",16,"Lima",137,"Yauyos",1392,"Madean","Distrito","District",NA,NA
+1393,178,"PER","Peru",16,"Lima",137,"Yauyos",1393,"Miraflores","Distrito","District",NA,NA
+1394,178,"PER","Peru",16,"Lima",137,"Yauyos",1394,"Omas","Distrito","District",NA,NA
+1395,178,"PER","Peru",16,"Lima",137,"Yauyos",1395,"Putinza","Distrito","District",NA,NA
+1396,178,"PER","Peru",16,"Lima",137,"Yauyos",1396,"Quinches","Distrito","District",NA,NA
+1397,178,"PER","Peru",16,"Lima",137,"Yauyos",1397,"Quinocay","Distrito","District",NA,NA
+1398,178,"PER","Peru",16,"Lima",137,"Yauyos",1398,"San Joaquin","Distrito","District",NA,NA
+1399,178,"PER","Peru",16,"Lima",137,"Yauyos",1399,"San Pedro de Pilas","Distrito","District",NA,NA
+1400,178,"PER","Peru",16,"Lima",137,"Yauyos",1400,"Tanta","Distrito","District",NA,NA
+1401,178,"PER","Peru",16,"Lima",137,"Yauyos",1401,"Tauripampa","Distrito","District",NA,NA
+1402,178,"PER","Peru",16,"Lima",137,"Yauyos",1402,"Tomas","Distrito","District",NA,NA
+1403,178,"PER","Peru",16,"Lima",137,"Yauyos",1403,"Tupe","Distrito","District",NA,NA
+1404,178,"PER","Peru",16,"Lima",137,"Yauyos",1404,"Viñac","Distrito","District",NA,NA
+1405,178,"PER","Peru",16,"Lima",137,"Yauyos",1405,"Vitis","Distrito","District",NA,NA
+1406,178,"PER","Peru",16,"Lima",137,"Yauyos",1406,"Yauyos","Distrito","District",NA,NA
+1407,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1407,"Balsapuerto","Distrito","District",NA,NA
+1408,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1408,"Barranca","Distrito","District",NA,NA
+1409,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1409,"Cahuapanas","Distrito","District",NA,NA
+1410,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1410,"Jeberos","Distrito","District",NA,NA
+1411,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1411,"Lagunas","Distrito","District",NA,NA
+1412,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1412,"Manseriche","Distrito","District",NA,NA
+1413,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1413,"Morona","Distrito","District",NA,NA
+1414,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1414,"Pastaza","Distrito","District",NA,NA
+1415,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1415,"Santa Cruz","Distrito","District",NA,NA
+1416,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1416,"Teniente Cesar Lopez Rojas","Distrito","District",NA,NA
+1417,178,"PER","Peru",17,"Loreto",138,"Alto Amazonas",1417,"Yurimaguas","Distrito","District",NA,NA
+1418,178,"PER","Peru",17,"Loreto",139,"Loreto",1418,"Nauta","Distrito","District",NA,NA
+1419,178,"PER","Peru",17,"Loreto",139,"Loreto",1419,"Parinari","Distrito","District",NA,NA
+1420,178,"PER","Peru",17,"Loreto",139,"Loreto",1420,"Tigre","Distrito","District",NA,NA
+1421,178,"PER","Peru",17,"Loreto",139,"Loreto",1421,"Trompeteros","Distrito","District",NA,NA
+1422,178,"PER","Peru",17,"Loreto",139,"Loreto",1422,"Urarinas","Distrito","District",NA,NA
+1423,178,"PER","Peru",17,"Loreto",140,"Mariscal Ramón Castilla",1423,"Pebas","Distrito","District",NA,NA
+1424,178,"PER","Peru",17,"Loreto",140,"Mariscal Ramón Castilla",1424,"Ramon Castilla","Distrito","District",NA,NA
+1425,178,"PER","Peru",17,"Loreto",140,"Mariscal Ramón Castilla",1425,"San Pablo","Distrito","District",NA,NA
+1426,178,"PER","Peru",17,"Loreto",140,"Mariscal Ramón Castilla",1426,"Yavari","Distrito","District",NA,NA
+1427,178,"PER","Peru",17,"Loreto",141,"Maynas",1427,"Alto Nanay","Distrito","District",NA,NA
+1428,178,"PER","Peru",17,"Loreto",141,"Maynas",1428,"Fernando Lores","Distrito","District",NA,NA
+1429,178,"PER","Peru",17,"Loreto",141,"Maynas",1429,"Indiana","Distrito","District",NA,NA
+1430,178,"PER","Peru",17,"Loreto",141,"Maynas",1430,"Iquitos","Distrito","District",NA,NA
+1431,178,"PER","Peru",17,"Loreto",141,"Maynas",1431,"Las Amazonas","Distrito","District",NA,NA
+1432,178,"PER","Peru",17,"Loreto",141,"Maynas",1432,"Mazan","Distrito","District",NA,NA
+1433,178,"PER","Peru",17,"Loreto",141,"Maynas",1433,"Napo","Distrito","District",NA,NA
+1434,178,"PER","Peru",17,"Loreto",141,"Maynas",1434,"Punchana","Distrito","District",NA,NA
+1435,178,"PER","Peru",17,"Loreto",141,"Maynas",1435,"Putumayo","Distrito","District",NA,NA
+1436,178,"PER","Peru",17,"Loreto",141,"Maynas",1436,"Torres Causana","Distrito","District",NA,NA
+1437,178,"PER","Peru",17,"Loreto",141,"Maynas",1437,"Yaquerana","Distrito","District",NA,NA
+1438,178,"PER","Peru",17,"Loreto",142,"Requena",1438,"Alto Tapiche","Distrito","District",NA,NA
+1439,178,"PER","Peru",17,"Loreto",142,"Requena",1439,"Capelo","Distrito","District",NA,NA
+1440,178,"PER","Peru",17,"Loreto",142,"Requena",1440,"Emilio San Martin","Distrito","District",NA,NA
+1441,178,"PER","Peru",17,"Loreto",142,"Requena",1441,"Jenaro Herrera","Distrito","District",NA,NA
+1442,178,"PER","Peru",17,"Loreto",142,"Requena",1442,"Maquia","Distrito","District",NA,NA
+1443,178,"PER","Peru",17,"Loreto",142,"Requena",1443,"Puinahua","Distrito","District",NA,NA
+1444,178,"PER","Peru",17,"Loreto",142,"Requena",1444,"Requena","Distrito","District",NA,NA
+1445,178,"PER","Peru",17,"Loreto",142,"Requena",1445,"Saquena","Distrito","District",NA,NA
+1446,178,"PER","Peru",17,"Loreto",142,"Requena",1446,"Soplin","Distrito","District",NA,NA
+1447,178,"PER","Peru",17,"Loreto",142,"Requena",1447,"Tapiche","Distrito","District",NA,NA
+1448,178,"PER","Peru",17,"Loreto",143,"Ucayali",1448,"Contamana","Distrito","District",NA,NA
+1449,178,"PER","Peru",17,"Loreto",143,"Ucayali",1449,"Inahuaya","Distrito","District",NA,NA
+1450,178,"PER","Peru",17,"Loreto",143,"Ucayali",1450,"Padre Marquez","Distrito","District",NA,NA
+1451,178,"PER","Peru",17,"Loreto",143,"Ucayali",1451,"Pampa Hermosa","Distrito","District",NA,NA
+1452,178,"PER","Peru",17,"Loreto",143,"Ucayali",1452,"Sarayacu","Distrito","District",NA,NA
+1453,178,"PER","Peru",17,"Loreto",143,"Ucayali",1453,"Vargas Guerra","Distrito","District",NA,NA
+1454,178,"PER","Peru",18,"Madre de Dios",144,"Manu",1454,"Fitzcarrald","Distrito","District",NA,NA
+1455,178,"PER","Peru",18,"Madre de Dios",144,"Manu",1455,"Madre de Dios","Distrito","District",NA,NA
+1456,178,"PER","Peru",18,"Madre de Dios",144,"Manu",1456,"Manu","Distrito","District",NA,NA
+1457,178,"PER","Peru",18,"Madre de Dios",145,"Tahuamanu",1457,"Iñapari","Distrito","District",NA,NA
+1458,178,"PER","Peru",18,"Madre de Dios",145,"Tahuamanu",1458,"Iberia","Distrito","District",NA,NA
+1459,178,"PER","Peru",18,"Madre de Dios",145,"Tahuamanu",1459,"Tahuamanu","Distrito","District",NA,NA
+1460,178,"PER","Peru",18,"Madre de Dios",146,"Tambopata",1460,"Inambari","Distrito","District",NA,NA
+1461,178,"PER","Peru",18,"Madre de Dios",146,"Tambopata",1461,"Laberinto","Distrito","District",NA,NA
+1462,178,"PER","Peru",18,"Madre de Dios",146,"Tambopata",1462,"Las Piedras","Distrito","District",NA,NA
+1463,178,"PER","Peru",18,"Madre de Dios",146,"Tambopata",1463,"Tambopata","Distrito","District",NA,NA
+1464,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1464,"Chojata","Distrito","District",NA,NA
+1465,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1465,"Coalaque","Distrito","District",NA,NA
+1466,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1466,"Ichuña","Distrito","District",NA,NA
+1467,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1467,"La Capilla","Distrito","District",NA,NA
+1468,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1468,"Lloque","Distrito","District",NA,NA
+1469,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1469,"Matalaque","Distrito","District",NA,NA
+1470,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1470,"Omate","Distrito","District",NA,NA
+1471,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1471,"Puquina","Distrito","District",NA,NA
+1472,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1472,"Quinistaquillas","Distrito","District",NA,NA
+1473,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1473,"Ubinas","Distrito","District",NA,NA
+1474,178,"PER","Peru",19,"Moquegua",147,"General Sánchez Cerro",1474,"Yunga","Distrito","District",NA,NA
+1475,178,"PER","Peru",19,"Moquegua",148,"Ilo",1475,"El Algarrobal","Distrito","District",NA,NA
+1476,178,"PER","Peru",19,"Moquegua",148,"Ilo",1476,"Ilo","Distrito","District",NA,NA
+1477,178,"PER","Peru",19,"Moquegua",148,"Ilo",1477,"Pacocha","Distrito","District",NA,NA
+1478,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1478,"Carumas","Distrito","District",NA,NA
+1479,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1479,"Cuchumbaya","Distrito","District",NA,NA
+1480,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1480,"Moquegua","Distrito","District",NA,NA
+1481,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1481,"Samegua","Distrito","District",NA,NA
+1482,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1482,"San Cristobal","Distrito","District",NA,NA
+1483,178,"PER","Peru",19,"Moquegua",149,"Mariscal Nieto",1483,"Torata","Distrito","District",NA,NA
+1484,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1484,"Chacayan","Distrito","District",NA,NA
+1485,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1485,"Goyllarisquizga","Distrito","District",NA,NA
+1486,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1486,"Paucar","Distrito","District",NA,NA
+1487,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1487,"San Pedro de Pillao","Distrito","District",NA,NA
+1488,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1488,"Santa Ana de Tusi","Distrito","District",NA,NA
+1489,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1489,"Tapuc","Distrito","District",NA,NA
+1490,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1490,"Vilcabamba","Distrito","District",NA,NA
+1491,178,"PER","Peru",20,"Pasco",150,"Daniel Alcides Carrión",1491,"Yanahuanca","Distrito","District",NA,NA
+1492,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1492,"Chontabamba","Distrito","District",NA,NA
+1493,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1493,"Huancabamba","Distrito","District",NA,NA
+1494,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1494,"Oxapampa","Distrito","District",NA,NA
+1495,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1495,"Palcazu","Distrito","District",NA,NA
+1496,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1496,"Pozuzo","Distrito","District",NA,NA
+1497,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1497,"Puerto Bermudez","Distrito","District",NA,NA
+1498,178,"PER","Peru",20,"Pasco",151,"Oxapampa",1498,"Villa Rica","Distrito","District",NA,NA
+1499,178,"PER","Peru",20,"Pasco",152,"Pasco",1499,"Chaupimarca","Distrito","District",NA,NA
+1500,178,"PER","Peru",20,"Pasco",152,"Pasco",1500,"Huachon","Distrito","District",NA,NA
+1501,178,"PER","Peru",20,"Pasco",152,"Pasco",1501,"Huariaca","Distrito","District",NA,NA
+1502,178,"PER","Peru",20,"Pasco",152,"Pasco",1502,"Huayllay","Distrito","District",NA,NA
+1503,178,"PER","Peru",20,"Pasco",152,"Pasco",1503,"Ninacaca","Distrito","District",NA,NA
+1504,178,"PER","Peru",20,"Pasco",152,"Pasco",1504,"Pallanchacra","Distrito","District",NA,NA
+1505,178,"PER","Peru",20,"Pasco",152,"Pasco",1505,"Paucartambo","Distrito","District",NA,NA
+1506,178,"PER","Peru",20,"Pasco",152,"Pasco",1506,"San Fco.De Asis de Yarusyacan","Distrito","District",NA,NA
+1507,178,"PER","Peru",20,"Pasco",152,"Pasco",1507,"Simon Bolivar","Distrito","District",NA,NA
+1508,178,"PER","Peru",20,"Pasco",152,"Pasco",1508,"Ticlacayan","Distrito","District",NA,NA
+1509,178,"PER","Peru",20,"Pasco",152,"Pasco",1509,"Tinyahuarco","Distrito","District",NA,NA
+1510,178,"PER","Peru",20,"Pasco",152,"Pasco",1510,"Vicco","Distrito","District",NA,NA
+1511,178,"PER","Peru",20,"Pasco",152,"Pasco",1511,"Yanacancha","Distrito","District",NA,NA
+1512,178,"PER","Peru",21,"Piura",153,"Ayabaca",1512,"Ayabaca","Distrito","District",NA,NA
+1513,178,"PER","Peru",21,"Piura",153,"Ayabaca",1513,"Frias","Distrito","District",NA,NA
+1514,178,"PER","Peru",21,"Piura",153,"Ayabaca",1514,"Jilili","Distrito","District",NA,NA
+1515,178,"PER","Peru",21,"Piura",153,"Ayabaca",1515,"Lagunas","Distrito","District",NA,NA
+1516,178,"PER","Peru",21,"Piura",153,"Ayabaca",1516,"Montero","Distrito","District",NA,NA
+1517,178,"PER","Peru",21,"Piura",153,"Ayabaca",1517,"Pacaipampa","Distrito","District",NA,NA
+1518,178,"PER","Peru",21,"Piura",153,"Ayabaca",1518,"Paimas","Distrito","District",NA,NA
+1519,178,"PER","Peru",21,"Piura",153,"Ayabaca",1519,"Sapillica","Distrito","District",NA,NA
+1520,178,"PER","Peru",21,"Piura",153,"Ayabaca",1520,"Sicchez","Distrito","District",NA,NA
+1521,178,"PER","Peru",21,"Piura",153,"Ayabaca",1521,"Suyo","Distrito","District",NA,NA
+1522,178,"PER","Peru",21,"Piura",154,"Huancabamba",1522,"Canchaque","Distrito","District",NA,NA
+1523,178,"PER","Peru",21,"Piura",154,"Huancabamba",1523,"El Carmen de la Frontera","Distrito","District",NA,NA
+1524,178,"PER","Peru",21,"Piura",154,"Huancabamba",1524,"Huancabamba","Distrito","District",NA,NA
+1525,178,"PER","Peru",21,"Piura",154,"Huancabamba",1525,"Huarmaca","Distrito","District",NA,NA
+1526,178,"PER","Peru",21,"Piura",154,"Huancabamba",1526,"Lalaquiz","Distrito","District",NA,NA
+1527,178,"PER","Peru",21,"Piura",154,"Huancabamba",1527,"San Miguel de El Faique","Distrito","District",NA,NA
+1528,178,"PER","Peru",21,"Piura",154,"Huancabamba",1528,"Sondor","Distrito","District",NA,NA
+1529,178,"PER","Peru",21,"Piura",154,"Huancabamba",1529,"Sondorillo","Distrito","District",NA,NA
+1530,178,"PER","Peru",21,"Piura",155,"Morropón",1530,"Buenos Aires","Distrito","District",NA,NA
+1531,178,"PER","Peru",21,"Piura",155,"Morropón",1531,"Chalaco","Distrito","District",NA,NA
+1532,178,"PER","Peru",21,"Piura",155,"Morropón",1532,"Chulucanas","Distrito","District",NA,NA
+1533,178,"PER","Peru",21,"Piura",155,"Morropón",1533,"La Matanza","Distrito","District",NA,NA
+1534,178,"PER","Peru",21,"Piura",155,"Morropón",1534,"Morropon","Distrito","District",NA,NA
+1535,178,"PER","Peru",21,"Piura",155,"Morropón",1535,"Salitral","Distrito","District",NA,NA
+1536,178,"PER","Peru",21,"Piura",155,"Morropón",1536,"San Juan de Bigote","Distrito","District",NA,NA
+1537,178,"PER","Peru",21,"Piura",155,"Morropón",1537,"Santa Catalina de Mossa","Distrito","District",NA,NA
+1538,178,"PER","Peru",21,"Piura",155,"Morropón",1538,"Santo Domingo","Distrito","District",NA,NA
+1539,178,"PER","Peru",21,"Piura",155,"Morropón",1539,"Yamango","Distrito","District",NA,NA
+1540,178,"PER","Peru",21,"Piura",156,"Paita",1540,"Amotape","Distrito","District",NA,NA
+1541,178,"PER","Peru",21,"Piura",156,"Paita",1541,"Arenal","Distrito","District",NA,NA
+1542,178,"PER","Peru",21,"Piura",156,"Paita",1542,"Colan","Distrito","District",NA,NA
+1543,178,"PER","Peru",21,"Piura",156,"Paita",1543,"La Huaca","Distrito","District",NA,NA
+1544,178,"PER","Peru",21,"Piura",156,"Paita",1544,"Paita","Distrito","District",NA,NA
+1545,178,"PER","Peru",21,"Piura",156,"Paita",1545,"Tamarindo","Distrito","District",NA,NA
+1546,178,"PER","Peru",21,"Piura",156,"Paita",1546,"Vichayal","Distrito","District",NA,NA
+1547,178,"PER","Peru",21,"Piura",157,"Piura",1547,"Castilla","Distrito","District",NA,NA
+1548,178,"PER","Peru",21,"Piura",157,"Piura",1548,"Catacaos","Distrito","District",NA,NA
+1549,178,"PER","Peru",21,"Piura",157,"Piura",1549,"Cura Mori","Distrito","District",NA,NA
+1550,178,"PER","Peru",21,"Piura",157,"Piura",1550,"El Tallan","Distrito","District",NA,NA
+1551,178,"PER","Peru",21,"Piura",157,"Piura",1551,"La Arena","Distrito","District",NA,NA
+1552,178,"PER","Peru",21,"Piura",157,"Piura",1552,"La Union","Distrito","District",NA,NA
+1553,178,"PER","Peru",21,"Piura",157,"Piura",1553,"Las Lomas","Distrito","District",NA,NA
+1554,178,"PER","Peru",21,"Piura",157,"Piura",1554,"Piura","Distrito","District",NA,NA
+1555,178,"PER","Peru",21,"Piura",157,"Piura",1555,"Tambo Grande","Distrito","District",NA,NA
+1556,178,"PER","Peru",21,"Piura",158,"Sechura",1556,"Bellavista de la Union","Distrito","District",NA,NA
+1557,178,"PER","Peru",21,"Piura",158,"Sechura",1557,"Bernal","Distrito","District",NA,NA
+1558,178,"PER","Peru",21,"Piura",158,"Sechura",1558,"Cristo Nos Valga","Distrito","District",NA,NA
+1559,178,"PER","Peru",21,"Piura",158,"Sechura",1559,"Rinconada Llicuar","Distrito","District",NA,NA
+1560,178,"PER","Peru",21,"Piura",158,"Sechura",1560,"Sechura","Distrito","District",NA,NA
+1561,178,"PER","Peru",21,"Piura",158,"Sechura",1561,"Vice","Distrito","District",NA,NA
+1562,178,"PER","Peru",21,"Piura",159,"Sullana",1562,"Bellavista","Distrito","District",NA,NA
+1563,178,"PER","Peru",21,"Piura",159,"Sullana",1563,"Ignacio Escudero","Distrito","District",NA,NA
+1564,178,"PER","Peru",21,"Piura",159,"Sullana",1564,"Lancones","Distrito","District",NA,NA
+1565,178,"PER","Peru",21,"Piura",159,"Sullana",1565,"Marcavelica","Distrito","District",NA,NA
+1566,178,"PER","Peru",21,"Piura",159,"Sullana",1566,"Miguel Checa","Distrito","District",NA,NA
+1567,178,"PER","Peru",21,"Piura",159,"Sullana",1567,"Querecotillo","Distrito","District",NA,NA
+1568,178,"PER","Peru",21,"Piura",159,"Sullana",1568,"Salitral","Distrito","District",NA,NA
+1569,178,"PER","Peru",21,"Piura",159,"Sullana",1569,"Sullana","Distrito","District",NA,NA
+1570,178,"PER","Peru",21,"Piura",160,"Talara",1570,"El Alto","Distrito","District",NA,NA
+1571,178,"PER","Peru",21,"Piura",160,"Talara",1571,"La Brea","Distrito","District",NA,NA
+1572,178,"PER","Peru",21,"Piura",160,"Talara",1572,"Lobitos","Distrito","District",NA,NA
+1573,178,"PER","Peru",21,"Piura",160,"Talara",1573,"Los Organos","Distrito","District",NA,NA
+1574,178,"PER","Peru",21,"Piura",160,"Talara",1574,"Mancora","Distrito","District",NA,NA
+1575,178,"PER","Peru",21,"Piura",160,"Talara",1575,"Pariñas","Distrito","District",NA,NA
+1576,178,"PER","Peru",22,"Puno",161,"Azángaro",1576,"Achaya","Distrito","District",NA,NA
+1577,178,"PER","Peru",22,"Puno",161,"Azángaro",1577,"Arapa","Distrito","District",NA,NA
+1578,178,"PER","Peru",22,"Puno",161,"Azángaro",1578,"Asillo","Distrito","District",NA,NA
+1579,178,"PER","Peru",22,"Puno",161,"Azángaro",1579,"Azangaro","Distrito","District",NA,NA
+1580,178,"PER","Peru",22,"Puno",161,"Azángaro",1580,"Caminaca","Distrito","District",NA,NA
+1581,178,"PER","Peru",22,"Puno",161,"Azángaro",1581,"Chupa","Distrito","District",NA,NA
+1582,178,"PER","Peru",22,"Puno",161,"Azángaro",1582,"Jose Domingo Choquehuanca","Distrito","District",NA,NA
+1583,178,"PER","Peru",22,"Puno",161,"Azángaro",1583,"Lago de Arapa","Distrito","District",NA,NA
+1584,178,"PER","Peru",22,"Puno",161,"Azángaro",1584,"Muñani","Distrito","District",NA,NA
+1585,178,"PER","Peru",22,"Puno",161,"Azángaro",1585,"Potoni","Distrito","District",NA,NA
+1586,178,"PER","Peru",22,"Puno",161,"Azángaro",1586,"Saman","Distrito","District",NA,NA
+1587,178,"PER","Peru",22,"Puno",161,"Azángaro",1587,"San Anton","Distrito","District",NA,NA
+1588,178,"PER","Peru",22,"Puno",161,"Azángaro",1588,"San Jose","Distrito","District",NA,NA
+1589,178,"PER","Peru",22,"Puno",161,"Azángaro",1589,"San Juan de Salinas","Distrito","District",NA,NA
+1590,178,"PER","Peru",22,"Puno",161,"Azángaro",1590,"Santiago de Pupuja","Distrito","District",NA,NA
+1591,178,"PER","Peru",22,"Puno",161,"Azángaro",1591,"Tirapata","Distrito","District",NA,NA
+1592,178,"PER","Peru",22,"Puno",162,"Carabaya",1592,"Ajoyani","Distrito","District",NA,NA
+1593,178,"PER","Peru",22,"Puno",162,"Carabaya",1593,"Ayapata","Distrito","District",NA,NA
+1594,178,"PER","Peru",22,"Puno",162,"Carabaya",1594,"Coasa","Distrito","District",NA,NA
+1595,178,"PER","Peru",22,"Puno",162,"Carabaya",1595,"Corani","Distrito","District",NA,NA
+1596,178,"PER","Peru",22,"Puno",162,"Carabaya",1596,"Crucero","Distrito","District",NA,NA
+1597,178,"PER","Peru",22,"Puno",162,"Carabaya",1597,"Ituata","Distrito","District",NA,NA
+1598,178,"PER","Peru",22,"Puno",162,"Carabaya",1598,"Macusani","Distrito","District",NA,NA
+1599,178,"PER","Peru",22,"Puno",162,"Carabaya",1599,"Ollachea","Distrito","District",NA,NA
+1600,178,"PER","Peru",22,"Puno",162,"Carabaya",1600,"San Gaban","Distrito","District",NA,NA
+1601,178,"PER","Peru",22,"Puno",162,"Carabaya",1601,"Usicayos","Distrito","District",NA,NA
+1602,178,"PER","Peru",22,"Puno",163,"Chucuíto",1602,"Desaguadero","Distrito","District",NA,NA
+1603,178,"PER","Peru",22,"Puno",163,"Chucuíto",1603,"Huacullani","Distrito","District",NA,NA
+1604,178,"PER","Peru",22,"Puno",163,"Chucuíto",1604,"Juli","Distrito","District",NA,NA
+1605,178,"PER","Peru",22,"Puno",163,"Chucuíto",1605,"Kelluyo","Distrito","District",NA,NA
+1606,178,"PER","Peru",22,"Puno",163,"Chucuíto",1606,"Pisacoma","Distrito","District",NA,NA
+1607,178,"PER","Peru",22,"Puno",163,"Chucuíto",1607,"Pomata","Distrito","District",NA,NA
+1608,178,"PER","Peru",22,"Puno",163,"Chucuíto",1608,"Zepita","Distrito","District",NA,NA
+1609,178,"PER","Peru",22,"Puno",164,"El Collao",1609,"Capaso","Distrito","District",NA,NA
+1610,178,"PER","Peru",22,"Puno",164,"El Collao",1610,"Conduriri","Distrito","District",NA,NA
+1611,178,"PER","Peru",22,"Puno",164,"El Collao",1611,"Ilave","Distrito","District",NA,NA
+1612,178,"PER","Peru",22,"Puno",164,"El Collao",1612,"Pilcuyo","Distrito","District",NA,NA
+1613,178,"PER","Peru",22,"Puno",164,"El Collao",1613,"Santa Rosa","Distrito","District",NA,NA
+1614,178,"PER","Peru",22,"Puno",165,"Huancane",1614,"Cojata","Distrito","District",NA,NA
+1615,178,"PER","Peru",22,"Puno",165,"Huancane",1615,"Huancane","Distrito","District",NA,NA
+1616,178,"PER","Peru",22,"Puno",165,"Huancane",1616,"Huatasani","Distrito","District",NA,NA
+1617,178,"PER","Peru",22,"Puno",165,"Huancane",1617,"Inchupalla","Distrito","District",NA,NA
+1618,178,"PER","Peru",22,"Puno",165,"Huancane",1618,"Pusi","Distrito","District",NA,NA
+1619,178,"PER","Peru",22,"Puno",165,"Huancane",1619,"Rosaspata","Distrito","District",NA,NA
+1620,178,"PER","Peru",22,"Puno",165,"Huancane",1620,"Taraco","Distrito","District",NA,NA
+1621,178,"PER","Peru",22,"Puno",165,"Huancane",1621,"Vilque Chico","Distrito","District",NA,NA
+1622,178,"PER","Peru",22,"Puno",166,"Lago Titicaca",1622,"n.a. (Lake Titicaca)","Water body","Water body",NA,NA
+1623,178,"PER","Peru",22,"Puno",167,"Lampa",1623,"Cabanilla","Distrito","District",NA,NA
+1624,178,"PER","Peru",22,"Puno",167,"Lampa",1624,"Calapuja","Distrito","District",NA,NA
+1625,178,"PER","Peru",22,"Puno",167,"Lampa",1625,"Lampa","Distrito","District",NA,NA
+1626,178,"PER","Peru",22,"Puno",167,"Lampa",1626,"Nicasio","Distrito","District",NA,NA
+1627,178,"PER","Peru",22,"Puno",167,"Lampa",1627,"Ocuviri","Distrito","District",NA,NA
+1628,178,"PER","Peru",22,"Puno",167,"Lampa",1628,"Palca","Distrito","District",NA,NA
+1629,178,"PER","Peru",22,"Puno",167,"Lampa",1629,"Paratia","Distrito","District",NA,NA
+1630,178,"PER","Peru",22,"Puno",167,"Lampa",1630,"Pucara","Distrito","District",NA,NA
+1631,178,"PER","Peru",22,"Puno",167,"Lampa",1631,"Santa Lucia","Distrito","District",NA,NA
+1632,178,"PER","Peru",22,"Puno",167,"Lampa",1632,"Vilavila","Distrito","District",NA,NA
+1633,178,"PER","Peru",22,"Puno",168,"Melgar",1633,"Ñuñoa","Distrito","District",NA,NA
+1634,178,"PER","Peru",22,"Puno",168,"Melgar",1634,"Antauta","Distrito","District",NA,NA
+1635,178,"PER","Peru",22,"Puno",168,"Melgar",1635,"Ayaviri","Distrito","District",NA,NA
+1636,178,"PER","Peru",22,"Puno",168,"Melgar",1636,"Cupi","Distrito","District",NA,NA
+1637,178,"PER","Peru",22,"Puno",168,"Melgar",1637,"Llalli","Distrito","District",NA,NA
+1638,178,"PER","Peru",22,"Puno",168,"Melgar",1638,"Macari","Distrito","District",NA,NA
+1639,178,"PER","Peru",22,"Puno",168,"Melgar",1639,"Orurillo","Distrito","District",NA,NA
+1640,178,"PER","Peru",22,"Puno",168,"Melgar",1640,"Santa Rosa","Distrito","District",NA,NA
+1641,178,"PER","Peru",22,"Puno",168,"Melgar",1641,"Umachiri","Distrito","District",NA,NA
+1642,178,"PER","Peru",22,"Puno",169,"Moho",1642,"Conima","Distrito","District",NA,NA
+1643,178,"PER","Peru",22,"Puno",169,"Moho",1643,"Huayrapata","Distrito","District",NA,NA
+1644,178,"PER","Peru",22,"Puno",169,"Moho",1644,"Moho","Distrito","District",NA,NA
+1645,178,"PER","Peru",22,"Puno",169,"Moho",1645,"Tilali","Distrito","District",NA,NA
+1646,178,"PER","Peru",22,"Puno",170,"Puno",1646,"Acora","Distrito","District",NA,NA
+1647,178,"PER","Peru",22,"Puno",170,"Puno",1647,"Amantani","Distrito","District",NA,NA
+1648,178,"PER","Peru",22,"Puno",170,"Puno",1648,"Atuncolla","Distrito","District",NA,NA
+1649,178,"PER","Peru",22,"Puno",170,"Puno",1649,"Capachica","Distrito","District",NA,NA
+1650,178,"PER","Peru",22,"Puno",170,"Puno",1650,"Chucuito","Distrito","District",NA,NA
+1651,178,"PER","Peru",22,"Puno",170,"Puno",1651,"Coata","Distrito","District",NA,NA
+1652,178,"PER","Peru",22,"Puno",170,"Puno",1652,"Huata","Distrito","District",NA,NA
+1653,178,"PER","Peru",22,"Puno",170,"Puno",1653,"Laguna Umayo","Distrito","District",NA,NA
+1654,178,"PER","Peru",22,"Puno",170,"Puno",1654,"Mañazo","Distrito","District",NA,NA
+1655,178,"PER","Peru",22,"Puno",170,"Puno",1655,"Paucarcolla","Distrito","District",NA,NA
+1656,178,"PER","Peru",22,"Puno",170,"Puno",1656,"Pichacani","Distrito","District",NA,NA
+1657,178,"PER","Peru",22,"Puno",170,"Puno",1657,"Plateria","Distrito","District",NA,NA
+1658,178,"PER","Peru",22,"Puno",170,"Puno",1658,"Puno","Distrito","District",NA,NA
+1659,178,"PER","Peru",22,"Puno",170,"Puno",1659,"San Antonio","Distrito","District",NA,NA
+1660,178,"PER","Peru",22,"Puno",170,"Puno",1660,"Tiquillaca","Distrito","District",NA,NA
+1661,178,"PER","Peru",22,"Puno",170,"Puno",1661,"Vilque","Distrito","District",NA,NA
+1662,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina",1662,"Ananea","Distrito","District",NA,NA
+1663,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina",1663,"Pedro Vilca Apaza","Distrito","District",NA,NA
+1664,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina",1664,"Putina","Distrito","District",NA,NA
+1665,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina",1665,"Quilcapuncu","Distrito","District",NA,NA
+1666,178,"PER","Peru",22,"Puno",171,"San Antonio de Putina",1666,"Sina","Distrito","District",NA,NA
+1667,178,"PER","Peru",22,"Puno",172,"San Román",1667,"Cabana","Distrito","District",NA,NA
+1668,178,"PER","Peru",22,"Puno",172,"San Román",1668,"Cabanillas","Distrito","District",NA,NA
+1669,178,"PER","Peru",22,"Puno",172,"San Román",1669,"Caracoto","Distrito","District",NA,NA
+1670,178,"PER","Peru",22,"Puno",172,"San Román",1670,"Juliaca","Distrito","District",NA,NA
+1671,178,"PER","Peru",22,"Puno",173,"Sandia",1671,"Alto Inambari","Distrito","District",NA,NA
+1672,178,"PER","Peru",22,"Puno",173,"Sandia",1672,"Cuyocuyo","Distrito","District",NA,NA
+1673,178,"PER","Peru",22,"Puno",173,"Sandia",1673,"Limbani","Distrito","District",NA,NA
+1674,178,"PER","Peru",22,"Puno",173,"Sandia",1674,"Patambuco","Distrito","District",NA,NA
+1675,178,"PER","Peru",22,"Puno",173,"Sandia",1675,"Phara","Distrito","District",NA,NA
+1676,178,"PER","Peru",22,"Puno",173,"Sandia",1676,"Quiaca","Distrito","District",NA,NA
+1677,178,"PER","Peru",22,"Puno",173,"Sandia",1677,"San Juan del Oro","Distrito","District",NA,NA
+1678,178,"PER","Peru",22,"Puno",173,"Sandia",1678,"Sandia","Distrito","District",NA,NA
+1679,178,"PER","Peru",22,"Puno",173,"Sandia",1679,"Yanahuaya","Distrito","District",NA,NA
+1680,178,"PER","Peru",22,"Puno",174,"Yunguyo",1680,"Anapia","Distrito","District",NA,NA
+1681,178,"PER","Peru",22,"Puno",174,"Yunguyo",1681,"Copani","Distrito","District",NA,NA
+1682,178,"PER","Peru",22,"Puno",174,"Yunguyo",1682,"Cuturapi","Distrito","District",NA,NA
+1683,178,"PER","Peru",22,"Puno",174,"Yunguyo",1683,"Ollaraya","Distrito","District",NA,NA
+1684,178,"PER","Peru",22,"Puno",174,"Yunguyo",1684,"Tinicachi","Distrito","District",NA,NA
+1685,178,"PER","Peru",22,"Puno",174,"Yunguyo",1685,"Unicachi","Distrito","District",NA,NA
+1686,178,"PER","Peru",22,"Puno",174,"Yunguyo",1686,"Yunguyo","Distrito","District",NA,NA
+1687,178,"PER","Peru",23,"San Martín",175,"Bellavista",1687,"Alto Biavo","Distrito","District",NA,NA
+1688,178,"PER","Peru",23,"San Martín",175,"Bellavista",1688,"Bajo Biavo","Distrito","District",NA,NA
+1689,178,"PER","Peru",23,"San Martín",175,"Bellavista",1689,"Bellavista","Distrito","District",NA,NA
+1690,178,"PER","Peru",23,"San Martín",175,"Bellavista",1690,"Huallaga","Distrito","District",NA,NA
+1691,178,"PER","Peru",23,"San Martín",175,"Bellavista",1691,"San Pablo","Distrito","District",NA,NA
+1692,178,"PER","Peru",23,"San Martín",175,"Bellavista",1692,"San Rafael","Distrito","District",NA,NA
+1693,178,"PER","Peru",23,"San Martín",176,"El Dorado",1693,"Agua Blanca","Distrito","District",NA,NA
+1694,178,"PER","Peru",23,"San Martín",176,"El Dorado",1694,"San Jose de Sisa","Distrito","District",NA,NA
+1695,178,"PER","Peru",23,"San Martín",176,"El Dorado",1695,"San Martin","Distrito","District",NA,NA
+1696,178,"PER","Peru",23,"San Martín",176,"El Dorado",1696,"Santa Rosa","Distrito","District",NA,NA
+1697,178,"PER","Peru",23,"San Martín",176,"El Dorado",1697,"Shatoja","Distrito","District",NA,NA
+1698,178,"PER","Peru",23,"San Martín",177,"Huallaga",1698,"Alto Saposoa","Distrito","District",NA,NA
+1699,178,"PER","Peru",23,"San Martín",177,"Huallaga",1699,"El Eslabon","Distrito","District",NA,NA
+1700,178,"PER","Peru",23,"San Martín",177,"Huallaga",1700,"Piscoyacu","Distrito","District",NA,NA
+1701,178,"PER","Peru",23,"San Martín",177,"Huallaga",1701,"Sacanche","Distrito","District",NA,NA
+1702,178,"PER","Peru",23,"San Martín",177,"Huallaga",1702,"Saposoa","Distrito","District",NA,NA
+1703,178,"PER","Peru",23,"San Martín",177,"Huallaga",1703,"Tingo de Saposoa","Distrito","District",NA,NA
+1704,178,"PER","Peru",23,"San Martín",178,"Lamas",1704,"Alonso de Alvarado","Distrito","District",NA,NA
+1705,178,"PER","Peru",23,"San Martín",178,"Lamas",1705,"Barranquita","Distrito","District",NA,NA
+1706,178,"PER","Peru",23,"San Martín",178,"Lamas",1706,"Caynarachi","Distrito","District",NA,NA
+1707,178,"PER","Peru",23,"San Martín",178,"Lamas",1707,"Cuñumbuqui","Distrito","District",NA,NA
+1708,178,"PER","Peru",23,"San Martín",178,"Lamas",1708,"Lamas","Distrito","District",NA,NA
+1709,178,"PER","Peru",23,"San Martín",178,"Lamas",1709,"Pinto Recodo","Distrito","District",NA,NA
+1710,178,"PER","Peru",23,"San Martín",178,"Lamas",1710,"Rumisapa","Distrito","District",NA,NA
+1711,178,"PER","Peru",23,"San Martín",178,"Lamas",1711,"San Roque de Cumbaza","Distrito","District",NA,NA
+1712,178,"PER","Peru",23,"San Martín",178,"Lamas",1712,"Shanao","Distrito","District",NA,NA
+1713,178,"PER","Peru",23,"San Martín",178,"Lamas",1713,"Tabalosos","Distrito","District",NA,NA
+1714,178,"PER","Peru",23,"San Martín",178,"Lamas",1714,"Zapatero","Distrito","District",NA,NA
+1715,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres",1715,"Campanilla","Distrito","District",NA,NA
+1716,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres",1716,"Huicungo","Distrito","District",NA,NA
+1717,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres",1717,"Juanjui","Distrito","District",NA,NA
+1718,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres",1718,"Pachiza","Distrito","District",NA,NA
+1719,178,"PER","Peru",23,"San Martín",179,"Mariscal Cáceres",1719,"Pajarillo","Distrito","District",NA,NA
+1720,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1720,"Calzada","Distrito","District",NA,NA
+1721,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1721,"Habana","Distrito","District",NA,NA
+1722,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1722,"Jepelacio","Distrito","District",NA,NA
+1723,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1723,"Moyobamba","Distrito","District",NA,NA
+1724,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1724,"Soritor","Distrito","District",NA,NA
+1725,178,"PER","Peru",23,"San Martín",180,"Moyobamba",1725,"Yantalo","Distrito","District",NA,NA
+1726,178,"PER","Peru",23,"San Martín",181,"Picota",1726,"Buenos Aires","Distrito","District",NA,NA
+1727,178,"PER","Peru",23,"San Martín",181,"Picota",1727,"Caspisapa","Distrito","District",NA,NA
+1728,178,"PER","Peru",23,"San Martín",181,"Picota",1728,"Picota","Distrito","District",NA,NA
+1729,178,"PER","Peru",23,"San Martín",181,"Picota",1729,"Pilluana","Distrito","District",NA,NA
+1730,178,"PER","Peru",23,"San Martín",181,"Picota",1730,"Pucacaca","Distrito","District",NA,NA
+1731,178,"PER","Peru",23,"San Martín",181,"Picota",1731,"San Cristobal","Distrito","District",NA,NA
+1732,178,"PER","Peru",23,"San Martín",181,"Picota",1732,"San Hilarion","Distrito","District",NA,NA
+1733,178,"PER","Peru",23,"San Martín",181,"Picota",1733,"Shamboyacu","Distrito","District",NA,NA
+1734,178,"PER","Peru",23,"San Martín",181,"Picota",1734,"Tingo de Ponasa","Distrito","District",NA,NA
+1735,178,"PER","Peru",23,"San Martín",181,"Picota",1735,"Tres Unidos","Distrito","District",NA,NA
+1736,178,"PER","Peru",23,"San Martín",182,"Rioja",1736,"Awajun","Distrito","District",NA,NA
+1737,178,"PER","Peru",23,"San Martín",182,"Rioja",1737,"Elias Soplin Vargas","Distrito","District",NA,NA
+1738,178,"PER","Peru",23,"San Martín",182,"Rioja",1738,"Nueva Cajamarca","Distrito","District",NA,NA
+1739,178,"PER","Peru",23,"San Martín",182,"Rioja",1739,"Pardo Miguel","Distrito","District",NA,NA
+1740,178,"PER","Peru",23,"San Martín",182,"Rioja",1740,"Posic","Distrito","District",NA,NA
+1741,178,"PER","Peru",23,"San Martín",182,"Rioja",1741,"Rioja","Distrito","District",NA,NA
+1742,178,"PER","Peru",23,"San Martín",182,"Rioja",1742,"San Fernando","Distrito","District",NA,NA
+1743,178,"PER","Peru",23,"San Martín",182,"Rioja",1743,"Yorongos","Distrito","District",NA,NA
+1744,178,"PER","Peru",23,"San Martín",182,"Rioja",1744,"Yuracyacu","Distrito","District",NA,NA
+1745,178,"PER","Peru",23,"San Martín",183,"San Martín",1745,"Alberto Leveau","Distrito","District",NA,NA
+1746,178,"PER","Peru",23,"San Martín",183,"San Martín",1746,"Cacatachi","Distrito","District",NA,NA
+1747,178,"PER","Peru",23,"San Martín",183,"San Martín",1747,"Chazuta","Distrito","District",NA,NA
+1748,178,"PER","Peru",23,"San Martín",183,"San Martín",1748,"Chipurana","Distrito","District",NA,NA
+1749,178,"PER","Peru",23,"San Martín",183,"San Martín",1749,"El Porvenir","Distrito","District",NA,NA
+1750,178,"PER","Peru",23,"San Martín",183,"San Martín",1750,"Huimbayoc","Distrito","District",NA,NA
+1751,178,"PER","Peru",23,"San Martín",183,"San Martín",1751,"Juan Guerra","Distrito","District",NA,NA
+1752,178,"PER","Peru",23,"San Martín",183,"San Martín",1752,"La Banda de Shilcayo","Distrito","District",NA,NA
+1753,178,"PER","Peru",23,"San Martín",183,"San Martín",1753,"Morales","Distrito","District",NA,NA
+1754,178,"PER","Peru",23,"San Martín",183,"San Martín",1754,"Papaplaya","Distrito","District",NA,NA
+1755,178,"PER","Peru",23,"San Martín",183,"San Martín",1755,"San Antonio","Distrito","District",NA,NA
+1756,178,"PER","Peru",23,"San Martín",183,"San Martín",1756,"Sauce","Distrito","District",NA,NA
+1757,178,"PER","Peru",23,"San Martín",183,"San Martín",1757,"Shapaja","Distrito","District",NA,NA
+1758,178,"PER","Peru",23,"San Martín",183,"San Martín",1758,"Tarapoto","Distrito","District",NA,NA
+1759,178,"PER","Peru",23,"San Martín",184,"Tocache",1759,"Nuevo Progreso","Distrito","District",NA,NA
+1760,178,"PER","Peru",23,"San Martín",184,"Tocache",1760,"Polvora","Distrito","District",NA,NA
+1761,178,"PER","Peru",23,"San Martín",184,"Tocache",1761,"Shunte","Distrito","District",NA,NA
+1762,178,"PER","Peru",23,"San Martín",184,"Tocache",1762,"Tocache","Distrito","District",NA,NA
+1763,178,"PER","Peru",23,"San Martín",184,"Tocache",1763,"Uchiza","Distrito","District",NA,NA
+1764,178,"PER","Peru",24,"Tacna",185,"Candarave",1764,"Cairani","Distrito","District",NA,NA
+1765,178,"PER","Peru",24,"Tacna",185,"Candarave",1765,"Camilaca","Distrito","District",NA,NA
+1766,178,"PER","Peru",24,"Tacna",185,"Candarave",1766,"Candarave","Distrito","District",NA,NA
+1767,178,"PER","Peru",24,"Tacna",185,"Candarave",1767,"Curibaya","Distrito","District",NA,NA
+1768,178,"PER","Peru",24,"Tacna",185,"Candarave",1768,"Huanuara","Distrito","District",NA,NA
+1769,178,"PER","Peru",24,"Tacna",185,"Candarave",1769,"Quilahuani","Distrito","District",NA,NA
+1770,178,"PER","Peru",24,"Tacna",186,"Jorge Basadre",1770,"Ilabaya","Distrito","District",NA,NA
+1771,178,"PER","Peru",24,"Tacna",186,"Jorge Basadre",1771,"Ite","Distrito","District",NA,NA
+1772,178,"PER","Peru",24,"Tacna",186,"Jorge Basadre",1772,"Locumba","Distrito","District",NA,NA
+1773,178,"PER","Peru",24,"Tacna",187,"Tacna",1773,"Alto de la Alianza","Distrito","District",NA,NA
+1774,178,"PER","Peru",24,"Tacna",187,"Tacna",1774,"Calana","Distrito","District",NA,NA
+1775,178,"PER","Peru",24,"Tacna",187,"Tacna",1775,"Ciudad Nueva","Distrito","District",NA,NA
+1776,178,"PER","Peru",24,"Tacna",187,"Tacna",1776,"Inclan","Distrito","District",NA,NA
+1777,178,"PER","Peru",24,"Tacna",187,"Tacna",1777,"Pachia","Distrito","District",NA,NA
+1778,178,"PER","Peru",24,"Tacna",187,"Tacna",1778,"Palca","Distrito","District",NA,NA
+1779,178,"PER","Peru",24,"Tacna",187,"Tacna",1779,"Pocollay","Distrito","District",NA,NA
+1780,178,"PER","Peru",24,"Tacna",187,"Tacna",1780,"Sama","Distrito","District",NA,NA
+1781,178,"PER","Peru",24,"Tacna",187,"Tacna",1781,"Tacna","Distrito","District",NA,NA
+1782,178,"PER","Peru",24,"Tacna",188,"Tarata",1782,"Chucatamani","Distrito","District",NA,NA
+1783,178,"PER","Peru",24,"Tacna",188,"Tarata",1783,"Estique-Pampa","Distrito","District",NA,NA
+1784,178,"PER","Peru",24,"Tacna",188,"Tarata",1784,"Estique","Distrito","District",NA,NA
+1785,178,"PER","Peru",24,"Tacna",188,"Tarata",1785,"Sitajara","Distrito","District",NA,NA
+1786,178,"PER","Peru",24,"Tacna",188,"Tarata",1786,"Susapaya","Distrito","District",NA,NA
+1787,178,"PER","Peru",24,"Tacna",188,"Tarata",1787,"Tarata","Distrito","District",NA,NA
+1788,178,"PER","Peru",24,"Tacna",188,"Tarata",1788,"Tarucachi","Distrito","District",NA,NA
+1789,178,"PER","Peru",24,"Tacna",188,"Tarata",1789,"Ticaco","Distrito","District",NA,NA
+1790,178,"PER","Peru",25,"Tumbes",189,"Contralmirante Villar",1790,"Casitas","Distrito","District",NA,NA
+1791,178,"PER","Peru",25,"Tumbes",189,"Contralmirante Villar",1791,"Zorritos","Distrito","District",NA,NA
+1792,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1792,"Corrales","Distrito","District",NA,NA
+1793,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1793,"La Cruz","Distrito","District",NA,NA
+1794,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1794,"Pampas de Hospital","Distrito","District",NA,NA
+1795,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1795,"San Jacinto","Distrito","District",NA,NA
+1796,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1796,"San Juan de la Virgen","Distrito","District",NA,NA
+1797,178,"PER","Peru",25,"Tumbes",190,"Tumbes",1797,"Tumbes","Distrito","District",NA,NA
+1798,178,"PER","Peru",25,"Tumbes",191,"Zarumilla",1798,"Aguas Verdes","Distrito","District",NA,NA
+1799,178,"PER","Peru",25,"Tumbes",191,"Zarumilla",1799,"Matapalo","Distrito","District",NA,NA
+1800,178,"PER","Peru",25,"Tumbes",191,"Zarumilla",1800,"Papayal","Distrito","District",NA,NA
+1801,178,"PER","Peru",25,"Tumbes",191,"Zarumilla",1801,"Zarumilla","Distrito","District",NA,NA
+1802,178,"PER","Peru",26,"Ucayali",192,"Atalaya",1802,"Raymondi","Distrito","District",NA,NA
+1803,178,"PER","Peru",26,"Ucayali",192,"Atalaya",1803,"Sepahua","Distrito","District",NA,NA
+1804,178,"PER","Peru",26,"Ucayali",192,"Atalaya",1804,"Tahuania","Distrito","District",NA,NA
+1805,178,"PER","Peru",26,"Ucayali",192,"Atalaya",1805,"Yurua","Distrito","District",NA,NA
+1806,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1806,"Callaria","Distrito","District",NA,NA
+1807,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1807,"Campoverde","Distrito","District",NA,NA
+1808,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1808,"Iparia","Distrito","District",NA,NA
+1809,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1809,"Masisea","Distrito","District",NA,NA
+1810,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1810,"Nueva Requena","Distrito","District",NA,NA
+1811,178,"PER","Peru",26,"Ucayali",193,"Coronel Portillo",1811,"Yarinacocha","Distrito","District",NA,NA
+1812,178,"PER","Peru",26,"Ucayali",194,"Padre Abad",1812,"Curimana","Distrito","District",NA,NA
+1813,178,"PER","Peru",26,"Ucayali",194,"Padre Abad",1813,"Irazola","Distrito","District",NA,NA
+1814,178,"PER","Peru",26,"Ucayali",194,"Padre Abad",1814,"Padre Abad","Distrito","District",NA,NA
+1815,178,"PER","Peru",26,"Ucayali",195,"Purús",1815,"Purus","Distrito","District",NA,NA
