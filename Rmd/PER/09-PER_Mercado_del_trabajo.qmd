@@ -310,7 +310,7 @@ ppc_dens_overlay(y = as.numeric(theta_dir$Ocupado), y_pred1)/
 ```
 
 
-```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+```{r echo=FALSE, out.width = "800px", out.height="500px",fig.align='center'}
 knitr::include_graphics("Rmd/PER/Recursos/ppc.png")
 ```  
 
@@ -531,7 +531,7 @@ hist(gk_Inactivo)
 ```
 
 
-```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+```{r echo=FALSE, out.width = "800px", out.height="500px",fig.align='center'}
 knitr::include_graphics("Rmd/PER/Recursos/Plot_Bench_gk.jpeg")
 ```  
 
@@ -618,7 +618,7 @@ Mapa_ocupado
 ```
 
 
-```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+```{r echo=FALSE, out.width = "800px", out.height="500px",fig.align='center'}
 knitr::include_graphics("Rmd/PER/Recursos/Map_Ocupados.png")
 ```
 
@@ -642,7 +642,7 @@ Mapa_desocupado
 ```
 
 
-```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+```{r echo=FALSE, out.width = "800px", out.height="500px",fig.align='center'}
 knitr::include_graphics("Rmd/PER/Recursos/Map_Desocupados.png")
 ```
 
@@ -665,7 +665,7 @@ Mapa_Inactivo <-
     legend.title.size = 3)
 ```
 
-```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+```{r echo=FALSE, out.width = "800px", out.height="500px",fig.align='center'}
 knitr::include_graphics("Rmd/PER/Recursos/Map_Inactivo.png")
 ```
 
