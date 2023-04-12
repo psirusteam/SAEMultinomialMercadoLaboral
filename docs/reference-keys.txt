@@ -84,3 +84,12 @@ estimación-de-los-parámetros.
 estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación
 metodología-de-benchmarking
 mapas-del-mercado-de-trabajo.
+país-perú.
+lectura-de-la-encuesta-y-estimaciones-directas-1
+selección-de-dominios-1
+preparando-insumos-para-stan-1
+validación-del-modelo-1
+estimación-de-los-parámetros.-1
+estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación-1
+metodología-de-benchmarking-1
+mapas-del-mercado-de-trabajo.-1

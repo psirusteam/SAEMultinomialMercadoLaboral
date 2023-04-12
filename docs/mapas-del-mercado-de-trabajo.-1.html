@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>9.6 Mapas del mercado de trabajo. | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="9.6 Mapas del mercado de trabajo. | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="9.6 Mapas del mercado de trabajo. | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"/>
-<link rel="next" href="lectura-de-librerías-3.html"/>
+<link rel="prev" href="metodología-de-benchmarking-1.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -301,17 +301,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimaciones-ajustadas-por-benchmark" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Estimaciones ajustadas por Benchmark<a href="estimaciones-ajustadas-por-benchmark.html#estimaciones-ajustadas-por-benchmark" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El ajuste de benchmark se puede realizar utilizando diferentes enfoques. En algunos casos, se puede utilizar información auxiliar directamente, como la información sobre la población o la información sobre la distribución de las variables de interés. En otros casos, se pueden utilizar modelos estadísticos para relacionar las variables auxiliares y las variables de interés en las áreas pequeñas y grandes.</p>
+<div id="mapas-del-mercado-de-trabajo.-1" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Mapas del mercado de trabajo.<a href="mapas-del-mercado-de-trabajo.-1.html#mapas-del-mercado-de-trabajo.-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sp)</span>
+<span id="cb170-2"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb170-3"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb170-4"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-4" aria-hidden="true" tabindex="-1"></a>ShapeSAE <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">&quot;01 Modelo de area/PER/2017/Shape/PER_dam2.shp&quot;</span>)</span>
+<span id="cb170-5"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb170-6"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-6" aria-hidden="true" tabindex="-1"></a>P1_empleo <span class="ot">&lt;-</span> <span class="fu">tm_shape</span>(ShapeSAE <span class="sc">%&gt;%</span></span>
+<span id="cb170-7"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-7" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">left_join</span>(estimaciones))</span>
+<span id="cb170-8"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-8" aria-hidden="true" tabindex="-1"></a>brks_ocupado <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.4</span>,<span class="dv">1</span>,<span class="fl">0.1</span>)</span>
+<span id="cb170-9"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-9" aria-hidden="true" tabindex="-1"></a>brks_desocupado <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fl">0.02</span>)</span>
+<span id="cb170-10"><a href="mapas-del-mercado-de-trabajo.-1.html#cb170-10" aria-hidden="true" tabindex="-1"></a>brks_inactivo <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.10</span>,<span class="fl">0.65</span>, <span class="fl">0.09</span>)</span></code></pre></div>
+<div id="ocupado-5" class="section level3 unnumbered hasAnchor">
+<h3>Ocupado<a href="mapas-del-mercado-de-trabajo.-1.html#ocupado-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-1" aria-hidden="true" tabindex="-1"></a>Mapa_ocupado <span class="ot">&lt;-</span></span>
+<span id="cb171-2"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-2" aria-hidden="true" tabindex="-1"></a>  P1_empleo <span class="sc">+</span></span>
+<span id="cb171-3"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_fill</span>(<span class="st">&quot;Ocupado_Bench&quot;</span>,</span>
+<span id="cb171-4"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">breaks =</span> brks_ocupado,</span>
+<span id="cb171-5"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Ocupado&quot;</span>,</span>
+<span id="cb171-6"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;-Blues&quot;</span>) <span class="sc">+</span></span>
+<span id="cb171-7"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(</span>
+<span id="cb171-8"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.only =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb171-9"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.height =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb171-10"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.width =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb171-11"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="fl">1.5</span>,</span>
+<span id="cb171-12"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text.size =</span> <span class="dv">3</span>,</span>
+<span id="cb171-13"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">3</span></span>
+<span id="cb171-14"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb171-15"><a href="mapas-del-mercado-de-trabajo.-1.html#cb171-15" aria-hidden="true" tabindex="-1"></a>Mapa_ocupado</span></code></pre></div>
+<p><img src="Rmd/PER/Recursos/Map_Ocupados.png" width="800px" height="200px" style="display: block; margin: auto;" /></p>
 </div>
+<div id="desocupado-5" class="section level3 unnumbered hasAnchor">
+<h3>Desocupado<a href="mapas-del-mercado-de-trabajo.-1.html#desocupado-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-1" aria-hidden="true" tabindex="-1"></a>Mapa_desocupado <span class="ot">&lt;-</span></span>
+<span id="cb172-2"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-2" aria-hidden="true" tabindex="-1"></a>  P1_empleo <span class="sc">+</span> <span class="fu">tm_fill</span>(</span>
+<span id="cb172-3"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Desocupado_Bench&quot;</span>,</span>
+<span id="cb172-4"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> brks_desocupado,</span>
+<span id="cb172-5"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span>  <span class="st">&quot;Desocupado&quot;</span>,</span>
+<span id="cb172-6"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;YlOrRd&quot;</span></span>
+<span id="cb172-7"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">tm_layout</span>( </span>
+<span id="cb172-8"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.only =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb172-9"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.height =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb172-10"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.width =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb172-11"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="fl">1.5</span>,</span>
+<span id="cb172-12"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text.size =</span> <span class="dv">3</span>,</span>
+<span id="cb172-13"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">3</span>)</span>
+<span id="cb172-14"><a href="mapas-del-mercado-de-trabajo.-1.html#cb172-14" aria-hidden="true" tabindex="-1"></a>Mapa_desocupado</span></code></pre></div>
+<p><img src="Rmd/PER/Recursos/Map_Desocupados.png" width="800px" height="200px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="inactivo-5" class="section level3 unnumbered hasAnchor">
+<h3>Inactivo<a href="mapas-del-mercado-de-trabajo.-1.html#inactivo-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-1" aria-hidden="true" tabindex="-1"></a>Mapa_Inactivo <span class="ot">&lt;-</span></span>
+<span id="cb173-2"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-2" aria-hidden="true" tabindex="-1"></a>  P1_empleo <span class="sc">+</span> <span class="fu">tm_fill</span>(</span>
+<span id="cb173-3"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&quot;Inactivo_Bench&quot;</span>,</span>
+<span id="cb173-4"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span>  <span class="st">&quot;Inactivo&quot;</span>,</span>
+<span id="cb173-5"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> brks_inactivo,</span>
+<span id="cb173-6"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">palette =</span> <span class="st">&quot;YlGn&quot;</span></span>
+<span id="cb173-7"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">tm_layout</span>( </span>
+<span id="cb173-8"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.only =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb173-9"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.height =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb173-10"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.width =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb173-11"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">asp =</span> <span class="fl">1.5</span>,</span>
+<span id="cb173-12"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text.size =</span> <span class="dv">3</span>,</span>
+<span id="cb173-13"><a href="mapas-del-mercado-de-trabajo.-1.html#cb173-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title.size =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="Rmd/PER/Recursos/Map_Inactivo.png" width="800px" height="200px" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lectura-de-librerías-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="metodología-de-benchmarking-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -342,7 +407,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/CHL/05-Benchmarking.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/PER/09-PER_Mercado_del_trabajo.qmd",
 "text": "Edit"
 },
 "history": {

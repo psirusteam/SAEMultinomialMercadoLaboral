@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>9.1 Lectura de la encuesta y estimaciones directas | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="9.1 Lectura de la encuesta y estimaciones directas | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="9.1 Lectura de la encuesta y estimaciones directas | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"/>
-<link rel="next" href="lectura-de-librerías-3.html"/>
+<link rel="prev" href="país-perú..html"/>
+<link rel="next" href="selección-de-dominios-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -301,17 +301,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimaciones-ajustadas-por-benchmark" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Estimaciones ajustadas por Benchmark<a href="estimaciones-ajustadas-por-benchmark.html#estimaciones-ajustadas-por-benchmark" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El ajuste de benchmark se puede realizar utilizando diferentes enfoques. En algunos casos, se puede utilizar información auxiliar directamente, como la información sobre la población o la información sobre la distribución de las variables de interés. En otros casos, se pueden utilizar modelos estadísticos para relacionar las variables auxiliares y las variables de interés en las áreas pequeñas y grandes.</p>
+<div id="lectura-de-la-encuesta-y-estimaciones-directas-1" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Lectura de la encuesta y estimaciones directas<a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#lectura-de-la-encuesta-y-estimaciones-directas-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la primera línea se carga la encuesta desde un archivo RDS y se guarda en un objeto llamado <code>encuesta</code>. La segunda línea utiliza la función <code>transmute()</code> de la librería <code>dplyr</code> para seleccionar las variables de interés en la encuesta y crear nuevas variables a partir de ellas. Luego, se utiliza la variable <code>id_dominio</code> para identificar el dominio de estudio. En conjunto, estos pasos son fundamentales para preparar los datos de la encuesta para su posterior estimación del parámetro.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-1" aria-hidden="true" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;01 Modelo de area/PER/2017/Data/encuesta_2017.Rds&#39;</span>)</span>
+<span id="cb144-2"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-3"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-3" aria-hidden="true" tabindex="-1"></a>length_upm <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">nchar</span>(encuesta[[<span class="st">&quot;_upm&quot;</span>]]))</span>
+<span id="cb144-4"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-4" aria-hidden="true" tabindex="-1"></a>length_estrato <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">nchar</span>(encuesta[[<span class="st">&quot;_estrato&quot;</span>]]))</span>
+<span id="cb144-5"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-6"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-6" aria-hidden="true" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span></span>
+<span id="cb144-7"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-7" aria-hidden="true" tabindex="-1"></a>  encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb144-8"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb144-9"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">dam =</span> <span class="fu">as_factor</span>(dam_ee,<span class="at">levels  =</span> <span class="st">&quot;values&quot;</span>),</span>
+<span id="cb144-10"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">dam =</span> <span class="fu">str_pad</span>(<span class="at">string =</span>dam, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb144-11"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb144-12"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">dam2 =</span> dam2,</span>
+<span id="cb144-13"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">nombre_dam =</span> <span class="fu">as_factor</span>(dam_ee,<span class="at">levels  =</span> <span class="st">&quot;labels&quot;</span>),</span>
+<span id="cb144-14"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-15"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb144-16"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">upm =</span> <span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">`</span><span class="at">_upm</span><span class="st">`</span>, <span class="at">width =</span> length_upm, <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb144-17"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">estrato =</span> <span class="fu">str_pad</span>(<span class="at">string =</span> <span class="st">`</span><span class="at">_estrato</span><span class="st">`</span>, <span class="at">width =</span> length_estrato , <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb144-18"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">estrato =</span> <span class="fu">paste0</span>(dam,estrato),</span>
+<span id="cb144-19"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">fep =</span> <span class="st">`</span><span class="at">_fep</span><span class="st">`</span>, </span>
+<span id="cb144-20"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">empleo =</span> condact3</span>
+<span id="cb144-21"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb144-22"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb144-22" aria-hidden="true" tabindex="-1"></a>id_dominio <span class="ot">&lt;-</span> <span class="st">&quot;dam2&quot;</span></span></code></pre></div>
+<p>El código presentado define el diseño muestral para el análisis de la encuesta “encuesta” en R. La primera línea establece una opción para el tratamiento de las PSU (unidades primarias de muestreo) solitarias, lo que indica que se deben aplicar ajustes en el cálculo de los errores estándar. La segunda línea utiliza la función “as_survey_design” de la librería “survey” para definir el diseño muestral. La función toma como argumentos la variable “encuesta” y los siguientes parámetros:</p>
+<ul>
+<li><p><code>strata</code>: la variable que define las estratas de muestreo en la encuesta, en este caso la variable “estrato”.</p></li>
+<li><p><code>ids</code>: la variable que identifica las PSU en la encuesta, en este caso la variable “upm”.</p></li>
+<li><p><code>weights</code>: la variable que indica los pesos muestrales de cada observación, en este caso la variable “fep”.</p></li>
+<li><p><code>nest</code>: un parámetro lógico que indica si los datos de la encuesta están anidados o no. En este caso, se establece en “TRUE” porque los datos están anidados por dominio.</p></li>
+</ul>
+<p>En conjunto, estos pasos permiten definir un diseño muestral que tenga en cuenta las características del muestreo y los pesos asignados a cada observación en la encuesta, lo que es necesario para obtener estimaciones precisas y representativas de los parámetros de interés.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">survey.lonely.psu=</span> <span class="st">&#39;adjust&#39;</span> )</span>
+<span id="cb145-2"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-2" aria-hidden="true" tabindex="-1"></a>diseno <span class="ot">&lt;-</span> encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb145-3"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(</span>
+<span id="cb145-4"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> estrato,</span>
+<span id="cb145-5"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ids =</span> upm,</span>
+<span id="cb145-6"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">weights =</span> fep,</span>
+<span id="cb145-7"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">nest=</span>T</span>
+<span id="cb145-8"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb145-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>El código presentado es una operación que se realiza en el diseño muestral definido en el código anterior, con el objetivo de obtener un indicador del empleo por dominio. La primera línea define un objeto llamado “indicador_dam”. En la segunda línea, se agrupa el diseño muestral según el dominio especificado en la variable “id_dominio”. La tercera línea filtra los datos para quedarse con los individuos que tienen empleo (empleo igual a 1), están desempleados (empleo igual a 2) o son inactivos (empleo igual a 3).</p>
+<p>A partir de la cuarta línea, se utilizan las funciones “summarise” y “survey_mean” para calcular las estadísticas descriptivas de interés. En particular, se calculan el número de personas ocupadas, desocupadas e inactivas en cada dominio, y la proporción de personas en cada una de estas categorías. La función “survey_mean” se utiliza para calcular la proporción de personas en cada una de estas categorías con sus respectivos errores estándar y efecto de diseño.</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="ot">&lt;-</span></span>
+<span id="cb146-2"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-2" aria-hidden="true" tabindex="-1"></a>  diseno <span class="sc">%&gt;%</span> <span class="fu">group_by_at</span>(id_dominio) <span class="sc">%&gt;%</span> </span>
+<span id="cb146-3"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(empleo <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb146-4"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb146-5"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_ocupado =</span> <span class="fu">unweighted</span>(<span class="fu">sum</span>(empleo <span class="sc">==</span> <span class="dv">1</span>)),</span>
+<span id="cb146-6"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_desocupado =</span> <span class="fu">unweighted</span>(<span class="fu">sum</span>(empleo <span class="sc">==</span> <span class="dv">2</span>)),</span>
+<span id="cb146-7"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_inactivo =</span> <span class="fu">unweighted</span>(<span class="fu">sum</span>(empleo <span class="sc">==</span> <span class="dv">3</span>)),</span>
+<span id="cb146-8"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado =</span> <span class="fu">survey_mean</span>(empleo <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb146-9"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;se&quot;</span>,  <span class="st">&quot;var&quot;</span>),</span>
+<span id="cb146-10"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">deff =</span> T</span>
+<span id="cb146-11"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb146-12"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado =</span> <span class="fu">survey_mean</span>(empleo <span class="sc">==</span> <span class="dv">2</span>,</span>
+<span id="cb146-13"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;se&quot;</span>,  <span class="st">&quot;var&quot;</span>),</span>
+<span id="cb146-14"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">deff =</span> T</span>
+<span id="cb146-15"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb146-16"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo =</span> <span class="fu">survey_mean</span>(empleo <span class="sc">==</span> <span class="dv">3</span>,</span>
+<span id="cb146-17"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-17" aria-hidden="true" tabindex="-1"></a>                          <span class="at">vartype =</span> <span class="fu">c</span>(<span class="st">&quot;se&quot;</span>,  <span class="st">&quot;var&quot;</span>),</span>
+<span id="cb146-18"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-18" aria-hidden="true" tabindex="-1"></a>                          <span class="at">deff =</span> T</span>
+<span id="cb146-19"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb146-20"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html#cb146-20" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lectura-de-librerías-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="país-perú..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="selección-de-dominios-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -342,7 +402,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/CHL/05-Benchmarking.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/PER/09-PER_Mercado_del_trabajo.qmd",
 "text": "Edit"
 },
 "history": {

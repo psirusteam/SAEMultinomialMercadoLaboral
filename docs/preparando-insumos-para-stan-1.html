@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>9.3 Preparando insumos para STAN | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="9.3 Preparando insumos para STAN | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Estimaciones ajustadas por Benchmark | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="9.3 Preparando insumos para STAN | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"/>
-<link rel="next" href="lectura-de-librerías-3.html"/>
+<link rel="prev" href="selección-de-dominios-1.html"/>
+<link rel="next" href="validación-del-modelo-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -301,17 +301,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="estimaciones-ajustadas-por-benchmark" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Estimaciones ajustadas por Benchmark<a href="estimaciones-ajustadas-por-benchmark.html#estimaciones-ajustadas-por-benchmark" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>El ajuste de benchmark se puede realizar utilizando diferentes enfoques. En algunos casos, se puede utilizar información auxiliar directamente, como la información sobre la población o la información sobre la distribución de las variables de interés. En otros casos, se pueden utilizar modelos estadísticos para relacionar las variables auxiliares y las variables de interés en las áreas pequeñas y grandes.</p>
+<div id="preparando-insumos-para-stan-1" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Preparando insumos para <code>STAN</code><a href="preparando-insumos-para-stan-1.html#preparando-insumos-para-stan-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Lectura y adecuación de covariables</li>
+</ol>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="preparando-insumos-para-stan-1.html#cb148-1" aria-hidden="true" tabindex="-1"></a>satelital_media <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;01 Modelo de area/PER/2017/Data/satelital_media.rds&#39;</span>)</span>
+<span id="cb148-2"><a href="preparando-insumos-para-stan-1.html#cb148-2" aria-hidden="true" tabindex="-1"></a>statelevel_censo <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&#39;01 Modelo de area/PER/2017/Data/statelevel_predictors_df_dam2.rds&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb148-3"><a href="preparando-insumos-para-stan-1.html#cb148-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dam2 =</span> <span class="fu">case_when</span>(dam2 <span class="sc">==</span> <span class="st">&quot;120606&quot;</span><span class="sc">~</span><span class="st">&quot;120699&quot;</span>,</span>
+<span id="cb148-4"><a href="preparando-insumos-para-stan-1.html#cb148-4" aria-hidden="true" tabindex="-1"></a>                          <span class="cn">TRUE</span> <span class="sc">~</span> dam2))</span>
+<span id="cb148-5"><a href="preparando-insumos-para-stan-1.html#cb148-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-6"><a href="preparando-insumos-para-stan-1.html#cb148-6" aria-hidden="true" tabindex="-1"></a>statelevel_predictors_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(satelital_media,statelevel_censo) </span>
+<span id="cb148-7"><a href="preparando-insumos-para-stan-1.html#cb148-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Estandarizando las variables para controlar el efecto de la escala. </span></span>
+<span id="cb148-8"><a href="preparando-insumos-para-stan-1.html#cb148-8" aria-hidden="true" tabindex="-1"></a>statelevel_predictors_df <span class="sc">%&lt;&gt;%</span></span>
+<span id="cb148-9"><a href="preparando-insumos-para-stan-1.html#cb148-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="st">&quot;luces_nocturnas&quot;</span>, </span>
+<span id="cb148-10"><a href="preparando-insumos-para-stan-1.html#cb148-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;cubrimiento_cultivo&quot;</span>,</span>
+<span id="cb148-11"><a href="preparando-insumos-para-stan-1.html#cb148-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;cubrimiento_urbano&quot;</span>,</span>
+<span id="cb148-12"><a href="preparando-insumos-para-stan-1.html#cb148-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;modificacion_humana&quot;</span>,</span>
+<span id="cb148-13"><a href="preparando-insumos-para-stan-1.html#cb148-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;accesibilidad_hospitales&quot;</span>,</span>
+<span id="cb148-14"><a href="preparando-insumos-para-stan-1.html#cb148-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;accesibilidad_hosp_caminado&quot;</span>),</span>
+<span id="cb148-15"><a href="preparando-insumos-para-stan-1.html#cb148-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">function</span>(x)<span class="fu">as.numeric</span>(<span class="fu">scale</span>(x)))</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Seleccionar las variables del modelo y crear matriz de covariables.</li>
+</ol>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="preparando-insumos-para-stan-1.html#cb149-1" aria-hidden="true" tabindex="-1"></a>names_cov <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb149-2"><a href="preparando-insumos-para-stan-1.html#cb149-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;dam2&quot;</span>,</span>
+<span id="cb149-3"><a href="preparando-insumos-para-stan-1.html#cb149-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;luces_nocturnas&quot;</span>,</span>
+<span id="cb149-4"><a href="preparando-insumos-para-stan-1.html#cb149-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;cubrimiento_cultivo&quot;</span>,</span>
+<span id="cb149-5"><a href="preparando-insumos-para-stan-1.html#cb149-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;cubrimiento_urbano&quot;</span>,</span>
+<span id="cb149-6"><a href="preparando-insumos-para-stan-1.html#cb149-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;modificacion_humana&quot;</span>,</span>
+<span id="cb149-7"><a href="preparando-insumos-para-stan-1.html#cb149-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;tasa_desocupacion&quot;</span>,</span>
+<span id="cb149-8"><a href="preparando-insumos-para-stan-1.html#cb149-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;discapacidad1&quot;</span>,</span>
+<span id="cb149-9"><a href="preparando-insumos-para-stan-1.html#cb149-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;rezago_escolar&quot;</span></span>
+<span id="cb149-10"><a href="preparando-insumos-para-stan-1.html#cb149-10" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb149-11"><a href="preparando-insumos-para-stan-1.html#cb149-11" aria-hidden="true" tabindex="-1"></a>X_pred <span class="ot">&lt;-</span></span>
+<span id="cb149-12"><a href="preparando-insumos-para-stan-1.html#cb149-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(statelevel_predictors_df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(names_cov)),</span>
+<span id="cb149-13"><a href="preparando-insumos-para-stan-1.html#cb149-13" aria-hidden="true" tabindex="-1"></a>            indicador_dam1 <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam2))</span></code></pre></div>
+<p>En el bloque de código se identifican que dominios serán los predichos.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="preparando-insumos-para-stan-1.html#cb150-1" aria-hidden="true" tabindex="-1"></a>X_pred <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam2) <span class="sc">%&gt;%</span> </span>
+<span id="cb150-2"><a href="preparando-insumos-para-stan-1.html#cb150-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(<span class="at">file =</span> <span class="st">&quot;01 Modelo de area/PER/2017/Data/dam_pred.rds&quot;</span>)</span></code></pre></div>
+<p>Creando la matriz de covariables para los dominios no observados (<code>X_pred</code>) y los observados (<code>X_obs</code>)</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="preparando-insumos-para-stan-1.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Obteniendo la matrix </span></span>
+<span id="cb151-2"><a href="preparando-insumos-para-stan-1.html#cb151-2" aria-hidden="true" tabindex="-1"></a>X_pred <span class="sc">%&lt;&gt;%</span></span>
+<span id="cb151-3"><a href="preparando-insumos-para-stan-1.html#cb151-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb151-4"><a href="preparando-insumos-para-stan-1.html#cb151-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>dam2)  <span class="sc">%&gt;%</span>  <span class="fu">as.matrix</span>()</span>
+<span id="cb151-5"><a href="preparando-insumos-para-stan-1.html#cb151-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-6"><a href="preparando-insumos-para-stan-1.html#cb151-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Identificando los dominios para realizar estimación del modelo</span></span>
+<span id="cb151-7"><a href="preparando-insumos-para-stan-1.html#cb151-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb151-8"><a href="preparando-insumos-para-stan-1.html#cb151-8" aria-hidden="true" tabindex="-1"></a>X_obs <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(indicador_dam1 <span class="sc">%&gt;%</span> <span class="fu">select</span>(dam2, id_orden),</span>
+<span id="cb151-9"><a href="preparando-insumos-para-stan-1.html#cb151-9" aria-hidden="true" tabindex="-1"></a>                    statelevel_predictors_df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">all_of</span>(names_cov))) <span class="sc">%&gt;%</span></span>
+<span id="cb151-10"><a href="preparando-insumos-para-stan-1.html#cb151-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(id_orden) <span class="sc">%&gt;%</span></span>
+<span id="cb151-11"><a href="preparando-insumos-para-stan-1.html#cb151-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb151-12"><a href="preparando-insumos-para-stan-1.html#cb151-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>dam2, <span class="sc">-</span>id_orden)  <span class="sc">%&gt;%</span>  <span class="fu">as.matrix</span>()</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculando el n_efectivo y el <span class="math inline">\(\tilde{y}\)</span></li>
+</ol>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="preparando-insumos-para-stan-1.html#cb152-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">nrow</span>(indicador_dam1)</span>
+<span id="cb152-2"><a href="preparando-insumos-para-stan-1.html#cb152-2" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># Ocupado, desocupado, inactivo.</span></span>
+<span id="cb152-3"><a href="preparando-insumos-para-stan-1.html#cb152-3" aria-hidden="true" tabindex="-1"></a>Y_tilde <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, D, P)</span>
+<span id="cb152-4"><a href="preparando-insumos-para-stan-1.html#cb152-4" aria-hidden="true" tabindex="-1"></a>n_tilde <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, D, P)</span>
+<span id="cb152-5"><a href="preparando-insumos-para-stan-1.html#cb152-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-6"><a href="preparando-insumos-para-stan-1.html#cb152-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-7"><a href="preparando-insumos-para-stan-1.html#cb152-7" aria-hidden="true" tabindex="-1"></a><span class="co"># n efectivos ocupado</span></span>
+<span id="cb152-8"><a href="preparando-insumos-para-stan-1.html#cb152-8" aria-hidden="true" tabindex="-1"></a>n_tilde[,<span class="dv">1</span>] <span class="ot">&lt;-</span> (indicador_dam1<span class="sc">$</span>Ocupado<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> indicador_dam1<span class="sc">$</span>Ocupado))<span class="sc">/</span>indicador_dam1<span class="sc">$</span>Ocupado_var</span>
+<span id="cb152-9"><a href="preparando-insumos-para-stan-1.html#cb152-9" aria-hidden="true" tabindex="-1"></a>Y_tilde[,<span class="dv">1</span>] <span class="ot">&lt;-</span> n_tilde[,<span class="dv">1</span>]<span class="sc">*</span> indicador_dam1<span class="sc">$</span>Ocupado</span>
+<span id="cb152-10"><a href="preparando-insumos-para-stan-1.html#cb152-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-11"><a href="preparando-insumos-para-stan-1.html#cb152-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-12"><a href="preparando-insumos-para-stan-1.html#cb152-12" aria-hidden="true" tabindex="-1"></a><span class="co"># n efectivos desocupado</span></span>
+<span id="cb152-13"><a href="preparando-insumos-para-stan-1.html#cb152-13" aria-hidden="true" tabindex="-1"></a>n_tilde[,<span class="dv">2</span>] <span class="ot">&lt;-</span> (indicador_dam1<span class="sc">$</span>Desocupado<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> indicador_dam1<span class="sc">$</span>Desocupado))<span class="sc">/</span>indicador_dam1<span class="sc">$</span>Desocupado_var</span>
+<span id="cb152-14"><a href="preparando-insumos-para-stan-1.html#cb152-14" aria-hidden="true" tabindex="-1"></a>Y_tilde[,<span class="dv">2</span>] <span class="ot">&lt;-</span> n_tilde[,<span class="dv">2</span>]<span class="sc">*</span> indicador_dam1<span class="sc">$</span>Desocupado</span>
+<span id="cb152-15"><a href="preparando-insumos-para-stan-1.html#cb152-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb152-16"><a href="preparando-insumos-para-stan-1.html#cb152-16" aria-hidden="true" tabindex="-1"></a><span class="co"># n efectivos Inactivo</span></span>
+<span id="cb152-17"><a href="preparando-insumos-para-stan-1.html#cb152-17" aria-hidden="true" tabindex="-1"></a>n_tilde[,<span class="dv">3</span>] <span class="ot">&lt;-</span> (indicador_dam1<span class="sc">$</span>Inactivo<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> indicador_dam1<span class="sc">$</span>Inactivo))<span class="sc">/</span>indicador_dam1<span class="sc">$</span>Inactivo_var</span>
+<span id="cb152-18"><a href="preparando-insumos-para-stan-1.html#cb152-18" aria-hidden="true" tabindex="-1"></a>Y_tilde[,<span class="dv">3</span>] <span class="ot">&lt;-</span> n_tilde[,<span class="dv">3</span>]<span class="sc">*</span> indicador_dam1<span class="sc">$</span>Inactivo</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Compilando el modelo</li>
+</ol>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="preparando-insumos-para-stan-1.html#cb153-1" aria-hidden="true" tabindex="-1"></a>X1_obs <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">matrix</span>(<span class="dv">1</span>,<span class="at">nrow =</span> D,<span class="at">ncol =</span> <span class="dv">1</span>),X_obs)</span>
+<span id="cb153-2"><a href="preparando-insumos-para-stan-1.html#cb153-2" aria-hidden="true" tabindex="-1"></a>K <span class="ot">=</span> <span class="fu">ncol</span>(X1_obs)</span>
+<span id="cb153-3"><a href="preparando-insumos-para-stan-1.html#cb153-3" aria-hidden="true" tabindex="-1"></a>D1 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(X_pred)</span>
+<span id="cb153-4"><a href="preparando-insumos-para-stan-1.html#cb153-4" aria-hidden="true" tabindex="-1"></a>X1_pred <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">matrix</span>(<span class="dv">1</span>,<span class="at">nrow =</span> D1,<span class="at">ncol =</span> <span class="dv">1</span>),X_pred)</span>
+<span id="cb153-5"><a href="preparando-insumos-para-stan-1.html#cb153-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-6"><a href="preparando-insumos-para-stan-1.html#cb153-6" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">D =</span> D,</span>
+<span id="cb153-7"><a href="preparando-insumos-para-stan-1.html#cb153-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">P =</span> P,</span>
+<span id="cb153-8"><a href="preparando-insumos-para-stan-1.html#cb153-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">K =</span> K,</span>
+<span id="cb153-9"><a href="preparando-insumos-para-stan-1.html#cb153-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">hat_y =</span> Y_tilde,</span>
+<span id="cb153-10"><a href="preparando-insumos-para-stan-1.html#cb153-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">X_obs =</span> X1_obs,</span>
+<span id="cb153-11"><a href="preparando-insumos-para-stan-1.html#cb153-11" aria-hidden="true" tabindex="-1"></a>                    <span class="at">X_pred =</span> X1_pred,</span>
+<span id="cb153-12"><a href="preparando-insumos-para-stan-1.html#cb153-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">D1 =</span> D1)</span>
+<span id="cb153-13"><a href="preparando-insumos-para-stan-1.html#cb153-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-14"><a href="preparando-insumos-para-stan-1.html#cb153-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-15"><a href="preparando-insumos-para-stan-1.html#cb153-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstan)</span>
+<span id="cb153-16"><a href="preparando-insumos-para-stan-1.html#cb153-16" aria-hidden="true" tabindex="-1"></a>fit_mcmc2 <span class="ot">&lt;-</span> <span class="fu">stan</span>(</span>
+<span id="cb153-17"><a href="preparando-insumos-para-stan-1.html#cb153-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">&quot;01 Modelo de area/0funciones/01 Multinomial_simple_pred.stan&quot;</span>,  <span class="co"># Stan program</span></span>
+<span id="cb153-18"><a href="preparando-insumos-para-stan-1.html#cb153-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> sample_data,    <span class="co"># named list of data</span></span>
+<span id="cb153-19"><a href="preparando-insumos-para-stan-1.html#cb153-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb153-20"><a href="preparando-insumos-para-stan-1.html#cb153-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">warmup =</span> <span class="dv">1000</span>,          <span class="co"># number of warmup iterations per chain</span></span>
+<span id="cb153-21"><a href="preparando-insumos-para-stan-1.html#cb153-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">iter =</span> <span class="dv">2000</span>,            <span class="co"># total number of iterations per chain</span></span>
+<span id="cb153-22"><a href="preparando-insumos-para-stan-1.html#cb153-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">cores =</span> <span class="dv">4</span>,              <span class="co"># number of cores (could use one per chain)</span></span>
+<span id="cb153-23"><a href="preparando-insumos-para-stan-1.html#cb153-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb153-24"><a href="preparando-insumos-para-stan-1.html#cb153-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-25"><a href="preparando-insumos-para-stan-1.html#cb153-25" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(fit_mcmc2,</span>
+<span id="cb153-26"><a href="preparando-insumos-para-stan-1.html#cb153-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;01 Modelo de area/PER/2017/Data/fit_rtanmultinomial_con_covariable_satelite.Rds&quot;</span>)</span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lectura-de-librerías-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="selección-de-dominios-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="validación-del-modelo-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -342,7 +441,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/CHL/05-Benchmarking.Rmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/PER/09-PER_Mercado_del_trabajo.qmd",
 "text": "Edit"
 },
 "history": {

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8.2 Selección de dominios | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <title>9.5 Metodología de Benchmarking | Estimación de áreas pequeñas con el modelo multinomial</title>
   <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8.2 Selección de dominios | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:title" content="9.5 Metodología de Benchmarking | Estimación de áreas pequeñas con el modelo multinomial" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
   <meta name="github-repo" content="psirusteam/HHS-Handbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8.2 Selección de dominios | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta name="twitter:title" content="9.5 Metodología de Benchmarking | Estimación de áreas pequeñas con el modelo multinomial" />
   
   <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lectura-de-la-encuesta-y-estimaciones-directas.html"/>
-<link rel="next" href="preparando-insumos-para-stan.html"/>
+<link rel="prev" href="validación-del-modelo-1.html"/>
+<link rel="next" href="mapas-del-mercado-de-trabajo.-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -301,655 +301,830 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="selección-de-dominios" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Selección de dominios<a href="selección-de-dominios.html#selección-de-dominios" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En la sección anterior, se llevó a cabo una estimación directa para cada categoría individualmente en cada municipio (dominio) presente en la muestra. Ahora, para evaluar la calidad de los resultados obtenidos, realizaremos un análisis descriptivo. Se emplean varias medidas de calidad, entre ellas, se cuenta el número de dominios que tienen dos o más unidades primarias de muestreo (UPM), así como el efecto de diseño mayor a 1 y las varianzas mayores a 0. Estas medidas nos permitirán determinar la fiabilidad de nuestros resultados y tomar decisiones informadas en función de ellos.</p>
-<p>Después de realizar las validaciones anteriores se establece como regla incluir en el estudio los dominios que posean</p>
-<ul>
-<li><p>Dos o más UPM por dominio.</p></li>
-<li><p>Contar con un resultado en el Deff</p></li>
-</ul>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="selección-de-dominios.html#cb117-1" aria-hidden="true" tabindex="-1"></a>indicador_dam <span class="ot">&lt;-</span> encuesta <span class="sc">%&gt;%</span> <span class="fu">select</span>(id_dominio, upm) <span class="sc">%&gt;%</span></span>
-<span id="cb117-2"><a href="selección-de-dominios.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb117-3"><a href="selección-de-dominios.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by_at</span>(id_dominio) <span class="sc">%&gt;%</span> </span>
-<span id="cb117-4"><a href="selección-de-dominios.html#cb117-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tally</span>(<span class="at">name =</span> <span class="st">&quot;n_upm&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb117-5"><a href="selección-de-dominios.html#cb117-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(indicador_dam, <span class="at">by =</span> id_dominio)</span>
-<span id="cb117-6"><a href="selección-de-dominios.html#cb117-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-7"><a href="selección-de-dominios.html#cb117-7" aria-hidden="true" tabindex="-1"></a>indicador_dam1 <span class="ot">&lt;-</span> indicador_dam <span class="sc">%&gt;%</span> </span>
-<span id="cb117-8"><a href="selección-de-dominios.html#cb117-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_upm <span class="sc">&gt;=</span> <span class="dv">2</span>, <span class="sc">!</span><span class="fu">is.na</span>(Desocupado_deff)) <span class="sc">%&gt;%</span> </span>
-<span id="cb117-9"><a href="selección-de-dominios.html#cb117-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id_orden =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>())</span>
-<span id="cb117-10"><a href="selección-de-dominios.html#cb117-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-11"><a href="selección-de-dominios.html#cb117-11" aria-hidden="true" tabindex="-1"></a><span class="co"># saveRDS(object = indicador_dam1, &quot;Rmd/COL/Recursos/base_modelo.Rds&quot;)</span></span></code></pre></div>
+<div id="metodología-de-benchmarking-1" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Metodología de Benchmarking<a href="metodología-de-benchmarking-1.html#metodología-de-benchmarking-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Conteos de personas agregados por dam2, personas mayores de 15 años de edad.</li>
+</ol>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="metodología-de-benchmarking-1.html#cb159-1" aria-hidden="true" tabindex="-1"></a>conteo_pp_dam <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;01 Modelo de area/PER/2017/Data/censo_dam2.rds&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-2"><a href="metodología-de-benchmarking-1.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(edad <span class="sc">&gt;</span> <span class="dv">1</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb159-3"><a href="metodología-de-benchmarking-1.html#cb159-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="at">dam =</span> depto, <span class="at">dam2 =</span> mpio) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-4"><a href="metodología-de-benchmarking-1.html#cb159-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pp_dam2 =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-5"><a href="metodología-de-benchmarking-1.html#cb159-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_tally</span>(<span class="at">wt =</span> pp_dam2, <span class="at">name =</span> <span class="st">&quot;pp_dam&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-6"><a href="metodología-de-benchmarking-1.html#cb159-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dam2 =</span> <span class="fu">case_when</span>(dam2 <span class="sc">==</span> <span class="st">&quot;120606&quot;</span><span class="sc">~</span><span class="st">&quot;120699&quot;</span>,</span>
+<span id="cb159-7"><a href="metodología-de-benchmarking-1.html#cb159-7" aria-hidden="true" tabindex="-1"></a>                          <span class="cn">TRUE</span> <span class="sc">~</span> dam2))</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Estimación del parámetro <code>theta</code> al nivel que la encuesta sea representativa.</li>
+</ol>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="metodología-de-benchmarking-1.html#cb160-1" aria-hidden="true" tabindex="-1"></a>Razon_empleo  <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;Rmd/PER/Recursos/Razon_empleo.rds&quot;</span>)</span>
+<span id="cb160-2"><a href="metodología-de-benchmarking-1.html#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tba</span>(<span class="fu">data.frame</span>(<span class="at">estimate_dir =</span> Razon_empleo) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>))</span></code></pre></div>
 <table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
-dam2
 </th>
 <th style="text-align:right;">
-n_upm
-</th>
-<th style="text-align:right;">
-n_ocupado
-</th>
-<th style="text-align:right;">
-n_desocupado
-</th>
-<th style="text-align:right;">
-n_inactivo
-</th>
-<th style="text-align:right;">
-Ocupado
-</th>
-<th style="text-align:right;">
-Ocupado_se
-</th>
-<th style="text-align:right;">
-Ocupado_var
-</th>
-<th style="text-align:right;">
-Ocupado_deff
-</th>
-<th style="text-align:right;">
-Desocupado
-</th>
-<th style="text-align:right;">
-Desocupado_se
-</th>
-<th style="text-align:right;">
-Desocupado_var
-</th>
-<th style="text-align:right;">
-Desocupado_deff
-</th>
-<th style="text-align:right;">
-Inactivo
-</th>
-<th style="text-align:right;">
-Inactivo_se
-</th>
-<th style="text-align:right;">
-Inactivo_var
-</th>
-<th style="text-align:right;">
-Inactivo_deff
-</th>
-<th style="text-align:right;">
-id_orden
+estimate_dir
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-05001
+dam_01_Ocupado
 </td>
 <td style="text-align:right;">
-806
-</td>
-<td style="text-align:right;">
-13447
-</td>
-<td style="text-align:right;">
-1805
-</td>
-<td style="text-align:right;">
-8453
-</td>
-<td style="text-align:right;">
-0.5772
-</td>
-<td style="text-align:right;">
-0.0039
-</td>
-<td style="text-align:right;">
-0.0000
-</td>
-<td style="text-align:right;">
-1.5169
-</td>
-<td style="text-align:right;">
-0.0775
-</td>
-<td style="text-align:right;">
-0.0022
-</td>
-<td style="text-align:right;">
-0e+00
-</td>
-<td style="text-align:right;">
-1.6507
-</td>
-<td style="text-align:right;">
-0.3453
-</td>
-<td style="text-align:right;">
-0.0038
-</td>
-<td style="text-align:right;">
-0.0000
-</td>
-<td style="text-align:right;">
-1.5436
-</td>
-<td style="text-align:right;">
-1
+0.7462
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05002
+dam_02_Ocupado
 </td>
 <td style="text-align:right;">
+0.7066
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_03_Ocupado
+</td>
+<td style="text-align:right;">
+0.7846
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_04_Ocupado
+</td>
+<td style="text-align:right;">
+0.6630
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_05_Ocupado
+</td>
+<td style="text-align:right;">
+0.7219
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_06_Ocupado
+</td>
+<td style="text-align:right;">
+0.7791
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_07_Ocupado
+</td>
+<td style="text-align:right;">
+0.6290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_08_Ocupado
+</td>
+<td style="text-align:right;">
+0.7574
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_09_Ocupado
+</td>
+<td style="text-align:right;">
+0.8197
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dam_10_Ocupado
+</td>
+<td style="text-align:right;">
+0.7163
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li>Definir los pesos por dominios.</li>
+</ol>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="metodología-de-benchmarking-1.html#cb161-1" aria-hidden="true" tabindex="-1"></a>names_cov <span class="ot">&lt;-</span>  <span class="st">&quot;dam&quot;</span></span>
+<span id="cb161-2"><a href="metodología-de-benchmarking-1.html#cb161-2" aria-hidden="true" tabindex="-1"></a>estimaciones_mod <span class="ot">&lt;-</span> estimaciones <span class="sc">%&gt;%</span> <span class="fu">transmute</span>(</span>
+<span id="cb161-3"><a href="metodología-de-benchmarking-1.html#cb161-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dam =</span> <span class="fu">substr</span>(dam2,<span class="dv">1</span>,<span class="dv">2</span>),</span>
+<span id="cb161-4"><a href="metodología-de-benchmarking-1.html#cb161-4" aria-hidden="true" tabindex="-1"></a>  dam2,Ocupado_mod,Desocupado_mod,Inactivo_mod) <span class="sc">%&gt;%</span> </span>
+<span id="cb161-5"><a href="metodología-de-benchmarking-1.html#cb161-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(conteo_pp_dam ) <span class="sc">%&gt;%</span> </span>
+<span id="cb161-6"><a href="metodología-de-benchmarking-1.html#cb161-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wi =</span> pp_dam2<span class="sc">/</span>pp_dam)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Crear variables dummys</li>
+</ol>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="metodología-de-benchmarking-1.html#cb162-1" aria-hidden="true" tabindex="-1"></a>estimaciones_mod <span class="sc">%&lt;&gt;%</span></span>
+<span id="cb162-2"><a href="metodología-de-benchmarking-1.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  fastDummies<span class="sc">::</span><span class="fu">dummy_cols</span>(<span class="at">select_columns =</span> names_cov,</span>
+<span id="cb162-3"><a href="metodología-de-benchmarking-1.html#cb162-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">remove_selected_columns =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb162-4"><a href="metodología-de-benchmarking-1.html#cb162-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-5"><a href="metodología-de-benchmarking-1.html#cb162-5" aria-hidden="true" tabindex="-1"></a>Xdummy <span class="ot">&lt;-</span> estimaciones_mod <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;dam_&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb162-6"><a href="metodología-de-benchmarking-1.html#cb162-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(<span class="fu">matches</span>(<span class="st">&quot;_</span><span class="sc">\\</span><span class="st">d&quot;</span>)) ,</span>
+<span id="cb162-7"><a href="metodología-de-benchmarking-1.html#cb162-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">list</span>(<span class="at">Ocupado =</span> <span class="cf">function</span>(x) x<span class="sc">*</span>estimaciones_mod<span class="sc">$</span>Ocupado_mod,</span>
+<span id="cb162-8"><a href="metodología-de-benchmarking-1.html#cb162-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Desocupado =</span> <span class="cf">function</span>(x) x<span class="sc">*</span>estimaciones_mod<span class="sc">$</span>Desocupado_mod,</span>
+<span id="cb162-9"><a href="metodología-de-benchmarking-1.html#cb162-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Inactivo =</span> <span class="cf">function</span>(x) x<span class="sc">*</span>estimaciones_mod<span class="sc">$</span>Inactivo_mod)) <span class="sc">%&gt;%</span> </span>
+<span id="cb162-10"><a href="metodología-de-benchmarking-1.html#cb162-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>((<span class="fu">matches</span>(<span class="st">&quot;Ocupado|Desocupado|Inactivo&quot;</span>))) </span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Calcular el ponderador para cada nivel de la variable.</li>
+</ol>
+<div id="ocupado-4" class="section level4 unnumbered hasAnchor">
+<h4>Ocupado<a href="metodología-de-benchmarking-1.html#ocupado-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="metodología-de-benchmarking-1.html#cb163-1" aria-hidden="true" tabindex="-1"></a>names_ocupado <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;_O&quot;</span>, <span class="at">x =</span> <span class="fu">colnames</span>(Xdummy),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb163-2"><a href="metodología-de-benchmarking-1.html#cb163-2" aria-hidden="true" tabindex="-1"></a>gk_ocupado <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_ocupado] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb163-3"><a href="metodología-de-benchmarking-1.html#cb163-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb163-4"><a href="metodología-de-benchmarking-1.html#cb163-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">total =</span> Razon_empleo[names_ocupado] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb163-5"><a href="metodología-de-benchmarking-1.html#cb163-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">method=</span><span class="st">&quot;logit&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>,) </span>
+<span id="cb163-6"><a href="metodología-de-benchmarking-1.html#cb163-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb163-7"><a href="metodología-de-benchmarking-1.html#cb163-7" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_ocupado] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb163-8"><a href="metodología-de-benchmarking-1.html#cb163-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb163-9"><a href="metodología-de-benchmarking-1.html#cb163-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_ocupado] <span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb163-10"><a href="metodología-de-benchmarking-1.html#cb163-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_ocupado,)</span></code></pre></div>
+</div>
+<div id="desocupado-4" class="section level4 unnumbered hasAnchor">
+<h4>Desocupado<a href="metodología-de-benchmarking-1.html#desocupado-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="metodología-de-benchmarking-1.html#cb164-1" aria-hidden="true" tabindex="-1"></a>names_descupados <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;_D&quot;</span>, <span class="at">x =</span> <span class="fu">colnames</span>(Xdummy),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb164-2"><a href="metodología-de-benchmarking-1.html#cb164-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb164-3"><a href="metodología-de-benchmarking-1.html#cb164-3" aria-hidden="true" tabindex="-1"></a>gk_desocupado <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_descupados]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb164-4"><a href="metodología-de-benchmarking-1.html#cb164-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb164-5"><a href="metodología-de-benchmarking-1.html#cb164-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">total =</span> Razon_empleo[names_descupados]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb164-6"><a href="metodología-de-benchmarking-1.html#cb164-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method=</span><span class="st">&quot;logit&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>) </span>
+<span id="cb164-7"><a href="metodología-de-benchmarking-1.html#cb164-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb164-8"><a href="metodología-de-benchmarking-1.html#cb164-8" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_descupados]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb164-9"><a href="metodología-de-benchmarking-1.html#cb164-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb164-10"><a href="metodología-de-benchmarking-1.html#cb164-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_descupados]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb164-11"><a href="metodología-de-benchmarking-1.html#cb164-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_desocupado,)</span></code></pre></div>
+</div>
+<div id="inactivo-4" class="section level4 unnumbered hasAnchor">
+<h4>Inactivo<a href="metodología-de-benchmarking-1.html#inactivo-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="metodología-de-benchmarking-1.html#cb165-1" aria-hidden="true" tabindex="-1"></a>names_inactivo <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;_I&quot;</span>, <span class="at">x =</span> <span class="fu">colnames</span>(Xdummy),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb165-2"><a href="metodología-de-benchmarking-1.html#cb165-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-3"><a href="metodología-de-benchmarking-1.html#cb165-3" aria-hidden="true" tabindex="-1"></a>gk_Inactivo <span class="ot">&lt;-</span> <span class="fu">calib</span>(<span class="at">Xs =</span> Xdummy[,names_inactivo]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb165-4"><a href="metodología-de-benchmarking-1.html#cb165-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">d =</span>  estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb165-5"><a href="metodología-de-benchmarking-1.html#cb165-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">total =</span> Razon_empleo[names_inactivo]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb165-6"><a href="metodología-de-benchmarking-1.html#cb165-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method=</span><span class="st">&quot;logit&quot;</span>,<span class="at">max_iter =</span> <span class="dv">5000</span>) </span>
+<span id="cb165-7"><a href="metodología-de-benchmarking-1.html#cb165-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-8"><a href="metodología-de-benchmarking-1.html#cb165-8" aria-hidden="true" tabindex="-1"></a><span class="fu">checkcalibration</span>(<span class="at">Xs =</span> Xdummy[,names_inactivo]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(), </span>
+<span id="cb165-9"><a href="metodología-de-benchmarking-1.html#cb165-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">d =</span>estimaciones_mod<span class="sc">$</span>wi,</span>
+<span id="cb165-10"><a href="metodología-de-benchmarking-1.html#cb165-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">total =</span> Razon_empleo[names_inactivo]<span class="sc">%&gt;%</span> <span class="fu">as.matrix</span>(),</span>
+<span id="cb165-11"><a href="metodología-de-benchmarking-1.html#cb165-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">g =</span> gk_Inactivo,)</span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li>Validar los resultados obtenidos.</li>
+</ol>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="metodología-de-benchmarking-1.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb166-2"><a href="metodología-de-benchmarking-1.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_ocupado)</span>
+<span id="cb166-3"><a href="metodología-de-benchmarking-1.html#cb166-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_desocupado)</span>
+<span id="cb166-4"><a href="metodología-de-benchmarking-1.html#cb166-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(gk_Inactivo)</span></code></pre></div>
+<p><img src="Rmd/PER/Recursos/Plot_Bench_gk.jpeg" width="800px" height="200px" style="display: block; margin: auto;" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Estimaciones ajustadas por el ponderador</li>
+</ol>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="metodología-de-benchmarking-1.html#cb167-1" aria-hidden="true" tabindex="-1"></a>estimacionesBench <span class="ot">&lt;-</span> estimaciones_mod <span class="sc">%&gt;%</span></span>
+<span id="cb167-2"><a href="metodología-de-benchmarking-1.html#cb167-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(gk_ocupado, gk_desocupado, gk_Inactivo) <span class="sc">%&gt;%</span></span>
+<span id="cb167-3"><a href="metodología-de-benchmarking-1.html#cb167-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb167-4"><a href="metodología-de-benchmarking-1.html#cb167-4" aria-hidden="true" tabindex="-1"></a>    dam,</span>
+<span id="cb167-5"><a href="metodología-de-benchmarking-1.html#cb167-5" aria-hidden="true" tabindex="-1"></a>    dam2,</span>
+<span id="cb167-6"><a href="metodología-de-benchmarking-1.html#cb167-6" aria-hidden="true" tabindex="-1"></a>    wi,gk_ocupado, gk_desocupado, gk_Inactivo,</span>
+<span id="cb167-7"><a href="metodología-de-benchmarking-1.html#cb167-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ocupado_Bench =</span> Ocupado_mod<span class="sc">*</span>gk_ocupado,</span>
+<span id="cb167-8"><a href="metodología-de-benchmarking-1.html#cb167-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Desocupado_Bench =</span> Desocupado_mod<span class="sc">*</span>gk_desocupado,</span>
+<span id="cb167-9"><a href="metodología-de-benchmarking-1.html#cb167-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Inactivo_Bench =</span> Inactivo_mod<span class="sc">*</span>gk_Inactivo</span>
+<span id="cb167-10"><a href="metodología-de-benchmarking-1.html#cb167-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<ol start="8" style="list-style-type: decimal">
+<li>Validación de resultados.</li>
+</ol>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="metodología-de-benchmarking-1.html#cb168-1" aria-hidden="true" tabindex="-1"></a>indicador_agregado <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;Rmd/PER/Recursos/indicador_agregado.rds&quot;</span>)</span>
+<span id="cb168-2"><a href="metodología-de-benchmarking-1.html#cb168-2" aria-hidden="true" tabindex="-1"></a>estimacionesBench <span class="sc">%&gt;%</span></span>
+<span id="cb168-3"><a href="metodología-de-benchmarking-1.html#cb168-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dam) <span class="sc">%&gt;%</span> </span>
+<span id="cb168-4"><a href="metodología-de-benchmarking-1.html#cb168-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Ocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Ocupado_Bench),</span>
+<span id="cb168-5"><a href="metodología-de-benchmarking-1.html#cb168-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Desocupado_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Desocupado_Bench),</span>
+<span id="cb168-6"><a href="metodología-de-benchmarking-1.html#cb168-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">Inactivo_Bench =</span> <span class="fu">sum</span>(wi<span class="sc">*</span>Inactivo_Bench)) <span class="sc">%&gt;%</span> </span>
+<span id="cb168-7"><a href="metodología-de-benchmarking-1.html#cb168-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(indicador_agregado) <span class="sc">%&gt;%</span> <span class="fu">tba</span>()</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+dam
+</th>
+<th style="text-align:right;">
+Ocupado_Bench
+</th>
+<th style="text-align:right;">
+Desocupado_Bench
+</th>
+<th style="text-align:right;">
+Inactivo_Bench
+</th>
+<th style="text-align:right;">
+Ocupado
+</th>
+<th style="text-align:right;">
+Desocupado
+</th>
+<th style="text-align:right;">
+Inactivo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+01
+</td>
+<td style="text-align:right;">
+0.7462
+</td>
+<td style="text-align:right;">
+0.0114
+</td>
+<td style="text-align:right;">
+0.2424
+</td>
+<td style="text-align:right;">
+0.7462
+</td>
+<td style="text-align:right;">
+0.0114
+</td>
+<td style="text-align:right;">
+0.2424
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+02
+</td>
+<td style="text-align:right;">
+0.7066
+</td>
+<td style="text-align:right;">
+0.0197
+</td>
+<td style="text-align:right;">
+0.2738
+</td>
+<td style="text-align:right;">
+0.7066
+</td>
+<td style="text-align:right;">
+0.0197
+</td>
+<td style="text-align:right;">
+0.2738
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+03
+</td>
+<td style="text-align:right;">
+0.7846
+</td>
+<td style="text-align:right;">
+0.0126
+</td>
+<td style="text-align:right;">
+0.2027
+</td>
+<td style="text-align:right;">
+0.7846
+</td>
+<td style="text-align:right;">
+0.0126
+</td>
+<td style="text-align:right;">
+0.2027
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+04
+</td>
+<td style="text-align:right;">
+0.6630
+</td>
+<td style="text-align:right;">
+0.0294
+</td>
+<td style="text-align:right;">
+0.3077
+</td>
+<td style="text-align:right;">
+0.6630
+</td>
+<td style="text-align:right;">
+0.0294
+</td>
+<td style="text-align:right;">
+0.3077
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+05
+</td>
+<td style="text-align:right;">
+0.7219
+</td>
+<td style="text-align:right;">
+0.0201
+</td>
+<td style="text-align:right;">
+0.2580
+</td>
+<td style="text-align:right;">
+0.7219
+</td>
+<td style="text-align:right;">
+0.0201
+</td>
+<td style="text-align:right;">
+0.2580
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+06
+</td>
+<td style="text-align:right;">
+0.7791
+</td>
+<td style="text-align:right;">
+0.0126
+</td>
+<td style="text-align:right;">
+0.2083
+</td>
+<td style="text-align:right;">
+0.7791
+</td>
+<td style="text-align:right;">
+0.0126
+</td>
+<td style="text-align:right;">
+0.2083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+07
+</td>
+<td style="text-align:right;">
+0.6290
+</td>
+<td style="text-align:right;">
+0.0434
+</td>
+<td style="text-align:right;">
+0.3275
+</td>
+<td style="text-align:right;">
+0.6290
+</td>
+<td style="text-align:right;">
+0.0434
+</td>
+<td style="text-align:right;">
+0.3275
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+08
+</td>
+<td style="text-align:right;">
+0.7574
+</td>
+<td style="text-align:right;">
+0.0212
+</td>
+<td style="text-align:right;">
+0.2214
+</td>
+<td style="text-align:right;">
+0.7574
+</td>
+<td style="text-align:right;">
+0.0212
+</td>
+<td style="text-align:right;">
+0.2214
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+09
+</td>
+<td style="text-align:right;">
+0.8197
+</td>
+<td style="text-align:right;">
+0.0171
+</td>
+<td style="text-align:right;">
+0.1632
+</td>
+<td style="text-align:right;">
+0.8197
+</td>
+<td style="text-align:right;">
+0.0171
+</td>
+<td style="text-align:right;">
+0.1632
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 10
 </td>
 <td style="text-align:right;">
-102
+0.7163
 </td>
 <td style="text-align:right;">
-7
+0.0225
 </td>
 <td style="text-align:right;">
-118
+0.2612
 </td>
 <td style="text-align:right;">
-0.4618
+0.7163
 </td>
 <td style="text-align:right;">
-0.0202
+0.0225
 </td>
 <td style="text-align:right;">
-0.0004
-</td>
-<td style="text-align:right;">
-0.3739
-</td>
-<td style="text-align:right;">
-0.0293
-</td>
-<td style="text-align:right;">
-0.0083
-</td>
-<td style="text-align:right;">
-1e-04
-</td>
-<td style="text-align:right;">
-0.5478
-</td>
-<td style="text-align:right;">
-0.5089
-</td>
-<td style="text-align:right;">
-0.0186
-</td>
-<td style="text-align:right;">
-0.0003
-</td>
-<td style="text-align:right;">
-0.3127
-</td>
-<td style="text-align:right;">
-2
+0.2612
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05031
+11
 </td>
 <td style="text-align:right;">
-7
+0.6504
 </td>
 <td style="text-align:right;">
-89
+0.0177
 </td>
 <td style="text-align:right;">
-8
+0.3319
 </td>
 <td style="text-align:right;">
-69
+0.6504
 </td>
 <td style="text-align:right;">
-0.5307
+0.0177
 </td>
 <td style="text-align:right;">
-0.0405
-</td>
-<td style="text-align:right;">
-0.0016
-</td>
-<td style="text-align:right;">
-1.0904
-</td>
-<td style="text-align:right;">
-0.0626
-</td>
-<td style="text-align:right;">
-0.0308
-</td>
-<td style="text-align:right;">
-9e-04
-</td>
-<td style="text-align:right;">
-2.6768
-</td>
-<td style="text-align:right;">
-0.4066
-</td>
-<td style="text-align:right;">
-0.0373
-</td>
-<td style="text-align:right;">
-0.0014
-</td>
-<td style="text-align:right;">
-0.9557
-</td>
-<td style="text-align:right;">
-3
+0.3319
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05034
+12
 </td>
 <td style="text-align:right;">
-6
+0.7020
 </td>
 <td style="text-align:right;">
-100
+0.0136
 </td>
 <td style="text-align:right;">
-3
+0.2844
 </td>
 <td style="text-align:right;">
-82
+0.7020
 </td>
 <td style="text-align:right;">
-0.5666
+0.0136
 </td>
 <td style="text-align:right;">
-0.0322
-</td>
-<td style="text-align:right;">
-0.0010
-</td>
-<td style="text-align:right;">
-0.7805
-</td>
-<td style="text-align:right;">
-0.0204
-</td>
-<td style="text-align:right;">
-0.0076
-</td>
-<td style="text-align:right;">
-1e-04
-</td>
-<td style="text-align:right;">
-0.5345
-</td>
-<td style="text-align:right;">
-0.4130
-</td>
-<td style="text-align:right;">
-0.0327
-</td>
-<td style="text-align:right;">
-0.0011
-</td>
-<td style="text-align:right;">
-0.8153
-</td>
-<td style="text-align:right;">
-4
+0.2844
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05045
-</td>
-<td style="text-align:right;">
 13
 </td>
 <td style="text-align:right;">
-196
+0.6726
 </td>
 <td style="text-align:right;">
-33
+0.0203
 </td>
 <td style="text-align:right;">
-175
+0.3071
 </td>
 <td style="text-align:right;">
-0.4808
+0.6726
 </td>
 <td style="text-align:right;">
-0.0368
+0.0203
 </td>
 <td style="text-align:right;">
-0.0014
-</td>
-<td style="text-align:right;">
-2.1892
-</td>
-<td style="text-align:right;">
-0.0920
-</td>
-<td style="text-align:right;">
-0.0188
-</td>
-<td style="text-align:right;">
-4e-04
-</td>
-<td style="text-align:right;">
-1.7104
-</td>
-<td style="text-align:right;">
-0.4272
-</td>
-<td style="text-align:right;">
-0.0322
-</td>
-<td style="text-align:right;">
-0.0010
-</td>
-<td style="text-align:right;">
-1.7154
-</td>
-<td style="text-align:right;">
-5
+0.3071
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05079
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-71
-</td>
-<td style="text-align:right;">
 14
 </td>
 <td style="text-align:right;">
-74
+0.6457
 </td>
 <td style="text-align:right;">
-0.4434
+0.0221
 </td>
 <td style="text-align:right;">
-0.0460
+0.3323
 </td>
 <td style="text-align:right;">
-0.0021
+0.6457
 </td>
 <td style="text-align:right;">
-1.3676
+0.0221
 </td>
 <td style="text-align:right;">
-0.0882
-</td>
-<td style="text-align:right;">
-0.0130
-</td>
-<td style="text-align:right;">
-2e-04
-</td>
-<td style="text-align:right;">
-0.3359
-</td>
-<td style="text-align:right;">
-0.4683
-</td>
-<td style="text-align:right;">
-0.0521
-</td>
-<td style="text-align:right;">
-0.0027
-</td>
-<td style="text-align:right;">
-1.7387
-</td>
-<td style="text-align:right;">
-6
+0.3323
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05088
+15
 </td>
 <td style="text-align:right;">
-129
+0.6474
 </td>
 <td style="text-align:right;">
-2169
+0.0428
 </td>
 <td style="text-align:right;">
-321
+0.3099
 </td>
 <td style="text-align:right;">
-1406
+0.6474
 </td>
 <td style="text-align:right;">
-0.5647
+0.0428
 </td>
 <td style="text-align:right;">
-0.0082
-</td>
-<td style="text-align:right;">
-0.0001
-</td>
-<td style="text-align:right;">
-1.0658
-</td>
-<td style="text-align:right;">
-0.0827
-</td>
-<td style="text-align:right;">
-0.0047
-</td>
-<td style="text-align:right;">
-0e+00
-</td>
-<td style="text-align:right;">
-1.1399
-</td>
-<td style="text-align:right;">
-0.3526
-</td>
-<td style="text-align:right;">
-0.0079
-</td>
-<td style="text-align:right;">
-0.0001
-</td>
-<td style="text-align:right;">
-1.0680
-</td>
-<td style="text-align:right;">
-7
+0.3099
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05093
+16
 </td>
 <td style="text-align:right;">
-6
+0.6771
 </td>
 <td style="text-align:right;">
-81
+0.0154
 </td>
 <td style="text-align:right;">
-1
+0.3075
 </td>
 <td style="text-align:right;">
-55
+0.6771
 </td>
 <td style="text-align:right;">
-0.5998
+0.0154
 </td>
 <td style="text-align:right;">
-0.0415
-</td>
-<td style="text-align:right;">
-0.0017
-</td>
-<td style="text-align:right;">
-0.9791
-</td>
-<td style="text-align:right;">
-0.0091
-</td>
-<td style="text-align:right;">
-0.0088
-</td>
-<td style="text-align:right;">
-1e-04
-</td>
-<td style="text-align:right;">
-1.1823
-</td>
-<td style="text-align:right;">
-0.3911
-</td>
-<td style="text-align:right;">
-0.0455
-</td>
-<td style="text-align:right;">
-0.0021
-</td>
-<td style="text-align:right;">
-1.1878
-</td>
-<td style="text-align:right;">
-8
+0.3075
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-05120
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-66
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-76
-</td>
-<td style="text-align:right;">
-0.4384
-</td>
-<td style="text-align:right;">
-0.0249
-</td>
-<td style="text-align:right;">
-0.0006
-</td>
-<td style="text-align:right;">
-0.3721
-</td>
-<td style="text-align:right;">
-0.0300
-</td>
-<td style="text-align:right;">
-0.0115
-</td>
-<td style="text-align:right;">
-1e-04
-</td>
-<td style="text-align:right;">
-0.6732
-</td>
-<td style="text-align:right;">
-0.5316
-</td>
-<td style="text-align:right;">
-0.0285
-</td>
-<td style="text-align:right;">
-0.0008
-</td>
-<td style="text-align:right;">
-0.4811
-</td>
-<td style="text-align:right;">
-9
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-05129
-</td>
-<td style="text-align:right;">
 17
 </td>
 <td style="text-align:right;">
-273
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-201
-</td>
-<td style="text-align:right;">
-0.5574
+0.7257
 </td>
 <td style="text-align:right;">
 0.0145
 </td>
 <td style="text-align:right;">
-0.0002
+0.2597
 </td>
 <td style="text-align:right;">
-0.4255
+0.7257
 </td>
 <td style="text-align:right;">
-0.0439
+0.0145
 </td>
 <td style="text-align:right;">
-0.0090
+0.2597
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
 </td>
 <td style="text-align:right;">
-1e-04
+0.6795
 </td>
 <td style="text-align:right;">
-0.9649
+0.0308
 </td>
 <td style="text-align:right;">
-0.3987
+0.2897
 </td>
 <td style="text-align:right;">
-0.0191
+0.6795
 </td>
 <td style="text-align:right;">
-0.0004
+0.0308
 </td>
 <td style="text-align:right;">
-0.7575
+0.2897
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
 </td>
 <td style="text-align:right;">
-10
+0.7215
+</td>
+<td style="text-align:right;">
+0.0294
+</td>
+<td style="text-align:right;">
+0.2491
+</td>
+<td style="text-align:right;">
+0.7215
+</td>
+<td style="text-align:right;">
+0.0294
+</td>
+<td style="text-align:right;">
+0.2491
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:right;">
+0.6608
+</td>
+<td style="text-align:right;">
+0.0175
+</td>
+<td style="text-align:right;">
+0.3217
+</td>
+<td style="text-align:right;">
+0.6608
+</td>
+<td style="text-align:right;">
+0.0175
+</td>
+<td style="text-align:right;">
+0.3217
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:right;">
+0.7522
+</td>
+<td style="text-align:right;">
+0.0202
+</td>
+<td style="text-align:right;">
+0.2277
+</td>
+<td style="text-align:right;">
+0.7522
+</td>
+<td style="text-align:right;">
+0.0202
+</td>
+<td style="text-align:right;">
+0.2277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:right;">
+0.7264
+</td>
+<td style="text-align:right;">
+0.0179
+</td>
+<td style="text-align:right;">
+0.2557
+</td>
+<td style="text-align:right;">
+0.7264
+</td>
+<td style="text-align:right;">
+0.0179
+</td>
+<td style="text-align:right;">
+0.2557
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23
+</td>
+<td style="text-align:right;">
+0.6498
+</td>
+<td style="text-align:right;">
+0.0280
+</td>
+<td style="text-align:right;">
+0.3222
+</td>
+<td style="text-align:right;">
+0.6498
+</td>
+<td style="text-align:right;">
+0.0280
+</td>
+<td style="text-align:right;">
+0.3222
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24
+</td>
+<td style="text-align:right;">
+0.6737
+</td>
+<td style="text-align:right;">
+0.0314
+</td>
+<td style="text-align:right;">
+0.2950
+</td>
+<td style="text-align:right;">
+0.6737
+</td>
+<td style="text-align:right;">
+0.0314
+</td>
+<td style="text-align:right;">
+0.2950
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:right;">
+0.7046
+</td>
+<td style="text-align:right;">
+0.0199
+</td>
+<td style="text-align:right;">
+0.2755
+</td>
+<td style="text-align:right;">
+0.7046
+</td>
+<td style="text-align:right;">
+0.0199
+</td>
+<td style="text-align:right;">
+0.2755
 </td>
 </tr>
 </tbody>
 </table>
+<ol start="9" style="list-style-type: decimal">
+<li>Guardar resultados</li>
+</ol>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="metodología-de-benchmarking-1.html#cb169-1" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(estimaciones,estimacionesBench)</span>
+<span id="cb169-2"><a href="metodología-de-benchmarking-1.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">object =</span> estimaciones, <span class="at">file =</span> <span class="st">&quot;Rmd/PER/Recursos/estimaciones_Bench.rds&quot;</span>)</span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lectura-de-la-encuesta-y-estimaciones-directas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="preparando-insumos-para-stan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="validación-del-modelo-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mapas-del-mercado-de-trabajo.-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -980,7 +1155,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/COL/08-COL_Mercado_del_trabajo.qmd",
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/PER/09-PER_Mercado_del_trabajo.qmd",
 "text": "Edit"
 },
 "history": {
