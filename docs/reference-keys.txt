@@ -93,3 +93,12 @@ estimación-de-los-parámetros.-1
 estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación-1
 metodología-de-benchmarking-1
 mapas-del-mercado-de-trabajo.-1
+país-méxico.
+lectura-de-la-encuesta-y-estimaciones-directas-2
+selección-de-dominios-2
+preparando-insumos-para-stan-2
+validación-del-modelo-2
+estimación-de-los-parámetros.-2
+estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación-2
+metodología-de-benchmarking-2
+mapas-del-mercado-de-trabajo.-2

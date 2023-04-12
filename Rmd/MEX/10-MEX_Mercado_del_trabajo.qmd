@@ -1,0 +1,667 @@
+
+```{r setup_mex, include=FALSE, message=FALSE, error=FALSE, warning=FALSE}
+rm(list = ls())
+library(kableExtra)
+library(tidyverse)
+
+library(survey)
+library(srvyr)
+library(TeachingSampling)
+library(haven)
+library(bayesplot)
+library(patchwork)
+library(stringr)
+library(rstan)
+
+tba <- function(dat, cap = NA){
+  kable(dat,
+      format = "html", digits =  4,
+      caption = cap) %>% 
+     kable_styling(bootstrap_options = "striped", full_width = F)%>%
+         kable_classic(full_width = F, html_font = "Arial Narrow")
+}
+
+```
+
+# País: México.
+
+En México, la Encuesta Nacional de Ocupación y Empleo (ENOE) es la encuesta de hogares que se utiliza para medir el empleo y otras características laborales de la población. La ENOE es realizada por el Instituto Nacional de Estadística y Geografía (INEGI) de manera trimestral y tiene una muestra representativa a nivel nacional y en áreas urbanas y rurales.
+
+A través de la ENOE, se obtiene información sobre la población en edad de trabajar, la población económicamente activa, la población ocupada y la población desocupada, así como otros indicadores relacionados con el empleo, como la informalidad laboral, el subempleo y las condiciones laborales.
+
+Además del empleo, la ENOE también recopila información sobre otros temas, como la educación, la salud, la vivienda y la pobreza. Los resultados de la encuesta son publicados en informes trimestrales que son utilizados por los gobiernos, empresas y organizaciones para tomar decisiones y diseñar políticas relacionadas con el empleo y la economía en general.
+
+Es importante destacar que la ENOE es una fuente de información fundamental para entender la situación laboral en México y es utilizada por organismos nacionales e internacionales para comparar la situación laboral de diferentes países. La participación en la encuesta es voluntaria y la información proporcionada es confidencial. En resumen, la ENOE es una herramienta importante para conocer el mercado laboral y la situación económica y social de los hogares en México.
+
+## Lectura de la encuesta y estimaciones directas 
+
+En la primera línea se carga la encuesta desde un archivo RDS y se guarda en un objeto llamado `encuesta`. La segunda línea utiliza la función `transmute()` de la librería `dplyr` para seleccionar las variables de interés en la encuesta y crear nuevas variables a partir de ellas. Luego, se utiliza la variable `id_dominio` para identificar el dominio de estudio. En conjunto, estos pasos son fundamentales para preparar los datos de la encuesta para su posterior estimación del parámetro.
+
+
+```{r, eval=TRUE}
+encuesta <- readRDS('01 Modelo de area/MEX/2020/Data/encuesta_2020.Rds')
+
+length_upm <- max(nchar(encuesta[["_upm"]]))
+length_estrato <- max(nchar(encuesta[["_estrato"]]))
+
+encuesta <-
+  encuesta %>%
+  transmute(
+    dam = as_factor(dam_ee,levels  = "values"),
+    dam = str_pad(string =dam, width = 2, pad = "0"),
+    dam2 = dam2,
+    
+    nombre_dam = as_factor(dam_ee,levels  = "labels"),
+    upm = str_pad(string = `_upm`, width = length_upm, pad = "0"),
+    estrato = str_pad(string = `_estrato`, width = length_estrato , pad = "0"),
+    fep = `_fep`, 
+    empleo = condact3
+  )
+id_dominio <- "dam2"
+
+```
+
+El código presentado define el diseño muestral para el análisis de la encuesta "encuesta" en R. La primera línea establece una opción para el tratamiento de las PSU (unidades primarias de muestreo) solitarias, lo que indica que se deben aplicar ajustes en el cálculo de los errores estándar. La segunda línea utiliza la función "as_survey_design" de la librería "survey" para definir el diseño muestral. La función toma como argumentos la variable "encuesta" y los siguientes parámetros:
+
+  -   `strata`: la variable que define las estratas de muestreo en la encuesta, en este caso la variable "estrato".
+
+  -   `ids`: la variable que identifica las PSU en la encuesta, en este caso la variable "upm".
+
+  -   `weights`: la variable que indica los pesos muestrales de cada observación, en este caso la variable "fep".
+
+  -   `nest`: un parámetro lógico que indica si los datos de la encuesta están anidados o no. En este caso, se establece en "TRUE" porque los datos están anidados por dominio.
+  
+En conjunto, estos pasos permiten definir un diseño muestral que tenga en cuenta las características del muestreo y los pesos asignados a cada observación en la encuesta, lo que es necesario para obtener estimaciones precisas y representativas de los parámetros de interés.
+
+```{r, eval=FALSE}
+options(survey.lonely.psu= 'adjust' )
+diseno <- encuesta %>%
+  as_survey_design(
+    strata = estrato,
+    ids = upm,
+    weights = fep,
+    nest=T
+  )
+
+```
+
+El código presentado es una operación que se realiza en el diseño muestral definido en el código anterior, con el objetivo de obtener un indicador del empleo por dominio. La primera línea define un objeto llamado "indicador_dam". En la segunda línea, se agrupa el diseño muestral según el dominio especificado en la variable "id_dominio". La tercera línea filtra los datos para quedarse con los individuos que tienen empleo (empleo igual a 1), están desempleados (empleo igual a 2) o son inactivos (empleo igual a 3).
+
+A partir de la cuarta línea, se utilizan las funciones "summarise" y "survey_mean" para calcular las estadísticas descriptivas de interés. En particular, se calculan el número de personas ocupadas, desocupadas e inactivas en cada dominio, y la proporción de personas en cada una de estas categorías. La función "survey_mean" se utiliza para calcular la proporción de personas en cada una de estas categorías con sus respectivos errores estándar y efecto de diseño.
+
+```{r, eval=FALSE}
+indicador_dam <-
+  diseno %>% group_by_at(id_dominio) %>% 
+  filter(empleo %in% c(1:3)) %>%
+  summarise(
+    n_ocupado = unweighted(sum(empleo == 1)),
+    n_desocupado = unweighted(sum(empleo == 2)),
+    n_inactivo = unweighted(sum(empleo == 3)),
+    Ocupado = survey_mean(empleo == 1,
+      vartype = c("se",  "var"),
+      deff = T
+    ),
+    Desocupado = survey_mean(empleo == 2,
+                          vartype = c("se",  "var"),
+                          deff = T
+    ),
+    Inactivo = survey_mean(empleo == 3,
+                          vartype = c("se",  "var"),
+                          deff = T
+    )
+  )
+
+```
+
+## Selección de dominios 
+
+En la sección anterior, se llevó a cabo una estimación directa para cada categoría individualmente en cada municipio (dominio) presente en la muestra. Ahora, para evaluar la calidad de los resultados obtenidos, realizaremos un análisis descriptivo. Se emplean varias medidas de calidad, entre ellas, se cuenta el número de dominios que tienen dos o más unidades primarias de muestreo (UPM), así como el efecto de diseño mayor a 1 y las varianzas mayores a 0. Estas medidas nos permitirán determinar la fiabilidad de nuestros resultados y tomar decisiones informadas en función de ellos.
+
+Después de realizar las validaciones anteriores se establece como regla incluir en el estudio los dominios que posean 
+
+  - Dos o más UPM por dominio. 
+  
+  - Contar con un resultado en el Deff
+  
+  - Varianza estimada mayor a $10^{-8}$
+  
+```{r, eval=FALSE}
+indicador_dam <- encuesta %>% select(id_dominio, upm) %>%
+  distinct() %>% 
+  group_by_at(id_dominio) %>% 
+  tally(name = "n_upm") %>% 
+  inner_join(indicador_dam, by = id_dominio)
+
+indicador_dam1 <-  indicador_dam %>% 
+  filter(n_upm >= 2, !is.na(Desocupado_deff),
+         !is.na(Ocupado_deff),
+         !is.na(Inactivo_deff),
+         Desocupado_var > 0.00000001,
+         Ocupado_var > 0.00000001,
+         Inactivo_var > 0.00000001
+         )  %>% 
+  mutate(id_orden = 1:n())
+
+# saveRDS(object = indicador_dam1, "Rmd/MEX/Recursos/base_modelo.Rds")
+```
+
+```{r, echo=FALSE}
+indicador_dam1 <- readRDS("Rmd/MEX/Recursos/base_modelo.Rds")
+tba(head(indicador_dam1,10))
+```
+
+## Preparando insumos para `STAN`
+
+  1.    Lectura y adecuación de covariables
+  
+```{r, eval=FALSE}
+statelevel_satelite <- readRDS('01 Modelo de area//MEX/2020/Data/satelital_media2.rds')
+statelevel_censo <- readRDS('01 Modelo de area//MEX/2020/Data/statelevel_predictors_df_dam2.rds')
+
+
+statelevel_predictors_df <- left_join(statelevel_satelite,statelevel_censo) 
+## Estandarizando las variables para controlar el efecto de la escala. 
+statelevel_predictors_df %<>%
+  mutate_at(vars("luces_nocturnas", 
+                 "cubrimiento_cultivo",
+                 "cubrimiento_urbano",
+                 "modificacion_humana",
+                 "accesibilidad_hospitales",
+                 "accesibilidad_hosp_caminado"),
+            function(x)as.numeric(scale(x)))
+```
+  
+  2.    Seleccionar las variables del modelo y crear matriz de covariables.
+  
+```{r, eval=FALSE}
+names_cov <- c(
+  "dam2",
+  "luces_nocturnas",
+  "cubrimiento_cultivo",
+  "cubrimiento_urbano",
+  "modificacion_humana",
+  "tasa_desocupacion",
+  "discapacidad1",
+  "rezago_escolar"
+) 
+X_pred <-
+  anti_join(statelevel_predictors_df %>% select(all_of(names_cov)),
+            indicador_dam1 %>% select(dam2))
+```
+
+  En el bloque de código se identifican que dominios serán los predichos.  
+```{r,eval=FALSE}
+X_pred %>% select(dam2) %>% 
+  saveRDS(file = "01 Modelo de area/MEX/2020/Data/dam_pred.rds")
+```
+
+  Creando la matriz de covariables para los dominios no observados (`X_pred`) y los observados (`X_obs`)
+  
+```{r, eval=FALSE}
+## Obteniendo la matrix 
+X_pred %<>%
+  data.frame() %>%
+  select(-dam2)  %>%  as.matrix()
+
+## Identificando los dominios para realizar estimación del modelo
+
+X_obs <- inner_join(indicador_dam1 %>% select(dam2, id_orden),
+                    statelevel_predictors_df %>% select(all_of(names_cov))) %>%
+  arrange(id_orden) %>%
+  data.frame() %>%
+  select(-dam2, -id_orden)  %>%  as.matrix()
+```
+  
+  3. Calculando el n_efectivo y el $\tilde{y}$ 
+  
+```{r,eval=FALSE}
+D <- nrow(indicador_dam1)
+P <- 3 # Ocupado, desocupado, inactivo.
+Y_tilde <- matrix(NA, D, P)
+n_tilde <- matrix(NA, D, P)
+
+
+# n efectivos ocupado
+n_tilde[,1] <- (indicador_dam1$Ocupado*(1 - indicador_dam1$Ocupado))/indicador_dam1$Ocupado_var
+Y_tilde[,1] <- n_tilde[,1]* indicador_dam1$Ocupado
+
+
+# n efectivos desocupado
+n_tilde[,2] <- (indicador_dam1$Desocupado*(1 - indicador_dam1$Desocupado))/indicador_dam1$Desocupado_var
+Y_tilde[,2] <- n_tilde[,2]* indicador_dam1$Desocupado
+
+# n efectivos Inactivo
+n_tilde[,3] <- (indicador_dam1$Inactivo*(1 - indicador_dam1$Inactivo))/indicador_dam1$Inactivo_var
+Y_tilde[,3] <- n_tilde[,3]* indicador_dam1$Inactivo
+
+```
+
+  4. Compilando el modelo 
+
+
+```{r, eval=FALSE}
+
+X1_obs <- cbind(matrix(1,nrow = D,ncol = 1),X_obs)
+K = ncol(X1_obs)
+D1 <- nrow(X_pred)
+X1_pred <- cbind(matrix(1,nrow = D1,ncol = 1),X_pred)
+
+sample_data <- list(D = D,
+                    P = P,
+                    K = K,
+                    hat_y = Y_tilde,
+                    X_obs = X1_obs,
+                    X_pred = X1_pred,
+                    D1 = D1)
+
+
+library(rstan)
+fit_mcmc2 <- stan(
+  file = "01 Modelo de area/0funciones/01 Multinomial_simple_pred.stan",  # Stan program
+  data = sample_data,    # named list of data
+  verbose = TRUE,
+  warmup = 1000,          # number of warmup iterations per chain
+  iter = 2000,            # total number of iterations per chain
+  cores = 4,              # number of cores (could use one per chain)
+)
+
+saveRDS(fit_mcmc2,
+        "01 Modelo de area/MEX/2020/Data/fit_rtanmultinomial_con_covariable_satelite2.Rds")
+```
+
+
+## Validación del modelo 
+
+La validación de un modelo es esencial para evaluar su capacidad para predecir de manera precisa y confiable los resultados futuros. En el caso de un modelo de área con respuesta multinomial, la validación se enfoca en medir la precisión del modelo para predecir las diferentes categorías de respuesta. El objetivo principal de la validación es determinar si el modelo es capaz de generalizar bien a datos no vistos y proporcionar predicciones precisas. Esto implica comparar las predicciones del modelo con los datos observados y utilizar métricas de evaluación para medir el rendimiento del modelo. La validación del modelo es esencial para garantizar la calidad de las predicciones y la confiabilidad del modelo para su uso en aplicaciones futuras.
+
+```{r, eval=FALSE}
+library(posterior)
+infile <- paste0("01 Modelo de area/MEX/2020/Data/fit_rtanmultinomial_con_covariable_satelite2.Rds")
+fit <- readRDS(infile)
+
+theta_dir <- indicador_dam1 %>%  
+  transmute(dam2,
+    n = n_desocupado + n_ocupado + n_inactivo,
+            Ocupado, Desocupado, Inactivo) 
+
+color_scheme_set("brightblue")
+theme_set(theme_bw(base_size = 15))
+y_pred_B <- as.array(fit, pars = "theta") %>%
+  as_draws_matrix()
+  
+rowsrandom <- sample(nrow(y_pred_B), 100)
+
+theta_1<-  grep(pattern = "1]",x = colnames(y_pred_B),value = TRUE)
+theta_2<-  grep(pattern = "2]",x = colnames(y_pred_B),value = TRUE)
+theta_3<-  grep(pattern = "3]",x = colnames(y_pred_B),value = TRUE)
+y_pred1 <- y_pred_B[rowsrandom,theta_1 ]
+y_pred2 <- y_pred_B[rowsrandom,theta_2 ]
+y_pred3 <- y_pred_B[rowsrandom,theta_3 ]
+
+ppc_dens_overlay(y = as.numeric(theta_dir$Ocupado), y_pred1)/
+  ppc_dens_overlay(y = as.numeric(theta_dir$Desocupado), y_pred2)/
+  ppc_dens_overlay(y = as.numeric(theta_dir$Inactivo), y_pred3)
+
+```
+
+
+```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+knitr::include_graphics("Rmd/MEX/Recursos/ppc.png")
+```  
+
+La matriz de correlación de los efectos aleatorios. 
+
+```{r, eval=FALSE}
+omega <- summary(fit,"Omega")$summary
+tba(omega)
+```
+
+```{r, echo=FALSE}
+omega <- readRDS("Rmd/MEX/Recursos/omega.rds")
+tba(omega)
+```
+
+
+### Estimación de los parámetros. 
+
+El código crea dos matrices, `theta_obs_ordenado` y `theta_pred_ordenado`, que contienen las estimaciones medias de los parámetros del modelo de respuesta multinomial con covariables para los datos de observación y predicción, respectivamente. La función `matrix()` se utiliza para dar formato a los datos con una matriz `nrow` x `ncol`, y se asignan nombres de columna apropiados a la matriz resultante utilizando `colnames()`. Luego se convierten las matrices en marcos de datos (`as.data.frame()`) y se unen mediante `full_join()` para crear una única tabla que contenga todas las estimaciones de los parámetros para los datos de observación y predicción, junto con la información del indicador de área (theta_dir). El resultado final es un marco de datos llamado estimaciones_obs.
+
+```{r, eval=FALSE}
+dam_pred <- readRDS("01 Modelo de area/MEX/2020/Data/dam_pred.rds")
+P <- 3 
+D <- nrow(indicador_dam1)
+D1 <- nrow(dam_pred)
+## Estimación del modelo. 
+theta_obs <- summary(fit, pars = "theta")$summary[, "mean"]
+theta_pred <- summary(fit, pars = "theta_pred")$summary[, "mean"]
+
+## Ordenando la matrix de theta 
+theta_obs_ordenado <- matrix(theta_obs, 
+                             nrow = D,
+                             ncol = P,byrow = TRUE) 
+
+colnames(theta_obs_ordenado) <- c("Ocupado_mod", "Desocupado_mod", "Inactivo_mod")
+theta_obs_ordenado%<>% as.data.frame()
+theta_obs_ordenado <- cbind(dam2 = indicador_dam1$dam2,
+                            theta_obs_ordenado)
+
+theta_pred_ordenado <- matrix(theta_pred, 
+                             nrow = D1,
+                             ncol = P,byrow = TRUE)
+
+colnames(theta_pred_ordenado) <- c("Ocupado_mod", "Desocupado_mod", "Inactivo_mod")
+theta_pred_ordenado%<>% as.data.frame()
+theta_pred_ordenado <- cbind(dam2 = dam_pred$dam2, theta_pred_ordenado)
+```
+
+#### Estimación del desviación estárdar y el coeficiente de valiación 
+
+Este bloque de código corresponde al cálculo de las desviaciones estándar (sd) y coeficientes de variación (cv) de los parámetros `theta` para los datos observados y predichos. En primer lugar, se utiliza la función `summary()` del paquete `rstan` para extraer los valores de `sd` de los parámetros `theta` observados y predichos, respectivamente, a partir del modelo (`fit`) que contiene la información de la estimación de los parámetros de la distribución Bayesiana. Luego, se organizan los valores de sd en una matriz ordenada por `dam2` y se les asignan los nombres correspondientes. Con esta matriz, se calcula otra matriz que contiene los coeficientes de variación para los parámetros `theta` observados (`theta_obs_ordenado_cv`). De manera similar, se construyen matrices ordenadas por `dam2` para los valores de sd y cv de los parámetros theta predichos (`theta_pred_ordenado_sd` y `theta_pred_ordenado_cv`, respectivamente).
+
+
+```{r, eval=FALSE}
+theta_obs_sd <- summary(fit, pars = "theta")$summary[, "sd"]
+theta_pred_sd <- summary(fit, pars = "theta_pred")$summary[, "sd"]
+
+theta_obs_ordenado_sd <- matrix(theta_obs_sd, 
+                             nrow = D,
+                             ncol = P,byrow = TRUE) 
+
+colnames(theta_obs_ordenado_sd) <- c("Ocupado_mod_sd", "Desocupado_mod_sd", "Inactivo_mod_sd")
+theta_obs_ordenado_sd%<>% as.data.frame()
+theta_obs_ordenado_sd <- cbind(dam2 = indicador_dam1$dam2,
+                            theta_obs_ordenado_sd)
+theta_obs_ordenado_cv <- theta_obs_ordenado_sd[,-1]/theta_obs_ordenado[,-1]
+
+colnames(theta_obs_ordenado_cv) <- c("Ocupado_mod_cv", "Desocupado_mod_cv", "Inactivo_mod_cv")
+
+theta_obs_ordenado_cv <- cbind(dam2 = indicador_dam1$dam2,
+                               theta_obs_ordenado_cv)
+
+theta_pred_ordenado_sd <- matrix(theta_pred_sd, 
+                              nrow = D1,
+                              ncol = P,byrow = TRUE)
+
+colnames(theta_pred_ordenado_sd) <- c("Ocupado_mod_sd", "Desocupado_mod_sd", "Inactivo_mod_sd")
+theta_pred_ordenado_sd%<>% as.data.frame()
+theta_pred_ordenado_sd <- cbind(dam2 = dam_pred$dam2, theta_pred_ordenado_sd)
+
+theta_pred_ordenado_cv <- theta_pred_ordenado_sd[,-1]/theta_pred_ordenado[,-1]
+
+colnames(theta_pred_ordenado_cv) <- c("Ocupado_mod_cv", "Desocupado_mod_cv", "Inactivo_mod_cv")
+
+theta_pred_ordenado_cv <- cbind(dam2 = dam_pred$dam2, theta_pred_ordenado_cv)
+
+```
+
+El último paso es realizar la consolidación de la bases obtenidas para la estimación puntual, desviación estándar y coeficiente de variación. 
+
+```{r, eval=FALSE}
+theta_obs_ordenado <- full_join(theta_obs_ordenado,theta_obs_ordenado_sd) %>% 
+  full_join(theta_obs_ordenado_cv)
+
+theta_pred_ordenado <- full_join(theta_pred_ordenado,theta_pred_ordenado_sd) %>% 
+  full_join(theta_pred_ordenado_cv)
+
+
+estimaciones <- full_join(indicador_dam1,
+                              bind_rows(theta_obs_ordenado, theta_pred_ordenado))
+
+saveRDS(object = estimaciones, file = "Rmd/MEX/Recursos/estimaciones.rds")
+tba(head(estimaciones,10))
+```
+
+```{r, echo=FALSE}
+estimaciones <- readRDS("Rmd/MEX/Recursos/estimaciones.rds")
+tba(head(estimaciones,10))
+```
+
+## Metodología de Benchmarking 
+
+  1. Conteos de personas agregados por dam2, personas mayores de 15 años de edad. 
+  
+```{r, eval=FALSE}
+conteo_pp_dam <- readRDS("01 Modelo de area/MEX/2020/Data/censo_dam2.rds") %>%
+  filter(edad > 1)  %>% 
+  group_by(dam = depto, dam2 = mpio) %>% 
+  summarise(pp_dam2 = sum(n)) %>% 
+  add_tally(wt = pp_dam2, name = "pp_dam")
+```
+
+  2.    Estimación del parámetro `theta` al nivel que la encuesta sea representativa.
+  
+```{r, eval=TRUE}
+indicador_agregado <- readRDS("Rmd/MEX/Recursos/indicador_agregado.rds")
+tba(indicador_agregado %>% head(10))
+Razon_empleo  <- readRDS("Rmd/MEX/Recursos/Razon_empleo.rds")
+```
+  
+  3.  Definir los pesos por dominios. 
+  
+```{r, eval=FALSE}
+names_cov <-  "dam"
+estimaciones_mod <- estimaciones %>% transmute(
+  dam = substr(dam2,1,2),
+  dam2,Ocupado_mod,Desocupado_mod,Inactivo_mod) %>% 
+  inner_join(conteo_pp_dam ) %>% 
+  mutate(wi = pp_dam2/pp_dam)
+
+```
+  
+  4. Crear variables dummys 
+  
+```{r,eval=FALSE}
+estimaciones_mod %<>%
+  fastDummies::dummy_cols(select_columns = names_cov,
+                          remove_selected_columns = FALSE)
+
+Xdummy <- estimaciones_mod %>% select(matches("dam_")) %>% 
+  mutate_at(vars(matches("_\\d")) ,
+            list(Ocupado = function(x) x*estimaciones_mod$Ocupado_mod,
+                 Desocupado = function(x) x*estimaciones_mod$Desocupado_mod,
+                 Inactivo = function(x) x*estimaciones_mod$Inactivo_mod)) %>% 
+  select((matches("Ocupado|Desocupado|Inactivo"))) 
+```
+  
+  5.    Calcular el ponderador para cada nivel de la variable. 
+  
+#### Ocupado {-}
+    
+```{r, eval=FALSE}
+names_ocupado <- grep(pattern = "_O", x = colnames(Xdummy),value = TRUE)
+gk_ocupado <- calib(Xs = Xdummy[,names_ocupado] %>% as.matrix(), 
+            d =  estimaciones_mod$wi,
+            total = Razon_empleo[names_ocupado] %>% as.matrix(),
+            method="logit",max_iter = 5000) 
+
+checkcalibration(Xs = Xdummy[,names_ocupado] %>% as.matrix(), 
+                 d =estimaciones_mod$wi,
+                 total = Razon_empleo[names_ocupado] %>% as.matrix(),
+                 g = gk_ocupado)
+
+```
+
+#### Desocupado {-} 
+    
+```{r, eval=FALSE}
+names_descupados <- grep(pattern = "_D", x = colnames(Xdummy),value = TRUE)
+
+gk_desocupado <- calib(Xs = Xdummy[,names_descupados]%>% as.matrix(), 
+                    d =  estimaciones_mod$wi,
+                    total = Razon_empleo[names_descupados]%>% as.matrix(),
+                    method="logit",max_iter = 5000) 
+
+checkcalibration(Xs = Xdummy[,names_descupados]%>% as.matrix(), 
+                 d =estimaciones_mod$wi,
+                 total = Razon_empleo[names_descupados]%>% as.matrix(),
+                 g = gk_desocupado,)
+```
+
+#### Inactivo {-}
+
+```{r, eval=FALSE}
+names_inactivo <- grep(pattern = "_I", x = colnames(Xdummy),value = TRUE)
+
+gk_Inactivo <- calib(Xs = Xdummy[,names_inactivo]%>% as.matrix(), 
+                    d =  estimaciones_mod$wi,
+                    total = Razon_empleo[names_inactivo]%>% as.matrix(),
+                    method="logit",max_iter = 5000) 
+
+checkcalibration(Xs = Xdummy[,names_inactivo]%>% as.matrix(), 
+                 d =estimaciones_mod$wi,
+                 total = Razon_empleo[names_inactivo]%>% as.matrix(),
+                 g = gk_Inactivo,)
+
+
+```
+  
+  6.    Validar los resultados obtenidos. 
+  
+```{r, eval=FALSE}
+par(mfrow = c(1,3))
+hist(gk_ocupado)
+hist(gk_desocupado)
+hist(gk_Inactivo)
+```
+
+
+```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+knitr::include_graphics("Rmd/MEX/Recursos/Plot_Bench_gk.jpeg")
+```  
+
+
+  7.    Estimaciones ajustadas por el ponderador
+  
+```{r, eval=FALSE}
+estimacionesBench <- estimaciones_mod %>%
+  mutate(gk_ocupado, gk_desocupado, gk_Inactivo) %>%
+  transmute(
+    dam,
+    dam2,
+    wi,gk_ocupado, gk_desocupado, gk_Inactivo,
+    Ocupado_Bench = Ocupado_mod*gk_ocupado,
+    Desocupado_Bench = Desocupado_mod*gk_desocupado,
+    Inactivo_Bench = Inactivo_mod*gk_Inactivo
+  )
+```
+
+  8.    Validación de resultados. 
+  
+```{r, eval=FALSE}
+estimacionesBench %>%
+  group_by(dam) %>% 
+  summarise(Ocupado_Bench = sum(wi*Ocupado_Bench),
+            Desocupado_Bench = sum(wi*Desocupado_Bench),
+            Inactivo_Bench = sum(wi*Inactivo_Bench)) %>% 
+  inner_join(indicador_agregado) %>% 
+  tba()
+```
+
+```{r, echo=FALSE}
+tablas <- readRDS("Rmd/MEX/Recursos/validar_Bench.rds")
+tba(tablas)
+
+```
+
+
+  9. Guardar resultados 
+  
+```{r, eval=FALSE}
+estimaciones <- inner_join(estimaciones,estimacionesBench)
+saveRDS(object = estimaciones, file = "Rmd/MEX/Recursos/estimaciones_Bench.rds")
+```
+
+```{r, echo=FALSE}
+estimaciones <- readRDS("Rmd/MEX/Recursos/estimaciones_Bench.rds")
+```
+
+## Mapas del mercado de trabajo.
+
+```{r, eval=FALSE}
+library(sp)
+library(sf)
+library(tmap)
+ShapeSAE <- read_sf("01 Modelo de area/MEX/2020/Shape/MEX_dam2.shp")
+
+P1_empleo <- tm_shape(ShapeSAE %>%
+                           inner_join(estimaciones))
+brks_ocupado <- seq(0,1,0.2)
+brks_desocupado <- seq(0,0.1,0.02)
+brks_inactivo <- seq(0.10,0.9, 0.2)
+
+```
+
+### Ocupado {-}
+
+```{r, eval=FALSE}
+Mapa_ocupado <-
+  P1_empleo +
+  tm_fill("Ocupado_Bench",
+          breaks = brks_ocupado,
+          title = "Ocupado",
+          palette = "-Blues") +
+  tm_layout(
+    legend.only = FALSE,
+    legend.height = -0.5,
+    legend.width = -0.5,
+    asp = 1.5,
+    legend.text.size = 3,
+    legend.title.size = 3
+  )
+Mapa_ocupado
+```
+
+
+```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+# knitr::include_graphics("Rmd/MEX/Recursos/Map_Ocupados.png")
+```
+
+### Desocupado {-} 
+
+```{r, eval=FALSE}
+Mapa_desocupado <-
+  P1_empleo + tm_fill(
+    "Desocupado_Bench",
+    breaks = brks_desocupado,
+    title =  "Desocupado",
+    palette = "YlOrRd"
+  ) + tm_layout( 
+    legend.only = FALSE,
+    legend.height = -0.5,
+    legend.width = -0.5,
+    asp = 1.5,
+    legend.text.size = 3,
+    legend.title.size = 3)
+Mapa_desocupado
+```
+
+
+```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+# knitr::include_graphics("Rmd/MEX/Recursos/Map_Desocupados.png")
+```
+
+
+### Inactivo {-} 
+
+```{r, eval=FALSE}
+Mapa_Inactivo <-
+  P1_empleo + tm_fill(
+      "Inactivo_Bench",
+    title =  "Inactivo",
+    breaks = brks_inactivo,
+    palette = "YlGn"
+  ) + tm_layout( 
+    legend.only = FALSE,
+    legend.height = -0.5,
+    legend.width = -0.5,
+    asp = 1.5,
+    legend.text.size = 3,
+    legend.title.size = 3)
+```
+
+```{r echo=FALSE, out.width = "800px", out.height="200px",fig.align='center'}
+knitr::include_graphics("Rmd/MEX/Recursos/Map_Mosaico.png")
+```
+
+    
+  

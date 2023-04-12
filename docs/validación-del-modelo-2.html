@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10.4 Validación del modelo | Estimación de áreas pequeñas con el modelo multinomial</title>
+  <meta name="description" content="Documentos con la descripción del proceso de compilación en R." />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10.4 Validación del modelo | Estimación de áreas pequeñas con el modelo multinomial" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Documentos con la descripción del proceso de compilación en R." />
+  <meta name="github-repo" content="psirusteam/HHS-Handbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10.4 Validación del modelo | Estimación de áreas pequeñas con el modelo multinomial" />
+  
+  <meta name="twitter:description" content="Documentos con la descripción del proceso de compilación en R." />
+  
+
+<meta name="author" content="Andrés Gutiérrez, Stalyn Guerrero, Carolina Franco, Charlotte Taglioni" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preparando-insumos-para-stan-2.html"/>
+<link rel="next" href="metodología-de-benchmarking-2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estimación de áreas pequeñas con el modelo multinomial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="1" data-path="estimación-directa-para-las-comunas-de-chile..html"><a href="estimación-directa-para-las-comunas-de-chile..html"><i class="fa fa-check"></i><b>1</b> Estimación directa para las comunas de Chile.</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lectura-de-la-encuesta..html"><a href="lectura-de-la-encuesta..html"><i class="fa fa-check"></i><b>1.1</b> Lectura de la encuesta.</a></li>
+<li class="chapter" data-level="1.2" data-path="definición-del-diseño-muestral.html"><a href="definición-del-diseño-muestral.html"><i class="fa fa-check"></i><b>1.2</b> Definición del diseño muestral</a></li>
+<li class="chapter" data-level="1.3" data-path="estimación-directa-del-indicador.html"><a href="estimación-directa-del-indicador.html"><i class="fa fa-check"></i><b>1.3</b> Estimación directa del indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="análisis-descriptivo-de-las-estimaciones-directas..html"><a href="análisis-descriptivo-de-las-estimaciones-directas..html"><i class="fa fa-check"></i><b>2</b> Análisis descriptivo de las estimaciones directas.</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lectura-de-librerías.html"><a href="lectura-de-librerías.html"><i class="fa fa-check"></i><b>2.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="2.2" data-path="definiendo-algunas-funciones..html"><a href="definiendo-algunas-funciones..html"><i class="fa fa-check"></i><b>2.2</b> Definiendo algunas funciones.</a></li>
+<li class="chapter" data-level="2.3" data-path="lectura-de-las-estimaciones-directas.html"><a href="lectura-de-las-estimaciones-directas.html"><i class="fa fa-check"></i><b>2.3</b> Lectura de las estimaciones directas</a></li>
+<li class="chapter" data-level="2.4" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html"><i class="fa fa-check"></i><b>2.4</b> Descriptivo de las estimaciones directas</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-los-dominios-con-deff-no-estimados"><i class="fa fa-check"></i><b>2.4.1</b> Conteo de los dominios con deff no estimados</a></li>
+<li class="chapter" data-level="2.4.2" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-los-dominios-con-deff-mayores-que-1"><i class="fa fa-check"></i><b>2.4.2</b> Conteo de los dominios con deff mayores que 1</a></li>
+<li class="chapter" data-level="2.4.3" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#porcentaje-de-dominios-con-estimación-de-la-varianza-mayor-a-0"><i class="fa fa-check"></i><b>2.4.3</b> Porcentaje de dominios con estimación de la varianza mayor a 0</a></li>
+<li class="chapter" data-level="2.4.4" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#conteo-de-dominios-con-dos-o-más-upm-y-deff-mayor-1-simultáneamente."><i class="fa fa-check"></i><b>2.4.4</b> Conteo de dominios con dos o más upm y deff mayor 1 simultáneamente.</a></li>
+<li class="chapter" data-level="2.4.5" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#selección-de-los-dominios-que-empleamos-en-el-modelo-de-área."><i class="fa fa-check"></i><b>2.4.5</b> Selección de los dominios que empleamos en el modelo de área.</a></li>
+<li class="chapter" data-level="2.4.6" data-path="descriptivo-de-las-estimaciones-directas.html"><a href="descriptivo-de-las-estimaciones-directas.html#guardar-archivos"><i class="fa fa-check"></i><b>2.4.6</b> Guardar archivos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimación-del-modelo-de-área-de-respuesta-multinomial.html"><a href="estimación-del-modelo-de-área-de-respuesta-multinomial.html"><i class="fa fa-check"></i><b>3</b> Estimación del modelo de área de respuesta multinomial</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lectura-de-librerías-1.html"><a href="lectura-de-librerías-1.html"><i class="fa fa-check"></i><b>3.1</b> Lectura de librerías</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="lectura-de-librerías-1.html"><a href="lectura-de-librerías-1.html#lectura-de-bases-de-datos"><i class="fa fa-check"></i><b>3.1.1</b> Lectura de bases de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="realizando-ajuste-sobre-el-deff-estimado..html"><a href="realizando-ajuste-sobre-el-deff-estimado..html"><i class="fa fa-check"></i><b>3.2</b> Realizando ajuste sobre el deff estimado.</a></li>
+<li class="chapter" data-level="3.3" data-path="definición-del-modelo-multinomial.html"><a href="definición-del-modelo-multinomial.html"><i class="fa fa-check"></i><b>3.3</b> Definición del modelo multinomial</a></li>
+<li class="chapter" data-level="3.4" data-path="modelo-programando-en-stan.html"><a href="modelo-programando-en-stan.html"><i class="fa fa-check"></i><b>3.4</b> Modelo programando en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.5" data-path="identificando-los-municipios-para-predicción.html"><a href="identificando-los-municipios-para-predicción.html"><i class="fa fa-check"></i><b>3.5</b> Identificando los municipios para predicción</a></li>
+<li class="chapter" data-level="3.6" data-path="obteniendo-la-matriz.html"><a href="obteniendo-la-matriz.html"><i class="fa fa-check"></i><b>3.6</b> Obteniendo la matriz</a></li>
+<li class="chapter" data-level="3.7" data-path="identificando-los-dominios-para-realizar-estimación-del-modelo.html"><a href="identificando-los-dominios-para-realizar-estimación-del-modelo.html"><i class="fa fa-check"></i><b>3.7</b> Identificando los dominios para realizar estimación del modelo</a></li>
+<li class="chapter" data-level="3.8" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html"><i class="fa fa-check"></i><b>3.8</b> Identificando los argumentos para <code>STAN</code></a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-argumentos-para-stan"><i class="fa fa-check"></i><b>3.8.1</b> Preparando argumentos para <code>STAN</code></a></li>
+<li class="chapter" data-level="3.8.2" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#ejecutando-el-modelo-en-stan"><i class="fa fa-check"></i><b>3.8.2</b> Ejecutando el modelo en <code>STAN</code></a></li>
+<li class="chapter" data-level="3.8.3" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-beta"><i class="fa fa-check"></i><b>3.8.3</b> Valores estimados para beta</a></li>
+<li class="chapter" data-level="3.8.4" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#valores-estimados-para-la-matriz-de-correlación"><i class="fa fa-check"></i><b>3.8.4</b> Valores estimados para la matriz de correlación</a></li>
+<li class="chapter" data-level="3.8.5" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#validación-dela-convergencia-de-las-cadenas"><i class="fa fa-check"></i><b>3.8.5</b> Validación dela convergencia de las cadenas</a></li>
+<li class="chapter" data-level="3.8.6" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#evaluación-visual-de-las-cadenas-para-beta"><i class="fa fa-check"></i><b>3.8.6</b> Evaluación visual de las cadenas para beta</a></li>
+<li class="chapter" data-level="3.8.7" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#extrayendo-las-estimaciones-para-theta"><i class="fa fa-check"></i><b>3.8.7</b> extrayendo las estimaciones para theta</a></li>
+<li class="chapter" data-level="3.8.8" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#organizando-los-resultados-en-una-matriz."><i class="fa fa-check"></i><b>3.8.8</b> Organizando los resultados en una matriz.</a></li>
+<li class="chapter" data-level="3.8.9" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-gráfico-comparativo-entre-la-estimación-dir-y-el-modelo"><i class="fa fa-check"></i><b>3.8.9</b> Preparando el gráfico comparativo entre la estimación dir y el modelo</a></li>
+<li class="chapter" data-level="3.8.10" data-path="identificando-los-argumentos-para-stan.html"><a href="identificando-los-argumentos-para-stan.html#preparando-el-ppc"><i class="fa fa-check"></i><b>3.8.10</b> Preparando el ppc</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="validación-sobre-los-resultados-del-modelo-de-área..html"><a href="validación-sobre-los-resultados-del-modelo-de-área..html"><i class="fa fa-check"></i><b>4</b> Validación sobre los resultados del modelo de área.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lectura-de-librerías-2.html"><a href="lectura-de-librerías-2.html"><i class="fa fa-check"></i><b>4.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="4.2" data-path="lectura-de-bases-de-datos-1.html"><a href="lectura-de-bases-de-datos-1.html"><i class="fa fa-check"></i><b>4.2</b> Lectura de bases de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="estimacion-directa.html"><a href="estimacion-directa.html"><i class="fa fa-check"></i><b>4.3</b> Estimacion directa</a></li>
+<li class="chapter" data-level="4.4" data-path="estimación-del-coeficiente-de-variación.html"><a href="estimación-del-coeficiente-de-variación.html"><i class="fa fa-check"></i><b>4.4</b> Estimación del coeficiente de variación</a></li>
+<li class="chapter" data-level="4.5" data-path="consolidando-los-resultados-en-una-base-de-datos..html"><a href="consolidando-los-resultados-en-una-base-de-datos..html"><i class="fa fa-check"></i><b>4.5</b> Consolidando los resultados en una base de datos.</a></li>
+<li class="chapter" data-level="4.6" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><i class="fa fa-check"></i><b>4.6</b> Gráfica comparativa entre las estimación directa y la estimación resultante del modelo</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#estimación-puntual"><i class="fa fa-check"></i><b>4.6.1</b> Estimación puntual</a></li>
+<li class="chapter" data-level="4.6.2" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#error-estándar."><i class="fa fa-check"></i><b>4.6.2</b> Error estándar.</a></li>
+<li class="chapter" data-level="4.6.3" data-path="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html"><a href="gráfica-comparativa-entre-las-estimación-directa-y-la-estimación-resultante-del-modelo.html#coeficiente-de-varianción."><i class="fa fa-check"></i><b>4.6.3</b> Coeficiente de varianción.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="estimaciones-ajustadas-por-benchmark.html"><a href="estimaciones-ajustadas-por-benchmark.html"><i class="fa fa-check"></i><b>5</b> Estimaciones ajustadas por Benchmark</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lectura-de-librerías-3.html"><a href="lectura-de-librerías-3.html"><i class="fa fa-check"></i><b>5.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="5.2" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html"><i class="fa fa-check"></i><b>5.2</b> Lectura de las bases de datos</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#parametrizando-el-código"><i class="fa fa-check"></i><b>5.2.1</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#conteos-agregados-por-dam-y-dam2"><i class="fa fa-check"></i><b>5.2.2</b> Conteos agregados por dam y dam2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#tranformando-variables-de-la-encuesta."><i class="fa fa-check"></i><b>5.2.3</b> Tranformando variables de la encuesta.</a></li>
+<li class="chapter" data-level="5.2.4" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#creando-el-objeto-diseño"><i class="fa fa-check"></i><b>5.2.4</b> Creando el objeto diseño</a></li>
+<li class="chapter" data-level="5.2.5" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#estimado-el-indicador"><i class="fa fa-check"></i><b>5.2.5</b> Estimado el indicador</a></li>
+<li class="chapter" data-level="5.2.6" data-path="lectura-de-las-bases-de-datos.html"><a href="lectura-de-las-bases-de-datos.html#organizando-las-estimaciones-directas-agregadas."><i class="fa fa-check"></i><b>5.2.6</b> Organizando las estimaciones directas agregadas.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="benchmarking.html"><a href="benchmarking.html"><i class="fa fa-check"></i><b>5.3</b> Benchmarking</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="benchmarking.html"><a href="benchmarking.html#seleccionado-variables"><i class="fa fa-check"></i><b>5.3.1</b> Seleccionado variables</a></li>
+<li class="chapter" data-level="5.3.2" data-path="benchmarking.html"><a href="benchmarking.html#creando-las-dummys"><i class="fa fa-check"></i><b>5.3.2</b> Creando las dummys</a></li>
+<li class="chapter" data-level="5.3.3" data-path="benchmarking.html"><a href="benchmarking.html#obtenideno-los-ponderadores"><i class="fa fa-check"></i><b>5.3.3</b> Obtenideno los ponderadores</a></li>
+<li class="chapter" data-level="5.3.4" data-path="benchmarking.html"><a href="benchmarking.html#creando-las-estimaciones-benchmark"><i class="fa fa-check"></i><b>5.3.4</b> Creando las estimaciones Benchmark</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="validación-visual-del-benchmark.html"><a href="validación-visual-del-benchmark.html"><i class="fa fa-check"></i><b>6</b> Validación visual del Benchmark</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lectura-de-librerias.html"><a href="lectura-de-librerias.html"><i class="fa fa-check"></i><b>6.1</b> Lectura de librerias</a></li>
+<li class="chapter" data-level="6.2" data-path="lectura-de-encuesta..html"><a href="lectura-de-encuesta..html"><i class="fa fa-check"></i><b>6.2</b> Lectura de encuesta.</a></li>
+<li class="chapter" data-level="6.3" data-path="estimación-agregada.html"><a href="estimación-agregada.html"><i class="fa fa-check"></i><b>6.3</b> Estimación agregada</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="estimación-agregada.html"><a href="estimación-agregada.html#creación-de-objeto-diseno"><i class="fa fa-check"></i><b>6.3.1</b> Creación de objeto diseno</a></li>
+<li class="chapter" data-level="6.3.2" data-path="estimación-agregada.html"><a href="estimación-agregada.html#estimación-del-indicador"><i class="fa fa-check"></i><b>6.3.2</b> Estimación del indicador</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html"><i class="fa fa-check"></i><b>6.4</b> Gráfica de validación</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#ocupado-1"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#desocupado-1"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="gráfica-de-validación.html"><a href="gráfica-de-validación.html#inactivo-1"><i class="fa fa-check"></i>Inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mapas-de-resultados.html"><a href="mapas-de-resultados.html"><i class="fa fa-check"></i><b>7</b> Mapas de resultados</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lectura-de-librerías-4.html"><a href="lectura-de-librerías-4.html"><i class="fa fa-check"></i><b>7.1</b> Lectura de librerías</a></li>
+<li class="chapter" data-level="7.2" data-path="parametrizando-el-código-1.html"><a href="parametrizando-el-código-1.html"><i class="fa fa-check"></i><b>7.2</b> Parametrizando el código</a></li>
+<li class="chapter" data-level="7.3" data-path="lectura-de-shapefile.html"><a href="lectura-de-shapefile.html"><i class="fa fa-check"></i><b>7.3</b> Lectura de shapefile</a></li>
+<li class="chapter" data-level="7.4" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html"><i class="fa fa-check"></i><b>7.4</b> Definición del mapa con <code>tmap</code></a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-ocupados"><i class="fa fa-check"></i><b>7.4.1</b> Creando mapa de ocupados</a></li>
+<li class="chapter" data-level="7.4.2" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-desocupados"><i class="fa fa-check"></i><b>7.4.2</b> Creando mapa de desocupados</a></li>
+<li class="chapter" data-level="7.4.3" data-path="definición-del-mapa-con-tmap.html"><a href="definición-del-mapa-con-tmap.html#creando-mapa-de-inactivo"><i class="fa fa-check"></i><b>7.4.3</b> Creando mapa de inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="país-colombia..html"><a href="país-colombia..html"><i class="fa fa-check"></i><b>8</b> País: Colombia.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lectura-de-la-encuesta-y-estimaciones-directas.html"><a href="lectura-de-la-encuesta-y-estimaciones-directas.html"><i class="fa fa-check"></i><b>8.1</b> Lectura de la encuesta y estimaciones directas</a></li>
+<li class="chapter" data-level="8.2" data-path="selección-de-dominios.html"><a href="selección-de-dominios.html"><i class="fa fa-check"></i><b>8.2</b> Selección de dominios</a></li>
+<li class="chapter" data-level="8.3" data-path="preparando-insumos-para-stan.html"><a href="preparando-insumos-para-stan.html"><i class="fa fa-check"></i><b>8.3</b> Preparando insumos para <code>STAN</code></a></li>
+<li class="chapter" data-level="8.4" data-path="validación-del-modelo.html"><a href="validación-del-modelo.html"><i class="fa fa-check"></i><b>8.4</b> Validación del modelo</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="validación-del-modelo.html"><a href="validación-del-modelo.html#estimación-de-los-parámetros."><i class="fa fa-check"></i><b>8.4.1</b> Estimación de los parámetros.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="metodología-de-benchmarking.html"><a href="metodología-de-benchmarking.html"><i class="fa fa-check"></i><b>8.5</b> Metodología de Benchmarking</a></li>
+<li class="chapter" data-level="8.6" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html"><i class="fa fa-check"></i><b>8.6</b> Mapas del mercado de trabajo.</a>
+<ul>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#ocupado-3"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#desocupado-3"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo..html"><a href="mapas-del-mercado-de-trabajo..html#inactivo-3"><i class="fa fa-check"></i>Inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="país-perú..html"><a href="país-perú..html"><i class="fa fa-check"></i><b>9</b> País: Perú.</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="lectura-de-la-encuesta-y-estimaciones-directas-1.html"><a href="lectura-de-la-encuesta-y-estimaciones-directas-1.html"><i class="fa fa-check"></i><b>9.1</b> Lectura de la encuesta y estimaciones directas</a></li>
+<li class="chapter" data-level="9.2" data-path="selección-de-dominios-1.html"><a href="selección-de-dominios-1.html"><i class="fa fa-check"></i><b>9.2</b> Selección de dominios</a></li>
+<li class="chapter" data-level="9.3" data-path="preparando-insumos-para-stan-1.html"><a href="preparando-insumos-para-stan-1.html"><i class="fa fa-check"></i><b>9.3</b> Preparando insumos para <code>STAN</code></a></li>
+<li class="chapter" data-level="9.4" data-path="validación-del-modelo-1.html"><a href="validación-del-modelo-1.html"><i class="fa fa-check"></i><b>9.4</b> Validación del modelo</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="validación-del-modelo-1.html"><a href="validación-del-modelo-1.html#estimación-de-los-parámetros.-1"><i class="fa fa-check"></i><b>9.4.1</b> Estimación de los parámetros.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="metodología-de-benchmarking-1.html"><a href="metodología-de-benchmarking-1.html"><i class="fa fa-check"></i><b>9.5</b> Metodología de Benchmarking</a></li>
+<li class="chapter" data-level="9.6" data-path="mapas-del-mercado-de-trabajo.-1.html"><a href="mapas-del-mercado-de-trabajo.-1.html"><i class="fa fa-check"></i><b>9.6</b> Mapas del mercado de trabajo.</a>
+<ul>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-1.html"><a href="mapas-del-mercado-de-trabajo.-1.html#ocupado-5"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-1.html"><a href="mapas-del-mercado-de-trabajo.-1.html#desocupado-5"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-1.html"><a href="mapas-del-mercado-de-trabajo.-1.html#inactivo-5"><i class="fa fa-check"></i>Inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="país-méxico..html"><a href="país-méxico..html"><i class="fa fa-check"></i><b>10</b> País: México.</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lectura-de-la-encuesta-y-estimaciones-directas-2.html"><a href="lectura-de-la-encuesta-y-estimaciones-directas-2.html"><i class="fa fa-check"></i><b>10.1</b> Lectura de la encuesta y estimaciones directas</a></li>
+<li class="chapter" data-level="10.2" data-path="selección-de-dominios-2.html"><a href="selección-de-dominios-2.html"><i class="fa fa-check"></i><b>10.2</b> Selección de dominios</a></li>
+<li class="chapter" data-level="10.3" data-path="preparando-insumos-para-stan-2.html"><a href="preparando-insumos-para-stan-2.html"><i class="fa fa-check"></i><b>10.3</b> Preparando insumos para <code>STAN</code></a></li>
+<li class="chapter" data-level="10.4" data-path="validación-del-modelo-2.html"><a href="validación-del-modelo-2.html"><i class="fa fa-check"></i><b>10.4</b> Validación del modelo</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="validación-del-modelo-2.html"><a href="validación-del-modelo-2.html#estimación-de-los-parámetros.-2"><i class="fa fa-check"></i><b>10.4.1</b> Estimación de los parámetros.</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="metodología-de-benchmarking-2.html"><a href="metodología-de-benchmarking-2.html"><i class="fa fa-check"></i><b>10.5</b> Metodología de Benchmarking</a></li>
+<li class="chapter" data-level="10.6" data-path="mapas-del-mercado-de-trabajo.-2.html"><a href="mapas-del-mercado-de-trabajo.-2.html"><i class="fa fa-check"></i><b>10.6</b> Mapas del mercado de trabajo.</a>
+<ul>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-2.html"><a href="mapas-del-mercado-de-trabajo.-2.html#ocupado-7"><i class="fa fa-check"></i>Ocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-2.html"><a href="mapas-del-mercado-de-trabajo.-2.html#desocupado-7"><i class="fa fa-check"></i>Desocupado</a></li>
+<li class="chapter" data-level="" data-path="mapas-del-mercado-de-trabajo.-2.html"><a href="mapas-del-mercado-de-trabajo.-2.html#inactivo-7"><i class="fa fa-check"></i>Inactivo</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a Estimación de áreas pequeñas con el modelo multinomial </a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estimación de áreas pequeñas con el modelo multinomial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="validación-del-modelo-2" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Validación del modelo<a href="validación-del-modelo-2.html#validación-del-modelo-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La validación de un modelo es esencial para evaluar su capacidad para predecir de manera precisa y confiable los resultados futuros. En el caso de un modelo de área con respuesta multinomial, la validación se enfoca en medir la precisión del modelo para predecir las diferentes categorías de respuesta. El objetivo principal de la validación es determinar si el modelo es capaz de generalizar bien a datos no vistos y proporcionar predicciones precisas. Esto implica comparar las predicciones del modelo con los datos observados y utilizar métricas de evaluación para medir el rendimiento del modelo. La validación del modelo es esencial para garantizar la calidad de las predicciones y la confiabilidad del modelo para su uso en aplicaciones futuras.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="validación-del-modelo-2.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(posterior)</span>
+<span id="cb184-2"><a href="validación-del-modelo-2.html#cb184-2" aria-hidden="true" tabindex="-1"></a>infile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;01 Modelo de area/MEX/2020/Data/fit_rtanmultinomial_con_covariable_satelite2.Rds&quot;</span>)</span>
+<span id="cb184-3"><a href="validación-del-modelo-2.html#cb184-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(infile)</span>
+<span id="cb184-4"><a href="validación-del-modelo-2.html#cb184-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-5"><a href="validación-del-modelo-2.html#cb184-5" aria-hidden="true" tabindex="-1"></a>theta_dir <span class="ot">&lt;-</span> indicador_dam1 <span class="sc">%&gt;%</span>  </span>
+<span id="cb184-6"><a href="validación-del-modelo-2.html#cb184-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(dam2,</span>
+<span id="cb184-7"><a href="validación-del-modelo-2.html#cb184-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> n_desocupado <span class="sc">+</span> n_ocupado <span class="sc">+</span> n_inactivo,</span>
+<span id="cb184-8"><a href="validación-del-modelo-2.html#cb184-8" aria-hidden="true" tabindex="-1"></a>            Ocupado, Desocupado, Inactivo) </span>
+<span id="cb184-9"><a href="validación-del-modelo-2.html#cb184-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-10"><a href="validación-del-modelo-2.html#cb184-10" aria-hidden="true" tabindex="-1"></a><span class="fu">color_scheme_set</span>(<span class="st">&quot;brightblue&quot;</span>)</span>
+<span id="cb184-11"><a href="validación-del-modelo-2.html#cb184-11" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">15</span>))</span>
+<span id="cb184-12"><a href="validación-del-modelo-2.html#cb184-12" aria-hidden="true" tabindex="-1"></a>y_pred_B <span class="ot">&lt;-</span> <span class="fu">as.array</span>(fit, <span class="at">pars =</span> <span class="st">&quot;theta&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb184-13"><a href="validación-del-modelo-2.html#cb184-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_draws_matrix</span>()</span>
+<span id="cb184-14"><a href="validación-del-modelo-2.html#cb184-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb184-15"><a href="validación-del-modelo-2.html#cb184-15" aria-hidden="true" tabindex="-1"></a>rowsrandom <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">nrow</span>(y_pred_B), <span class="dv">100</span>)</span>
+<span id="cb184-16"><a href="validación-del-modelo-2.html#cb184-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-17"><a href="validación-del-modelo-2.html#cb184-17" aria-hidden="true" tabindex="-1"></a>theta_1<span class="ot">&lt;-</span>  <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;1]&quot;</span>,<span class="at">x =</span> <span class="fu">colnames</span>(y_pred_B),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb184-18"><a href="validación-del-modelo-2.html#cb184-18" aria-hidden="true" tabindex="-1"></a>theta_2<span class="ot">&lt;-</span>  <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;2]&quot;</span>,<span class="at">x =</span> <span class="fu">colnames</span>(y_pred_B),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb184-19"><a href="validación-del-modelo-2.html#cb184-19" aria-hidden="true" tabindex="-1"></a>theta_3<span class="ot">&lt;-</span>  <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">&quot;3]&quot;</span>,<span class="at">x =</span> <span class="fu">colnames</span>(y_pred_B),<span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb184-20"><a href="validación-del-modelo-2.html#cb184-20" aria-hidden="true" tabindex="-1"></a>y_pred1 <span class="ot">&lt;-</span> y_pred_B[rowsrandom,theta_1 ]</span>
+<span id="cb184-21"><a href="validación-del-modelo-2.html#cb184-21" aria-hidden="true" tabindex="-1"></a>y_pred2 <span class="ot">&lt;-</span> y_pred_B[rowsrandom,theta_2 ]</span>
+<span id="cb184-22"><a href="validación-del-modelo-2.html#cb184-22" aria-hidden="true" tabindex="-1"></a>y_pred3 <span class="ot">&lt;-</span> y_pred_B[rowsrandom,theta_3 ]</span>
+<span id="cb184-23"><a href="validación-del-modelo-2.html#cb184-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb184-24"><a href="validación-del-modelo-2.html#cb184-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ppc_dens_overlay</span>(<span class="at">y =</span> <span class="fu">as.numeric</span>(theta_dir<span class="sc">$</span>Ocupado), y_pred1)<span class="sc">/</span></span>
+<span id="cb184-25"><a href="validación-del-modelo-2.html#cb184-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ppc_dens_overlay</span>(<span class="at">y =</span> <span class="fu">as.numeric</span>(theta_dir<span class="sc">$</span>Desocupado), y_pred2)<span class="sc">/</span></span>
+<span id="cb184-26"><a href="validación-del-modelo-2.html#cb184-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ppc_dens_overlay</span>(<span class="at">y =</span> <span class="fu">as.numeric</span>(theta_dir<span class="sc">$</span>Inactivo), y_pred3)</span></code></pre></div>
+<p><img src="Rmd/MEX/Recursos/ppc.png" width="800px" height="200px" style="display: block; margin: auto;" /></p>
+<p>La matriz de correlación de los efectos aleatorios.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="validación-del-modelo-2.html#cb185-1" aria-hidden="true" tabindex="-1"></a>omega <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit,<span class="st">&quot;Omega&quot;</span>)<span class="sc">$</span>summary</span>
+<span id="cb185-2"><a href="validación-del-modelo-2.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tba</span>(omega)</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+se_mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+2.5%
+</th>
+<th style="text-align:right;">
+25%
+</th>
+<th style="text-align:right;">
+50%
+</th>
+<th style="text-align:right;">
+75%
+</th>
+<th style="text-align:right;">
+97.5%
+</th>
+<th style="text-align:right;">
+n_eff
+</th>
+<th style="text-align:right;">
+Rhat
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Omega[1,1]
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+<td style="text-align:right;">
+NaN
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Omega[1,2]
+</td>
+<td style="text-align:right;">
+0.4851
+</td>
+<td style="text-align:right;">
+0.002
+</td>
+<td style="text-align:right;">
+0.0429
+</td>
+<td style="text-align:right;">
+0.3976
+</td>
+<td style="text-align:right;">
+0.4576
+</td>
+<td style="text-align:right;">
+0.4864
+</td>
+<td style="text-align:right;">
+0.5153
+</td>
+<td style="text-align:right;">
+0.5639
+</td>
+<td style="text-align:right;">
+462.4828
+</td>
+<td style="text-align:right;">
+1.0058
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Omega[2,1]
+</td>
+<td style="text-align:right;">
+0.4851
+</td>
+<td style="text-align:right;">
+0.002
+</td>
+<td style="text-align:right;">
+0.0429
+</td>
+<td style="text-align:right;">
+0.3976
+</td>
+<td style="text-align:right;">
+0.4576
+</td>
+<td style="text-align:right;">
+0.4864
+</td>
+<td style="text-align:right;">
+0.5153
+</td>
+<td style="text-align:right;">
+0.5639
+</td>
+<td style="text-align:right;">
+462.4828
+</td>
+<td style="text-align:right;">
+1.0058
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Omega[2,2]
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+1.0000
+</td>
+<td style="text-align:right;">
+3358.3429
+</td>
+<td style="text-align:right;">
+0.9990
+</td>
+</tr>
+</tbody>
+</table>
+<div id="estimación-de-los-parámetros.-2" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Estimación de los parámetros.<a href="validación-del-modelo-2.html#estimación-de-los-parámetros.-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El código crea dos matrices, <code>theta_obs_ordenado</code> y <code>theta_pred_ordenado</code>, que contienen las estimaciones medias de los parámetros del modelo de respuesta multinomial con covariables para los datos de observación y predicción, respectivamente. La función <code>matrix()</code> se utiliza para dar formato a los datos con una matriz <code>nrow</code> x <code>ncol</code>, y se asignan nombres de columna apropiados a la matriz resultante utilizando <code>colnames()</code>. Luego se convierten las matrices en marcos de datos (<code>as.data.frame()</code>) y se unen mediante <code>full_join()</code> para crear una única tabla que contenga todas las estimaciones de los parámetros para los datos de observación y predicción, junto con la información del indicador de área (theta_dir). El resultado final es un marco de datos llamado estimaciones_obs.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="validación-del-modelo-2.html#cb186-1" aria-hidden="true" tabindex="-1"></a>dam_pred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;01 Modelo de area/MEX/2020/Data/dam_pred.rds&quot;</span>)</span>
+<span id="cb186-2"><a href="validación-del-modelo-2.html#cb186-2" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> <span class="dv">3</span> </span>
+<span id="cb186-3"><a href="validación-del-modelo-2.html#cb186-3" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">nrow</span>(indicador_dam1)</span>
+<span id="cb186-4"><a href="validación-del-modelo-2.html#cb186-4" aria-hidden="true" tabindex="-1"></a>D1 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(dam_pred)</span>
+<span id="cb186-5"><a href="validación-del-modelo-2.html#cb186-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Estimación del modelo. </span></span>
+<span id="cb186-6"><a href="validación-del-modelo-2.html#cb186-6" aria-hidden="true" tabindex="-1"></a>theta_obs <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit, <span class="at">pars =</span> <span class="st">&quot;theta&quot;</span>)<span class="sc">$</span>summary[, <span class="st">&quot;mean&quot;</span>]</span>
+<span id="cb186-7"><a href="validación-del-modelo-2.html#cb186-7" aria-hidden="true" tabindex="-1"></a>theta_pred <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit, <span class="at">pars =</span> <span class="st">&quot;theta_pred&quot;</span>)<span class="sc">$</span>summary[, <span class="st">&quot;mean&quot;</span>]</span>
+<span id="cb186-8"><a href="validación-del-modelo-2.html#cb186-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-9"><a href="validación-del-modelo-2.html#cb186-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Ordenando la matrix de theta </span></span>
+<span id="cb186-10"><a href="validación-del-modelo-2.html#cb186-10" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado <span class="ot">&lt;-</span> <span class="fu">matrix</span>(theta_obs, </span>
+<span id="cb186-11"><a href="validación-del-modelo-2.html#cb186-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">nrow =</span> D,</span>
+<span id="cb186-12"><a href="validación-del-modelo-2.html#cb186-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ncol =</span> P,<span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb186-13"><a href="validación-del-modelo-2.html#cb186-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-14"><a href="validación-del-modelo-2.html#cb186-14" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_obs_ordenado) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod&quot;</span>, <span class="st">&quot;Desocupado_mod&quot;</span>, <span class="st">&quot;Inactivo_mod&quot;</span>)</span>
+<span id="cb186-15"><a href="validación-del-modelo-2.html#cb186-15" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado<span class="sc">%&lt;&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb186-16"><a href="validación-del-modelo-2.html#cb186-16" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> indicador_dam1<span class="sc">$</span>dam2,</span>
+<span id="cb186-17"><a href="validación-del-modelo-2.html#cb186-17" aria-hidden="true" tabindex="-1"></a>                            theta_obs_ordenado)</span>
+<span id="cb186-18"><a href="validación-del-modelo-2.html#cb186-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-19"><a href="validación-del-modelo-2.html#cb186-19" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado <span class="ot">&lt;-</span> <span class="fu">matrix</span>(theta_pred, </span>
+<span id="cb186-20"><a href="validación-del-modelo-2.html#cb186-20" aria-hidden="true" tabindex="-1"></a>                             <span class="at">nrow =</span> D1,</span>
+<span id="cb186-21"><a href="validación-del-modelo-2.html#cb186-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ncol =</span> P,<span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb186-22"><a href="validación-del-modelo-2.html#cb186-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb186-23"><a href="validación-del-modelo-2.html#cb186-23" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_pred_ordenado) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod&quot;</span>, <span class="st">&quot;Desocupado_mod&quot;</span>, <span class="st">&quot;Inactivo_mod&quot;</span>)</span>
+<span id="cb186-24"><a href="validación-del-modelo-2.html#cb186-24" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado<span class="sc">%&lt;&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb186-25"><a href="validación-del-modelo-2.html#cb186-25" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> dam_pred<span class="sc">$</span>dam2, theta_pred_ordenado)</span></code></pre></div>
+<div id="estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación-2" class="section level4 hasAnchor" number="10.4.1.1">
+<h4><span class="header-section-number">10.4.1.1</span> Estimación del desviación estárdar y el coeficiente de valiación<a href="validación-del-modelo-2.html#estimación-del-desviación-estárdar-y-el-coeficiente-de-valiación-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Este bloque de código corresponde al cálculo de las desviaciones estándar (sd) y coeficientes de variación (cv) de los parámetros <code>theta</code> para los datos observados y predichos. En primer lugar, se utiliza la función <code>summary()</code> del paquete <code>rstan</code> para extraer los valores de <code>sd</code> de los parámetros <code>theta</code> observados y predichos, respectivamente, a partir del modelo (<code>fit</code>) que contiene la información de la estimación de los parámetros de la distribución Bayesiana. Luego, se organizan los valores de sd en una matriz ordenada por <code>dam2</code> y se les asignan los nombres correspondientes. Con esta matriz, se calcula otra matriz que contiene los coeficientes de variación para los parámetros <code>theta</code> observados (<code>theta_obs_ordenado_cv</code>). De manera similar, se construyen matrices ordenadas por <code>dam2</code> para los valores de sd y cv de los parámetros theta predichos (<code>theta_pred_ordenado_sd</code> y <code>theta_pred_ordenado_cv</code>, respectivamente).</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="validación-del-modelo-2.html#cb187-1" aria-hidden="true" tabindex="-1"></a>theta_obs_sd <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit, <span class="at">pars =</span> <span class="st">&quot;theta&quot;</span>)<span class="sc">$</span>summary[, <span class="st">&quot;sd&quot;</span>]</span>
+<span id="cb187-2"><a href="validación-del-modelo-2.html#cb187-2" aria-hidden="true" tabindex="-1"></a>theta_pred_sd <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit, <span class="at">pars =</span> <span class="st">&quot;theta_pred&quot;</span>)<span class="sc">$</span>summary[, <span class="st">&quot;sd&quot;</span>]</span>
+<span id="cb187-3"><a href="validación-del-modelo-2.html#cb187-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-4"><a href="validación-del-modelo-2.html#cb187-4" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado_sd <span class="ot">&lt;-</span> <span class="fu">matrix</span>(theta_obs_sd, </span>
+<span id="cb187-5"><a href="validación-del-modelo-2.html#cb187-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">nrow =</span> D,</span>
+<span id="cb187-6"><a href="validación-del-modelo-2.html#cb187-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">ncol =</span> P,<span class="at">byrow =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb187-7"><a href="validación-del-modelo-2.html#cb187-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-8"><a href="validación-del-modelo-2.html#cb187-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_obs_ordenado_sd) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod_sd&quot;</span>, <span class="st">&quot;Desocupado_mod_sd&quot;</span>, <span class="st">&quot;Inactivo_mod_sd&quot;</span>)</span>
+<span id="cb187-9"><a href="validación-del-modelo-2.html#cb187-9" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado_sd<span class="sc">%&lt;&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb187-10"><a href="validación-del-modelo-2.html#cb187-10" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado_sd <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> indicador_dam1<span class="sc">$</span>dam2,</span>
+<span id="cb187-11"><a href="validación-del-modelo-2.html#cb187-11" aria-hidden="true" tabindex="-1"></a>                            theta_obs_ordenado_sd)</span>
+<span id="cb187-12"><a href="validación-del-modelo-2.html#cb187-12" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado_cv <span class="ot">&lt;-</span> theta_obs_ordenado_sd[,<span class="sc">-</span><span class="dv">1</span>]<span class="sc">/</span>theta_obs_ordenado[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb187-13"><a href="validación-del-modelo-2.html#cb187-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-14"><a href="validación-del-modelo-2.html#cb187-14" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_obs_ordenado_cv) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod_cv&quot;</span>, <span class="st">&quot;Desocupado_mod_cv&quot;</span>, <span class="st">&quot;Inactivo_mod_cv&quot;</span>)</span>
+<span id="cb187-15"><a href="validación-del-modelo-2.html#cb187-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-16"><a href="validación-del-modelo-2.html#cb187-16" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado_cv <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> indicador_dam1<span class="sc">$</span>dam2,</span>
+<span id="cb187-17"><a href="validación-del-modelo-2.html#cb187-17" aria-hidden="true" tabindex="-1"></a>                               theta_obs_ordenado_cv)</span>
+<span id="cb187-18"><a href="validación-del-modelo-2.html#cb187-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-19"><a href="validación-del-modelo-2.html#cb187-19" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado_sd <span class="ot">&lt;-</span> <span class="fu">matrix</span>(theta_pred_sd, </span>
+<span id="cb187-20"><a href="validación-del-modelo-2.html#cb187-20" aria-hidden="true" tabindex="-1"></a>                              <span class="at">nrow =</span> D1,</span>
+<span id="cb187-21"><a href="validación-del-modelo-2.html#cb187-21" aria-hidden="true" tabindex="-1"></a>                              <span class="at">ncol =</span> P,<span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb187-22"><a href="validación-del-modelo-2.html#cb187-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-23"><a href="validación-del-modelo-2.html#cb187-23" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_pred_ordenado_sd) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod_sd&quot;</span>, <span class="st">&quot;Desocupado_mod_sd&quot;</span>, <span class="st">&quot;Inactivo_mod_sd&quot;</span>)</span>
+<span id="cb187-24"><a href="validación-del-modelo-2.html#cb187-24" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado_sd<span class="sc">%&lt;&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb187-25"><a href="validación-del-modelo-2.html#cb187-25" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado_sd <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> dam_pred<span class="sc">$</span>dam2, theta_pred_ordenado_sd)</span>
+<span id="cb187-26"><a href="validación-del-modelo-2.html#cb187-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-27"><a href="validación-del-modelo-2.html#cb187-27" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado_cv <span class="ot">&lt;-</span> theta_pred_ordenado_sd[,<span class="sc">-</span><span class="dv">1</span>]<span class="sc">/</span>theta_pred_ordenado[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb187-28"><a href="validación-del-modelo-2.html#cb187-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-29"><a href="validación-del-modelo-2.html#cb187-29" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(theta_pred_ordenado_cv) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Ocupado_mod_cv&quot;</span>, <span class="st">&quot;Desocupado_mod_cv&quot;</span>, <span class="st">&quot;Inactivo_mod_cv&quot;</span>)</span>
+<span id="cb187-30"><a href="validación-del-modelo-2.html#cb187-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-31"><a href="validación-del-modelo-2.html#cb187-31" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado_cv <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">dam2 =</span> dam_pred<span class="sc">$</span>dam2, theta_pred_ordenado_cv)</span></code></pre></div>
+<p>El último paso es realizar la consolidación de la bases obtenidas para la estimación puntual, desviación estándar y coeficiente de variación.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="validación-del-modelo-2.html#cb188-1" aria-hidden="true" tabindex="-1"></a>theta_obs_ordenado <span class="ot">&lt;-</span> <span class="fu">full_join</span>(theta_obs_ordenado,theta_obs_ordenado_sd) <span class="sc">%&gt;%</span> </span>
+<span id="cb188-2"><a href="validación-del-modelo-2.html#cb188-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(theta_obs_ordenado_cv)</span>
+<span id="cb188-3"><a href="validación-del-modelo-2.html#cb188-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-4"><a href="validación-del-modelo-2.html#cb188-4" aria-hidden="true" tabindex="-1"></a>theta_pred_ordenado <span class="ot">&lt;-</span> <span class="fu">full_join</span>(theta_pred_ordenado,theta_pred_ordenado_sd) <span class="sc">%&gt;%</span> </span>
+<span id="cb188-5"><a href="validación-del-modelo-2.html#cb188-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(theta_pred_ordenado_cv)</span>
+<span id="cb188-6"><a href="validación-del-modelo-2.html#cb188-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-7"><a href="validación-del-modelo-2.html#cb188-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-8"><a href="validación-del-modelo-2.html#cb188-8" aria-hidden="true" tabindex="-1"></a>estimaciones <span class="ot">&lt;-</span> <span class="fu">full_join</span>(indicador_dam1,</span>
+<span id="cb188-9"><a href="validación-del-modelo-2.html#cb188-9" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">bind_rows</span>(theta_obs_ordenado, theta_pred_ordenado))</span>
+<span id="cb188-10"><a href="validación-del-modelo-2.html#cb188-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-11"><a href="validación-del-modelo-2.html#cb188-11" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">object =</span> estimaciones, <span class="at">file =</span> <span class="st">&quot;Rmd/MEX/Recursos/estimaciones.rds&quot;</span>)</span>
+<span id="cb188-12"><a href="validación-del-modelo-2.html#cb188-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tba</span>(<span class="fu">head</span>(estimaciones,<span class="dv">10</span>))</span></code></pre></div>
+<table class="table table-striped lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Arial Narrow; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+dam2
+</th>
+<th style="text-align:right;">
+n_upm
+</th>
+<th style="text-align:right;">
+n_ocupado
+</th>
+<th style="text-align:right;">
+n_desocupado
+</th>
+<th style="text-align:right;">
+n_inactivo
+</th>
+<th style="text-align:right;">
+Ocupado
+</th>
+<th style="text-align:right;">
+Ocupado_se
+</th>
+<th style="text-align:right;">
+Ocupado_var
+</th>
+<th style="text-align:right;">
+Ocupado_deff
+</th>
+<th style="text-align:right;">
+Desocupado
+</th>
+<th style="text-align:right;">
+Desocupado_se
+</th>
+<th style="text-align:right;">
+Desocupado_var
+</th>
+<th style="text-align:right;">
+Desocupado_deff
+</th>
+<th style="text-align:right;">
+Inactivo
+</th>
+<th style="text-align:right;">
+Inactivo_se
+</th>
+<th style="text-align:right;">
+Inactivo_var
+</th>
+<th style="text-align:right;">
+Inactivo_deff
+</th>
+<th style="text-align:right;">
+id_orden
+</th>
+<th style="text-align:right;">
+Ocupado_mod
+</th>
+<th style="text-align:right;">
+Desocupado_mod
+</th>
+<th style="text-align:right;">
+Inactivo_mod
+</th>
+<th style="text-align:right;">
+Ocupado_mod_sd
+</th>
+<th style="text-align:right;">
+Desocupado_mod_sd
+</th>
+<th style="text-align:right;">
+Inactivo_mod_sd
+</th>
+<th style="text-align:right;">
+Ocupado_mod_cv
+</th>
+<th style="text-align:right;">
+Desocupado_mod_cv
+</th>
+<th style="text-align:right;">
+Inactivo_mod_cv
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+01001
+</td>
+<td style="text-align:right;">
+274
+</td>
+<td style="text-align:right;">
+2560
+</td>
+<td style="text-align:right;">
+151
+</td>
+<td style="text-align:right;">
+1609
+</td>
+<td style="text-align:right;">
+0.5927
+</td>
+<td style="text-align:right;">
+0.0082
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.2035
+</td>
+<td style="text-align:right;">
+0.0361
+</td>
+<td style="text-align:right;">
+0.0032
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+1.3006
+</td>
+<td style="text-align:right;">
+0.3712
+</td>
+<td style="text-align:right;">
+0.0079
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.1630
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.5921
+</td>
+<td style="text-align:right;">
+0.0358
+</td>
+<td style="text-align:right;">
+0.3721
+</td>
+<td style="text-align:right;">
+0.0079
+</td>
+<td style="text-align:right;">
+0.0030
+</td>
+<td style="text-align:right;">
+0.0078
+</td>
+<td style="text-align:right;">
+0.0134
+</td>
+<td style="text-align:right;">
+0.0840
+</td>
+<td style="text-align:right;">
+0.0210
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01002
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+199
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+149
+</td>
+<td style="text-align:right;">
+0.5602
+</td>
+<td style="text-align:right;">
+0.0104
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+0.1579
+</td>
+<td style="text-align:right;">
+0.0223
+</td>
+<td style="text-align:right;">
+0.0063
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+0.6451
+</td>
+<td style="text-align:right;">
+0.4175
+</td>
+<td style="text-align:right;">
+0.0091
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+0.1235
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.5611
+</td>
+<td style="text-align:right;">
+0.0225
+</td>
+<td style="text-align:right;">
+0.4164
+</td>
+<td style="text-align:right;">
+0.0098
+</td>
+<td style="text-align:right;">
+0.0028
+</td>
+<td style="text-align:right;">
+0.0097
+</td>
+<td style="text-align:right;">
+0.0175
+</td>
+<td style="text-align:right;">
+0.1254
+</td>
+<td style="text-align:right;">
+0.0233
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01003
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+238
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+194
+</td>
+<td style="text-align:right;">
+0.5399
+</td>
+<td style="text-align:right;">
+0.0158
+</td>
+<td style="text-align:right;">
+2e-04
+</td>
+<td style="text-align:right;">
+0.4575
+</td>
+<td style="text-align:right;">
+0.0362
+</td>
+<td style="text-align:right;">
+0.0075
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+0.7328
+</td>
+<td style="text-align:right;">
+0.4239
+</td>
+<td style="text-align:right;">
+0.0138
+</td>
+<td style="text-align:right;">
+2e-04
+</td>
+<td style="text-align:right;">
+0.3554
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.5414
+</td>
+<td style="text-align:right;">
+0.0342
+</td>
+<td style="text-align:right;">
+0.4244
+</td>
+<td style="text-align:right;">
+0.0149
+</td>
+<td style="text-align:right;">
+0.0051
+</td>
+<td style="text-align:right;">
+0.0148
+</td>
+<td style="text-align:right;">
+0.0275
+</td>
+<td style="text-align:right;">
+0.1489
+</td>
+<td style="text-align:right;">
+0.0348
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01005
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+619
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+298
+</td>
+<td style="text-align:right;">
+0.6365
+</td>
+<td style="text-align:right;">
+0.0182
+</td>
+<td style="text-align:right;">
+3e-04
+</td>
+<td style="text-align:right;">
+1.3637
+</td>
+<td style="text-align:right;">
+0.0352
+</td>
+<td style="text-align:right;">
+0.0077
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.6567
+</td>
+<td style="text-align:right;">
+0.3283
+</td>
+<td style="text-align:right;">
+0.0157
+</td>
+<td style="text-align:right;">
+2e-04
+</td>
+<td style="text-align:right;">
+1.0603
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.6306
+</td>
+<td style="text-align:right;">
+0.0335
+</td>
+<td style="text-align:right;">
+0.3360
+</td>
+<td style="text-align:right;">
+0.0169
+</td>
+<td style="text-align:right;">
+0.0060
+</td>
+<td style="text-align:right;">
+0.0164
+</td>
+<td style="text-align:right;">
+0.0268
+</td>
+<td style="text-align:right;">
+0.1804
+</td>
+<td style="text-align:right;">
+0.0487
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01006
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+273
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+194
+</td>
+<td style="text-align:right;">
+0.5801
+</td>
+<td style="text-align:right;">
+0.0200
+</td>
+<td style="text-align:right;">
+4e-04
+</td>
+<td style="text-align:right;">
+0.7957
+</td>
+<td style="text-align:right;">
+0.0264
+</td>
+<td style="text-align:right;">
+0.0056
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+0.5836
+</td>
+<td style="text-align:right;">
+0.3935
+</td>
+<td style="text-align:right;">
+0.0180
+</td>
+<td style="text-align:right;">
+3e-04
+</td>
+<td style="text-align:right;">
+0.6536
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0.5805
+</td>
+<td style="text-align:right;">
+0.0269
+</td>
+<td style="text-align:right;">
+0.3926
+</td>
+<td style="text-align:right;">
+0.0176
+</td>
+<td style="text-align:right;">
+0.0054
+</td>
+<td style="text-align:right;">
+0.0172
+</td>
+<td style="text-align:right;">
+0.0304
+</td>
+<td style="text-align:right;">
+0.2023
+</td>
+<td style="text-align:right;">
+0.0437
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01007
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+334
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+0.6132
+</td>
+<td style="text-align:right;">
+0.0312
+</td>
+<td style="text-align:right;">
+1e-03
+</td>
+<td style="text-align:right;">
+2.3457
+</td>
+<td style="text-align:right;">
+0.0155
+</td>
+<td style="text-align:right;">
+0.0059
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+1.3093
+</td>
+<td style="text-align:right;">
+0.3714
+</td>
+<td style="text-align:right;">
+0.0300
+</td>
+<td style="text-align:right;">
+9e-04
+</td>
+<td style="text-align:right;">
+2.2054
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0.6089
+</td>
+<td style="text-align:right;">
+0.0205
+</td>
+<td style="text-align:right;">
+0.3706
+</td>
+<td style="text-align:right;">
+0.0273
+</td>
+<td style="text-align:right;">
+0.0063
+</td>
+<td style="text-align:right;">
+0.0264
+</td>
+<td style="text-align:right;">
+0.0449
+</td>
+<td style="text-align:right;">
+0.3091
+</td>
+<td style="text-align:right;">
+0.0711
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01009
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+0.6034
+</td>
+<td style="text-align:right;">
+0.0225
+</td>
+<td style="text-align:right;">
+5e-04
+</td>
+<td style="text-align:right;">
+0.2796
+</td>
+<td style="text-align:right;">
+0.0119
+</td>
+<td style="text-align:right;">
+0.0095
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.0159
+</td>
+<td style="text-align:right;">
+0.3847
+</td>
+<td style="text-align:right;">
+0.0130
+</td>
+<td style="text-align:right;">
+2e-04
+</td>
+<td style="text-align:right;">
+0.0943
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.6023
+</td>
+<td style="text-align:right;">
+0.0152
+</td>
+<td style="text-align:right;">
+0.3825
+</td>
+<td style="text-align:right;">
+0.0167
+</td>
+<td style="text-align:right;">
+0.0035
+</td>
+<td style="text-align:right;">
+0.0163
+</td>
+<td style="text-align:right;">
+0.0278
+</td>
+<td style="text-align:right;">
+0.2332
+</td>
+<td style="text-align:right;">
+0.0426
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+01011
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+324
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+177
+</td>
+<td style="text-align:right;">
+0.6359
+</td>
+<td style="text-align:right;">
+0.0290
+</td>
+<td style="text-align:right;">
+8e-04
+</td>
+<td style="text-align:right;">
+1.9003
+</td>
+<td style="text-align:right;">
+0.0298
+</td>
+<td style="text-align:right;">
+0.0074
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+0.9842
+</td>
+<td style="text-align:right;">
+0.3343
+</td>
+<td style="text-align:right;">
+0.0319
+</td>
+<td style="text-align:right;">
+1e-03
+</td>
+<td style="text-align:right;">
+2.3912
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.6252
+</td>
+<td style="text-align:right;">
+0.0291
+</td>
+<td style="text-align:right;">
+0.3458
+</td>
+<td style="text-align:right;">
+0.0264
+</td>
+<td style="text-align:right;">
+0.0081
+</td>
+<td style="text-align:right;">
+0.0252
+</td>
+<td style="text-align:right;">
+0.0422
+</td>
+<td style="text-align:right;">
+0.2783
+</td>
+<td style="text-align:right;">
+0.0730
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+02001
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+1359
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+979
+</td>
+<td style="text-align:right;">
+0.5488
+</td>
+<td style="text-align:right;">
+0.0190
+</td>
+<td style="text-align:right;">
+4e-04
+</td>
+<td style="text-align:right;">
+3.5128
+</td>
+<td style="text-align:right;">
+0.0230
+</td>
+<td style="text-align:right;">
+0.0050
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+2.6845
+</td>
+<td style="text-align:right;">
+0.4282
+</td>
+<td style="text-align:right;">
+0.0181
+</td>
+<td style="text-align:right;">
+3e-04
+</td>
+<td style="text-align:right;">
+3.2195
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+0.5493
+</td>
+<td style="text-align:right;">
+0.0253
+</td>
+<td style="text-align:right;">
+0.4253
+</td>
+<td style="text-align:right;">
+0.0175
+</td>
+<td style="text-align:right;">
+0.0050
+</td>
+<td style="text-align:right;">
+0.0172
+</td>
+<td style="text-align:right;">
+0.0318
+</td>
+<td style="text-align:right;">
+0.1989
+</td>
+<td style="text-align:right;">
+0.0404
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+02002
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+1644
+</td>
+<td style="text-align:right;">
+0.5537
+</td>
+<td style="text-align:right;">
+0.0113
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.9590
+</td>
+<td style="text-align:right;">
+0.0221
+</td>
+<td style="text-align:right;">
+0.0039
+</td>
+<td style="text-align:right;">
+0e+00
+</td>
+<td style="text-align:right;">
+2.6821
+</td>
+<td style="text-align:right;">
+0.4242
+</td>
+<td style="text-align:right;">
+0.0110
+</td>
+<td style="text-align:right;">
+1e-04
+</td>
+<td style="text-align:right;">
+1.8694
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.5537
+</td>
+<td style="text-align:right;">
+0.0234
+</td>
+<td style="text-align:right;">
+0.4229
+</td>
+<td style="text-align:right;">
+0.0110
+</td>
+<td style="text-align:right;">
+0.0033
+</td>
+<td style="text-align:right;">
+0.0109
+</td>
+<td style="text-align:right;">
+0.0199
+</td>
+<td style="text-align:right;">
+0.1419
+</td>
+<td style="text-align:right;">
+0.0258
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preparando-insumos-para-stan-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="metodología-de-benchmarking-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/psirusteam/SAEMultinomialMercadoLaboral/Rmd/MEX/10-MEX_Mercado_del_trabajo.qmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Estimación de áreas pequeñas con el modelo multinomial.pdf", "Estimación de áreas pequeñas con el modelo multinomial.epub", "Estimación de áreas pequeñas con el modelo multinomial.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"tconfig": null
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
